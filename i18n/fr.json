@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — tableau des scores et classement en ligne gratuits pour la classe et les soirées quiz",
-    "description": "Tableau des scores et classement gratuits pour les enseignants et les quiz au bar. Affichez les points en grand sur une TV ou un vidéoprojecteur, gérez les manches, couronnez les gagnants. Sans inscription, fonctionne hors ligne, vos données restent dans votre navigateur."
+    "title": "Punkto — tableau des scores et classement en ligne gratuits",
+    "description": "Tableau des scores et classement en ligne gratuits. Affichez les points en grand sur une TV ou un vidéoprojecteur, gérez les manches, couronnez les gagnants. Sans inscription, fonctionne hors ligne, vos données restent dans votre navigateur."
   },
   "common": {
     "close": "Fermer",
@@ -19,10 +19,10 @@
     "manage": "Gérer"
   },
   "home": {
-    "h1": "Tableau des scores gratuit pour la classe et les soirées quiz",
+    "h1": "Tableau des scores et classement en ligne gratuits",
     "tagline": "Comptez les points sur votre ordinateur ou votre téléphone et affichez-les en grand sur une TV ou un vidéoprojecteur. Classements, manches, tableaux à deux équipes et podium des gagnants — sans inscription.",
     "privacyTitle": "Vos données restent sur cet appareil.",
-    "privacyText": "Pas de compte, pas d'inscription, rien n'est envoyé en ligne. Les noms, points et photos sont stockés uniquement dans votre navigateur.",
+    "privacyText": "Pas de compte, pas d'inscription, rien n'est envoyé en ligne. Les noms et les points sont stockés uniquement dans votre navigateur.",
     "yourBoards": "Vos tableaux",
     "import": "Importer",
     "newBoard": "Nouveau tableau",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} joueur", "other": "{n} joueurs" },
     "squad": { "one": "{n} joueur dans les effectifs", "other": "{n} joueurs dans les effectifs" },
     "featuresTitle": "Pourquoi Punkto",
-    "f1Title": "Pour les enseignants",
-    "f1Text": "Attribuez des points à la classe chaque jour, ajoutez les photos des élèves et célébrez les gagnants au vidéoprojecteur.",
-    "f2Title": "Pour les soirées quiz",
-    "f2Text": "Équipes, manches et classement en direct sur la TV du bar. Saisissez une manche entière en quelques secondes.",
+    "f1Title": "Deux façons de compter",
+    "f1Text": "Un classement pour autant de joueurs ou d'équipes que vous voulez, ou un tableau des scores pour deux équipes face à face.",
+    "f2Title": "Manches, gagnants et historique",
+    "f2Text": "Comptez les points par manche, terminez avec un podium des gagnants et gardez chaque résultat dans l'historique.",
     "f3Title": "Pensé pour le grand écran",
     "f3Text": "Un affichage immense et lisible qui se met à jour instantanément pendant que vous comptez les points depuis votre ordinateur ou téléphone.",
     "f4Title": "Confidentiel par nature",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Classement",
-    "leaderboardDesc": "De nombreux joueurs ou équipes, des points et des manches. Idéal pour la classe et les quiz.",
+    "leaderboardDesc": "De nombreux joueurs ou équipes, des points et des manches.",
     "scoreboard": "Tableau des scores",
     "scoreboardDesc": "Deux équipes face à face, avec logos, effectifs et buteurs."
   },
   "create": {
     "heading": "Nouveau tableau",
     "title": "Nom",
-    "titlePlaceholder": "ex. CM1 B ou Quiz du vendredi",
+    "titlePlaceholder": "ex. Coupe de printemps",
     "mode": "Type",
     "create": "Créer le tableau"
-  },
-  "palettes": {
-    "classroom": "Classe",
-    "pub": "Bar",
-    "sports": "Sport",
-    "minimal": "Minimal",
-    "custom": "Personnalisé"
   },
   "settings": {
     "title": "Réglages",
@@ -80,19 +73,14 @@
     "storage": "Stockage utilisé : {used} Ko sur environ {total} Ko",
     "wipe": "Supprimer toutes les données",
     "wipeConfirm": "Supprimer TOUS les tableaux, l'historique et les réglages de ce navigateur ? Cette action est irréversible.",
-    "palette": "Couleurs",
     "boardSettings": "Réglages du tableau",
     "boardTitle": "Titre du tableau",
     "logo": "Logo",
     "uploadLogo": "Importer un logo",
     "changeLogo": "Changer le logo",
-    "color1": "Couleur principale",
-    "color2": "Couleur secondaire",
     "steps": "Boutons de points",
     "stepsHint": "Séparés par des virgules, ex. 1, 5 ou 1, 2, 3 (jusqu'à 4).",
     "clock": "Afficher un chronomètre de match",
-    "teamColors": "Couleurs des équipes",
-    "usePalette": "Utiliser la palette",
     "resetScores": "Remettre les points à zéro",
     "resetConfirm": "Remettre tous les points à zéro ? Les parties terminées de l'historique sont conservées.",
     "deleteBoard": "Supprimer le tableau"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Confidentialité",
-    "noTracking": "Pas de compte · Aucun pistage par Punkto",
-    "madeFor": "conçu pour la classe et les soirées quiz"
+    "noTracking": "Pas de compte · Aucun pistage par Punkto"
   },
   "privacy": {
     "title": "Confidentialité",
-    "p1": "Punkto n'a ni comptes ni base de données. Tout ce que vous créez — tableaux, noms, points, photos et logos — est stocké uniquement dans le stockage local de votre navigateur sur cet appareil. Nous n'en recevons rien.",
-    "p2": "Les photos et logos sont redimensionnés et compressés dans votre navigateur avant d'être enregistrés. Supprimer un tableau, ou utiliser « Supprimer toutes les données » dans les réglages, l'efface définitivement de cet appareil.",
-    "p3": "Les liens de partage contiennent les données du tableau après le signe # de l'adresse. Les navigateurs n'envoient jamais cette partie à un serveur : les données ne parviennent qu'aux personnes à qui vous donnez le lien. Les photos ne sont pas incluses dans les liens.",
+    "p1": "Punkto n'a ni comptes ni base de données. Tout ce que vous créez — tableaux, noms, points et logos — est stocké uniquement dans le stockage local de votre navigateur sur cet appareil. Nous n'en recevons rien.",
+    "p2": "Les logos sont redimensionnés et compressés dans votre navigateur avant d'être enregistrés. Supprimer un tableau, ou utiliser « Supprimer toutes les données » dans les réglages, l'efface définitivement de cet appareil.",
+    "p3": "Les liens de partage contiennent les données du tableau après le signe # de l'adresse. Les navigateurs n'envoient jamais cette partie à un serveur : les données ne parviennent qu'aux personnes à qui vous donnez le lien. Les logos ne sont pas inclus dans les liens.",
     "p4": "Le site est hébergé sur GitHub Pages. Comme tout serveur web, GitHub peut enregistrer des données techniques, comme votre adresse IP, lors du chargement de la page. Punkto lui-même n'utilise ni outil d'analyse ni cookie de suivi.",
     "p5": "Dans la version gratuite, les publicités sont fournies par Google AdSense. Google peut utiliser des cookies pour afficher et mesurer les annonces ; lorsque la loi l'exige, votre consentement est demandé au préalable. Les pubs peuvent être masquées pour la session, et Premium supprime tout code publicitaire.",
     "p6": "Lorsque vous activez Premium, votre clé de licence est envoyée à notre prestataire de paiement Lemon Squeezy pour vérifier sa validité. Les paiements sont entièrement gérés par Lemon Squeezy — nous ne voyons jamais vos données de carte ou de paiement.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Copier le lien de sauvegarde",
     "export": "Exporter un fichier",
-    "linkCopied": "Lien copié ! Ouvrez-le sur un autre appareil pour restaurer ce tableau (sans les photos).",
+    "linkCopied": "Lien copié ! Ouvrez-le sur un autre appareil pour restaurer ce tableau (sans les logos).",
     "imported": { "one": "{n} tableau importé", "other": "{n} tableaux importés" },
     "reading": "Lecture du lien…",
     "restoreTitle": "Restaurer le tableau",
     "restoreText": "Ajouter ce tableau à ce navigateur ?",
-    "noPhotos": "Les photos et logos ne font pas partie des liens. Utilisez « Exporter un fichier » pour une copie complète.",
-    "restore": "Restaurer"
+    "restore": "Restaurer",
+    "noImages": "Les logos ne font pas partie des liens. Utilisez « Exporter un fichier » pour une copie complète."
   },
   "errors": {
-    "storageFull": "Le stockage du navigateur est plein. Retirez quelques photos ou exportez puis supprimez d'anciens tableaux.",
+    "storageFull": "Le stockage du navigateur est plein. Retirez quelques logos ou exportez puis supprimez d'anciens tableaux.",
     "badFile": "Ce fichier n'est pas une sauvegarde Punkto.",
     "badLink": "Ce lien est cassé ou incomplet.",
     "badImage": "Impossible de lire cette image. Essayez un JPG ou un PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Modifier les joueurs",
     "noPlayers": "Aucun joueur pour l'instant — ajoutez-les ci-dessous.",
     "thisRound": "{n} cette manche",
-    "photo": "Photo",
-    "changePhoto": "Changer la photo",
-    "removePhoto": "Retirer l'image",
     "name": "Nom",
     "removed": "{name} retiré",
     "removeConfirm": "Retirer {name} ? Ses points seront perdus.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Nom du joueur ou de l'équipe",
     "addPlayer": "Ajouter un joueur ou une équipe",
     "add": "Ajouter",
-    "addHint": "Astuce : collez une liste (un nom par ligne) pour ajouter toute une classe d'un coup."
+    "addHint": "Astuce : collez une liste (un nom par ligne) pour ajouter de nombreux joueurs d'un coup."
   },
   "sb": {
     "home": "Domicile",
@@ -240,11 +224,12 @@
     "resume": "Reprendre",
     "resetClock": "Remettre le chrono à zéro",
     "noGoals": "Pas encore de but.",
-    "timeline": "Buts"
+    "timeline": "Buts",
+    "removeLogo": "Retirer le logo"
   },
   "examples": {
-    "quiz": "Soirée quiz (exemple)",
-    "match": "Match du vendredi (exemple)"
+    "leaderboard": "Classement d'exemple",
+    "scoreboard": "Match d'exemple"
   },
   "display": {
     "fullscreen": "Plein écran",
@@ -269,12 +254,12 @@
     "q1": "Punkto est-il vraiment gratuit ?",
     "a1": "Oui. Toutes les fonctionnalités sont gratuites. De petites publicités font vivre le projet — vous pouvez les masquer gratuitement pour la session, ou les supprimer pour toujours avec un achat unique.",
     "q2": "Où sont stockées mes données ?",
-    "a2": "Uniquement dans votre navigateur, sur cet appareil. Il n'y a ni compte ni serveur qui reçoive vos tableaux, noms ou photos. Utilisez « Copier le lien de sauvegarde » ou « Exporter un fichier » pour transférer un tableau sur un autre appareil.",
+    "a2": "Uniquement dans votre navigateur, sur cet appareil. Il n'y a ni compte ni serveur qui reçoive vos tableaux, noms ou points. Utilisez « Copier le lien de sauvegarde » ou « Exporter un fichier » pour transférer un tableau sur un autre appareil.",
     "q3": "Comment afficher les scores sur une TV ou un vidéoprojecteur ?",
     "a3": "Ouvrez votre tableau et cliquez sur « Affichage ». Une deuxième fenêtre s'ouvre — déplacez-la sur la TV ou le vidéoprojecteur et appuyez sur F pour le plein écran. Elle se met à jour instantanément pendant que vous modifiez les points.",
     "q4": "Fonctionne-t-il hors ligne ?",
     "a4": "Oui. Après la première visite, Punkto fonctionne sans internet. Vous pouvez aussi l'installer comme une appli depuis le menu de votre navigateur.",
-    "q5": "Convient-il aux écoles et au RGPD ?",
-    "a5": "Punkto est conçu pour la confidentialité : pas d'inscription et aucune donnée personnelle stockée sur un serveur, les noms et photos des élèves restent donc sur l'appareil de l'enseignant. Avec Premium, aucun code publicitaire tiers n'est chargé. Respectez toutefois les règles de votre établissement."
+    "q5": "Punkto est-il respectueux du RGPD ?",
+    "a5": "Punkto est conçu pour la confidentialité : pas d'inscription et aucune donnée personnelle stockée sur un serveur — les noms restent sur votre appareil. Avec Premium, aucun code publicitaire tiers n'est chargé."
   }
 }

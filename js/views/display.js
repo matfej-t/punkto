@@ -5,7 +5,7 @@ import { icon } from '../icons.js';
 import { t, fmtNum } from '../i18n.js';
 import * as store from '../store.js';
 import { rankPlayers, playerTotal, teamScore, clockMs, fmtClock, minuteOf } from '../model.js';
-import { applyPalette, teamColor, teamInk, toggleScheme } from '../theme.js';
+import { teamVars, toggleScheme } from '../theme.js';
 import { isPremium } from '../premium.js';
 import { adSlot } from '../ads.js';
 import { confetti } from '../confetti.js';
@@ -20,7 +20,6 @@ export function displayView(root, id) {
     root.append(h('main.page.center', h('h1', { text: t('errors.notFound') }), h('a.btn.btn-primary', { href: '#/', text: t('common.home') })));
     return null;
   }
-  applyPalette(board);
 
   const titleEl = h('div.d-title');
   const metaEl = h('div.d-meta');
@@ -54,7 +53,6 @@ export function displayView(root, id) {
   /* ---------------------------------------------------------- render */
   function render() {
     board = store.getBoard(id) || board;
-    applyPalette(board);
     document.title = `${board.title} · Punkto`;
     fill(titleEl, board.logo ? h('img.d-logo', { src: board.logo, alt: '' }) : null, h('h1', { text: board.title }));
     if (board.mode === 'leaderboard') {
@@ -92,7 +90,7 @@ export function displayView(root, id) {
       row.className = 'd-row' + (anyScore && r.rank <= 3 ? ` medal-${r.rank}` : '');
       fill(row, 
         h('span.d-rank', { text: anyScore ? r.rank : i + 1 }),
-        avatar(p.name, p.photo, 'd-avatar'),
+        avatar(p.name, 'd-avatar'),
         h('span.d-name', { text: p.name || '—' }),
         roundPts ? h('span.d-roundpts', { text: (roundPts > 0 ? '+' : '') + fmtNum(roundPts) }) : null,
         h('span.d-score', { text: fmtNum(r.total) })
@@ -154,7 +152,7 @@ export function displayView(root, id) {
       h('thead', h('tr', h('th'), h('th'), cols.map(i => h('th', { class: i === board.round ? 'current' : '', text: t('lb.roundShort', { n: i + 1 }) })), h('th.total', { text: t('lb.total') }))),
       h('tbody', ranked.map(r => h('tr', { class: r.total !== 0 && r.rank <= 3 ? 'medal-' + r.rank : '' },
         h('td.rk', { text: r.rank }),
-        h('td.nm', h('div', avatar(r.player.name, r.player.photo, 'd-avatar'), h('span', { text: r.player.name || '—' }))),
+        h('td.nm', h('div', avatar(r.player.name, 'd-avatar'), h('span', { text: r.player.name || '—' }))),
         cols.map(i => h('td', { class: i === board.round ? 'current' : '', text: fmtNum(Number(r.player.scores[i]) || 0) })),
         h('td.total', { text: fmtNum(r.total) })
       )))
@@ -177,7 +175,7 @@ export function displayView(root, id) {
         if (!scorers.has(name)) scorers.set(name, []);
         scorers.get(name).push(e.t != null ? minuteOf(e.t) + "'" : '');
       });
-      return h('div.d-team', { style: { '--team': teamColor(board, i), '--team-ink': teamInk(board, i) } },
+      return h('div.d-team', { style: teamVars(i) },
         tm.logo ? h('img.d-team-logo', { src: tm.logo, alt: '' }) : h('span.d-team-logo.placeholder', { text: (tm.name || '?')[0] }),
         h('h2.d-team-name', { text: tm.name || '—' }),
         h('ul.d-scorers', [...scorers].map(([n, mins]) => {

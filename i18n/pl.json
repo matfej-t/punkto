@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — darmowa tablica wyników i ranking online na lekcje i wieczory quizowe",
-    "description": "Darmowa tablica wyników i ranking dla nauczycieli i quizów w pubach. Pokaż punkty w dużym formacie na telewizorze lub rzutniku, prowadź rundy i nagradzaj zwycięzców. Bez rejestracji, działa offline, dane zostają w przeglądarce."
+    "title": "Punkto — darmowa tablica wyników i ranking online",
+    "description": "Darmowa tablica wyników i ranking online. Pokaż punkty w dużym formacie na telewizorze lub rzutniku, prowadź rundy i nagradzaj zwycięzców. Bez rejestracji, działa offline, dane zostają w przeglądarce."
   },
   "common": {
     "close": "Zamknij",
@@ -19,10 +19,10 @@
     "manage": "Zarządzaj"
   },
   "home": {
-    "h1": "Darmowa tablica wyników na lekcje i wieczory quizowe",
+    "h1": "Darmowa tablica wyników i ranking online",
     "tagline": "Licz punkty na laptopie lub telefonie i pokazuj je w dużym formacie na telewizorze lub rzutniku. Rankingi, rundy, tablice dla dwóch drużyn i podium zwycięzców — bez rejestracji.",
     "privacyTitle": "Twoje dane zostają na tym urządzeniu.",
-    "privacyText": "Bez kont, bez rejestracji, nic nie jest wysyłane. Imiona, punkty i zdjęcia są przechowywane tylko w Twojej przeglądarce.",
+    "privacyText": "Bez kont, bez rejestracji, nic nie jest wysyłane. Imiona i punkty są przechowywane tylko w Twojej przeglądarce.",
     "yourBoards": "Twoje tablice",
     "import": "Importuj",
     "newBoard": "Nowa tablica",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} uczestnik", "few": "{n} uczestników", "many": "{n} uczestników", "other": "{n} uczestnika" },
     "squad": { "one": "{n} zawodnik w składach", "few": "{n} zawodników w składach", "many": "{n} zawodników w składach", "other": "{n} zawodnika w składach" },
     "featuresTitle": "Dlaczego Punkto",
-    "f1Title": "Dla nauczycieli",
-    "f1Text": "Przyznawaj punkty klasie każdego dnia, dodawaj zdjęcia uczniów i świętuj zwycięzców na rzutniku.",
-    "f2Title": "Na wieczory quizowe",
-    "f2Text": "Drużyny, rundy i ranking na żywo na telewizorze w pubie. Całą rundę wpiszesz w kilka sekund.",
+    "f1Title": "Dwa sposoby liczenia punktów",
+    "f1Text": "Ranking dla dowolnej liczby graczy lub drużyn albo tablica wyników dla dwóch drużyn grających przeciwko sobie.",
+    "f2Title": "Rundy, zwycięzcy i historia",
+    "f2Text": "Licz punkty w rundach, zakończ grę podium zwycięzców i zachowaj każdy wynik w historii.",
     "f3Title": "Stworzone na duży ekran",
     "f3Text": "Ogromny, czytelny ekran, który aktualizuje się natychmiast, gdy liczysz punkty na laptopie lub telefonie.",
     "f4Title": "Prywatność w standardzie",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Ranking",
-    "leaderboardDesc": "Wielu graczy lub drużyn, punkty i rundy. Świetne do klasy i quizów.",
+    "leaderboardDesc": "Wielu graczy lub drużyn, punkty i rundy.",
     "scoreboard": "Tablica meczu",
     "scoreboardDesc": "Dwie drużyny naprzeciw siebie, z herbami, składami i strzelcami."
   },
   "create": {
     "heading": "Nowa tablica",
     "title": "Nazwa",
-    "titlePlaceholder": "np. Klasa 4b albo Piątkowy quiz",
+    "titlePlaceholder": "np. Wiosenny puchar",
     "mode": "Rodzaj",
     "create": "Utwórz tablicę"
-  },
-  "palettes": {
-    "classroom": "Klasa",
-    "pub": "Pub",
-    "sports": "Sport",
-    "minimal": "Minimal",
-    "custom": "Własne"
   },
   "settings": {
     "title": "Ustawienia",
@@ -80,19 +73,14 @@
     "storage": "Zajęte miejsce: {used} KB z około {total} KB",
     "wipe": "Usuń wszystkie dane",
     "wipeConfirm": "Usunąć WSZYSTKIE tablice, historię i ustawienia z tej przeglądarki? Tej operacji nie można cofnąć.",
-    "palette": "Kolory",
     "boardSettings": "Ustawienia tablicy",
     "boardTitle": "Tytuł tablicy",
     "logo": "Logo",
     "uploadLogo": "Wgraj logo",
     "changeLogo": "Zmień logo",
-    "color1": "Kolor główny",
-    "color2": "Kolor dodatkowy",
     "steps": "Przyciski punktów",
     "stepsHint": "Oddzielone przecinkami, np. 1, 5 lub 1, 2, 3 (maks. 4).",
     "clock": "Pokaż zegar meczowy",
-    "teamColors": "Kolory drużyn",
-    "usePalette": "Użyj palety",
     "resetScores": "Wyzeruj punkty",
     "resetConfirm": "Wyzerować wszystkie punkty? Zakończone gry w historii zostaną zachowane.",
     "deleteBoard": "Usuń tablicę"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Prywatność",
-    "noTracking": "Bez kont · Bez śledzenia przez Punkto",
-    "madeFor": "stworzone na lekcje i wieczory quizowe"
+    "noTracking": "Bez kont · Bez śledzenia przez Punkto"
   },
   "privacy": {
     "title": "Prywatność",
-    "p1": "Punkto nie ma kont ani bazy danych. Wszystko, co tworzysz — tablice, imiona, punkty, zdjęcia i loga — jest zapisywane wyłącznie w pamięci lokalnej Twojej przeglądarki na tym urządzeniu. Nie otrzymujemy niczego z tych danych.",
-    "p2": "Zdjęcia i loga są pomniejszane i kompresowane w przeglądarce przed zapisaniem. Usunięcie tablicy albo użycie opcji „Usuń wszystkie dane” w ustawieniach trwale usuwa je z tego urządzenia.",
-    "p3": "Linki do udostępniania zawierają dane tablicy za znakiem # w adresie. Przeglądarki nigdy nie wysyłają tej części do serwera, więc dane trafiają tylko do osób, którym przekażesz link. Zdjęcia nie są zawarte w linkach.",
+    "p1": "Punkto nie ma kont ani bazy danych. Wszystko, co tworzysz — tablice, imiona, punkty i loga — jest zapisywane wyłącznie w pamięci lokalnej Twojej przeglądarki na tym urządzeniu. Nie otrzymujemy niczego z tych danych.",
+    "p2": "Loga są pomniejszane i kompresowane w przeglądarce przed zapisaniem. Usunięcie tablicy albo użycie opcji „Usuń wszystkie dane” w ustawieniach trwale usuwa je z tego urządzenia.",
+    "p3": "Linki do udostępniania zawierają dane tablicy za znakiem # w adresie. Przeglądarki nigdy nie wysyłają tej części do serwera, więc dane trafiają tylko do osób, którym przekażesz link. Loga nie są zawarte w linkach.",
     "p4": "Strona jest hostowana na GitHub Pages. Jak każdy serwer WWW, GitHub może zapisywać dane techniczne, np. Twój adres IP, podczas ładowania strony. Samo Punkto nie używa analityki ani śledzących plików cookie.",
     "p5": "W wersji darmowej reklamy dostarcza Google AdSense. Google może używać plików cookie do wyświetlania i mierzenia reklam; tam, gdzie wymaga tego prawo, najpierw poprosimy o zgodę. Reklamy można ukryć na czas sesji, a Premium usuwa cały kod reklamowy.",
     "p6": "Gdy aktywujesz Premium, Twój klucz licencyjny jest wysyłany do naszego operatora płatności Lemon Squeezy w celu sprawdzenia ważności. Płatności obsługuje w całości Lemon Squeezy — nigdy nie widzimy danych Twojej karty ani płatności.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Kopiuj link z kopią",
     "export": "Eksportuj plik",
-    "linkCopied": "Link skopiowany! Otwórz go na innym urządzeniu, aby przywrócić tę tablicę (bez zdjęć).",
+    "linkCopied": "Link skopiowany! Otwórz go na innym urządzeniu, aby przywrócić tę tablicę (bez logo).",
     "imported": { "one": "Zaimportowano {n} tablicę", "few": "Zaimportowano {n} tablice", "many": "Zaimportowano {n} tablic", "other": "Zaimportowano {n} tablicy" },
     "reading": "Odczytywanie linku…",
     "restoreTitle": "Przywróć tablicę",
     "restoreText": "Dodać tę tablicę do tej przeglądarki?",
-    "noPhotos": "Zdjęcia i loga nie są częścią linków. Aby mieć pełną kopię, użyj „Eksportuj plik”.",
-    "restore": "Przywróć"
+    "restore": "Przywróć",
+    "noImages": "Loga nie są częścią linków. Aby mieć pełną kopię, użyj „Eksportuj plik”."
   },
   "errors": {
-    "storageFull": "Pamięć przeglądarki jest pełna. Usuń część zdjęć albo wyeksportuj i usuń stare tablice.",
+    "storageFull": "Pamięć przeglądarki jest pełna. Usuń część logo albo wyeksportuj i usuń stare tablice.",
     "badFile": "Ten plik nie jest kopią zapasową Punkto.",
     "badLink": "Ten link jest uszkodzony lub niekompletny.",
     "badImage": "Nie udało się odczytać obrazu. Spróbuj pliku JPG lub PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Edytuj uczestników",
     "noPlayers": "Brak uczestników — dodaj ich poniżej.",
     "thisRound": "{n} w tej rundzie",
-    "photo": "Zdjęcie",
-    "changePhoto": "Zmień zdjęcie",
-    "removePhoto": "Usuń obraz",
     "name": "Imię / nazwa",
     "removed": "Usunięto: {name}",
     "removeConfirm": "Usunąć: {name}? Punkty przepadną.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Imię uczestnika lub nazwa drużyny",
     "addPlayer": "Dodaj uczestnika lub drużynę",
     "add": "Dodaj",
-    "addHint": "Wskazówka: wklej listę (jedno imię w wierszu), aby dodać całą klasę naraz."
+    "addHint": "Wskazówka: wklej listę (jedno imię w wierszu), aby dodać wielu uczestników naraz."
   },
   "sb": {
     "home": "Gospodarze",
@@ -240,11 +224,12 @@
     "resume": "Wznów",
     "resetClock": "Zeruj zegar",
     "noGoals": "Jeszcze brak goli.",
-    "timeline": "Gole"
+    "timeline": "Gole",
+    "removeLogo": "Usuń logo"
   },
   "examples": {
-    "quiz": "Wieczór quizowy (przykład)",
-    "match": "Piątkowy mecz (przykład)"
+    "leaderboard": "Przykładowy ranking",
+    "scoreboard": "Przykładowy mecz"
   },
   "display": {
     "fullscreen": "Pełny ekran",
@@ -269,12 +254,12 @@
     "q1": "Czy Punkto jest naprawdę darmowe?",
     "a1": "Tak. Wszystkie funkcje są darmowe. Niewielkie reklamy utrzymują projekt — możesz je ukryć za darmo na czas sesji albo usunąć na zawsze jednorazowym zakupem.",
     "q2": "Gdzie są przechowywane moje dane?",
-    "a2": "Tylko w Twojej przeglądarce na tym urządzeniu. Nie ma kont ani serwera, który otrzymywałby Twoje tablice, imiona czy zdjęcia. Aby przenieść tablicę na inne urządzenie, użyj „Kopiuj link z kopią” lub „Eksportuj plik”.",
+    "a2": "Tylko w Twojej przeglądarce na tym urządzeniu. Nie ma kont ani serwera, który otrzymywałby Twoje tablice, imiona czy punkty. Aby przenieść tablicę na inne urządzenie, użyj „Kopiuj link z kopią” lub „Eksportuj plik”.",
     "q3": "Jak pokazać wyniki na telewizorze lub rzutniku?",
     "a3": "Otwórz tablicę i kliknij „Ekran”. Otworzy się drugie okno — przeciągnij je na telewizor lub rzutnik i naciśnij F, aby włączyć pełny ekran. Aktualizuje się natychmiast, gdy zmieniasz punkty.",
     "q4": "Czy działa offline?",
     "a4": "Tak. Po pierwszej wizycie Punkto działa bez internetu. Możesz też zainstalować je jako aplikację z menu przeglądarki.",
-    "q5": "Czy nadaje się do szkół i jest zgodne z RODO?",
-    "a5": "Punkto zaprojektowano z myślą o prywatności: bez rejestracji i bez danych osobowych na serwerze, więc imiona i zdjęcia uczniów zostają na urządzeniu nauczyciela. Z Premium nie jest ładowany żaden kod reklamowy firm trzecich. Mimo to stosuj się do zasad swojej szkoły."
+    "q5": "Czy Punkto jest zgodne z RODO?",
+    "a5": "Punkto zaprojektowano z myślą o prywatności: bez rejestracji i bez danych osobowych na serwerze — imiona zostają na Twoim urządzeniu. Z Premium nie jest ładowany żaden kod reklamowy firm trzecich."
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "Punkto — Scoreboard & Leaderboard",
   "short_name": "Punkto",
-  "description": "Free scoreboard and leaderboard for classrooms and quiz nights. Works offline, no sign-up.",
+  "description": "Free online scoreboard and leaderboard. Works offline, no sign-up.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

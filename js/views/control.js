@@ -4,12 +4,12 @@ import { h, btn, iconBtn, modal, popMenu, promptDialog, confirmDialog, toast, do
 import { icon } from '../icons.js';
 import { t, fmtDate } from '../i18n.js';
 import * as store from '../store.js';
-import { scoreSnapshot, restoreSnapshot, endGame, resetScores, hasScores, parseSteps, entryWinners } from '../model.js';
-import { applyPalette, PALETTE_SWATCHES, toggleScheme } from '../theme.js';
+import { scoreSnapshot, restoreSnapshot, endGame, resetScores, hasScores, entryWinners } from '../model.js';
+import { toggleScheme } from '../theme.js';
 import { processImage } from '../images.js';
 import { exportJson, safeFilename } from '../share.js';
 import { adSlot, adsActive } from '../ads.js';
-import { openPremium } from './common.js';
+import { openPremium, stepsInput } from './common.js';
 import { openDisplayWindow, copyBoardLink } from './home.js';
 import { leaderboardBody } from './control-leaderboard.js';
 import { scoreboardBody } from './control-scoreboard.js';
@@ -19,7 +19,6 @@ const isTyping = (el) => el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
 export function controlView(root, id) {
   let board = store.getBoard(id);
   if (!board) return notFound(root);
-  applyPalette(board);
   document.body.classList.add('is-control');
   // Back on the board → the TV leaves the winner screen too.
   if (board.winner) { board.winner = null; store.saveBoard(board, { touch: false }); }
@@ -45,7 +44,7 @@ export function controlView(root, id) {
       body.render();
       updateBar();
     },
-    /** Structural change (names, photos, settings): saved, re-rendered. */
+    /** Structural change (names, logos, settings): saved, re-rendered. */
     save({ render = true } = {}) {
       store.saveBoard(board);
       if (render) body.render();
@@ -199,7 +198,7 @@ export function controlView(root, id) {
       if (msg.type === 'board' && msg.id === board.id) {
         if (msg.deleted) { location.hash = '#/'; return; }
         const fresh = store.getBoard(board.id);
-        if (fresh) { board = fresh; applyPalette(board); body.render(); updateBar(); }
+        if (fresh) { board = fresh; body.render(); updateBar(); }
       }
     }
   };
@@ -209,7 +208,7 @@ export function controlView(root, id) {
 
 function boardSettingsFields(ctx, redraw, closeModal) {
   const b = ctx.board;
-  const save = () => { ctx.save(); applyPalette(b); };
+  const save = () => ctx.save();
 
   const title = h('input.input', { type: 'text', value: b.title, maxLength: 80, oninput: (e) => { b.title = e.target.value.trim() || b.title; ctx.save({ render: false }); } });
 
@@ -223,47 +222,19 @@ function boardSettingsFields(ctx, redraw, closeModal) {
     b.logo ? btn(t('common.remove'), { cls: 'btn-ghost', onclick: () => { b.logo = null; save(); redraw(); } }) : null
   );
 
-  const pals = h('div.swatches', Object.entries(PALETTE_SWATCHES).map(([p, [a, c2, bg]]) => h('button.swatch', {
-    class: b.palette === p ? 'on' : '', 'aria-pressed': String(b.palette === p), title: t('palettes.' + p),
-    style: { '--a': a, '--b': c2, '--bg': bg }, onclick: () => { b.palette = p; save(); redraw(); }
-  }, h('span.swatch-dots'), h('span.swatch-name', { text: t('palettes.' + p) }))).concat(
-    h('button.swatch', {
-      class: b.palette === 'custom' ? 'on' : '', 'aria-pressed': String(b.palette === 'custom'),
-      style: { '--a': b.custom.a, '--b': b.custom.b, '--bg': 'var(--surface)' }, onclick: () => { b.palette = 'custom'; save(); redraw(); }
-    }, h('span.swatch-dots'), h('span.swatch-name', { text: t('palettes.custom') }))
-  ));
-
-  const custom = b.palette === 'custom' ? h('div.row.wrap',
-    colorField(t('settings.color1'), b.custom.a, v => { b.custom.a = v; save(); }),
-    colorField(t('settings.color2'), b.custom.b, v => { b.custom.b = v; save(); })
-  ) : null;
-
-  const steps = h('input.input', {
-    type: 'text', value: b.steps.join(', '), inputMode: 'numeric',
-    onchange: (e) => {
-      const s = parseSteps(e.target.value);
-      if (s.length) { b.steps = s; save(); }
-      e.target.value = b.steps.join(', ');
-    }
-  });
+  const steps = stepsInput(b.steps, (s) => { b.steps = s; save(); });
 
   const modeFields = [];
   if (b.mode === 'scoreboard') {
     modeFields.push(
       h('label.check', h('input', { type: 'checkbox', checked: b.clock.enabled, onchange: (e) => { b.clock.enabled = e.target.checked; save(); } }),
-        h('span', { text: t('settings.clock') })),
-      h('div.field', h('span.field-label', { text: t('settings.teamColors') }),
-        h('div.row.wrap', b.teams.map((tm, i) => h('div.row',
-          colorField(tm.name, tm.color || (i === 0 ? PALETTE_SWATCHES.classroom[0] : PALETTE_SWATCHES.classroom[1]), v => { tm.color = v; save(); }),
-          tm.color ? btn(t('settings.usePalette'), { cls: 'btn-ghost btn-sm', onclick: () => { tm.color = null; save(); redraw(); } }) : null
-        ))))
+        h('span', { text: t('settings.clock') }))
     );
   }
 
   return [
     h('label.field', h('span.field-label', { text: t('settings.boardTitle') }), title),
     h('div.field', h('span.field-label', { text: t('settings.logo') }), logoRow),
-    h('div.field', h('span.field-label', { text: t('settings.palette') }), pals, custom),
     h('label.field', h('span.field-label', { text: t('settings.steps') }), steps, h('span.small.muted', { text: t('settings.stepsHint') })),
     ...modeFields,
     h('div.divider'),
@@ -284,13 +255,6 @@ function boardSettingsFields(ctx, redraw, closeModal) {
   ];
 }
 
-function colorField(label, value, onChange) {
-  return h('label.color-field',
-    h('input', { type: 'color', value: /^#[0-9a-f]{6}$/i.test(value) ? value : '#e8572a', oninput: (e) => onChange(e.target.value) }),
-    h('span', { text: label })
-  );
-}
-
 /* --------------------------------------------------------------- shortcuts */
 
 export function openShortcuts(mode) {
@@ -308,7 +272,6 @@ export function openShortcuts(mode) {
 }
 
 function notFound(root) {
-  applyPalette(null);
   root.append(h('main.page.center',
     h('h1', { text: t('errors.notFound') }),
     h('p.muted', { text: t('errors.notFoundText') }),

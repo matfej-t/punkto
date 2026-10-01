@@ -4,10 +4,11 @@ import { h, iconBtn, btn, modal, toast, confirmDialog, downloadText, pickFile } 
 import { icon } from '../icons.js';
 import { t, LANGS, LANG_NAMES, getLang, setLang, langUrl, fmtNum } from '../i18n.js';
 import * as store from '../store.js';
-import { toggleScheme, resolvedScheme, setThemePref, applyPalette } from '../theme.js';
+import { toggleScheme, resolvedScheme, setThemePref } from '../theme.js';
 import { isPremium, getLicense, activateLicense, removeLicense, hideAdsForSession, maskKey } from '../premium.js';
 import { adsActive } from '../ads.js';
 import { exportJson, parseImport, prepareImported, linkToBoard } from '../share.js';
+import { parseSteps } from '../model.js';
 import { APP_VERSION } from '../env.js';
 
 const cfg = window.PUNKTO_CONFIG;
@@ -16,6 +17,28 @@ const cfg = window.PUNKTO_CONFIG;
 export function reroute() { window.dispatchEvent(new HashChangeEvent('hashchange')); }
 
 export const logoSvg = `<svg viewBox="0 0 512 512" class="logo" aria-hidden="true"><rect width="512" height="512" rx="120" fill="var(--accent)"/><path d="M190 386V136h88a78 78 0 0 1 0 156h-88" fill="none" stroke="var(--accent-ink)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="372" r="38" fill="var(--gold)"/></svg>`;
+
+/* --------------------------------------------------------- point buttons */
+
+/**
+ * Text field for the point buttons, e.g. "1, 5" → [1, 5].
+ * onChange receives the parsed list; invalid input snaps back to the last valid value.
+ */
+export function stepsInput(initial, onChange) {
+  let current = [...initial];
+  const input = h('input.input', {
+    type: 'text', value: current.join(', '), inputMode: 'numeric', 'aria-label': t('settings.steps'),
+    onchange: () => {
+      const s = parseSteps(input.value);
+      if (s.length) { current = s; onChange(s); }
+      input.value = current.join(', ');
+    }
+  });
+  /** Replace the value programmatically (used when the board type changes). */
+  input.setSteps = (s) => { current = [...s]; input.value = current.join(', '); };
+  input.getSteps = () => { const s = parseSteps(input.value); return s.length ? s : current; };
+  return input;
+}
 
 /* ------------------------------------------------------------- language */
 
@@ -64,7 +87,7 @@ export function footer() {
     h('nav.footer-langs', { 'aria-label': t('settings.language') },
       LANGS.map(c => h('a', { href: langUrl(c).href, hreflang: c, lang: c, text: LANG_NAMES[c], onclick: (e) => { e.preventDefault(); changeLang(c); } }))
     ),
-    h('p.muted.small', { text: `Punkto ${APP_VERSION} · ${t('footer.madeFor')}` })
+    h('p.muted.small', { text: `Punkto ${APP_VERSION}` })
   );
 }
 
@@ -215,7 +238,6 @@ export function openPremium() {
 /* ---------------------------------------------------------------- privacy */
 
 export function privacyView(root) {
-  applyPalette(null);
   document.title = `${t('privacy.title')} · Punkto`;
   const paras = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'].map(k => h('p', { text: t('privacy.' + k) }));
   root.append(
@@ -233,7 +255,6 @@ export function privacyView(root) {
 /* ------------------------------------------------------- restore from link */
 
 export function importView(root, payload) {
-  applyPalette(null);
   root.append(appBar(), h('main.page', h('p.muted.center', { text: t('share.reading') })));
   linkToBoard(payload).then((board) => {
     const n = board.mode === 'leaderboard' ? board.players.length : board.teams.reduce((a, x) => a + x.players.length, 0);
@@ -243,7 +264,7 @@ export function importView(root, payload) {
       content: h('div.stack',
         h('p', {}, t('share.restoreText') + ' ', h('strong', { text: board.title })),
         h('p.small.muted', { text: `${t('modes.' + board.mode)} · ${t('home.players', { n })}` }),
-        h('p.small.muted', { text: t('share.noPhotos') })
+        h('p.small.muted', { text: t('share.noImages') })
       ),
       actions: [
         { label: t('common.cancel'), kind: 'ghost' },

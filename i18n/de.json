@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — kostenloses Online-Scoreboard & Punktetafel für Schule und Quizabende",
-    "description": "Kostenlose Punktetafel und Rangliste für Lehrkräfte und Kneipenquiz. Punkte groß auf TV oder Beamer zeigen, Runden zählen, Sieger küren. Ohne Anmeldung, funktioniert offline, deine Daten bleiben im Browser."
+    "title": "Punkto — kostenloses Online-Scoreboard & Rangliste",
+    "description": "Kostenloses Online-Scoreboard und Rangliste. Punkte groß auf TV oder Beamer zeigen, Runden zählen, Sieger küren. Ohne Anmeldung, funktioniert offline, deine Daten bleiben im Browser."
   },
   "common": {
     "close": "Schließen",
@@ -19,10 +19,10 @@
     "manage": "Verwalten"
   },
   "home": {
-    "h1": "Kostenlose Punktetafel für Klassenzimmer und Quizabende",
+    "h1": "Kostenloses Online-Scoreboard und Rangliste",
     "tagline": "Punkte am Laptop oder Handy zählen und groß auf TV oder Beamer zeigen. Ranglisten, Runden, Scoreboards für zwei Teams und ein Siegerpodest — ganz ohne Anmeldung.",
     "privacyTitle": "Deine Daten bleiben auf diesem Gerät.",
-    "privacyText": "Keine Konten, keine Anmeldung, kein Upload. Namen, Punkte und Fotos werden nur in deinem Browser gespeichert.",
+    "privacyText": "Keine Konten, keine Anmeldung, kein Upload. Namen und Punkte werden nur in deinem Browser gespeichert.",
     "yourBoards": "Deine Tafeln",
     "import": "Importieren",
     "newBoard": "Neue Tafel",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} Spieler", "other": "{n} Spieler" },
     "squad": { "one": "{n} Spieler im Kader", "other": "{n} Spieler im Kader" },
     "featuresTitle": "Warum Punkto",
-    "f1Title": "Für Lehrkräfte",
-    "f1Text": "Vergib jeden Tag Klassenpunkte, füge Fotos der Kinder hinzu und feiere die Sieger am Beamer.",
-    "f2Title": "Für Quizabende",
-    "f2Text": "Teams, Runden und eine Live-Rangliste für den Fernseher in der Kneipe. Eine ganze Runde ist in Sekunden eingetragen.",
+    "f1Title": "Zwei Arten zu zählen",
+    "f1Text": "Eine Rangliste für beliebig viele Spieler oder Teams – oder ein Scoreboard für zwei Teams im direkten Duell.",
+    "f2Title": "Runden, Sieger und Verlauf",
+    "f2Text": "Punkte pro Runde erfassen, mit einem Siegerpodest abschließen und jedes Ergebnis im Verlauf behalten.",
     "f3Title": "Gemacht für große Bildschirme",
     "f3Text": "Eine riesige, gut lesbare Anzeige, die sich sofort aktualisiert, während du am Laptop oder Handy zählst.",
     "f4Title": "Datenschutz eingebaut",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Rangliste",
-    "leaderboardDesc": "Viele Spieler oder Teams, Punkte und Runden. Ideal für Klassen und Quiz.",
+    "leaderboardDesc": "Viele Spieler oder Teams, Punkte und Runden.",
     "scoreboard": "Scoreboard",
     "scoreboardDesc": "Zwei Teams im direkten Duell, mit Logos, Kader und Torschützen."
   },
   "create": {
     "heading": "Neue Tafel",
     "title": "Name",
-    "titlePlaceholder": "z. B. Klasse 4b oder Freitagsquiz",
+    "titlePlaceholder": "z. B. Frühlingscup",
     "mode": "Art",
     "create": "Tafel erstellen"
-  },
-  "palettes": {
-    "classroom": "Klassenzimmer",
-    "pub": "Kneipe",
-    "sports": "Sport",
-    "minimal": "Minimal",
-    "custom": "Eigene"
   },
   "settings": {
     "title": "Einstellungen",
@@ -80,19 +73,14 @@
     "storage": "Speicher belegt: {used} KB von etwa {total} KB",
     "wipe": "Alle Daten löschen",
     "wipeConfirm": "ALLE Tafeln, Verläufe und Einstellungen aus diesem Browser löschen? Das kann nicht rückgängig gemacht werden.",
-    "palette": "Farben",
     "boardSettings": "Tafel-Einstellungen",
     "boardTitle": "Titel der Tafel",
     "logo": "Logo",
     "uploadLogo": "Logo hochladen",
     "changeLogo": "Logo ändern",
-    "color1": "Hauptfarbe",
-    "color2": "Zweitfarbe",
     "steps": "Punkte-Buttons",
     "stepsHint": "Durch Kommas getrennt, z. B. 1, 5 oder 1, 2, 3 (bis zu 4).",
     "clock": "Spieluhr anzeigen",
-    "teamColors": "Teamfarben",
-    "usePalette": "Palette verwenden",
     "resetScores": "Punkte zurücksetzen",
     "resetConfirm": "Alle Punkte auf null setzen? Beendete Spiele im Verlauf bleiben erhalten.",
     "deleteBoard": "Tafel löschen"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Datenschutz",
-    "noTracking": "Keine Konten · Kein Tracking durch Punkto",
-    "madeFor": "gemacht für Klassenzimmer und Quizabende"
+    "noTracking": "Keine Konten · Kein Tracking durch Punkto"
   },
   "privacy": {
     "title": "Datenschutz",
-    "p1": "Punkto hat keine Benutzerkonten und keine Datenbank. Alles, was du erstellst — Tafeln, Namen, Punkte, Fotos und Logos — wird nur im lokalen Speicher deines Browsers auf diesem Gerät abgelegt. Wir erhalten davon nichts.",
-    "p2": "Fotos und Logos werden in deinem Browser verkleinert und komprimiert, bevor sie gespeichert werden. Wenn du eine Tafel löschst oder in den Einstellungen „Alle Daten löschen“ wählst, wird sie endgültig von diesem Gerät entfernt.",
-    "p3": "Teilen-Links enthalten die Tafeldaten hinter dem #-Zeichen der Adresse. Browser senden diesen Teil nie an einen Server, die Daten gelangen also nur zu den Personen, denen du den Link gibst. Fotos sind in Links nicht enthalten.",
+    "p1": "Punkto hat keine Benutzerkonten und keine Datenbank. Alles, was du erstellst — Tafeln, Namen, Punkte und Logos — wird nur im lokalen Speicher deines Browsers auf diesem Gerät abgelegt. Wir erhalten davon nichts.",
+    "p2": "Logos werden in deinem Browser verkleinert und komprimiert, bevor sie gespeichert werden. Wenn du eine Tafel löschst oder in den Einstellungen „Alle Daten löschen“ wählst, wird sie endgültig von diesem Gerät entfernt.",
+    "p3": "Teilen-Links enthalten die Tafeldaten hinter dem #-Zeichen der Adresse. Browser senden diesen Teil nie an einen Server, die Daten gelangen also nur zu den Personen, denen du den Link gibst. Logos sind in Links nicht enthalten.",
     "p4": "Die Website wird auf GitHub Pages gehostet. Wie jeder Webserver kann GitHub beim Laden der Seite technische Daten wie deine IP-Adresse protokollieren. Punkto selbst verwendet keine Analyse-Tools und keine Tracking-Cookies.",
     "p5": "In der kostenlosen Version wird Werbung von Google AdSense bereitgestellt. Google kann Cookies verwenden, um Anzeigen auszuliefern und zu messen; wo gesetzlich vorgeschrieben, wirst du vorher um Einwilligung gebeten. Werbung lässt sich für die Sitzung ausblenden, und Premium entfernt sämtlichen Werbecode.",
     "p6": "Wenn du Premium aktivierst, wird dein Lizenzschlüssel zur Prüfung an unseren Zahlungsanbieter Lemon Squeezy gesendet. Zahlungen werden vollständig von Lemon Squeezy abgewickelt — Karten- oder Zahlungsdaten sehen wir nie.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Sicherungslink kopieren",
     "export": "Datei exportieren",
-    "linkCopied": "Link kopiert! Öffne ihn auf einem anderen Gerät, um diese Tafel wiederherzustellen (ohne Fotos).",
+    "linkCopied": "Link kopiert! Öffne ihn auf einem anderen Gerät, um diese Tafel wiederherzustellen (ohne Logos).",
     "imported": { "one": "{n} Tafel importiert", "other": "{n} Tafeln importiert" },
     "reading": "Link wird gelesen…",
     "restoreTitle": "Tafel wiederherstellen",
     "restoreText": "Diese Tafel zu diesem Browser hinzufügen?",
-    "noPhotos": "Fotos und Logos sind nicht Teil von Links. Für eine vollständige Kopie nutze „Datei exportieren“.",
-    "restore": "Wiederherstellen"
+    "restore": "Wiederherstellen",
+    "noImages": "Logos sind nicht Teil von Links. Für eine vollständige Kopie nutze „Datei exportieren“."
   },
   "errors": {
-    "storageFull": "Der Browserspeicher ist voll. Entferne einige Fotos oder exportiere und lösche alte Tafeln.",
+    "storageFull": "Der Browserspeicher ist voll. Entferne einige Logos oder exportiere und lösche alte Tafeln.",
     "badFile": "Diese Datei ist keine Punkto-Sicherung.",
     "badLink": "Dieser Link ist beschädigt oder unvollständig.",
     "badImage": "Dieses Bild konnte nicht gelesen werden. Versuche es mit JPG oder PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Spieler bearbeiten",
     "noPlayers": "Noch keine Spieler — füge sie unten hinzu.",
     "thisRound": "{n} in dieser Runde",
-    "photo": "Foto",
-    "changePhoto": "Foto ändern",
-    "removePhoto": "Bild entfernen",
     "name": "Name",
     "removed": "{name} entfernt",
     "removeConfirm": "{name} entfernen? Die Punkte gehen verloren.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Name von Spieler oder Team",
     "addPlayer": "Spieler oder Team hinzufügen",
     "add": "Hinzufügen",
-    "addHint": "Tipp: Füge eine Liste ein (ein Name pro Zeile), um eine ganze Klasse auf einmal hinzuzufügen."
+    "addHint": "Tipp: Füge eine Liste ein (ein Name pro Zeile), um viele Spieler auf einmal hinzuzufügen."
   },
   "sb": {
     "home": "Heim",
@@ -240,11 +224,12 @@
     "resume": "Weiter",
     "resetClock": "Uhr zurücksetzen",
     "noGoals": "Noch keine Tore.",
-    "timeline": "Tore"
+    "timeline": "Tore",
+    "removeLogo": "Logo entfernen"
   },
   "examples": {
-    "quiz": "Quizabend (Beispiel)",
-    "match": "Freitagsspiel (Beispiel)"
+    "leaderboard": "Beispiel-Rangliste",
+    "scoreboard": "Beispielspiel"
   },
   "display": {
     "fullscreen": "Vollbild",
@@ -269,12 +254,12 @@
     "q1": "Ist Punkto wirklich kostenlos?",
     "a1": "Ja. Alle Funktionen sind kostenlos. Kleine Anzeigen finanzieren das Projekt — du kannst sie kostenlos für die Sitzung ausblenden oder mit einem Einmalkauf für immer entfernen.",
     "q2": "Wo werden meine Daten gespeichert?",
-    "a2": "Nur in deinem Browser auf diesem Gerät. Es gibt keine Konten und keinen Server, der deine Tafeln, Namen oder Fotos erhält. Mit „Sicherungslink kopieren“ oder „Datei exportieren“ überträgst du eine Tafel auf ein anderes Gerät.",
+    "a2": "Nur in deinem Browser auf diesem Gerät. Es gibt keine Konten und keinen Server, der deine Tafeln, Namen oder Punkte erhält. Mit „Sicherungslink kopieren“ oder „Datei exportieren“ überträgst du eine Tafel auf ein anderes Gerät.",
     "q3": "Wie zeige ich die Punkte auf einem Fernseher oder Beamer?",
     "a3": "Öffne deine Tafel und klicke auf „Anzeige“. Ein zweites Fenster öffnet sich — zieh es auf den Fernseher oder Beamer und drücke F für Vollbild. Es aktualisiert sich sofort, während du Punkte vergibst.",
     "q4": "Funktioniert es offline?",
     "a4": "Ja. Nach dem ersten Besuch funktioniert Punkto ohne Internet. Du kannst es auch über das Browsermenü als App installieren.",
-    "q5": "Passt Punkto zu Schulen und zur DSGVO?",
-    "a5": "Punkto ist auf Datenschutz ausgelegt: keine Anmeldung, keine personenbezogenen Daten auf einem Server — Namen und Fotos der Kinder bleiben auf dem Gerät der Lehrkraft. Mit Premium wird überhaupt kein Werbecode von Dritten geladen. Bitte beachte trotzdem die Regeln deiner Schule."
+    "q5": "Ist Punkto DSGVO-freundlich?",
+    "a5": "Punkto ist auf Datenschutz ausgelegt: keine Anmeldung und keine personenbezogenen Daten auf einem Server — Namen bleiben auf deinem Gerät. Mit Premium wird überhaupt kein Werbecode von Dritten geladen."
   }
 }

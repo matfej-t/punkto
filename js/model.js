@@ -1,44 +1,46 @@
 // Board data model and game logic (pure functions, no DOM).
 //
 // Leaderboard board:
-//   players: [{ id, name, photo, scores: [round1, round2, ...] }]
+//   players: [{ id, name, scores: [round1, round2, ...] }]
 //   round: index of the current round, roundCount: number of rounds
 // Scoreboard board:
-//   teams: [{ id, name, logo, color, players: [{ id, name }] }]  (always 2)
+//   teams: [{ id, name, logo, players: [{ id, name }] }]  (always 2)
 //   events: [{ id, teamId, playerId, points, t (match clock ms|null), at }]
 //   clock: { enabled, running, startedAt, elapsed }
 
 export const MODES = ['leaderboard', 'scoreboard'];
 export const HISTORY_LIMIT = 200;
+/** Default point buttons per mode (e.g. "+1" and "+5"). */
+export const DEFAULT_STEPS = { leaderboard: [1, 5], scoreboard: [1] };
 
 export function uid() {
   if (crypto.randomUUID) return crypto.randomUUID().replace(/-/g, '').slice(0, 12);
   return (Date.now().toString(36) + Math.random().toString(36).slice(2)).slice(0, 12);
 }
 
-export function newPlayer(name, photo = null) {
-  return { id: uid(), name: String(name).trim().slice(0, 60), photo, scores: [] };
+export function newPlayer(name) {
+  return { id: uid(), name: String(name).trim().slice(0, 60), scores: [] };
 }
 
-export function newTeam(name, color = null) {
-  return { id: uid(), name, logo: null, color, players: [] };
+export function newTeam(name) {
+  return { id: uid(), name, logo: null, players: [] };
 }
 
-export function newBoard(mode, title, palette = 'classroom') {
+export function newBoard(mode, title, steps = null) {
   const now = Date.now();
   const b = {
     id: uid(), v: 1, mode, title: title.slice(0, 80), createdAt: now, updatedAt: now,
-    logo: null, palette, custom: { a: '#E8572A', b: '#2E9C8A' },
-    history: [], winner: null
+    logo: null, history: [], winner: null
   };
   if (mode === 'leaderboard') {
-    Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [1, 5], showRounds: false, sortControl: false });
+    Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [...DEFAULT_STEPS.leaderboard], showRounds: false, sortControl: false });
   } else {
     Object.assign(b, {
-      teams: [newTeam('Home'), newTeam('Away')], events: [], steps: [1],
+      teams: [newTeam('Home'), newTeam('Away')], events: [], steps: [...DEFAULT_STEPS.scoreboard],
       clock: { enabled: false, running: false, startedAt: null, elapsed: 0 }
     });
   }
+  if (steps?.length) b.steps = steps;
   return b;
 }
 
@@ -49,12 +51,15 @@ export function normalizeBoard(b) {
   const base = newBoard(b.mode, String(b.title ?? 'Punkto'));
   for (const k of Object.keys(base)) if (b[k] === undefined) b[k] = base[k];
   b.title = String(b.title).slice(0, 80);
+  // Removed features: colour palettes, custom colours and player photos.
+  delete b.palette;
+  delete b.custom;
   if (!Array.isArray(b.history)) b.history = [];
   if (!Array.isArray(b.steps) || !b.steps.length) b.steps = base.steps;
   if (b.mode === 'leaderboard') {
     if (!Array.isArray(b.players)) b.players = [];
     b.players = b.players.filter(p => p && typeof p === 'object').map(p => ({
-      id: String(p.id || uid()), name: String(p.name ?? '').slice(0, 60), photo: typeof p.photo === 'string' ? p.photo : null,
+      id: String(p.id || uid()), name: String(p.name ?? '').slice(0, 60),
       scores: Array.isArray(p.scores) ? p.scores.map(n => Number(n) || 0) : [Number(p.score) || 0]
     }));
     b.roundCount = Math.max(1, Math.floor(b.roundCount) || 1);
@@ -64,6 +69,7 @@ export function normalizeBoard(b) {
     b.teams.forEach(t => {
       t.id = String(t.id || uid());
       t.name = String(t.name ?? '').slice(0, 60);
+      delete t.color;
       if (!Array.isArray(t.players)) t.players = [];
       t.players = t.players.map(p => ({ id: String(p.id || uid()), name: String(p.name ?? '').slice(0, 60) }));
       if (typeof t.logo !== 'string') t.logo = null;
@@ -197,7 +203,7 @@ export function endGame(board) {
       rounds: Array.from({ length: board.roundCount }, (_, i) => Number(r.player.scores[i]) || 0)
     }));
   } else {
-    entry.teams = board.teams.map(t => ({ id: t.id, name: t.name, color: t.color, score: teamScore(board, t.id) }));
+    entry.teams = board.teams.map(t => ({ id: t.id, name: t.name, score: teamScore(board, t.id) }));
     entry.events = board.events.map(e => ({
       teamId: e.teamId, points: e.points, t: e.t,
       player: playerName(board, e.teamId, e.playerId)

@@ -1,15 +1,15 @@
 # Punkto
 
-**Free scoreboard & leaderboard for classrooms and quiz nights.**
+**Free online scoreboard & leaderboard.**
 Static site — HTML, CSS and vanilla JavaScript. No backend, no build step, no accounts.
 All data stays in the visitor's browser.
 
-- **Leaderboard mode:** many players or teams, optional photos, points, quick +/− buttons, rounds view (points per round).
+- **Leaderboard mode:** many players or teams, points, quick +/− buttons (point amounts chosen when creating the board), rounds view (points per round).
 - **Scoreboard mode:** two teams like football, logos, optional squads, goal scorers, optional match clock.
 - **Control view** for the host (mobile-friendly, keyboard shortcuts, undo) and a **Display view** for the TV or projector. The display updates live (`BroadcastChannel`), stays fullscreen and keeps the screen awake.
 - **End game** saves the result in a per-board history and shows a winner podium with a little confetti.
 - **Autosave** in `localStorage`, **backup link** (board data in the URL `#fragment`), **JSON export/import**.
-- **Customisation:** day/night mode (follows the system by default), 4 palettes plus custom colours, logos, photos, board titles. Images are resized and compressed in the browser (a photo is usually 5–25 KB).
+- **Customisation:** day/night mode (follows the system by default), board and team logos, board titles. Logos are resized and compressed in the browser (usually 5–25 KB).
 - **12 languages:** English, German, Russian, Spanish, French, Italian, Portuguese, Polish, Ukrainian, Turkish, Czech, Dutch. The browser language is detected automatically, and each language has its own SEO page (`/de/`, `/fr/`, …).
 - **Offline:** service worker; can be installed as an app (PWA).
 - **Money:** two small AdSense slots, a free "hide ads for this session" option, and "Remove ads forever" through Lemon Squeezy license keys.
@@ -187,7 +187,7 @@ The service worker serves the cached app immediately and fetches updates in the 
 
 ## 9. Tests
 
-`tests/e2e.mjs` drives a real Chromium browser through every feature: creating boards, adding players by typing and pasting, photo compression, scoring with buttons, keys and undo, live display sync, rounds, end game, podium and history, scoreboard scorers and clock, backup link restore, JSON export/import, invalid and valid license keys (with a mocked Lemon Squeezy API), session ad hiding, all 12 language pages, browser language detection, day/night mode, mobile layout and offline mode.
+`tests/e2e.mjs` drives a real Chromium browser through every feature: creating boards, adding players by typing and pasting, point buttons at creation, logo compression, scoring with buttons, keys and undo, live display sync, rounds, end game, podium and history, scoreboard scorers and clock, backup link restore, JSON export/import, invalid and valid license keys (with a mocked Lemon Squeezy API), session ad hiding, all 12 language pages, browser language detection, day/night mode, mobile layout and offline mode.
 
 ```bash
 npm i -D playwright && npx playwright install chromium   # once
@@ -199,12 +199,12 @@ node tests/e2e.mjs
 ```
 index.html, de/ … nl/     generated language pages (edit tools/page-template.html instead)
 config.js                 ← all settings (ads, premium, site URL, languages)
-css/app.css               all styles: palettes, day/night, control & display layouts
+css/app.css               all styles: colours, day/night, control & display layouts
 js/app.js                 bootstrap + hash router
 js/store.js               localStorage persistence + BroadcastChannel live sync
 js/model.js               board data model and game logic (pure functions)
 js/i18n.js                translations, plurals, language detection
-js/theme.js               day/night mode, palettes
+js/theme.js               day/night mode, team colours
 js/images.js              client-side image resize/compression
 js/share.js               backup links, JSON export/import
 js/premium.js             Lemon Squeezy license activation
@@ -224,7 +224,7 @@ tests/e2e.mjs             browser tests
 
 ## 11. Privacy and GDPR notes
 
-- Punkto stores boards, names, scores and photos **only in `localStorage`** on the visitor's device. There is no server, database or analytics.
+- Punkto stores boards, names, scores and logos **only in `localStorage`** on the visitor's device. There is no server, database or analytics.
 - Backup links keep the data after `#`, which browsers never send to a server.
 - The app uses no external fonts or CDNs, so the only third parties are:
   - GitHub Pages (hosting),
@@ -232,4 +232,4 @@ tests/e2e.mjs             browser tests
   - Lemon Squeezy (only when a license key is activated).
 
   The privacy page (`#/privacy`) explains this in all 12 languages. Add your contact e-mail in `config.js` and have the text checked against your own legal situation. Depending on your country, you may also need an imprint (Impressum).
-- For schools: Premium users load no third-party ad code at all.
+- Premium users load no third-party ad code at all.

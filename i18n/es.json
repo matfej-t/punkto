@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — marcador y clasificación online gratis para clase y noches de quiz",
-    "description": "Marcador y tabla de clasificación gratis para docentes y quizzes en bares. Muestra los puntos en grande en una TV o proyector, lleva las rondas y corona a los ganadores. Sin registro, funciona sin conexión y tus datos se quedan en tu navegador."
+    "title": "Punkto — marcador y clasificación online gratis",
+    "description": "Marcador y tabla de clasificación online gratis. Muestra los puntos en grande en una TV o proyector, lleva las rondas y corona a los ganadores. Sin registro, funciona sin conexión y tus datos se quedan en tu navegador."
   },
   "common": {
     "close": "Cerrar",
@@ -19,10 +19,10 @@
     "manage": "Gestionar"
   },
   "home": {
-    "h1": "Marcador gratis para clases y noches de quiz",
+    "h1": "Marcador y clasificación online gratis",
     "tagline": "Lleva la puntuación en tu portátil o móvil y muéstrala en grande en una TV o proyector. Clasificaciones, rondas, marcadores de dos equipos y un podio de ganadores, sin registrarte.",
     "privacyTitle": "Tus datos se quedan en este dispositivo.",
-    "privacyText": "Sin cuentas, sin registro, no se sube nada. Los nombres, puntos y fotos se guardan solo en tu navegador.",
+    "privacyText": "Sin cuentas, sin registro, no se sube nada. Los nombres y puntos se guardan solo en tu navegador.",
     "yourBoards": "Tus marcadores",
     "import": "Importar",
     "newBoard": "Nuevo marcador",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} jugador", "other": "{n} jugadores" },
     "squad": { "one": "{n} jugador en las plantillas", "other": "{n} jugadores en las plantillas" },
     "featuresTitle": "Por qué Punkto",
-    "f1Title": "Para docentes",
-    "f1Text": "Da puntos a la clase cada día, añade fotos del alumnado y celebra a los ganadores en el proyector.",
-    "f2Title": "Para noches de quiz",
-    "f2Text": "Equipos, rondas y una clasificación en directo para la TV del bar. Introduce una ronda entera en segundos.",
+    "f1Title": "Dos formas de puntuar",
+    "f1Text": "Una clasificación para cualquier número de jugadores o equipos, o un marcador para dos equipos cara a cara.",
+    "f2Title": "Rondas, ganadores e historial",
+    "f2Text": "Lleva los puntos por ronda, termina con un podio de ganadores y guarda cada resultado en el historial.",
     "f3Title": "Hecho para la pantalla grande",
     "f3Text": "Una pantalla enorme y legible que se actualiza al instante mientras puntúas desde el portátil o el móvil.",
     "f4Title": "Privado por diseño",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Clasificación",
-    "leaderboardDesc": "Muchos jugadores o equipos, puntos y rondas. Ideal para clases y quizzes.",
+    "leaderboardDesc": "Muchos jugadores o equipos, puntos y rondas.",
     "scoreboard": "Marcador",
     "scoreboardDesc": "Dos equipos cara a cara, con escudos, plantillas y goleadores."
   },
   "create": {
     "heading": "Nuevo marcador",
     "title": "Nombre",
-    "titlePlaceholder": "p. ej. 4.º B o Quiz del viernes",
+    "titlePlaceholder": "p. ej. Copa de primavera",
     "mode": "Tipo",
     "create": "Crear marcador"
-  },
-  "palettes": {
-    "classroom": "Aula",
-    "pub": "Bar",
-    "sports": "Deportes",
-    "minimal": "Minimalista",
-    "custom": "Personalizado"
   },
   "settings": {
     "title": "Ajustes",
@@ -80,19 +73,14 @@
     "storage": "Almacenamiento usado: {used} KB de unos {total} KB",
     "wipe": "Borrar todos los datos",
     "wipeConfirm": "¿Borrar TODOS los marcadores, el historial y los ajustes de este navegador? No se puede deshacer.",
-    "palette": "Colores",
     "boardSettings": "Ajustes del marcador",
     "boardTitle": "Título del marcador",
     "logo": "Logo",
     "uploadLogo": "Subir logo",
     "changeLogo": "Cambiar logo",
-    "color1": "Color principal",
-    "color2": "Color secundario",
     "steps": "Botones de puntos",
     "stepsHint": "Separados por comas, p. ej. 1, 5 o 1, 2, 3 (hasta 4).",
     "clock": "Mostrar reloj de partido",
-    "teamColors": "Colores de los equipos",
-    "usePalette": "Usar paleta",
     "resetScores": "Reiniciar puntos",
     "resetConfirm": "¿Poner todos los puntos a cero? Las partidas terminadas del historial se conservan.",
     "deleteBoard": "Eliminar marcador"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Privacidad",
-    "noTracking": "Sin cuentas · Sin rastreo por parte de Punkto",
-    "madeFor": "hecho para aulas y noches de quiz"
+    "noTracking": "Sin cuentas · Sin rastreo por parte de Punkto"
   },
   "privacy": {
     "title": "Privacidad",
-    "p1": "Punkto no tiene cuentas ni base de datos. Todo lo que creas —marcadores, nombres, puntos, fotos y logos— se guarda solo en el almacenamiento local de tu navegador en este dispositivo. Nosotros nunca lo recibimos.",
-    "p2": "Las fotos y los logos se reducen y comprimen en tu navegador antes de guardarse. Al eliminar un marcador o usar «Borrar todos los datos» en los ajustes, se borra definitivamente de este dispositivo.",
-    "p3": "Los enlaces para compartir contienen los datos del marcador tras el signo # de la dirección. Los navegadores nunca envían esa parte a ningún servidor, así que los datos solo llegan a quien le des el enlace. Las fotos no se incluyen en los enlaces.",
+    "p1": "Punkto no tiene cuentas ni base de datos. Todo lo que creas —marcadores, nombres, puntos y logos— se guarda solo en el almacenamiento local de tu navegador en este dispositivo. Nosotros nunca lo recibimos.",
+    "p2": "Los logos se reducen y comprimen en tu navegador antes de guardarse. Al eliminar un marcador o usar «Borrar todos los datos» en los ajustes, se borra definitivamente de este dispositivo.",
+    "p3": "Los enlaces para compartir contienen los datos del marcador tras el signo # de la dirección. Los navegadores nunca envían esa parte a ningún servidor, así que los datos solo llegan a quien le des el enlace. Los logos no se incluyen en los enlaces.",
     "p4": "El sitio web está alojado en GitHub Pages. Como cualquier servidor web, GitHub puede registrar datos técnicos, como tu dirección IP, al cargar la página. Punkto no usa analítica ni cookies de rastreo propias.",
     "p5": "En la versión gratuita, los anuncios los proporciona Google AdSense. Google puede usar cookies para mostrar y medir anuncios; cuando la ley lo exige, primero se te pide consentimiento. Puedes ocultar los anuncios durante la sesión, y Premium elimina todo el código publicitario.",
     "p6": "Al activar Premium, tu clave de licencia se envía a nuestro proveedor de pagos Lemon Squeezy para comprobar que es válida. Los pagos los gestiona íntegramente Lemon Squeezy: nunca vemos los datos de tu tarjeta ni de pago.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Copiar enlace de copia",
     "export": "Exportar archivo",
-    "linkCopied": "¡Enlace copiado! Ábrelo en otro dispositivo para restaurar este marcador (sin fotos).",
+    "linkCopied": "¡Enlace copiado! Ábrelo en otro dispositivo para restaurar este marcador (sin logos).",
     "imported": { "one": "{n} marcador importado", "other": "{n} marcadores importados" },
     "reading": "Leyendo el enlace…",
     "restoreTitle": "Restaurar marcador",
     "restoreText": "¿Añadir este marcador a este navegador?",
-    "noPhotos": "Las fotos y los logos no forman parte de los enlaces. Usa «Exportar archivo» para una copia completa.",
-    "restore": "Restaurar"
+    "restore": "Restaurar",
+    "noImages": "Los logos no forman parte de los enlaces. Usa «Exportar archivo» para una copia completa."
   },
   "errors": {
-    "storageFull": "El almacenamiento del navegador está lleno. Quita algunas fotos o exporta y elimina marcadores antiguos.",
+    "storageFull": "El almacenamiento del navegador está lleno. Quita algunos logos o exporta y elimina marcadores antiguos.",
     "badFile": "Este archivo no es una copia de Punkto.",
     "badLink": "Este enlace está roto o incompleto.",
     "badImage": "No se pudo leer esta imagen. Prueba con JPG o PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Editar jugadores",
     "noPlayers": "Aún no hay jugadores: añádelos abajo.",
     "thisRound": "{n} en esta ronda",
-    "photo": "Foto",
-    "changePhoto": "Cambiar foto",
-    "removePhoto": "Quitar imagen",
     "name": "Nombre",
     "removed": "{name} eliminado",
     "removeConfirm": "¿Quitar a {name}? Se perderán sus puntos.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Nombre del jugador o equipo",
     "addPlayer": "Añadir jugador o equipo",
     "add": "Añadir",
-    "addHint": "Consejo: pega una lista (un nombre por línea) para añadir una clase entera de golpe."
+    "addHint": "Consejo: pega una lista (un nombre por línea) para añadir muchos jugadores de golpe."
   },
   "sb": {
     "home": "Local",
@@ -240,11 +224,12 @@
     "resume": "Continuar",
     "resetClock": "Reiniciar reloj",
     "noGoals": "Aún no hay goles.",
-    "timeline": "Goles"
+    "timeline": "Goles",
+    "removeLogo": "Quitar logo"
   },
   "examples": {
-    "quiz": "Noche de quiz (ejemplo)",
-    "match": "Partido del viernes (ejemplo)"
+    "leaderboard": "Clasificación de ejemplo",
+    "scoreboard": "Partido de ejemplo"
   },
   "display": {
     "fullscreen": "Pantalla completa",
@@ -269,12 +254,12 @@
     "q1": "¿Punkto es realmente gratis?",
     "a1": "Sí. Todas las funciones son gratuitas. Unos pequeños anuncios mantienen el proyecto: puedes ocultarlos gratis durante la sesión o quitarlos para siempre con un pago único.",
     "q2": "¿Dónde se guardan mis datos?",
-    "a2": "Solo en tu navegador, en este dispositivo. No hay cuentas ni ningún servidor que reciba tus marcadores, nombres o fotos. Usa «Copiar enlace de copia» o «Exportar archivo» para pasar un marcador a otro dispositivo.",
+    "a2": "Solo en tu navegador, en este dispositivo. No hay cuentas ni ningún servidor que reciba tus marcadores, nombres o puntos. Usa «Copiar enlace de copia» o «Exportar archivo» para pasar un marcador a otro dispositivo.",
     "q3": "¿Cómo muestro los puntos en una TV o proyector?",
     "a3": "Abre tu marcador y haz clic en «Pantalla». Se abrirá una segunda ventana: llévala a la TV o al proyector y pulsa F para pantalla completa. Se actualiza al instante mientras cambias los puntos.",
     "q4": "¿Funciona sin conexión?",
     "a4": "Sí. Tras la primera visita, Punkto funciona sin internet. También puedes instalarlo como app desde el menú de tu navegador.",
-    "q5": "¿Es adecuado para colegios y el RGPD?",
-    "a5": "Punkto está pensado para la privacidad: sin registro y sin datos personales en ningún servidor, de modo que los nombres y fotos del alumnado se quedan en el dispositivo del docente. Con Premium no se carga ningún código publicitario de terceros. Aun así, sigue las normas de tu centro."
+    "q5": "¿Punkto respeta el RGPD?",
+    "a5": "Punkto está pensado para la privacidad: sin registro y sin datos personales en ningún servidor; los nombres se quedan en tu dispositivo. Con Premium no se carga ningún código publicitario de terceros."
   }
 }

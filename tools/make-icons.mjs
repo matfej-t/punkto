@@ -29,7 +29,7 @@ await shot('og.png', 1200, 630, `
   ${svg.replace('<svg ', '<svg width="260" height="260" ')}
   <div>
     <div style="font-size:96px;font-weight:900;letter-spacing:-2px">Punkto</div>
-    <div style="font-size:40px;font-weight:700;color:#7A6556;margin-top:8px;line-height:1.25">Free scoreboard &amp; leaderboard<br>for classrooms and quiz nights</div>
+    <div style="font-size:40px;font-weight:700;color:#7A6556;margin-top:8px;line-height:1.25">Free online scoreboard<br>&amp; leaderboard</div>
     <div style="margin-top:28px;display:flex;gap:14px;font-size:26px;font-weight:700">
       <span style="background:#E8572A;color:#fff;padding:8px 20px;border-radius:99px">No sign-up</span>
       <span style="background:#2E9C8A;color:#fff;padding:8px 20px;border-radius:99px">Works offline</span>

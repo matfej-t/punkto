@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — segnapunti e classifica online gratis per la classe e le serate quiz",
-    "description": "Segnapunti e classifica gratuiti per insegnanti e quiz al pub. Mostra i punteggi in grande su TV o proiettore, gestisci i round, incorona i vincitori. Senza registrazione, funziona offline, i tuoi dati restano nel browser."
+    "title": "Punkto — segnapunti e classifica online gratis",
+    "description": "Segnapunti e classifica online gratuiti. Mostra i punteggi in grande su TV o proiettore, gestisci i round, incorona i vincitori. Senza registrazione, funziona offline, i tuoi dati restano nel browser."
   },
   "common": {
     "close": "Chiudi",
@@ -19,10 +19,10 @@
     "manage": "Gestisci"
   },
   "home": {
-    "h1": "Segnapunti gratis per la classe e le serate quiz",
+    "h1": "Segnapunti e classifica online gratis",
     "tagline": "Tieni il punteggio su portatile o telefono e mostralo in grande su una TV o un proiettore. Classifiche, round, tabelloni a due squadre e un podio per i vincitori — senza registrazione.",
     "privacyTitle": "I tuoi dati restano su questo dispositivo.",
-    "privacyText": "Niente account, niente registrazione, nessun caricamento online. Nomi, punteggi e foto sono salvati solo nel tuo browser.",
+    "privacyText": "Niente account, niente registrazione, nessun caricamento online. Nomi e punteggi sono salvati solo nel tuo browser.",
     "yourBoards": "I tuoi tabelloni",
     "import": "Importa",
     "newBoard": "Nuovo tabellone",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} giocatore", "other": "{n} giocatori" },
     "squad": { "one": "{n} giocatore nelle rose", "other": "{n} giocatori nelle rose" },
     "featuresTitle": "Perché Punkto",
-    "f1Title": "Per gli insegnanti",
-    "f1Text": "Assegna punti alla classe ogni giorno, aggiungi le foto degli alunni e festeggia i vincitori sul proiettore.",
-    "f2Title": "Per le serate quiz",
-    "f2Text": "Squadre, round e una classifica in diretta sulla TV del pub. Inserisci un intero round in pochi secondi.",
+    "f1Title": "Due modi per segnare i punti",
+    "f1Text": "Una classifica per tutti i giocatori o le squadre che vuoi, oppure un tabellone per due squadre una contro l'altra.",
+    "f2Title": "Round, vincitori e cronologia",
+    "f2Text": "Segna i punti per round, chiudi con un podio per i vincitori e conserva ogni risultato nella cronologia.",
     "f3Title": "Fatto per il grande schermo",
     "f3Text": "Una schermata enorme e leggibile che si aggiorna all'istante mentre segni i punti da portatile o telefono.",
     "f4Title": "Privacy prima di tutto",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Classifica",
-    "leaderboardDesc": "Tanti giocatori o squadre, punti e round. Perfetto per classi e quiz.",
+    "leaderboardDesc": "Tanti giocatori o squadre, punti e round.",
     "scoreboard": "Tabellone",
     "scoreboardDesc": "Due squadre una contro l'altra, con loghi, rose e marcatori."
   },
   "create": {
     "heading": "Nuovo tabellone",
     "title": "Nome",
-    "titlePlaceholder": "es. 4ª B o Quiz del venerdì",
+    "titlePlaceholder": "es. Coppa di primavera",
     "mode": "Tipo",
     "create": "Crea tabellone"
-  },
-  "palettes": {
-    "classroom": "Classe",
-    "pub": "Pub",
-    "sports": "Sport",
-    "minimal": "Minimal",
-    "custom": "Personalizzato"
   },
   "settings": {
     "title": "Impostazioni",
@@ -80,19 +73,14 @@
     "storage": "Spazio usato: {used} KB su circa {total} KB",
     "wipe": "Elimina tutti i dati",
     "wipeConfirm": "Eliminare TUTTI i tabelloni, la cronologia e le impostazioni da questo browser? L'operazione non si può annullare.",
-    "palette": "Colori",
     "boardSettings": "Impostazioni del tabellone",
     "boardTitle": "Titolo del tabellone",
     "logo": "Logo",
     "uploadLogo": "Carica logo",
     "changeLogo": "Cambia logo",
-    "color1": "Colore principale",
-    "color2": "Colore secondario",
     "steps": "Pulsanti punti",
     "stepsHint": "Separati da virgole, es. 1, 5 oppure 1, 2, 3 (fino a 4).",
     "clock": "Mostra il cronometro della partita",
-    "teamColors": "Colori delle squadre",
-    "usePalette": "Usa la palette",
     "resetScores": "Azzera i punteggi",
     "resetConfirm": "Riportare tutti i punteggi a zero? Le partite concluse nella cronologia vengono mantenute.",
     "deleteBoard": "Elimina tabellone"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Privacy",
-    "noTracking": "Nessun account · Nessun tracciamento da parte di Punkto",
-    "madeFor": "fatto per le classi e le serate quiz"
+    "noTracking": "Nessun account · Nessun tracciamento da parte di Punkto"
   },
   "privacy": {
     "title": "Privacy",
-    "p1": "Punkto non ha account né database. Tutto ciò che crei — tabelloni, nomi, punteggi, foto e loghi — viene salvato solo nella memoria locale del tuo browser su questo dispositivo. Noi non riceviamo nulla.",
-    "p2": "Foto e loghi vengono ridimensionati e compressi nel tuo browser prima del salvataggio. Eliminando un tabellone, o usando «Elimina tutti i dati» nelle impostazioni, lo rimuovi definitivamente da questo dispositivo.",
-    "p3": "I link di condivisione contengono i dati del tabellone dopo il simbolo # dell'indirizzo. I browser non inviano mai questa parte a nessun server, quindi i dati arrivano solo a chi riceve il link da te. Le foto non sono incluse nei link.",
+    "p1": "Punkto non ha account né database. Tutto ciò che crei — tabelloni, nomi, punteggi e loghi — viene salvato solo nella memoria locale del tuo browser su questo dispositivo. Noi non riceviamo nulla.",
+    "p2": "I loghi vengono ridimensionati e compressi nel tuo browser prima del salvataggio. Eliminando un tabellone, o usando «Elimina tutti i dati» nelle impostazioni, lo rimuovi definitivamente da questo dispositivo.",
+    "p3": "I link di condivisione contengono i dati del tabellone dopo il simbolo # dell'indirizzo. I browser non inviano mai questa parte a nessun server, quindi i dati arrivano solo a chi riceve il link da te. I loghi non sono inclusi nei link.",
     "p4": "Il sito è ospitato su GitHub Pages. Come ogni server web, GitHub può registrare dati tecnici come il tuo indirizzo IP quando la pagina viene caricata. Punkto non usa strumenti di analisi né cookie di tracciamento propri.",
     "p5": "Nella versione gratuita la pubblicità è fornita da Google AdSense. Google può usare cookie per mostrare e misurare gli annunci; dove la legge lo richiede, ti viene prima chiesto il consenso. La pubblicità si può nascondere per la sessione e Premium rimuove tutto il codice pubblicitario.",
     "p6": "Quando attivi Premium, la tua chiave di licenza viene inviata al nostro fornitore di pagamenti Lemon Squeezy per verificarne la validità. I pagamenti sono gestiti interamente da Lemon Squeezy: non vediamo mai i dati della tua carta o del pagamento.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Copia link di backup",
     "export": "Esporta file",
-    "linkCopied": "Link copiato! Aprilo su un altro dispositivo per ripristinare questo tabellone (senza foto).",
+    "linkCopied": "Link copiato! Aprilo su un altro dispositivo per ripristinare questo tabellone (senza loghi).",
     "imported": { "one": "{n} tabellone importato", "other": "{n} tabelloni importati" },
     "reading": "Lettura del link…",
     "restoreTitle": "Ripristina tabellone",
     "restoreText": "Aggiungere questo tabellone a questo browser?",
-    "noPhotos": "Foto e loghi non fanno parte dei link. Usa «Esporta file» per una copia completa.",
-    "restore": "Ripristina"
+    "restore": "Ripristina",
+    "noImages": "I loghi non fanno parte dei link. Usa «Esporta file» per una copia completa."
   },
   "errors": {
-    "storageFull": "La memoria del browser è piena. Rimuovi alcune foto oppure esporta ed elimina i tabelloni vecchi.",
+    "storageFull": "La memoria del browser è piena. Rimuovi alcuni loghi oppure esporta ed elimina i tabelloni vecchi.",
     "badFile": "Questo file non è un backup di Punkto.",
     "badLink": "Questo link è danneggiato o incompleto.",
     "badImage": "Impossibile leggere l'immagine. Prova con un JPG o un PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Modifica giocatori",
     "noPlayers": "Ancora nessun giocatore: aggiungili qui sotto.",
     "thisRound": "{n} in questo round",
-    "photo": "Foto",
-    "changePhoto": "Cambia foto",
-    "removePhoto": "Rimuovi immagine",
     "name": "Nome",
     "removed": "{name} rimosso",
     "removeConfirm": "Rimuovere {name}? I suoi punti andranno persi.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Nome del giocatore o della squadra",
     "addPlayer": "Aggiungi giocatore o squadra",
     "add": "Aggiungi",
-    "addHint": "Suggerimento: incolla un elenco (un nome per riga) per aggiungere un'intera classe in un colpo solo."
+    "addHint": "Suggerimento: incolla un elenco (un nome per riga) per aggiungere tanti giocatori in un colpo solo."
   },
   "sb": {
     "home": "Casa",
@@ -240,11 +224,12 @@
     "resume": "Riprendi",
     "resetClock": "Azzera cronometro",
     "noGoals": "Ancora nessun gol.",
-    "timeline": "Gol"
+    "timeline": "Gol",
+    "removeLogo": "Rimuovi logo"
   },
   "examples": {
-    "quiz": "Serata quiz (esempio)",
-    "match": "Partita del venerdì (esempio)"
+    "leaderboard": "Classifica di esempio",
+    "scoreboard": "Partita di esempio"
   },
   "display": {
     "fullscreen": "Schermo intero",
@@ -269,12 +254,12 @@
     "q1": "Punkto è davvero gratis?",
     "a1": "Sì. Tutte le funzioni sono gratuite. Piccoli annunci tengono in vita il progetto: puoi nasconderli gratis per la sessione o rimuoverli per sempre con un acquisto una tantum.",
     "q2": "Dove vengono salvati i miei dati?",
-    "a2": "Solo nel tuo browser, su questo dispositivo. Non ci sono account né un server che riceva i tuoi tabelloni, nomi o foto. Usa «Copia link di backup» o «Esporta file» per spostare un tabellone su un altro dispositivo.",
+    "a2": "Solo nel tuo browser, su questo dispositivo. Non ci sono account né un server che riceva i tuoi tabelloni, nomi o punteggi. Usa «Copia link di backup» o «Esporta file» per spostare un tabellone su un altro dispositivo.",
     "q3": "Come mostro i punteggi su una TV o un proiettore?",
     "a3": "Apri il tuo tabellone e fai clic su «Schermo». Si apre una seconda finestra: spostala sulla TV o sul proiettore e premi F per lo schermo intero. Si aggiorna all'istante mentre cambi i punteggi.",
     "q4": "Funziona offline?",
     "a4": "Sì. Dopo la prima visita Punkto funziona senza internet. Puoi anche installarlo come app dal menu del browser.",
-    "q5": "È adatto alle scuole e al GDPR?",
-    "a5": "Punkto è pensato per la privacy: nessuna registrazione e nessun dato personale salvato su un server, così nomi e foto degli alunni restano sul dispositivo dell'insegnante. Con Premium non viene caricato alcun codice pubblicitario di terzi. Segui comunque le regole della tua scuola."
+    "q5": "Punkto rispetta il GDPR?",
+    "a5": "Punkto è pensato per la privacy: nessuna registrazione e nessun dato personale salvato su un server — i nomi restano sul tuo dispositivo. Con Premium non viene caricato alcun codice pubblicitario di terzi."
   }
 }

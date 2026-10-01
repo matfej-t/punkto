@@ -1,9 +1,8 @@
 // Leaderboard control body: player rows with +/- buttons, edit mode, rounds table.
-import { h, btn, iconBtn, rerender, popMenu, avatar, toast, pickFile, confirmDialog } from '../ui.js';
+import { h, btn, iconBtn, rerender, avatar, toast, confirmDialog } from '../ui.js';
 import { icon } from '../icons.js';
 import { t, fmtNum } from '../i18n.js';
 import { newPlayer, rankPlayers, playerTotal, addPoints, setRoundScore, nextRound } from '../model.js';
-import { processImage } from '../images.js';
 
 export function leaderboardBody(ctx) {
   const el = h('div.lb');
@@ -77,7 +76,7 @@ export function leaderboardBody(ctx) {
       onclick: (e) => { if (!e.target.closest('button')) { selected = selected === p.id ? null : p.id; render(); } }
     },
       h('span.rank', { class: medal, text: anyScore ? r.rank : i + 1, title: i < 9 ? `${t('shortcuts.selectN')}: ${i + 1}` : '' }),
-      avatar(p.name, p.photo),
+      avatar(p.name),
       h('span.name', { text: p.name || '—' },
         roundPts !== null ? h('span.round-pts', { text: t('lb.thisRound', { n: fmtNum(roundPts) }) }) : null),
       h('div.score-ctl',
@@ -93,18 +92,8 @@ export function leaderboardBody(ctx) {
 
   function editRow(p) {
     const b = ctx.board;
-    const photoBtn = h('button.avatar-btn', {
-      title: t('lb.photo'), 'aria-label': t('lb.photo'),
-      onclick: (e) => {
-        if (!p.photo) return uploadPhoto(p);
-        popMenu(e.currentTarget, [
-          { label: t('lb.changePhoto'), icon: 'image', onClick: () => uploadPhoto(p) },
-          { label: t('lb.removePhoto'), icon: 'trash', onClick: () => { p.photo = null; ctx.save(); } }
-        ]);
-      }
-    }, avatar(p.name, p.photo), h('span.avatar-edit', { html: icon('image') }));
     return h('li.lb-row.editing', { dataset: { id: p.id } },
-      photoBtn,
+      avatar(p.name),
       h('input.input.name-input', {
         type: 'text', value: p.name, maxLength: 60, dataset: { key: 'name-' + p.id }, 'aria-label': t('lb.name'),
         oninput: (e) => { p.name = e.target.value; ctx.save({ render: false }); },
@@ -121,12 +110,6 @@ export function leaderboardBody(ctx) {
     );
   }
 
-  async function uploadPhoto(p) {
-    const f = await pickFile('image/*');
-    if (!f) return;
-    try { p.photo = await processImage(f, 'photo'); ctx.save(); } catch { toast(t('errors.badImage'), { kind: 'error' }); }
-  }
-
   /* ---------------- rounds table ---------------- */
   function roundsTable() {
     const b = ctx.board;
@@ -141,7 +124,7 @@ export function leaderboardBody(ctx) {
           h('th.total-col', { text: t('lb.total') })
         )),
         h('tbody', order().map(p => h('tr',
-          h('th.name-col', { scope: 'row' }, h('div.row', avatar(p.name, p.photo, 'sm'), h('span', { text: p.name || '—' }))),
+          h('th.name-col', { scope: 'row' }, h('div.row', avatar(p.name, 'sm'), h('span', { text: p.name || '—' }))),
           cols.map(i => h('td', { class: i === b.round ? 'current' : '' },
             h('input.cell', {
               type: 'number', inputMode: 'numeric', step: 'any', value: String(Number(p.scores[i]) || 0),

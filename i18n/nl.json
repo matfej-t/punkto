@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — gratis online scorebord en ranglijst voor de klas en quizavonden",
-    "description": "Gratis scorebord en ranglijst voor leerkrachten en kroegquizzen. Toon de scores groot op een tv of beamer, houd rondes bij en kroon de winnaars. Zonder account, werkt offline en je gegevens blijven in je browser."
+    "title": "Punkto — gratis online scorebord en ranglijst",
+    "description": "Gratis online scorebord en ranglijst. Toon de scores groot op een tv of beamer, houd rondes bij en kroon de winnaars. Zonder account, werkt offline en je gegevens blijven in je browser."
   },
   "common": {
     "close": "Sluiten",
@@ -19,10 +19,10 @@
     "manage": "Beheren"
   },
   "home": {
-    "h1": "Gratis scorebord voor de klas en quizavonden",
+    "h1": "Gratis online scorebord en ranglijst",
     "tagline": "Houd de score bij op je laptop of telefoon en toon die groot op een tv of beamer. Ranglijsten, rondes, scoreborden voor twee teams en een podium voor de winnaars — zonder account.",
     "privacyTitle": "Je gegevens blijven op dit apparaat.",
-    "privacyText": "Geen accounts, niet aanmelden, er wordt niets geüpload. Namen, scores en foto's worden alleen in je browser opgeslagen.",
+    "privacyText": "Geen accounts, niet aanmelden, er wordt niets geüpload. Namen en scores worden alleen in je browser opgeslagen.",
     "yourBoards": "Jouw borden",
     "import": "Importeren",
     "newBoard": "Nieuw bord",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} speler", "other": "{n} spelers" },
     "squad": { "one": "{n} speler in de selecties", "other": "{n} spelers in de selecties" },
     "featuresTitle": "Waarom Punkto",
-    "f1Title": "Voor leerkrachten",
-    "f1Text": "Geef de klas elke dag punten, voeg foto's van leerlingen toe en vier de winnaars op de beamer.",
-    "f2Title": "Voor quizavonden",
-    "f2Text": "Teams, rondes en een live ranglijst voor de tv in de kroeg. Voer een hele ronde in een paar seconden in.",
+    "f1Title": "Twee manieren om te scoren",
+    "f1Text": "Een ranglijst voor zoveel spelers of teams als je wilt, of een scorebord voor twee teams tegen elkaar.",
+    "f2Title": "Rondes, winnaars en geschiedenis",
+    "f2Text": "Houd punten per ronde bij, sluit af met een podium voor de winnaars en bewaar elke uitslag in de geschiedenis.",
     "f3Title": "Gemaakt voor het grote scherm",
     "f3Text": "Een enorm, goed leesbaar scherm dat direct bijwerkt terwijl jij de score bijhoudt op je laptop of telefoon.",
     "f4Title": "Privacy ingebouwd",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Ranglijst",
-    "leaderboardDesc": "Veel spelers of teams, punten en rondes. Ideaal voor de klas en quizzen.",
+    "leaderboardDesc": "Veel spelers of teams, punten en rondes.",
     "scoreboard": "Scorebord",
     "scoreboardDesc": "Twee teams tegen elkaar, met logo's, selecties en doelpuntenmakers."
   },
   "create": {
     "heading": "Nieuw bord",
     "title": "Naam",
-    "titlePlaceholder": "bijv. Groep 6b of Vrijdagquiz",
+    "titlePlaceholder": "bijv. Voorjaarsbeker",
     "mode": "Soort",
     "create": "Bord maken"
-  },
-  "palettes": {
-    "classroom": "Klas",
-    "pub": "Kroeg",
-    "sports": "Sport",
-    "minimal": "Minimaal",
-    "custom": "Eigen"
   },
   "settings": {
     "title": "Instellingen",
@@ -80,19 +73,14 @@
     "storage": "Opslag gebruikt: {used} KB van ongeveer {total} KB",
     "wipe": "Alle gegevens wissen",
     "wipeConfirm": "ALLE borden, geschiedenis en instellingen uit deze browser wissen? Dit kan niet ongedaan worden gemaakt.",
-    "palette": "Kleuren",
     "boardSettings": "Bordinstellingen",
     "boardTitle": "Titel van het bord",
     "logo": "Logo",
     "uploadLogo": "Logo uploaden",
     "changeLogo": "Logo wijzigen",
-    "color1": "Hoofdkleur",
-    "color2": "Tweede kleur",
     "steps": "Puntenknoppen",
     "stepsHint": "Gescheiden door komma's, bijv. 1, 5 of 1, 2, 3 (maximaal 4).",
     "clock": "Wedstrijdklok tonen",
-    "teamColors": "Teamkleuren",
-    "usePalette": "Palet gebruiken",
     "resetScores": "Scores resetten",
     "resetConfirm": "Alle scores op nul zetten? Afgeronde spellen in de geschiedenis blijven bewaard.",
     "deleteBoard": "Bord verwijderen"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Privacy",
-    "noTracking": "Geen accounts · Geen tracking door Punkto",
-    "madeFor": "gemaakt voor de klas en quizavonden"
+    "noTracking": "Geen accounts · Geen tracking door Punkto"
   },
   "privacy": {
     "title": "Privacy",
-    "p1": "Punkto heeft geen accounts en geen database. Alles wat je maakt — borden, namen, scores, foto's en logo's — wordt alleen opgeslagen in de lokale opslag van je browser op dit apparaat. Wij ontvangen er niets van.",
-    "p2": "Foto's en logo's worden in je browser verkleind en gecomprimeerd voordat ze worden opgeslagen. Als je een bord verwijdert, of in de instellingen “Alle gegevens wissen” kiest, verdwijnt het voorgoed van dit apparaat.",
-    "p3": "Deellinks bevatten de gegevens van het bord achter het #-teken in het adres. Browsers sturen dat deel nooit naar een server, dus de gegevens komen alleen terecht bij de mensen aan wie jij de link geeft. Foto's zitten niet in links.",
+    "p1": "Punkto heeft geen accounts en geen database. Alles wat je maakt — borden, namen, scores en logo's — wordt alleen opgeslagen in de lokale opslag van je browser op dit apparaat. Wij ontvangen er niets van.",
+    "p2": "Logo's worden in je browser verkleind en gecomprimeerd voordat ze worden opgeslagen. Als je een bord verwijdert, of in de instellingen “Alle gegevens wissen” kiest, verdwijnt het voorgoed van dit apparaat.",
+    "p3": "Deellinks bevatten de gegevens van het bord achter het #-teken in het adres. Browsers sturen dat deel nooit naar een server, dus de gegevens komen alleen terecht bij de mensen aan wie jij de link geeft. Logo's zitten niet in links.",
     "p4": "De website wordt gehost op GitHub Pages. Zoals elke webserver kan GitHub bij het laden van de pagina technische gegevens vastleggen, zoals je IP-adres. Punkto zelf gebruikt geen analytics en geen trackingcookies.",
     "p5": "In de gratis versie worden advertenties geleverd door Google AdSense. Google kan cookies gebruiken om advertenties te tonen en te meten; waar de wet dat vereist, wordt eerst om je toestemming gevraagd. Advertenties kun je voor de sessie verbergen, en Premium verwijdert alle advertentiecode.",
     "p6": "Als je Premium activeert, wordt je licentiesleutel naar onze betaalprovider Lemon Squeezy gestuurd om te controleren of hij geldig is. Betalingen worden volledig door Lemon Squeezy afgehandeld — wij zien nooit je kaart- of betaalgegevens.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Back-uplink kopiëren",
     "export": "Bestand exporteren",
-    "linkCopied": "Link gekopieerd! Open hem op een ander apparaat om dit bord te herstellen (zonder foto's).",
+    "linkCopied": "Link gekopieerd! Open hem op een ander apparaat om dit bord te herstellen (zonder logo's).",
     "imported": { "one": "{n} bord geïmporteerd", "other": "{n} borden geïmporteerd" },
     "reading": "Link wordt gelezen…",
     "restoreTitle": "Bord herstellen",
     "restoreText": "Dit bord aan deze browser toevoegen?",
-    "noPhotos": "Foto's en logo's zitten niet in links. Gebruik “Bestand exporteren” voor een volledige kopie.",
-    "restore": "Herstellen"
+    "restore": "Herstellen",
+    "noImages": "Logo's zitten niet in links. Gebruik “Bestand exporteren” voor een volledige kopie."
   },
   "errors": {
-    "storageFull": "De opslag van de browser is vol. Verwijder wat foto's of exporteer en verwijder oude borden.",
+    "storageFull": "De opslag van de browser is vol. Verwijder wat logo's of exporteer en verwijder oude borden.",
     "badFile": "Dit bestand is geen Punkto-back-up.",
     "badLink": "Deze link is beschadigd of onvolledig.",
     "badImage": "Deze afbeelding kon niet worden gelezen. Probeer een JPG of PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Spelers bewerken",
     "noPlayers": "Nog geen spelers — voeg ze hieronder toe.",
     "thisRound": "{n} deze ronde",
-    "photo": "Foto",
-    "changePhoto": "Foto wijzigen",
-    "removePhoto": "Afbeelding verwijderen",
     "name": "Naam",
     "removed": "{name} verwijderd",
     "removeConfirm": "{name} verwijderen? De punten gaan verloren.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Naam van speler of team",
     "addPlayer": "Speler of team toevoegen",
     "add": "Toevoegen",
-    "addHint": "Tip: plak een lijst (één naam per regel) om in één keer een hele klas toe te voegen."
+    "addHint": "Tip: plak een lijst (één naam per regel) om veel spelers in één keer toe te voegen."
   },
   "sb": {
     "home": "Thuis",
@@ -240,11 +224,12 @@
     "resume": "Hervatten",
     "resetClock": "Klok resetten",
     "noGoals": "Nog geen doelpunten.",
-    "timeline": "Doelpunten"
+    "timeline": "Doelpunten",
+    "removeLogo": "Logo verwijderen"
   },
   "examples": {
-    "quiz": "Quizavond (voorbeeld)",
-    "match": "Vrijdagwedstrijd (voorbeeld)"
+    "leaderboard": "Voorbeeldranglijst",
+    "scoreboard": "Voorbeeldwedstrijd"
   },
   "display": {
     "fullscreen": "Volledig scherm",
@@ -269,12 +254,12 @@
     "q1": "Is Punkto echt gratis?",
     "a1": "Ja. Alle functies zijn gratis. Kleine advertenties houden het project draaiende — je kunt ze gratis verbergen voor de sessie of voor altijd verwijderen met een eenmalige aankoop.",
     "q2": "Waar worden mijn gegevens opgeslagen?",
-    "a2": "Alleen in je browser op dit apparaat. Er zijn geen accounts en er is geen server die je borden, namen of foto's ontvangt. Gebruik “Back-uplink kopiëren” of “Bestand exporteren” om een bord naar een ander apparaat te verplaatsen.",
+    "a2": "Alleen in je browser op dit apparaat. Er zijn geen accounts en er is geen server die je borden, namen of scores ontvangt. Gebruik “Back-uplink kopiëren” of “Bestand exporteren” om een bord naar een ander apparaat te verplaatsen.",
     "q3": "Hoe toon ik de scores op een tv of beamer?",
     "a3": "Open je bord en klik op “Weergave”. Er opent een tweede venster — sleep het naar de tv of beamer en druk op F voor volledig scherm. Het werkt direct bij terwijl jij de scores aanpast.",
     "q4": "Werkt het offline?",
     "a4": "Ja. Na je eerste bezoek werkt Punkto zonder internet. Je kunt het ook als app installeren via het menu van je browser.",
-    "q5": "Is het geschikt voor scholen en de AVG?",
-    "a5": "Punkto is gebouwd met privacy voorop: geen account en geen persoonsgegevens op een server, dus namen en foto's van leerlingen blijven op het apparaat van de leerkracht. Met Premium wordt er helemaal geen advertentiecode van derden geladen. Volg wel altijd de regels van je school."
+    "q5": "Is Punkto AVG-vriendelijk?",
+    "a5": "Punkto is gebouwd met privacy voorop: geen account en geen persoonsgegevens op een server — namen blijven op jouw apparaat. Met Premium wordt er helemaal geen advertentiecode van derden geladen."
   }
 }
