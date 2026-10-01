@@ -196,8 +196,6 @@
     "roundShort": "Р{n}",
     "newRound": "Новый раунд",
     "roundStarted": "Раунд {n} начался",
-    "sortManual": "Мой порядок",
-    "sortScore": "Сортировать по очкам",
     "editPlayers": "Изменить участников",
     "noPlayers": "Участников пока нет — добавьте их ниже.",
     "thisRound": "{n} в этом раунде",

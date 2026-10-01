@@ -59,6 +59,10 @@ async function createBoard(p, mode, name, players = []) {
   for (const n of players) { await p.fill('[data-key="add"]', n); await p.keyboard.press('Enter'); }
   if (players.length) await p.click('button:has-text("Done")');
 }
+// Leaderboard rows move with the score, so tests find them by player name.
+const rowOf = (name) => page.locator('.lb-row').filter({ has: page.locator('.name', { hasText: new RegExp('^' + name) }) });
+const scoreOf = (name) => rowOf(name).locator('.score').textContent();
+const names = () => page.locator('.lb-row .name').evaluateAll(els => els.map(e => e.firstChild.textContent));
 const boardOf = (page) => page.evaluate(() => JSON.parse(localStorage.getItem('punkto:board:' + location.hash.split('/')[2])));
 
 console.log('Punkto e2e');
@@ -178,19 +182,22 @@ await test('board logo upload is resized and compressed', async () => {
   await page.waitForSelector('.ctl-bar img.ctl-logo');
 });
 
-await test('score with buttons, keyboard and undo', async () => {
-  await page.locator('.lb-row').nth(1).locator('.step.plus.primary').click();
-  await page.locator('.lb-row').nth(1).locator('.step.plus').nth(1).click(); // +3
-  await page.keyboard.press('3');
+await test('score with buttons, keyboard and undo; ranking always sorted by points', async () => {
+  eq(await page.locator('.toolbar .icon-btn[aria-label*="Sort"], .toolbar .icon-btn[aria-label*="order"]').count(), 0, 'no sort button');
+  await rowOf('Ben').locator('.step.plus.first').click();
+  await rowOf('Ben').locator('.step.plus').nth(1).click(); // +3
+  eq(await names(), ['Ben', 'Anna', 'Carla', 'David', 'Emma'], 'Ben moves to the top');
+  await page.keyboard.press('3'); // third row = Carla
   await page.keyboard.press('+'); await page.keyboard.press('+');
   await page.keyboard.press('ArrowLeft');
-  eq((await page.locator('.score').allTextContents()).slice(0, 3), ['0', '4', '1']);
+  eq([await scoreOf('Ben'), await scoreOf('Carla'), await scoreOf('Anna')], ['4', '1', '0']);
+  eq(await names(), ['Ben', 'Carla', 'Anna', 'David', 'Emma'], 'sorted by points');
   await page.keyboard.press('Control+z');
-  eq((await page.locator('.score').allTextContents())[2], '2', 'undo');
+  eq(await scoreOf('Carla'), '2', 'undo');
 });
 
 await test('subtract buttons and typing a score by hand', async () => {
-  const row = page.locator('.lb-row').nth(0);
+  const row = rowOf('Anna');
   await row.locator('.step.minus').click();
   eq(await row.locator('.score').textContent(), '-1', '−1 button');
   await row.locator('.score').click();
@@ -212,7 +219,7 @@ await test('display window updates live (BroadcastChannel)', async () => {
   await display.waitForSelector('.d-row');
   eq(await display.locator('.d-name').first().textContent(), 'Ben');
   await page.bringToFront();
-  for (let i = 0; i < 8; i++) await page.locator('.lb-row').nth(4).locator('.step.plus.primary').click();
+  for (let i = 0; i < 8; i++) await rowOf('Emma').locator('.step.plus.first').click();
   await display.waitForTimeout(300);
   eq(await display.locator('.d-name').first().textContent(), 'Emma', 'new leader');
   assert(await display.locator('.made-with').count() === 1, 'badge');
@@ -223,10 +230,12 @@ await test('rounds: new round, edit a cell, display shows the table', async () =
   await page.keyboard.press('n');
   await page.keyboard.press('r');
   await page.waitForSelector('.rounds-table');
+  const firstName = await page.locator('.rounds-table tbody tr th span:not(.avatar)').first().textContent();
+  eq(firstName, 'Emma', 'rounds table sorted by points');
   const cell = page.locator('[data-key$="-1"]').first();
   await cell.fill('7'); await cell.press('Enter');
   const b = await boardOf(page);
-  eq(b.roundCount, 2); eq(b.players[0].scores[1], 7);
+  eq(b.roundCount, 2); eq(b.players.find(p => p.name === 'Emma').scores[1], 7);
   await display.waitForSelector('.d-rounds');
   await page.click('.segmented button:has-text("Points")');
 });

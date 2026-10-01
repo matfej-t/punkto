@@ -196,8 +196,6 @@
     "roundShort": "T{n}",
     "newRound": "Yeni tur",
     "roundStarted": "Tur {n} başladı",
-    "sortManual": "Benim sıramı koru",
-    "sortScore": "Puana göre sırala",
     "editPlayers": "Oyuncuları düzenle",
     "noPlayers": "Henüz oyuncu yok — aşağıdan ekleyin.",
     "thisRound": "bu turda {n}",

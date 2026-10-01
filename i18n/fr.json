@@ -196,8 +196,6 @@
     "roundShort": "M{n}",
     "newRound": "Nouvelle manche",
     "roundStarted": "Manche {n} commencée",
-    "sortManual": "Garder mon ordre",
-    "sortScore": "Trier par points",
     "editPlayers": "Modifier les joueurs",
     "noPlayers": "Aucun joueur pour l'instant — ajoutez-les ci-dessous.",
     "thisRound": "{n} cette manche",

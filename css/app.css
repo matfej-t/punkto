@@ -292,8 +292,10 @@ dialog.modal::backdrop { background: rgb(20 12 6 / .45); backdrop-filter: blur(2
 .score-input.score { width: 80px; padding: 4px; font-size: 22px; }
 .score-input.team-score { width: min(240px, 100%); padding: 0 8px; }
 .step { min-width: var(--tap); padding: 0 10px; font-size: 17px; font-variant-numeric: tabular-nums; }
-.step.plus.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-.step.minus { color: var(--muted); font-size: 17px; }
+/* Colour shows direction: every add button is filled, every subtract button is outlined. */
+.step.plus { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.step.plus:hover { background: color-mix(in srgb, var(--accent) 85%, var(--text)); }
+.step.minus { background: var(--surface); border-color: var(--border); color: var(--text); }
 .bump { animation: bump .35s ease-out; }
 @keyframes bump { 40% { transform: scale(1.25); color: var(--accent); } }
 @media (max-width: 520px) {
@@ -303,7 +305,7 @@ dialog.modal::backdrop { background: rgb(20 12 6 / .45); backdrop-filter: blur(2
   .score-ctl { gap: 4px; }
   .step { min-width: 40px; padding: 0 8px; }
   .score { min-width: 44px; font-size: 21px; }
-  .step.plus:not(.primary), .lb-row .step.minus:not(.first) { display: none; } /* extra step buttons hidden on very small screens */
+  .lb-row .step:not(.first) { display: none; } /* only the first add/subtract button on very small screens */
 }
 .lb-row.editing { gap: 8px; }
 .name-input { flex: 1; font-weight: 700; }
@@ -336,9 +338,9 @@ dialog.modal::backdrop { background: rgb(20 12 6 / .45); backdrop-filter: blur(2
 .team-logo.placeholder { display: grid; place-items: center; border-radius: 50%; background: var(--team); color: var(--team-ink); font-weight: 900; font-size: 20px; }
 .team-score { font-size: clamp(64px, 14vw, 120px); font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
 .team-buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-.goal-btn { min-height: 56px; min-width: 72px; font-size: 22px; }
-.team-card .step.plus.primary { background: var(--team); border-color: var(--team); color: var(--team-ink); }
-.team-buttons .minus { min-height: 56px; }
+.team-buttons .step { min-height: 56px; min-width: 72px; font-size: 22px; }
+.team-card .step.plus { background: var(--team); border-color: var(--team); color: var(--team-ink); }
+.team-card .step.plus:hover { background: color-mix(in srgb, var(--team) 85%, var(--text)); }
 .squad-chips { width: 100%; text-align: center; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 6px; }
 .key-hint { margin: 0; opacity: .7; }
@@ -352,7 +354,7 @@ dialog.modal::backdrop { background: rgb(20 12 6 / .45); backdrop-filter: blur(2
 @media (max-width: 520px) {
   .sb-teams { gap: 8px; }
   .team-card { padding: 10px 6px; }
-  .goal-btn { min-width: 60px; }
+  .team-buttons .step { min-width: 56px; }
   .team-name { font-size: 17px; }
 }
 .clock-card { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 12px; padding: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }

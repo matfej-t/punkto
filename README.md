@@ -4,7 +4,7 @@
 Static site — HTML, CSS and vanilla JavaScript. No backend, no build step, no accounts.
 All data stays in the visitor's browser.
 
-- **Leaderboard mode:** many players or teams, points, quick add and subtract buttons (amounts chosen when creating the board, default +1 +3 / −1), click any score to type a new value, rounds view (points per round).
+- **Leaderboard mode:** many players or teams, points, quick add and subtract buttons (amounts chosen when creating the board, default +1 +3 / −1), click any score to type a new value, rounds view (points per round). The ranking is always sorted by points.
 - **Names:** every board needs a name that is unique among all boards; player, team and squad names are unique within their board.
 - **Scoreboard mode:** two teams like football, logos, optional squads, goal scorers, optional match clock.
 - **Control view** for the host (mobile-friendly, keyboard shortcuts, undo) and a **Display view** for the TV or projector. The display updates live (`BroadcastChannel`), stays fullscreen and keeps the screen awake.

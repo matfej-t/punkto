@@ -196,8 +196,6 @@
     "roundShort": "R{n}",
     "newRound": "New round",
     "roundStarted": "Round {n} started",
-    "sortManual": "Keep my order",
-    "sortScore": "Sort by score",
     "editPlayers": "Edit players",
     "noPlayers": "No players yet — add them below.",
     "thisRound": "{n} this round",

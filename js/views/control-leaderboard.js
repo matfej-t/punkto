@@ -10,15 +10,22 @@ export function leaderboardBody(ctx) {
   let selected = null;       // selected player id (keyboard scoring)
   let lastTotals = new Map(); // for the "bump" animation
 
-  const order = () => {
-    const b = ctx.board;
-    return b.sortControl ? rankPlayers(b.players).map(r => r.player) : b.players;
-  };
+  // The ranking is always ordered by points (ties keep the order players were added).
+  const order = () => rankPlayers(ctx.board.players).map(r => r.player);
 
   function render() {
     const b = ctx.board;
     if (selected && !b.players.some(p => p.id === selected)) selected = null;
+    // FLIP: remember row positions so rows can slide to their new rank.
+    const before = new Map([...el.querySelectorAll('.lb-row[data-id]')].map(r => [r.dataset.id, r.getBoundingClientRect().top]));
     rerender(el, () => [toolbar(), b.showRounds ? roundsTable() : list(), addRow()]);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      for (const row of el.querySelectorAll('.lb-row[data-id]')) {
+        const top = before.get(row.dataset.id);
+        const dy = top == null ? 0 : top - row.getBoundingClientRect().top;
+        if (dy) row.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 350, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      }
+    }
     // Bump animation on changed totals.
     const now = new Map(b.players.map(p => [p.id, playerTotal(p)]));
     for (const [id, v] of now) {
@@ -47,7 +54,6 @@ export function leaderboardBody(ctx) {
           : btn(t('lb.newRound'), { icon: 'plus', cls: 'btn-ghost btn-sm', title: 'N', onclick: newRound })
       ) : null,
       h('div.spacer'),
-      iconBtn('sort', b.sortControl ? t('lb.sortManual') : t('lb.sortScore'), () => { b.sortControl = !b.sortControl; ctx.save(); }, b.sortControl ? 'on' : ''),
       h('button.btn.btn-ghost.btn-sm', { class: ctx.ui.edit ? 'on' : '', 'aria-pressed': String(ctx.ui.edit), onclick: ctx.toggleEdit, html: icon(ctx.ui.edit ? 'check' : 'edit') },
         h('span', { text: ctx.ui.edit ? t('common.done') : t('lb.editPlayers') }))
     );
@@ -92,7 +98,7 @@ export function leaderboardBody(ctx) {
           onSet: (n) => ctx.mutate(bd => addPoints(bd, p.id, n - r.total))
         }),
         ...b.steps.map((s, k) => h('button.btn.step.plus', {
-          class: k === 0 ? 'primary' : '', 'aria-label': `+${s} ${p.name}`,
+          class: k === 0 ? 'first' : '', 'aria-label': `+${s} ${p.name}`,
           onclick: () => ctx.mutate(bd => addPoints(bd, p.id, s))
         }, `+${s}`))
       )

@@ -82,7 +82,7 @@ export function scoreboardBody(ctx) {
           onclick: () => ctx.mutate(bd => addGoal(bd, tm.id, null, -s))
         }, `−${s}`)),
         ...b.steps.map((s, k) => h('button.btn.step.plus.goal-btn', {
-          class: k === 0 ? 'primary' : '', title: k === 0 ? KEYS[i][0] : '', 'aria-label': `+${s} ${tm.name}`,
+          class: k === 0 ? 'first' : '', title: k === 0 ? KEYS[i][0] : '', 'aria-label': `+${s} ${tm.name}`,
           onclick: () => scoreFor(i, s)
         }, `+${s}`))
       ),

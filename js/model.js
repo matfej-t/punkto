@@ -35,7 +35,7 @@ export function newBoard(mode, title, steps = null, minus = null) {
     minus: [...DEFAULT_MINUS] // subtract buttons (stored as positive amounts)
   };
   if (mode === 'leaderboard') {
-    Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [...DEFAULT_STEPS], showRounds: false, sortControl: false });
+    Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [...DEFAULT_STEPS], showRounds: false });
   } else {
     Object.assign(b, {
       teams: [newTeam('Home'), newTeam('Away')], events: [], steps: [...DEFAULT_STEPS],
@@ -54,9 +54,10 @@ export function normalizeBoard(b) {
   const base = newBoard(b.mode, String(b.title ?? 'Punkto'));
   for (const k of Object.keys(base)) if (b[k] === undefined) b[k] = base[k];
   b.title = String(b.title).slice(0, 80);
-  // Removed features: colour palettes, custom colours and player photos.
+  // Removed features: colour palettes, custom colours, player photos, manual order.
   delete b.palette;
   delete b.custom;
+  delete b.sortControl; // the ranking is always sorted by points
   if (!Array.isArray(b.history)) b.history = [];
   if (!Array.isArray(b.steps) || !b.steps.length) b.steps = base.steps;
   if (!Array.isArray(b.minus) || !b.minus.length) b.minus = base.minus;
