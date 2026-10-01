@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matfej-t.github.io/punkto/sitemap.xml
