@@ -124,7 +124,7 @@
     "p4": "Strona jest hostowana na GitHub Pages. Jak każdy serwer WWW, GitHub może zapisywać dane techniczne, np. Twój adres IP, podczas ładowania strony. Samo Punkto nie używa plików cookie i Cię nie śledzi.",
     "p5": "W wersji darmowej reklamy dostarcza Google AdSense. Google może używać plików cookie do wyświetlania i mierzenia reklam; tam, gdzie wymaga tego prawo, najpierw poprosimy o zgodę. Reklamy można ukryć na czas sesji, a Premium usuwa cały kod reklamowy.",
     "p6": "Gdy aktywujesz Premium, Twój klucz licencyjny jest wysyłany do naszego operatora płatności Lemon Squeezy w celu sprawdzenia ważności. Płatności obsługuje w całości Lemon Squeezy — nigdy nie widzimy danych Twojej karty ani płatności.",
-    "p7": "Aby wiedzieć, ile osób korzysta z Punkto, liczymy odsłony i kilka anonimowych zdarzeń (np. „utworzono tablicę”) za pomocą GoatCounter — usługi statystycznej przyjaznej prywatności. Nie używa plików cookie, nie przechowuje danych osobowych i nie śledzi Cię na innych stronach.",
+    "p7": "Aby wiedzieć, ile osób korzysta z Punkto, liczymy odsłony za pomocą Cloudflare Web Analytics — usługi statystycznej przyjaznej prywatności. Nie używa plików cookie, nie tworzy Twojego profilu i nie śledzi Cię na innych stronach.",
     "contact": "Pytania? Kontakt:"
   },
   "share": {

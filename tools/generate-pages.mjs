@@ -52,9 +52,16 @@ const LANDING = [
   { slug: 'score-keeper', mode: 'leaderboard' }
 ];
 const landingUrl = (l, slug) => `${pageUrl(l)}${slug}/`;
-const analyticsTag = /^https:\/\/[\w.-]+\/count$/.test(cfg.analytics?.goatcounter || '')
-  ? `<script data-goatcounter="${esc(cfg.analytics.goatcounter)}" async src="https://gc.zgo.at/count.js"></script>`
+// Cookie-free statistics (Cloudflare Web Analytics) and search-engine verification,
+// added to every generated page when set in config.js.
+const cfToken = cfg.analytics?.cloudflareToken || '';
+const analyticsTag = /^[a-f0-9]{32}$/i.test(cfToken)
+  ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${cfToken}"}'></script>`
   : '';
+const verificationTags = [
+  cfg.verification?.google ? `<meta name="google-site-verification" content="${esc(cfg.verification.google)}">` : '',
+  cfg.verification?.bing ? `<meta name="msvalidate.01" content="${esc(cfg.verification.bing)}">` : ''
+].filter(Boolean).join('\n');
 const hreflang = [
   ...langs.map(l => `<link rel="alternate" hreflang="${l}" href="${pageUrl(l)}">`),
   `<link rel="alternate" hreflang="x-default" href="${pageUrl(FALLBACK)}">`
@@ -93,6 +100,8 @@ for (const lang of langs) {
     ogLocale: OG_LOCALE[lang] || lang,
     ogExtra: `<meta property="og:url" content="${pageUrl(lang)}">\n<meta property="og:image" content="${site}icons/og.png">`,
     adsenseMeta: cfg.ads?.adsenseClient ? `<meta name="google-adsense-account" content="${esc(cfg.ads.adsenseClient)}">` : '',
+    analytics: analyticsTag,
+    verification: verificationTags,
     jsonld,
     h1: esc(t('home.h1')),
     tagline: esc(t('home.tagline')),
@@ -147,6 +156,7 @@ for (const lang of langs) {
       ogLocale: OG_LOCALE[lang] || lang,
       adsenseMeta: cfg.ads?.adsenseClient ? `<meta name="google-adsense-account" content="${esc(cfg.ads.adsenseClient)}">` : '',
       analytics: analyticsTag,
+      verification: verificationTags,
       jsonld,
       logo,
       ctaUrl: `${appUrl}#/new/${mode}`,

@@ -1,66 +1,87 @@
-# Growing Punkto: getting visitors
+# Your checklist: getting Punkto live and found
 
-The app is done. Revenue now depends only on visitors, so this is the plan. Do it in order: each step makes the next one work better.
+Everything that can be done in code is done. What's left needs **accounts in your name**: a domain you own, Google proving the site is yours, and money going to you. I can't create accounts or post as you. Each step below is just clicks, and I've written exactly which ones.
 
-**Realistic expectations:** a new website usually needs 3–6 months before Google sends steady traffic. The first month is mostly Google discovering the pages. Judge results by the trend in Search Console, not by single days.
+**How we work:** you do a step and send me what it says to send. I put it into the site and publish.
 
 ---
 
-## Week 1: foundations (once, about 2 hours)
+## Part A: go live (about 30 minutes, once)
 
-1. **Domain.** Get one, for example via the GitHub Student Developer Pack, and connect it (README §3).
-   Then set `siteUrl` in `config.js`, run `node tools/generate-pages.mjs`, then commit and push.
-   > Every page tells Google its own address. Until `siteUrl` matches the real domain, Google is pointed at the old one.
-2. **Google Search Console** (search.google.com/search-console):
-   - Add a *Domain* property and verify it with the DNS TXT record your registrar lets you add.
-   - Go to **Sitemaps** and submit `https://YOUR-DOMAIN/sitemap.xml`. It lists all 72 pages (12 languages × app + 5 landing pages).
-   - Use **URL inspection** to request indexing for `/`, `/de/`, `/scoreboard/`, `/quiz/` and `/classroom/`.
-3. **Bing Webmaster Tools** (bing.com/webmasters): import the site from Search Console with one click. Bing also powers DuckDuckGo, Ecosia and several AI search tools.
-4. **Statistics:** create a free GoatCounter account and put the URL in `config.js` (README §12).
-5. **AdSense:** apply once the domain is live and the pages are indexed. Set it up as in README §4, with Auto ads OFF.
-6. **Lemon Squeezy:** create the product and paste the checkout link (README §5).
+### A1. Get the domain (10 min)
+1. Open **education.github.com/pack** and sign in with GitHub.
+2. Find a domain offer (for example *Namecheap* or *name.com*) and register a short name, ideally `punkto` plus whatever ending is free (`.me`, `.app`, `.live`, …).
+3. **Send me the domain name.**
 
-## Weeks 1–2: listings (backlinks that also bring visitors)
+I then connect it in the code. After that you add these 5 records at your registrar. Look for **"DNS"** or **"Advanced DNS"** next to the domain and use **"Add record"** for each:
 
-Submit Punkto to each of these. Use the texts further down. Each one is a link Google trusts.
+| Type | Host / Name | Value |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `matfej-t.github.io` |
 
-| Where | What to do |
-|---|---|
-| **AlternativeTo.net** | Add Punkto as an alternative to other online scoreboard and leaderboard sites ("Keep the Score", "Scoreboard", "Flippity", "Classroomscreen"). People search this site directly. |
-| **Product Hunt** | Launch on a Tuesday–Thursday. Upload 4 screenshots: home, leaderboard control, TV display, podium. |
-| **Show HN** (news.ycombinator.com) | Post the "Show HN" text. Stay around to answer comments for the first 2 hours. |
-| **SaaSHub, Uneed, Indie Hackers** | Free listings for indie tools. |
-| **Your own GitHub repo** | Add the site URL and topics (`scoreboard`, `leaderboard`, `pwa`, `offline-first`) to the repo's About box. |
+Delete any other A record for `@` the registrar created by default ("parking page"). It can take up to a few hours before the domain works.
+Then, on GitHub: repository **Settings → Pages**. The domain should be filled in already. Once its check is green, tick **Enforce HTTPS**.
 
-## Ongoing: communities (where users actually are)
+### A2. Statistics: see how many people visit (5 min)
+1. Create a free account at **dash.cloudflare.com/sign-up**.
+2. In the left menu: **Analytics & Logs → Web Analytics → Add a site**.
+3. Enter your domain and click **Done**. Choose the *JavaScript snippet* option if asked.
+4. In the code snippet it shows, copy the long code after `"token": "` (32 letters and numbers). **Send it to me.**
 
-Rules that keep you from getting banned:
-- **Post as the maker, say it's free, and ask for feedback.** Don't advertise.
-- **Read each group's rules first.** Many only allow self-promotion in a weekly thread.
-- **One post per community.** After that, answer questions in threads where a scoreboard is genuinely the answer.
+Cookie-free, free of charge, and you'll see visitors per page and country in that same Cloudflare screen.
 
-Where to post:
-- **Teachers:** r/edtech and r/teachingresources; Facebook groups for teachers in Germany, Poland, Czechia, the Netherlands and Turkey (search "Lehrer Ideen", "nauczyciele", "učitelé", "leerkrachten", "öğretmenler"). Non-English groups are less crowded, and Punkto speaks their language.
-- **Quiz hosts:** r/pubquiz, r/trivia, quiz-host Facebook groups.
-- **Game nights:** r/boardgames (in their self-promotion thread only), r/cardgames.
-- **Makers:** r/SideProject, and r/webdev on "Showoff Saturday".
+### A3. Google Search Console: tell Google the site exists (10 min, after A1 works)
+This is the most important step for being found on Google.
+1. Open **search.google.com/search-console** and sign in with a Google account.
+2. Click **Add property** → choose the right-hand box **URL prefix** → type `https://YOUR-DOMAIN/` → **Continue**.
+3. Under *Other verification methods* open **HTML tag** and copy only the part inside `content="…"`. **Send it to me.**
+4. When I say it's published, click **Verify** on that same page.
+5. In the left menu: **Sitemaps** → type `sitemap.xml` → **Submit**. It lists all 72 pages.
 
-## Monthly routine (30 minutes)
+### A4. Bing (2 min, after A3)
+Open **bing.com/webmasters**, sign in, choose **Import from Google Search Console** and allow it. Done: no code needed. Bing also feeds DuckDuckGo, Ecosia and some AI search tools.
 
-1. In **Search Console → Performance**, sort queries by *impressions*:
-   - **A page gets impressions but few clicks:** improve its `title` and `description` in `content/landing/<lang>.json`, then regenerate.
-   - **A query has no page yet** (for example "darts scoreboard" or "basketball scoreboard online"): add a landing page. Copy an entry in `content/landing/*.json` and add the slug to `LANDING` in `tools/generate-pages.mjs` and `USE_CASES` in `js/views/common.js`.
-2. In **GoatCounter**, compare `board-created-*` with page views. If few visitors create a board, the landing pages aren't convincing: change the intro and button text.
-3. Track `premium-checkout-clicked` against actual sales. Many clicks with few sales means the price is too high; try €5.
+**Send me in total:** the domain (A1), the Cloudflare token (A2) and the Google code (A3). I run one command and publish.
 
-**Decision point after 3 months:**
-- Search Console clicks are rising: keep adding pages for the queries you see.
-- Clicks are flat: the competition for these phrases is too strong. Focus on the non-English pages and the communities.
+---
+
+## Part B: tell people it exists (1–2 hours over 2 weeks)
+
+Google trusts a new site faster when other sites link to it, and the first users come from places where people look for tools. **What each one is:**
+
+| Where | What it is | Worth it? |
+|---|---|---|
+| **AlternativeTo.net** | A site where people search "alternatives to X". You make a free account, click **Add application**, and paste the texts below. Add Punkto as an alternative to "Keep the Score", "Flippity", "Classroomscreen" and "Scoreboard". | ⭐ **Yes, do this first** |
+| **Teacher / quiz groups** | Facebook groups and Reddit communities where teachers or quiz hosts ask for tools. You post once, as the maker, with the Reddit text below. | ⭐ **Yes, 2–4 posts** |
+| **Product Hunt** | A daily list of new apps that tech people browse. Free account → **Submit** → paste texts, upload 3–4 screenshots. | Optional |
+| **Hacker News "Show HN"** | A forum for programmers. Post the "Show HN" text and answer comments for an hour. | Optional |
+
+Where to post as the maker:
+- **Teachers:** Facebook groups in German, Polish, Czech, Dutch or Turkish (search "Lehrer Ideen", "nauczyciele", "učitelé", "leerkrachten", "öğretmenler"), and Reddit's r/edtech.
+- **Quiz hosts:** Reddit's r/pubquiz and r/trivia.
+- **Game nights:** Reddit's r/boardgames, but only in its weekly self-promotion thread.
+
+House rules: post **once** per group, say you made it and that it's free, ask for feedback, and read each group's rules first. Many only allow self-promotion in one weekly thread.
+
+---
+
+## Part C: money switches (later, when visitors arrive)
+
+- **Ads (Google AdSense):** apply once Part A is done and Google shows your pages, usually after 2–4 weeks. README §4 has the steps. Send me the publisher ID and the two ad-unit numbers, and I'll put them in.
+- **"Remove ads forever" (Lemon Squeezy):** README §5. Send me the checkout link and the store/product numbers.
+
+## Every month (10 minutes)
+
+Open Search Console → **Performance**, scroll to **Queries**, take a screenshot and send it to me. I'll rewrite titles for pages people see but don't click, and add pages for searches we don't cover yet. Expect the first real numbers after 1–3 months. New sites start slowly, and that's normal.
 
 ## Don't
 
-- Don't buy links or traffic, or use "SEO packages". Google penalises this, and the site may never recover.
-- Don't post the same text in many groups the same day. It gets flagged as spam.
+- Don't buy links, traffic or "SEO packages". Google penalises sites for it.
+- Don't post the same text in many groups on the same day. It gets flagged as spam.
 - Don't write fake reviews.
 
 ---

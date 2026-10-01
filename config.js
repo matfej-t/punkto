@@ -38,12 +38,21 @@ window.PUNKTO_CONFIG = {
   },
 
   /* ----------------------------------------------------- STATISTICS */
-  /* Optional, cookie-free visitor statistics with GoatCounter (free).
-     Sign up at https://www.goatcounter.com, choose a code (e.g. "punkto")
-     and put your count URL here: "https://punkto.goatcounter.com/count".
+  /* Cookie-free visitor statistics with Cloudflare Web Analytics (free,
+     also for sites with ads). Cloudflare dashboard → Analytics & Logs →
+     Web Analytics → Add a site → copy the token (32 letters/digits).
      While empty, no statistics script is loaded at all.              */
   analytics: {
-    goatcounter: ""
+    cloudflareToken: ""
+  },
+
+  /* ------------------------------------------- SEARCH ENGINE VERIFY */
+  /* Proves to Google/Bing that the site is yours (Search Console /
+     Bing Webmaster Tools → "HTML tag" method → copy only the content="…"
+     value). Added to every page by tools/generate-pages.mjs.          */
+  verification: {
+    google: "",
+    bing: ""
   },
 
   /* -------------------------------------------------------- PREMIUM */

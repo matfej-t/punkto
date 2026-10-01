@@ -30,7 +30,7 @@ All data stays in the visitor's browser.
 9. [Tests](#9-tests)
 10. [Project structure](#10-project-structure)
 11. [Privacy and GDPR notes](#11-privacy-and-gdpr-notes)
-12. [Visitor statistics (GoatCounter)](#12-visitor-statistics-goatcounter)
+12. [Visitor statistics and search engines](#12-visitor-statistics-and-search-engines)
 
 How to get visitors (Search Console, directories, communities) is in **[GROWTH.md](GROWTH.md)**.
 
@@ -71,8 +71,8 @@ A custom domain such as `punkto.app` looks more professional. **You also need on
    - **www** (`www.punkto.app`): a `CNAME` record pointing to `<your-user>.github.io`.
 3. On GitHub, go to **Settings → Pages → Custom domain**, enter `punkto.app` and click **Save**. GitHub creates a `CNAME` file in the repository for you.
 4. Once the DNS check passes, which can take up to a few hours, tick **Enforce HTTPS**.
-5. Edit `config.js` and set `siteUrl: "https://punkto.app/"`, with the trailing slash.
-6. Run `node tools/generate-pages.mjs` (see [section 7](#7-languages-and-seo-pages)), then commit and push.
+5. Run `node tools/setup.mjs --domain punkto.app`. It sets `siteUrl`, writes the `CNAME` file and regenerates all pages (see [section 12](#12-visitor-statistics-and-search-engines)).
+6. Commit and push.
 7. Optional but recommended: in [Google Search Console](https://search.google.com/search-console), add the domain and submit `https://punkto.app/sitemap.xml`.
 
 ## 4. Add Google AdSense
@@ -154,6 +154,8 @@ If an `access-control-allow-origin` line shows up, direct browser calls work and
 | `ads.adsenseClient` | `ca-pub-…`. While it is empty, no ad code loads. |
 | `ads.slots.control` / `ads.slots.display` | AdSense ad unit IDs. |
 | `ads.showPlaceholders` | Show dashed placeholder boxes (or add `?adpreview=1` to the URL). |
+| `analytics.cloudflareToken` | Cloudflare Web Analytics token (cookie-free statistics). |
+| `verification.google` / `verification.bing` | Site-verification codes for Google Search Console and Bing Webmaster Tools. |
 | `premium.checkoutUrl` | Lemon Squeezy checkout link. |
 | `premium.priceLabel` | Text on the buy button. |
 | `premium.licenseProxyUrl` | Optional CORS proxy (see [section 5](#5-set-up-lemon-squeezy-remove-ads-forever)). |
@@ -239,22 +241,17 @@ tests/e2e.mjs             browser tests
   The privacy page (`#/privacy`) explains this in all 12 languages. Add your contact e-mail in `config.js` and have the text checked against your own legal situation. Depending on your country, you may also need an imprint (Impressum).
 - Premium users load no third-party ad code at all.
 
-## 12. Visitor statistics (GoatCounter)
+## 12. Visitor statistics and search engines
 
-Without numbers you can't tell what works, so Punkto supports [GoatCounter](https://www.goatcounter.com). It is free for sites like this, open source, and uses **no cookies**, so it needs no consent banner and fits the privacy promise.
+**Statistics:** [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) is free (also for sites with ads), sets **no cookies** and needs no consent banner. Create a free Cloudflare account, open **Analytics & Logs → Web Analytics → Add a site**, enter your domain and copy the token from the snippet (the 32 letters/digits after `"token":`).
 
-1. Sign up at goatcounter.com and choose a code, for example `punkto`.
-2. In `config.js`, set `analytics: { goatcounter: "https://punkto.goatcounter.com/count" }`.
-3. Run `node tools/generate-pages.mjs` so the landing pages include the counter too, then commit and push.
+**Search engines:** in Google Search Console and Bing Webmaster Tools, choose the **HTML tag** verification method and copy the `content="…"` value.
 
-It counts page views per page and language, where visitors came from, and these anonymous events:
+Put everything in with one command. It updates `config.js`, writes `CNAME` and regenerates all pages:
 
-| Event | Meaning |
-|---|---|
-| `board-created-leaderboard` / `board-created-scoreboard` | someone created a board |
-| `display-opened` | the TV/projector view was opened |
-| `game-ended-…` | a game was finished |
-| `premium-opened` / `premium-checkout-clicked` / `premium-activated` | the paying funnel |
+```bash
+node tools/setup.mjs --domain punkto.me --cloudflare <token> --google <code> --bing <code>
+git add -A && git commit -m "Go live on punkto.me" && git push
+```
 
-The privacy page mentions GoatCounter automatically once it is switched on. While `goatcounter` is empty, no script is loaded.
-
+Each option also works on its own, for example adding only `--google` later. While a value is empty, nothing is loaded for it. The privacy page mentions Cloudflare automatically once statistics are on.

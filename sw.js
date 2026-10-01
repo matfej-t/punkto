@@ -8,7 +8,7 @@
 // The VERSION and ASSETS list below are rewritten by tools/generate-pages.mjs.
 
 // @@GENERATED-START
-const VERSION = 'punkto-22c0646900';
+const VERSION = 'punkto-f85c194f7e';
 const ASSETS = [
   './',
   'de/',
@@ -26,7 +26,6 @@ const ASSETS = [
   'manifest.webmanifest',
   'css/app.css',
   'js/ads.js',
-  'js/analytics.js',
   'js/app.js',
   'js/confetti.js',
   'js/env.js',

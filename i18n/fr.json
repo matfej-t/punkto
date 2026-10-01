@@ -124,7 +124,7 @@
     "p4": "Le site est hébergé sur GitHub Pages. Comme tout serveur web, GitHub peut enregistrer des données techniques, comme votre adresse IP, lors du chargement de la page. Punkto lui-même ne dépose aucun cookie et ne vous suit pas.",
     "p5": "Dans la version gratuite, les publicités sont fournies par Google AdSense. Google peut utiliser des cookies pour afficher et mesurer les annonces ; lorsque la loi l'exige, votre consentement est demandé au préalable. Les pubs peuvent être masquées pour la session, et Premium supprime tout code publicitaire.",
     "p6": "Lorsque vous activez Premium, votre clé de licence est envoyée à notre prestataire de paiement Lemon Squeezy pour vérifier sa validité. Les paiements sont entièrement gérés par Lemon Squeezy — nous ne voyons jamais vos données de carte ou de paiement.",
-    "p7": "Pour savoir combien de personnes utilisent Punkto, les visites et quelques événements anonymes (comme « tableau créé ») sont comptés avec GoatCounter, un service de statistiques respectueux de la vie privée. Il n'utilise aucun cookie, ne stocke aucune donnée personnelle et ne vous suit pas d'un site à l'autre.",
+    "p7": "Pour savoir combien de personnes utilisent Punkto, les visites sont comptées avec Cloudflare Web Analytics, un service de statistiques respectueux de la vie privée. Il ne dépose aucun cookie, ne crée aucun profil personnel et ne vous suit pas d'un site à l'autre.",
     "contact": "Des questions ? Contact :"
   },
   "share": {

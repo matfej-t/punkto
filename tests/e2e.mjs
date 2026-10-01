@@ -462,7 +462,7 @@ await test('SEO landing pages: every language, hreflang, CTA opens the right boa
   eq(await p9.locator('.footer-uses a').count(), 5, 'app footer links to landing pages');
   await p9.goto(BASE + '#/privacy');
   await p9.waitForSelector('.prose');
-  assert(!(await p9.locator('.prose').textContent()).includes('GoatCounter'), 'no statistics text while statistics are off');
+  assert(!(await p9.locator('.prose').textContent()).includes('Cloudflare'), 'no statistics text while statistics are off');
   await ctx9.close();
 });
 

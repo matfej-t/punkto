@@ -15,7 +15,6 @@ import { toast, closeMenus } from './ui.js';
 import { revalidateInBackground, hideAdsForSession } from './premium.js';
 import { ROOT_URL } from './env.js';
 import { homeView, openCreate } from './views/home.js';
-import { initAnalytics } from './analytics.js';
 import { controlView } from './views/control.js';
 import { displayView } from './views/display.js';
 import { winnerView } from './views/winner.js';
@@ -95,7 +94,6 @@ async function boot() {
   route();
   revalidateInBackground();
   registerServiceWorker();
-  initAnalytics();
 }
 
 function registerServiceWorker() {

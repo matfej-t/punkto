@@ -10,7 +10,6 @@ import { adsActive } from '../ads.js';
 import { exportJson, parseImport, prepareImported, linkToBoard } from '../share.js';
 import { parseSteps, normName, namesInBoard } from '../model.js';
 import { APP_VERSION } from '../env.js';
-import { analyticsOn, track } from '../analytics.js';
 
 const cfg = window.PUNKTO_CONFIG;
 
@@ -283,7 +282,6 @@ export async function importFromFile() {
 /* --------------------------------------------------------------- premium */
 
 export function openPremium() {
-  track('premium-opened');
   const content = h('div.stack');
   const m = modal({ title: t('premium.title'), content, cls: 'premium-modal' });
 
@@ -315,7 +313,6 @@ export function openPremium() {
       status.textContent = t('premium.checking');
       try {
         await activateLicense(input.value);
-        track('premium-activated');
         toast(t('premium.active'), { kind: 'ok' });
         m.close();
         reroute();
@@ -331,7 +328,7 @@ export function openPremium() {
 
   content.append(
     h('ul.benefits', ['b1', 'b2', 'b3', 'b4'].map(k => h('li', { html: icon('check') }, h('span', { text: t('premium.' + k) })))),
-    h('a.btn.btn-primary.btn-lg.block', { href: cfg.premium.checkoutUrl, target: '_blank', rel: 'noopener', html: icon('sparkle'), onclick: () => track('premium-checkout-clicked') },
+    h('a.btn.btn-primary.btn-lg.block', { href: cfg.premium.checkoutUrl, target: '_blank', rel: 'noopener', html: icon('sparkle') },
       h('span', { text: t('premium.buy', { price: cfg.premium.priceLabel }) })),
     h('p.small.muted.center', { text: t('premium.payments') }),
     h('div.divider'),
@@ -356,6 +353,7 @@ export function openPremium() {
 export function privacyView(root) {
   document.title = `${t('privacy.title')} · Punkto`;
   // p7 (statistics) is only shown when statistics are switched on in config.js.
+  const analyticsOn = /^[a-f0-9]{32}$/i.test(cfg.analytics?.cloudflareToken || '');
   const paras = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', analyticsOn ? 'p7' : null].filter(Boolean).map(k => h('p', { text: t('privacy.' + k) }));
   root.append(
     appBar(),

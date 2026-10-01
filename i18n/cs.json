@@ -124,7 +124,7 @@
     "p4": "Web je hostován na GitHub Pages. Jako každý webový server může GitHub při načtení stránky zaznamenat technické údaje, například vaši IP adresu. Samotné Punkto nepoužívá cookies a nesleduje vás.",
     "p5": "V bezplatné verzi poskytuje reklamy Google AdSense. Google může používat cookies k zobrazování a měření reklam; tam, kde to zákon vyžaduje, budete nejprve požádáni o souhlas. Reklamy lze skrýt na dobu relace a Premium odstraní veškerý reklamní kód.",
     "p6": "Když aktivujete Premium, váš licenční klíč se pro ověření platnosti odešle našemu poskytovateli plateb Lemon Squeezy. Platby zpracovává výhradně Lemon Squeezy — údaje o vaší kartě ani platbě nikdy nevidíme.",
-    "p7": "Abychom věděli, kolik lidí Punkto používá, počítáme návštěvy stránek a několik anonymních událostí (například „tabule vytvořena“) pomocí GoatCounter, statistické služby šetrné k soukromí. Nepoužívá cookies, neukládá osobní údaje a nesleduje vás napříč weby.",
+    "p7": "Abychom věděli, kolik lidí Punkto používá, počítáme návštěvy stránek pomocí Cloudflare Web Analytics, statistické služby šetrné k soukromí. Nepoužívá cookies, nevytváří o vás osobní profil a nesleduje vás napříč weby.",
     "contact": "Dotazy? Kontakt:"
   },
   "share": {
