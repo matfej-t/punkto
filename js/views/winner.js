@@ -4,7 +4,7 @@ import { icon } from '../icons.js';
 import { t, fmtNum, fmtDate } from '../i18n.js';
 import * as store from '../store.js';
 import { entryWinners, minuteOf } from '../model.js';
-import { applyPalette, inkFor } from '../theme.js';
+import { teamVars } from '../theme.js';
 import { confetti } from '../confetti.js';
 import { openDisplayWindow } from './home.js';
 
@@ -19,7 +19,6 @@ export function winnerHeadline(entry) {
 /** Podium / final score element for a history entry. */
 export function podium(entry, board, { maxRest = 12 } = {}) {
   if (entry.mode === 'scoreboard') return finalScore(entry, board);
-  const photos = new Map((board.players || []).map(p => [p.id, p.photo]));
   const s = entry.standings;
   const top = s.slice(0, 3);
   const order = [top[1], top[0], top[2]]; // 2nd – 1st – 3rd
@@ -28,7 +27,7 @@ export function podium(entry, board, { maxRest = 12 } = {}) {
     return h('div.pod-col', { class: 'pos-' + pos },
       h('div.pod-person',
         pos === 1 ? h('span.crown', { html: icon('trophy') }) : null,
-        avatar(row.name, photos.get(row.id), 'pod-avatar'),
+        avatar(row.name, 'pod-avatar'),
         h('span.pod-name', { text: row.name || '—' }),
         h('span.pod-score', { text: fmtNum(row.total) })
       ),
@@ -50,9 +49,8 @@ function finalScore(entry, board) {
   const logos = new Map((board.teams || []).map(tm => [tm.id, tm.logo]));
   const side = (tm, i) => {
     const won = tm.score > entry.teams[1 - i].score;
-    const color = tm.color || (i === 0 ? 'var(--accent)' : 'var(--accent-2)');
     const scorers = entry.events.filter(e => e.teamId === tm.id && e.player);
-    return h('div.final-team', { class: won ? 'won' : '', style: { '--team': color, '--team-ink': tm.color ? inkFor(tm.color) : (i === 0 ? 'var(--accent-ink)' : 'var(--accent-2-ink)') } },
+    return h('div.final-team', { class: won ? 'won' : '', style: teamVars(i) },
       won ? h('span.crown', { html: icon('trophy') }) : null,
       logos.get(tm.id) ? h('img.team-logo', { src: logos.get(tm.id), alt: '' }) : h('span.team-logo.placeholder', { text: (tm.name || '?')[0] }),
       h('span.final-name', { text: tm.name }),
@@ -72,7 +70,6 @@ export function winnerView(root, id, hid) {
   const board = store.getBoard(id);
   const entry = board?.history.find(e => e.id === hid);
   if (!board || !entry) { location.replace(board ? '#/b/' + id : '#/'); return null; }
-  applyPalette(board);
   document.body.classList.add('is-winner');
   document.title = `${winnerHeadline(entry)} · ${board.title}`;
   let keep = false;

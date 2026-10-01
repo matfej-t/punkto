@@ -266,9 +266,8 @@ export async function copyText(text) {
   }
 }
 
-/** Avatar: photo if present, otherwise coloured initials. */
-export function avatar(name, photo, cls = '') {
-  if (photo) return h('img.avatar', { class: cls, src: photo, alt: '', draggable: false });
+/** Avatar: coloured circle with the name's initials. */
+export function avatar(name, cls = '') {
   const initials = String(name || '?').trim().split(/\s+/).slice(0, 2).map(w => [...w][0] || '').join('').toUpperCase() || '?';
   return h('span.avatar.initials', { class: cls, text: initials, style: { '--hue': hashHue(name) }, 'aria-hidden': 'true' });
 }

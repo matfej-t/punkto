@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — sınıflar ve quiz geceleri için ücretsiz online skor tabelası ve sıralama",
-    "description": "Öğretmenler ve bar quizleri için ücretsiz skor tabelası ve sıralama. Puanları TV'de veya projektörde büyük gösterin, turları takip edin, kazananları taçlandırın. Kayıt gerekmez, çevrimdışı çalışır, verileriniz tarayıcınızda kalır."
+    "title": "Punkto — ücretsiz online skor tabelası ve sıralama",
+    "description": "Ücretsiz online skor tabelası ve sıralama. Puanları TV'de veya projektörde büyük gösterin, turları takip edin, kazananları taçlandırın. Kayıt gerekmez, çevrimdışı çalışır, verileriniz tarayıcınızda kalır."
   },
   "common": {
     "close": "Kapat",
@@ -19,10 +19,10 @@
     "manage": "Yönet"
   },
   "home": {
-    "h1": "Sınıflar ve quiz geceleri için ücretsiz skor tabelası",
+    "h1": "Ücretsiz online skor tabelası ve sıralama",
     "tagline": "Puanları dizüstü bilgisayarınızda veya telefonunuzda tutun, TV'de ya da projektörde büyük gösterin. Sıralamalar, turlar, iki takımlı skor tabelaları ve kazananlar için bir kürsü — kayıt gerekmez.",
     "privacyTitle": "Verileriniz bu cihazda kalır.",
-    "privacyText": "Hesap yok, kayıt yok, hiçbir şey yüklenmez. İsimler, puanlar ve fotoğraflar yalnızca tarayıcınızda saklanır.",
+    "privacyText": "Hesap yok, kayıt yok, hiçbir şey yüklenmez. İsimler ve puanlar yalnızca tarayıcınızda saklanır.",
     "yourBoards": "Tabelalarınız",
     "import": "İçe aktar",
     "newBoard": "Yeni tabela",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} oyuncu", "other": "{n} oyuncu" },
     "squad": { "one": "Kadrolarda {n} oyuncu", "other": "Kadrolarda {n} oyuncu" },
     "featuresTitle": "Neden Punkto",
-    "f1Title": "Öğretmenler için",
-    "f1Text": "Sınıfa her gün puan verin, öğrencilerin fotoğraflarını ekleyin ve kazananları projektörde kutlayın.",
-    "f2Title": "Quiz geceleri için",
-    "f2Text": "Bardaki TV için takımlar, turlar ve canlı sıralama. Bir turun tamamını saniyeler içinde girin.",
+    "f1Title": "Puan tutmanın iki yolu",
+    "f1Text": "İstediğiniz sayıda oyuncu veya takım için bir sıralama ya da karşı karşıya gelen iki takım için bir skor tabelası.",
+    "f2Title": "Turlar, kazananlar ve geçmiş",
+    "f2Text": "Puanları tur tur tutun, oyunu kazananlar kürsüsüyle bitirin ve her sonucu geçmişte saklayın.",
     "f3Title": "Büyük ekran için tasarlandı",
     "f3Text": "Siz dizüstü bilgisayardan ya da telefondan puan girerken anında güncellenen dev ve okunaklı bir ekran.",
     "f4Title": "Tasarımı gereği gizli",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Sıralama",
-    "leaderboardDesc": "Çok sayıda oyuncu veya takım, puanlar ve turlar. Sınıflar ve quizler için ideal.",
+    "leaderboardDesc": "Çok sayıda oyuncu veya takım, puanlar ve turlar.",
     "scoreboard": "Skor tabelası",
     "scoreboardDesc": "Logolar, kadrolar ve gol atanlarla karşı karşıya iki takım."
   },
   "create": {
     "heading": "Yeni tabela",
     "title": "Ad",
-    "titlePlaceholder": "ör. 4-B sınıfı veya Cuma quizi",
+    "titlePlaceholder": "ör. Bahar Kupası",
     "mode": "Tür",
     "create": "Tabelayı oluştur"
-  },
-  "palettes": {
-    "classroom": "Sınıf",
-    "pub": "Bar",
-    "sports": "Spor",
-    "minimal": "Sade",
-    "custom": "Özel"
   },
   "settings": {
     "title": "Ayarlar",
@@ -80,19 +73,14 @@
     "storage": "Kullanılan alan: yaklaşık {total} KB'nin {used} KB'si",
     "wipe": "Tüm verileri sil",
     "wipeConfirm": "Bu tarayıcıdaki TÜM tabelalar, geçmiş ve ayarlar silinsin mi? Bu işlem geri alınamaz.",
-    "palette": "Renkler",
     "boardSettings": "Tabela ayarları",
     "boardTitle": "Tabela başlığı",
     "logo": "Logo",
     "uploadLogo": "Logo yükle",
     "changeLogo": "Logoyu değiştir",
-    "color1": "Ana renk",
-    "color2": "İkinci renk",
     "steps": "Puan düğmeleri",
     "stepsHint": "Virgülle ayırın, ör. 1, 5 veya 1, 2, 3 (en fazla 4).",
     "clock": "Maç saatini göster",
-    "teamColors": "Takım renkleri",
-    "usePalette": "Paleti kullan",
     "resetScores": "Puanları sıfırla",
     "resetConfirm": "Tüm puanlar sıfırlansın mı? Geçmişteki bitmiş oyunlar korunur.",
     "deleteBoard": "Tabelayı sil"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Gizlilik",
-    "noTracking": "Hesap yok · Punkto tarafından izleme yok",
-    "madeFor": "sınıflar ve quiz geceleri için yapıldı"
+    "noTracking": "Hesap yok · Punkto tarafından izleme yok"
   },
   "privacy": {
     "title": "Gizlilik",
-    "p1": "Punkto'nun hesapları ve veritabanı yoktur. Oluşturduğunuz her şey — tabelalar, isimler, puanlar, fotoğraflar ve logolar — yalnızca bu cihazdaki tarayıcınızın yerel depolamasında saklanır. Biz bunların hiçbirini almayız.",
-    "p2": "Fotoğraflar ve logolar kaydedilmeden önce tarayıcınızda küçültülür ve sıkıştırılır. Bir tabelayı silmek veya ayarlardaki “Tüm verileri sil” seçeneğini kullanmak onu bu cihazdan kalıcı olarak kaldırır.",
-    "p3": "Paylaşım bağlantıları tabela verilerini adresteki # işaretinden sonra içerir. Tarayıcılar bu kısmı hiçbir sunucuya göndermez; böylece veriler yalnızca bağlantıyı verdiğiniz kişilere ulaşır. Fotoğraflar bağlantılara dahil edilmez.",
+    "p1": "Punkto'nun hesapları ve veritabanı yoktur. Oluşturduğunuz her şey — tabelalar, isimler, puanlar ve logolar — yalnızca bu cihazdaki tarayıcınızın yerel depolamasında saklanır. Biz bunların hiçbirini almayız.",
+    "p2": "Logolar kaydedilmeden önce tarayıcınızda küçültülür ve sıkıştırılır. Bir tabelayı silmek veya ayarlardaki “Tüm verileri sil” seçeneğini kullanmak onu bu cihazdan kalıcı olarak kaldırır.",
+    "p3": "Paylaşım bağlantıları tabela verilerini adresteki # işaretinden sonra içerir. Tarayıcılar bu kısmı hiçbir sunucuya göndermez; böylece veriler yalnızca bağlantıyı verdiğiniz kişilere ulaşır. Logolar bağlantılara dahil edilmez.",
     "p4": "Web sitesi GitHub Pages üzerinde barındırılır. Her web sunucusu gibi GitHub da sayfa yüklenirken IP adresiniz gibi teknik verileri kaydedebilir. Punkto'nun kendisi analiz aracı veya izleme çerezi kullanmaz.",
     "p5": "Ücretsiz sürümde reklamlar Google AdSense tarafından sağlanır. Google, reklamları göstermek ve ölçmek için çerez kullanabilir; yasanın gerektirdiği yerlerde önce onayınız istenir. Reklamlar oturum boyunca gizlenebilir ve Premium tüm reklam kodunu kaldırır.",
     "p6": "Premium'u etkinleştirdiğinizde lisans anahtarınız geçerliliğinin kontrolü için ödeme sağlayıcımız Lemon Squeezy'ye gönderilir. Ödemeler tamamen Lemon Squeezy tarafından işlenir — kart veya ödeme bilgilerinizi asla görmeyiz.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Yedek bağlantısını kopyala",
     "export": "Dosyayı dışa aktar",
-    "linkCopied": "Bağlantı kopyalandı! Bu tabelayı geri yüklemek için başka bir cihazda açın (fotoğraflar dahil değil).",
+    "linkCopied": "Bağlantı kopyalandı! Bu tabelayı geri yüklemek için başka bir cihazda açın (logolar dahil değil).",
     "imported": { "one": "{n} tabela içe aktarıldı", "other": "{n} tabela içe aktarıldı" },
     "reading": "Bağlantı okunuyor…",
     "restoreTitle": "Tabelayı geri yükle",
     "restoreText": "Bu tabela bu tarayıcıya eklensin mi?",
-    "noPhotos": "Fotoğraflar ve logolar bağlantılara dahil değildir. Tam bir kopya için “Dosyayı dışa aktar”ı kullanın.",
-    "restore": "Geri yükle"
+    "restore": "Geri yükle",
+    "noImages": "Logolar bağlantılara dahil değildir. Tam bir kopya için “Dosyayı dışa aktar”ı kullanın."
   },
   "errors": {
-    "storageFull": "Tarayıcı depolaması dolu. Bazı fotoğrafları kaldırın ya da eski tabelaları dışa aktarıp silin.",
+    "storageFull": "Tarayıcı depolaması dolu. Bazı logoları kaldırın ya da eski tabelaları dışa aktarıp silin.",
     "badFile": "Bu dosya bir Punkto yedeği değil.",
     "badLink": "Bu bağlantı bozuk veya eksik.",
     "badImage": "Bu görsel okunamadı. JPG veya PNG deneyin.",
@@ -211,9 +198,6 @@
     "editPlayers": "Oyuncuları düzenle",
     "noPlayers": "Henüz oyuncu yok — aşağıdan ekleyin.",
     "thisRound": "bu turda {n}",
-    "photo": "Fotoğraf",
-    "changePhoto": "Fotoğrafı değiştir",
-    "removePhoto": "Görseli kaldır",
     "name": "Ad",
     "removed": "{name} kaldırıldı",
     "removeConfirm": "{name} kaldırılsın mı? Puanları kaybolacak.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Oyuncu veya takım adı",
     "addPlayer": "Oyuncu veya takım ekle",
     "add": "Ekle",
-    "addHint": "İpucu: bütün sınıfı tek seferde eklemek için bir liste yapıştırın (her satıra bir ad)."
+    "addHint": "İpucu: birçok oyuncuyu tek seferde eklemek için bir liste yapıştırın (her satıra bir ad)."
   },
   "sb": {
     "home": "Ev sahibi",
@@ -240,11 +224,12 @@
     "resume": "Devam et",
     "resetClock": "Saati sıfırla",
     "noGoals": "Henüz gol yok.",
-    "timeline": "Goller"
+    "timeline": "Goller",
+    "removeLogo": "Logoyu kaldır"
   },
   "examples": {
-    "quiz": "Quiz gecesi (örnek)",
-    "match": "Cuma maçı (örnek)"
+    "leaderboard": "Örnek sıralama",
+    "scoreboard": "Örnek maç"
   },
   "display": {
     "fullscreen": "Tam ekran",
@@ -269,12 +254,12 @@
     "q1": "Punkto gerçekten ücretsiz mi?",
     "a1": "Evet. Tüm özellikler ücretsizdir. Küçük reklamlar projeyi ayakta tutar — bunları oturum boyunca ücretsiz gizleyebilir ya da tek seferlik bir satın alımla sonsuza dek kaldırabilirsiniz.",
     "q2": "Verilerim nerede saklanıyor?",
-    "a2": "Yalnızca bu cihazdaki tarayıcınızda. Hesap yoktur ve tabelalarınızı, isimlerinizi ya da fotoğraflarınızı alan bir sunucu yoktur. Bir tabelayı başka bir cihaza taşımak için “Yedek bağlantısını kopyala” veya “Dosyayı dışa aktar”ı kullanın.",
+    "a2": "Yalnızca bu cihazdaki tarayıcınızda. Hesap yoktur ve tabelalarınızı, isimlerinizi ya da puanlarınızı alan bir sunucu yoktur. Bir tabelayı başka bir cihaza taşımak için “Yedek bağlantısını kopyala” veya “Dosyayı dışa aktar”ı kullanın.",
     "q3": "Puanları TV'de veya projektörde nasıl gösteririm?",
     "a3": "Tabelanızı açın ve “Ekran”a tıklayın. İkinci bir pencere açılır — onu TV'ye veya projektöre taşıyın ve tam ekran için F tuşuna basın. Siz puanları değiştirdikçe anında güncellenir.",
     "q4": "Çevrimdışı çalışır mı?",
     "a4": "Evet. İlk ziyaretten sonra Punkto internet olmadan çalışır. Tarayıcınızın menüsünden uygulama olarak da yükleyebilirsiniz.",
-    "q5": "Okullar ve KVKK/GDPR için uygun mu?",
-    "a5": "Punkto gizlilik düşünülerek tasarlandı: kayıt yok ve hiçbir sunucuda kişisel veri saklanmıyor; bu yüzden öğrencilerin isimleri ve fotoğrafları öğretmenin cihazında kalır. Premium ile hiçbir üçüncü taraf reklam kodu yüklenmez. Yine de okulunuzun kurallarına uyun."
+    "q5": "Punkto KVKK/GDPR ile uyumlu mu?",
+    "a5": "Punkto gizlilik düşünülerek tasarlandı: kayıt yok ve hiçbir sunucuda kişisel veri saklanmıyor — isimler sizin cihazınızda kalır. Premium ile hiçbir üçüncü taraf reklam kodu yüklenmez."
   }
 }

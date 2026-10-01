@@ -66,10 +66,17 @@ await test('home shows privacy promise and SEO content', async () => {
   assert((await page.title()).includes('Punkto'));
 });
 
-await test('create a leaderboard with the mode cards', async () => {
+await test('create a leaderboard with the mode cards and point buttons', async () => {
   await page.click('text=Create your first board');
   assert(await page.locator('.mode-card svg').count() === 2, 'two illustrated cards');
-  await page.fill('dialog input.input', 'Class 4B');
+  eq(await page.locator('dialog .swatch, dialog input[type=color]').count(), 0, 'no colour picker');
+  const steps = page.locator('dialog input[aria-label="Point buttons"]');
+  eq(await steps.inputValue(), '1, 5', 'leaderboard default');
+  await page.click('.mode-card[data-mode="scoreboard"]');
+  eq(await steps.inputValue(), '1', 'scoreboard default');
+  await page.click('.mode-card[data-mode="leaderboard"]');
+  eq(await steps.inputValue(), '1, 5');
+  await page.locator('dialog input.input').first().fill('Spring Cup');
   await page.click('text=Create board');
   await page.waitForSelector('[data-key="add"]');
 });
@@ -85,15 +92,24 @@ await test('add players by Enter and by pasting a list', async () => {
   await page.click('button:has-text("Done")');
 });
 
-await test('photo upload is resized and compressed', async () => {
+await test('no photo picker for players; no colour picker in settings', async () => {
   await page.click('button:has-text("Edit players")');
-  const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.locator('.avatar-btn').first().click()]);
-  await fc.setFiles(join(ROOT, 'icons/og.png'));
-  await page.waitForSelector('.lb-row img.avatar');
-  const photo = (await boardOf(page)).players[0].photo;
-  assert(photo.startsWith('data:image/'), 'data url');
-  assert(photo.length < 40000, 'compressed: ' + photo.length);
+  eq(await page.locator('.lb-row .avatar-btn, .lb-row img').count(), 0, 'no photo picker');
   await page.click('button:has-text("Done")');
+  await page.click('.ctl-bar .icon-btn[aria-label="More"]');
+  await page.click('.menu-item:has-text("Board settings")');
+  eq(await page.locator('dialog .swatch, dialog input[type=color]').count(), 0, 'no colour picker');
+});
+
+await test('board logo upload is resized and compressed', async () => {
+  const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('dialog button:has-text("Upload logo")')]);
+  await fc.setFiles(join(ROOT, 'icons/og.png'));
+  await page.waitForSelector('dialog img.logo-preview');
+  const logo = (await boardOf(page)).logo;
+  assert(logo.startsWith('data:image/'), 'data url');
+  assert(logo.length < 60000, 'compressed: ' + logo.length);
+  await page.click('dialog .modal-foot .btn-primary');
+  await page.waitForSelector('.ctl-bar img.ctl-logo');
 });
 
 await test('score with buttons, keyboard and undo', async () => {
@@ -157,9 +173,12 @@ await test('scoreboard: scorer picker, minus, clock, display', async () => {
   await page.goto(BASE + '?adpreview=1#/');
   await page.click('.section-head button:has-text("New board")');
   await page.click('.mode-card[data-mode="scoreboard"]');
-  await page.fill('dialog input.input', 'Cup final');
+  await page.locator('dialog input.input').first().fill('Cup final');
+  await page.fill('dialog input[aria-label="Point buttons"]', '1, 2, 3');
   await page.click('text=Create board');
   await page.waitForSelector('.team-card');
+  eq((await boardOf(page)).steps, [1, 2, 3], 'steps chosen at creation');
+  eq(await page.locator('.team-card').first().locator('.goal-btn').count(), 3, 'three point buttons');
   await page.click('button:has-text("Edit teams")');
   await page.fill('[data-key="sq-add-0"]', 'Sam'); await page.keyboard.press('Enter');
   await page.fill('[data-key="sq-add-0"]', 'Kim'); await page.keyboard.press('Enter');

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — free online scoreboard & leaderboard for classrooms and quiz nights",
-    "description": "Free scoreboard and leaderboard app for teachers and pub quizzes. Show scores big on a TV or projector, track rounds, crown the winners. No sign-up, works offline, your data stays in your browser."
+    "title": "Punkto — free online scoreboard & leaderboard",
+    "description": "Free online scoreboard and leaderboard. Show scores big on a TV or projector, track rounds, crown the winners. No sign-up, works offline, your data stays in your browser."
   },
   "common": {
     "close": "Close",
@@ -19,10 +19,10 @@
     "manage": "Manage"
   },
   "home": {
-    "h1": "Free scoreboard for classrooms and quiz nights",
+    "h1": "Free online scoreboard and leaderboard",
     "tagline": "Keep score on your laptop or phone and show it big on a TV or projector. Leaderboards, rounds, two-team scoreboards and a winner podium — no sign-up needed.",
     "privacyTitle": "Your data stays on this device.",
-    "privacyText": "No accounts, no sign-up, nothing is uploaded. Names, scores and photos are stored only in your browser.",
+    "privacyText": "No accounts, no sign-up, nothing is uploaded. Names and scores are stored only in your browser.",
     "yourBoards": "Your boards",
     "import": "Import",
     "newBoard": "New board",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} player", "other": "{n} players" },
     "squad": { "one": "{n} player in squads", "other": "{n} players in squads" },
     "featuresTitle": "Why Punkto",
-    "f1Title": "For teachers",
-    "f1Text": "Award class points every day, add pupils' photos and celebrate the winners on the projector.",
-    "f2Title": "For quiz nights",
-    "f2Text": "Teams, rounds and a live leaderboard for the pub TV. Enter a whole round in seconds.",
+    "f1Title": "Two ways to keep score",
+    "f1Text": "A ranked leaderboard for any number of players or teams, or a head-to-head scoreboard for two teams.",
+    "f2Title": "Rounds, winners and history",
+    "f2Text": "Track points per round, finish with a winner podium and keep every result in the history.",
     "f3Title": "Made for the big screen",
     "f3Text": "A huge, readable display that updates instantly while you keep score from your laptop or phone.",
     "f4Title": "Private by design",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Leaderboard",
-    "leaderboardDesc": "Many players or teams, points and rounds. Great for classes and quizzes.",
+    "leaderboardDesc": "Many players or teams, points and rounds.",
     "scoreboard": "Scoreboard",
     "scoreboardDesc": "Two teams head to head, with logos, squads and goal scorers."
   },
   "create": {
     "heading": "New board",
     "title": "Name",
-    "titlePlaceholder": "e.g. Class 4B or Friday Quiz",
+    "titlePlaceholder": "e.g. Spring Cup",
     "mode": "Type",
     "create": "Create board"
-  },
-  "palettes": {
-    "classroom": "Classroom",
-    "pub": "Pub",
-    "sports": "Sports",
-    "minimal": "Minimal",
-    "custom": "Custom"
   },
   "settings": {
     "title": "Settings",
@@ -80,19 +73,14 @@
     "storage": "Storage used: {used} KB of about {total} KB",
     "wipe": "Delete all data",
     "wipeConfirm": "Delete ALL boards, history and settings from this browser? This cannot be undone.",
-    "palette": "Colours",
     "boardSettings": "Board settings",
     "boardTitle": "Board title",
     "logo": "Logo",
     "uploadLogo": "Upload logo",
     "changeLogo": "Change logo",
-    "color1": "Main colour",
-    "color2": "Second colour",
     "steps": "Point buttons",
     "stepsHint": "Comma-separated, e.g. 1, 5 or 1, 2, 3 (up to 4).",
     "clock": "Show a match clock",
-    "teamColors": "Team colours",
-    "usePalette": "Use palette",
     "resetScores": "Reset scores",
     "resetConfirm": "Set all scores back to zero? Finished games in the history are kept.",
     "deleteBoard": "Delete board"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Privacy",
-    "noTracking": "No accounts · No tracking by Punkto",
-    "madeFor": "made for classrooms and quiz nights"
+    "noTracking": "No accounts · No tracking by Punkto"
   },
   "privacy": {
     "title": "Privacy",
-    "p1": "Punkto has no accounts and no database. Everything you create — boards, names, scores, photos and logos — is stored only in your browser's local storage on this device. We never receive it.",
-    "p2": "Photos and logos are resized and compressed inside your browser before they are saved. Deleting a board, or using “Delete all data” in the settings, removes it from this device for good.",
-    "p3": "Share links contain the board data after the # sign of the address. Browsers never send that part to any server, so the data only travels to the people you give the link to. Photos are not included in links.",
+    "p1": "Punkto has no accounts and no database. Everything you create — boards, names, scores and logos — is stored only in your browser's local storage on this device. We never receive it.",
+    "p2": "Logos are resized and compressed inside your browser before they are saved. Deleting a board, or using “Delete all data” in the settings, removes it from this device for good.",
+    "p3": "Share links contain the board data after the # sign of the address. Browsers never send that part to any server, so the data only travels to the people you give the link to. Logos are not included in links.",
     "p4": "The website is hosted on GitHub Pages. Like any web server, GitHub may log technical data such as your IP address when the page loads. Punkto itself uses no analytics and no tracking cookies.",
     "p5": "In the free version, ads are provided by Google AdSense. Google may use cookies to show and measure ads; where the law requires it, you are asked for consent first. Ads can be hidden for the session, and Premium removes all ad code.",
     "p6": "When you activate Premium, your license key is sent to our payment provider Lemon Squeezy to check that it is valid. Payments are handled entirely by Lemon Squeezy — we never see your card or payment details.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Copy backup link",
     "export": "Export file",
-    "linkCopied": "Link copied! Open it on another device to restore this board (photos are not included).",
+    "linkCopied": "Link copied! Open it on another device to restore this board (logos are not included).",
     "imported": { "one": "{n} board imported", "other": "{n} boards imported" },
     "reading": "Reading the link…",
     "restoreTitle": "Restore board",
     "restoreText": "Add this board to this browser?",
-    "noPhotos": "Photos and logos are not part of links. Use “Export file” for a complete copy.",
-    "restore": "Restore"
+    "restore": "Restore",
+    "noImages": "Logos are not part of links. Use “Export file” for a complete copy."
   },
   "errors": {
-    "storageFull": "Browser storage is full. Remove some photos or export and delete old boards.",
+    "storageFull": "Browser storage is full. Remove some logos or export and delete old boards.",
     "badFile": "This file isn't a Punkto backup.",
     "badLink": "This link is broken or incomplete.",
     "badImage": "This image couldn't be read. Try a JPG or PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Edit players",
     "noPlayers": "No players yet — add them below.",
     "thisRound": "{n} this round",
-    "photo": "Photo",
-    "changePhoto": "Change photo",
-    "removePhoto": "Remove picture",
     "name": "Name",
     "removed": "{name} removed",
     "removeConfirm": "Remove {name}? Their points will be lost.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Player or team name",
     "addPlayer": "Add player or team",
     "add": "Add",
-    "addHint": "Tip: paste a list (one name per line) to add a whole class at once."
+    "addHint": "Tip: paste a list (one name per line) to add many players at once."
   },
   "sb": {
     "home": "Home",
@@ -240,11 +224,12 @@
     "resume": "Resume",
     "resetClock": "Reset clock",
     "noGoals": "No goals yet.",
-    "timeline": "Goals"
+    "timeline": "Goals",
+    "removeLogo": "Remove logo"
   },
   "examples": {
-    "quiz": "Quiz night (example)",
-    "match": "Friday match (example)"
+    "leaderboard": "Example leaderboard",
+    "scoreboard": "Example match"
   },
   "display": {
     "fullscreen": "Fullscreen",
@@ -269,12 +254,12 @@
     "q1": "Is Punkto really free?",
     "a1": "Yes. Every feature is free. Small ads keep the project running — you can hide them for the session for free, or remove them forever with a one-time purchase.",
     "q2": "Where is my data stored?",
-    "a2": "Only in your browser on this device. There are no accounts and no server that receives your boards, names or photos. Use “Copy backup link” or “Export file” to move a board to another device.",
+    "a2": "Only in your browser on this device. There are no accounts and no server that receives your boards, names or scores. Use “Copy backup link” or “Export file” to move a board to another device.",
     "q3": "How do I show the scores on a TV or projector?",
     "a3": "Open your board and click “Display”. A second window opens — move it to the TV or projector and press F for fullscreen. It updates instantly while you change scores.",
     "q4": "Does it work offline?",
     "a4": "Yes. After your first visit Punkto works without internet. You can also install it as an app from your browser's menu.",
-    "q5": "Is it a good fit for schools and the GDPR?",
-    "a5": "Punkto is built for privacy: no sign-up, and no personal data is stored on any server, so pupils' names and photos stay on the teacher's device. With Premium, no third-party ad code is loaded at all. Please still follow your school's own rules."
+    "q5": "Is Punkto GDPR-friendly?",
+    "a5": "Punkto is built for privacy: no sign-up and no personal data on any server — names stay on your device. With Premium, no third-party ad code is loaded at all."
   }
 }

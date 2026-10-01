@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Punkto — bezplatná online tabule skóre a žebříček pro školu a kvízové večery",
-    "description": "Bezplatná tabule skóre a žebříček pro učitele a hospodské kvízy. Zobrazte body ve velkém na televizi nebo projektoru, počítejte kola a vyhlaste vítěze. Bez registrace, funguje offline, data zůstávají ve vašem prohlížeči."
+    "title": "Punkto — bezplatná online tabule skóre a žebříček",
+    "description": "Bezplatná online tabule skóre a žebříček. Zobrazte body ve velkém na televizi nebo projektoru, počítejte kola a vyhlaste vítěze. Bez registrace, funguje offline, data zůstávají ve vašem prohlížeči."
   },
   "common": {
     "close": "Zavřít",
@@ -19,10 +19,10 @@
     "manage": "Spravovat"
   },
   "home": {
-    "h1": "Bezplatná tabule skóre pro třídy a kvízové večery",
+    "h1": "Bezplatná online tabule skóre a žebříček",
     "tagline": "Počítejte body na notebooku nebo mobilu a ukažte je ve velkém na televizi či projektoru. Žebříčky, kola, tabule pro dva týmy a stupně vítězů — bez registrace.",
     "privacyTitle": "Vaše data zůstávají v tomto zařízení.",
-    "privacyText": "Žádné účty, žádná registrace, nic se nenahrává. Jména, body a fotky se ukládají jen ve vašem prohlížeči.",
+    "privacyText": "Žádné účty, žádná registrace, nic se nenahrává. Jména a body se ukládají jen ve vašem prohlížeči.",
     "yourBoards": "Vaše tabule",
     "import": "Importovat",
     "newBoard": "Nová tabule",
@@ -36,10 +36,10 @@
     "players": { "one": "{n} hráč", "few": "{n} hráči", "many": "{n} hráče", "other": "{n} hráčů" },
     "squad": { "one": "{n} hráč v soupiskách", "few": "{n} hráči v soupiskách", "many": "{n} hráče v soupiskách", "other": "{n} hráčů v soupiskách" },
     "featuresTitle": "Proč Punkto",
-    "f1Title": "Pro učitele",
-    "f1Text": "Udělujte třídě body každý den, přidejte fotky žáků a oslavte vítěze na projektoru.",
-    "f2Title": "Pro kvízové večery",
-    "f2Text": "Týmy, kola a živý žebříček na televizi v hospodě. Celé kolo zadáte během pár vteřin.",
+    "f1Title": "Dva způsoby, jak počítat body",
+    "f1Text": "Žebříček pro libovolný počet hráčů nebo týmů, nebo tabule skóre pro dva týmy proti sobě.",
+    "f2Title": "Kola, vítězové a historie",
+    "f2Text": "Počítejte body po kolech, zakončete hru stupni vítězů a uchovejte každý výsledek v historii.",
     "f3Title": "Stvořeno pro velkou obrazovku",
     "f3Text": "Obrovské a čitelné zobrazení, které se okamžitě aktualizuje, zatímco počítáte body z notebooku nebo mobilu.",
     "f4Title": "Soukromí v základu",
@@ -47,23 +47,16 @@
   },
   "modes": {
     "leaderboard": "Žebříček",
-    "leaderboardDesc": "Hodně hráčů nebo týmů, body a kola. Skvělé pro třídy a kvízy.",
+    "leaderboardDesc": "Hodně hráčů nebo týmů, body a kola.",
     "scoreboard": "Tabule zápasu",
     "scoreboardDesc": "Dva týmy proti sobě, s logy, soupiskami a střelci."
   },
   "create": {
     "heading": "Nová tabule",
     "title": "Název",
-    "titlePlaceholder": "např. 4.B nebo Páteční kvíz",
+    "titlePlaceholder": "např. Jarní pohár",
     "mode": "Typ",
     "create": "Vytvořit tabuli"
-  },
-  "palettes": {
-    "classroom": "Třída",
-    "pub": "Hospoda",
-    "sports": "Sport",
-    "minimal": "Minimal",
-    "custom": "Vlastní"
   },
   "settings": {
     "title": "Nastavení",
@@ -80,19 +73,14 @@
     "storage": "Využité úložiště: {used} KB z přibližně {total} KB",
     "wipe": "Smazat všechna data",
     "wipeConfirm": "Smazat VŠECHNY tabule, historii a nastavení z tohoto prohlížeče? Tuto akci nelze vrátit.",
-    "palette": "Barvy",
     "boardSettings": "Nastavení tabule",
     "boardTitle": "Název tabule",
     "logo": "Logo",
     "uploadLogo": "Nahrát logo",
     "changeLogo": "Změnit logo",
-    "color1": "Hlavní barva",
-    "color2": "Druhá barva",
     "steps": "Tlačítka bodů",
     "stepsHint": "Oddělené čárkami, např. 1, 5 nebo 1, 2, 3 (nejvýš 4).",
     "clock": "Zobrazit hodiny zápasu",
-    "teamColors": "Barvy týmů",
-    "usePalette": "Použít paletu",
     "resetScores": "Vynulovat body",
     "resetConfirm": "Vynulovat všechny body? Ukončené hry v historii zůstanou zachovány.",
     "deleteBoard": "Smazat tabuli"
@@ -126,14 +114,13 @@
   },
   "footer": {
     "privacy": "Soukromí",
-    "noTracking": "Žádné účty · Žádné sledování ze strany Punkto",
-    "madeFor": "vytvořeno pro třídy a kvízové večery"
+    "noTracking": "Žádné účty · Žádné sledování ze strany Punkto"
   },
   "privacy": {
     "title": "Soukromí",
-    "p1": "Punkto nemá účty ani databázi. Vše, co vytvoříte — tabule, jména, body, fotky a loga — se ukládá pouze v místním úložišti vašeho prohlížeče v tomto zařízení. My z toho nic nedostáváme.",
-    "p2": "Fotky a loga se před uložením zmenší a zkomprimují přímo ve vašem prohlížeči. Smazáním tabule nebo volbou „Smazat všechna data“ v nastavení je z tohoto zařízení trvale odstraníte.",
-    "p3": "Odkazy ke sdílení obsahují data tabule za znakem # v adrese. Prohlížeče tuto část nikdy neposílají na server, takže se data dostanou jen k lidem, kterým odkaz dáte. Fotky nejsou součástí odkazů.",
+    "p1": "Punkto nemá účty ani databázi. Vše, co vytvoříte — tabule, jména, body a loga — se ukládá pouze v místním úložišti vašeho prohlížeče v tomto zařízení. My z toho nic nedostáváme.",
+    "p2": "Loga se před uložením zmenší a zkomprimují přímo ve vašem prohlížeči. Smazáním tabule nebo volbou „Smazat všechna data“ v nastavení je z tohoto zařízení trvale odstraníte.",
+    "p3": "Odkazy ke sdílení obsahují data tabule za znakem # v adrese. Prohlížeče tuto část nikdy neposílají na server, takže se data dostanou jen k lidem, kterým odkaz dáte. Loga nejsou součástí odkazů.",
     "p4": "Web je hostován na GitHub Pages. Jako každý webový server může GitHub při načtení stránky zaznamenat technické údaje, například vaši IP adresu. Samotné Punkto nepoužívá analytiku ani sledovací cookies.",
     "p5": "V bezplatné verzi poskytuje reklamy Google AdSense. Google může používat cookies k zobrazování a měření reklam; tam, kde to zákon vyžaduje, budete nejprve požádáni o souhlas. Reklamy lze skrýt na dobu relace a Premium odstraní veškerý reklamní kód.",
     "p6": "Když aktivujete Premium, váš licenční klíč se pro ověření platnosti odešle našemu poskytovateli plateb Lemon Squeezy. Platby zpracovává výhradně Lemon Squeezy — údaje o vaší kartě ani platbě nikdy nevidíme.",
@@ -142,16 +129,16 @@
   "share": {
     "copyLink": "Kopírovat záložní odkaz",
     "export": "Exportovat soubor",
-    "linkCopied": "Odkaz zkopírován! Otevřete ho v jiném zařízení a obnovíte tuto tabuli (bez fotek).",
+    "linkCopied": "Odkaz zkopírován! Otevřete ho v jiném zařízení a obnovíte tuto tabuli (bez log).",
     "imported": { "one": "Importována {n} tabule", "few": "Importovány {n} tabule", "many": "Importováno {n} tabule", "other": "Importováno {n} tabulí" },
     "reading": "Načítám odkaz…",
     "restoreTitle": "Obnovit tabuli",
     "restoreText": "Přidat tuto tabuli do tohoto prohlížeče?",
-    "noPhotos": "Fotky a loga nejsou součástí odkazů. Pro úplnou kopii použijte „Exportovat soubor“.",
-    "restore": "Obnovit"
+    "restore": "Obnovit",
+    "noImages": "Loga nejsou součástí odkazů. Pro úplnou kopii použijte „Exportovat soubor“."
   },
   "errors": {
-    "storageFull": "Úložiště prohlížeče je plné. Odeberte některé fotky nebo exportujte a smažte staré tabule.",
+    "storageFull": "Úložiště prohlížeče je plné. Odeberte některá loga nebo exportujte a smažte staré tabule.",
     "badFile": "Tento soubor není záloha Punkto.",
     "badLink": "Tento odkaz je poškozený nebo neúplný.",
     "badImage": "Obrázek se nepodařilo načíst. Zkuste JPG nebo PNG.",
@@ -211,9 +198,6 @@
     "editPlayers": "Upravit hráče",
     "noPlayers": "Zatím žádní hráči — přidejte je níže.",
     "thisRound": "{n} v tomto kole",
-    "photo": "Fotka",
-    "changePhoto": "Změnit fotku",
-    "removePhoto": "Odebrat obrázek",
     "name": "Jméno",
     "removed": "{name} odebrán(a)",
     "removeConfirm": "Odebrat {name}? Body budou ztraceny.",
@@ -222,7 +206,7 @@
     "addPlaceholder": "Jméno hráče nebo týmu",
     "addPlayer": "Přidat hráče nebo tým",
     "add": "Přidat",
-    "addHint": "Tip: vložte seznam (jedno jméno na řádek) a přidáte celou třídu najednou."
+    "addHint": "Tip: vložte seznam (jedno jméno na řádek) a přidáte mnoho hráčů najednou."
   },
   "sb": {
     "home": "Domácí",
@@ -240,11 +224,12 @@
     "resume": "Pokračovat",
     "resetClock": "Vynulovat hodiny",
     "noGoals": "Zatím žádné góly.",
-    "timeline": "Góly"
+    "timeline": "Góly",
+    "removeLogo": "Odebrat logo"
   },
   "examples": {
-    "quiz": "Kvízový večer (ukázka)",
-    "match": "Páteční zápas (ukázka)"
+    "leaderboard": "Ukázkový žebříček",
+    "scoreboard": "Ukázkový zápas"
   },
   "display": {
     "fullscreen": "Celá obrazovka",
@@ -269,12 +254,12 @@
     "q1": "Je Punkto opravdu zdarma?",
     "a1": "Ano. Všechny funkce jsou zdarma. Malé reklamy projekt udržují — můžete je zdarma skrýt na dobu relace, nebo je jednorázovým nákupem odstranit navždy.",
     "q2": "Kde jsou moje data uložena?",
-    "a2": "Jen ve vašem prohlížeči v tomto zařízení. Neexistují žádné účty ani server, který by přijímal vaše tabule, jména nebo fotky. K přenosu tabule do jiného zařízení použijte „Kopírovat záložní odkaz“ nebo „Exportovat soubor“.",
+    "a2": "Jen ve vašem prohlížeči v tomto zařízení. Neexistují žádné účty ani server, který by přijímal vaše tabule, jména nebo body. K přenosu tabule do jiného zařízení použijte „Kopírovat záložní odkaz“ nebo „Exportovat soubor“.",
     "q3": "Jak zobrazím skóre na televizi nebo projektoru?",
     "a3": "Otevřete tabuli a klikněte na „Zobrazení“. Otevře se druhé okno — přetáhněte ho na televizi nebo projektor a stiskněte F pro celou obrazovku. Aktualizuje se okamžitě, zatímco měníte body.",
     "q4": "Funguje offline?",
     "a4": "Ano. Po první návštěvě funguje Punkto bez internetu. Můžete si ho také nainstalovat jako aplikaci z nabídky prohlížeče.",
-    "q5": "Hodí se pro školy a GDPR?",
-    "a5": "Punkto je navrženo s ohledem na soukromí: bez registrace a bez osobních údajů na serveru, takže jména a fotky žáků zůstávají v zařízení učitele. S Premium se nenačítá žádný reklamní kód třetích stran. Přesto se řiďte pravidly své školy."
+    "q5": "Je Punkto v souladu s GDPR?",
+    "a5": "Punkto je navrženo s ohledem na soukromí: bez registrace a bez osobních údajů na serveru — jména zůstávají ve vašem zařízení. S Premium se nenačítá žádný reklamní kód třetích stran."
   }
 }

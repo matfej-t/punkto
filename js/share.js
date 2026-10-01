@@ -2,7 +2,7 @@
 //
 // Restore links put the board in the URL *fragment* (#/import/...), which
 // browsers never send to any server — the data stays between the devices.
-// Photos/logos are left out to keep links short; use JSON export for those.
+// Logos are left out to keep links short; use JSON export for those.
 import { normalizeBoard, uid } from './model.js';
 import { ROOT_URL } from './env.js';
 
@@ -30,7 +30,6 @@ async function pipe(bytes, stream) {
 export function stripImages(board) {
   const b = JSON.parse(JSON.stringify(board));
   b.logo = null;
-  b.players?.forEach(p => { p.photo = null; });
   b.teams?.forEach(t => { t.logo = null; });
   b.winner = null;
   return b;

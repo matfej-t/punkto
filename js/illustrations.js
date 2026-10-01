@@ -1,5 +1,5 @@
 // Inline SVG illustrations for the "choose a mode" cards.
-// Colours come from CSS variables so they follow the theme and palette.
+// Colours come from CSS variables so they follow day/night mode.
 
 export const leaderboardArt = `
 <svg viewBox="0 0 220 140" class="mode-art" aria-hidden="true">

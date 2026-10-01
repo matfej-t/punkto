@@ -3,7 +3,7 @@ import { h, btn, iconBtn, rerender, modal, toast, pickFile } from '../ui.js';
 import { icon } from '../icons.js';
 import { t, fmtNum } from '../i18n.js';
 import { teamScore, addGoal, removeLastGoal, toggleClock, resetClock, clockMs, fmtClock, minuteOf, uid } from '../model.js';
-import { teamColor, teamInk } from '../theme.js';
+import { teamVars } from '../theme.js';
 import { processImage } from '../images.js';
 
 const KEYS = [['Q', 'A'], ['P', 'L']];
@@ -39,7 +39,7 @@ export function scoreboardBody(ctx) {
   function teamCard(tm, i) {
     const b = ctx.board;
     const score = teamScore(b, tm.id);
-    const style = { '--team': teamColor(b, i), '--team-ink': teamInk(b, i) };
+    const style = teamVars(i);
     const logo = tm.logo ? h('img.team-logo', { src: tm.logo, alt: '' }) : h('span.team-logo.placeholder', { text: (tm.name || '?')[0] });
 
     if (ctx.ui.edit) {
@@ -51,7 +51,7 @@ export function scoreboardBody(ctx) {
             oninput: (e) => { tm.name = e.target.value; ctx.save({ render: false }); }
           })
         ),
-        tm.logo ? btn(t('lb.removePhoto'), { cls: 'btn-ghost btn-sm', onclick: () => { tm.logo = null; ctx.save(); } }) : null,
+        tm.logo ? btn(t('sb.removeLogo'), { cls: 'btn-ghost btn-sm', onclick: () => { tm.logo = null; ctx.save(); } }) : null,
         h('div.squad-edit',
           h('span.field-label', { text: t('sb.squad') }),
           h('ul.squad-list', tm.players.map(p => h('li',
@@ -161,7 +161,7 @@ export function scoreboardBody(ctx) {
         const i = b.teams.findIndex(x => x.id === ev.teamId);
         const tm = b.teams[i];
         const pl = tm.players.find(p => p.id === ev.playerId);
-        return h('li.event', { style: { '--team': teamColor(b, i) } },
+        return h('li.event', { style: teamVars(i) },
           h('span.dot'),
           ev.t != null ? h('span.minute', { text: minuteOf(ev.t) + "'" }) : null,
           h('span.ev-team', { text: tm.name }),

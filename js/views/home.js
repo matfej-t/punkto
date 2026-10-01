@@ -3,14 +3,12 @@ import { h, btn, iconBtn, modal, popMenu, promptDialog, confirmDialog, toast, co
 import { icon } from '../icons.js';
 import { t, fmtAgo, fmtNum } from '../i18n.js';
 import * as store from '../store.js';
-import { newBoard, newPlayer, cloneBoard, boardSummary, addGoal } from '../model.js';
-import { applyPalette, PALETTE_SWATCHES } from '../theme.js';
+import { newBoard, newPlayer, cloneBoard, boardSummary, addGoal, DEFAULT_STEPS } from '../model.js';
 import { leaderboardArt, scoreboardArt } from '../illustrations.js';
 import { boardToLink, exportJson, safeFilename } from '../share.js';
-import { appBar, footer, importFromFile } from './common.js';
+import { appBar, footer, importFromFile, stepsInput } from './common.js';
 
 export function homeView(root) {
-  applyPalette(null);
   document.title = t('meta.title');
   const boardsWrap = h('div');
 
@@ -72,7 +70,6 @@ function boardsSection(boards, render) {
 
 function boardCard(b, render) {
   const sum = boardSummary(b);
-  const sw = PALETTE_SWATCHES[b.palette] || [b.custom?.a, b.custom?.b];
   const more = iconBtn('more', t('common.more'), (e) => popMenu(e.currentTarget, [
     { label: t('common.rename'), icon: 'edit', onClick: async () => {
       const name = await promptDialog(t('common.rename'), { value: b.title });
@@ -96,7 +93,7 @@ function boardCard(b, render) {
     ? (sum.leader ? h('p.card-leader', { html: icon('trophy') }, h('span', { text: sum.leader.name }), h('b', { text: fmtNum(sum.leader.score) })) : null)
     : h('p.card-leader.scoreline', { text: `${b.teams[0].name}  ${sum.line}  ${b.teams[1].name}` });
 
-  return h('article.board-card', { style: { '--c1': sw[0], '--c2': sw[1] } },
+  return h('article.board-card',
     h('a.board-card-main', { href: '#/b/' + b.id },
       h('div.card-top',
         h('span.mode-chip', { html: icon(b.mode === 'leaderboard' ? 'list' : 'ball') }, h('span', { text: t('modes.' + b.mode) })),
@@ -127,7 +124,9 @@ export async function copyBoardLink(b) {
 
 export function openCreate() {
   let mode = 'leaderboard';
-  let palette = 'classroom';
+  let stepsEdited = false; // keep the user's point buttons when switching type
+  const steps = stepsInput(DEFAULT_STEPS[mode], () => {});
+  steps.addEventListener('input', () => { stepsEdited = true; });
   const title = h('input.input', { type: 'text', maxLength: 80, placeholder: t('create.titlePlaceholder'), autofocus: true, 'aria-label': t('create.title') });
 
   const cards = h('div.mode-cards', { role: 'radiogroup', 'aria-label': t('create.mode') },
@@ -136,21 +135,12 @@ export function openCreate() {
         role: 'radio', 'aria-checked': String(m === mode), class: m === mode ? 'on' : '', dataset: { mode: m },
         onclick: (e) => {
           mode = m;
+          if (!stepsEdited) steps.setSteps(DEFAULT_STEPS[mode]);
           cards.querySelectorAll('.mode-card').forEach(c => { const on = c === e.currentTarget; c.classList.toggle('on', on); c.setAttribute('aria-checked', String(on)); });
         },
         html: art
       }, h('strong', { text: t('modes.' + m) }), h('span.small.muted', { text: t('modes.' + m + 'Desc') }))
     ));
-
-  const pals = h('div.swatches', { role: 'radiogroup', 'aria-label': t('settings.palette') },
-    Object.entries(PALETTE_SWATCHES).map(([p, [a, b2, bg]]) => h('button.swatch', {
-      role: 'radio', 'aria-checked': String(p === palette), class: p === palette ? 'on' : '', title: t('palettes.' + p),
-      style: { '--a': a, '--b': b2, '--bg': bg },
-      onclick: (e) => {
-        palette = p;
-        pals.querySelectorAll('.swatch').forEach(s => { const on = s === e.currentTarget; s.classList.toggle('on', on); s.setAttribute('aria-checked', String(on)); });
-      }
-    }, h('span.swatch-dots'), h('span.swatch-name', { text: t('palettes.' + p) }))));
 
   modal({
     title: t('create.heading'),
@@ -158,12 +148,12 @@ export function openCreate() {
     content: h('div.stack',
       h('label.field', h('span.field-label', { text: t('create.title') }), title),
       h('div.field', h('span.field-label', { text: t('create.mode') }), cards),
-      h('div.field', h('span.field-label', { text: t('settings.palette') }), pals)
+      h('label.field', h('span.field-label', { text: t('settings.steps') }), steps, h('span.small.muted', { text: t('settings.stepsHint') }))
     ),
     actions: [
       { label: t('common.cancel'), kind: 'ghost' },
       { label: t('create.create'), kind: 'primary', onClick: () => {
-        const b = newBoard(mode, title.value.trim() || t('modes.' + mode), palette);
+        const b = newBoard(mode, title.value.trim() || t('modes.' + mode), steps.getSteps());
         if (mode === 'scoreboard') { b.teams[0].name = t('sb.home'); b.teams[1].name = t('sb.away'); }
         store.saveBoard(b);
         location.hash = '#/b/' + b.id;
@@ -173,13 +163,13 @@ export function openCreate() {
 }
 
 function createExamples() {
-  const quiz = newBoard('leaderboard', t('examples.quiz'), 'pub');
+  const quiz = newBoard('leaderboard', t('examples.leaderboard'), [1, 2]);
   const teams = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo'];
   const rounds = [[8, 7, 9], [6, 9, 8], [9, 5, 7], [7, 8, 6], [5, 6, 9]];
   quiz.players = teams.map((n, i) => ({ ...newPlayer(n), scores: rounds[i] }));
-  quiz.round = 2; quiz.roundCount = 3; quiz.showRounds = false; quiz.steps = [1, 2];
+  quiz.round = 2; quiz.roundCount = 3;
 
-  const match = newBoard('scoreboard', t('examples.match'), 'sports');
+  const match = newBoard('scoreboard', t('examples.scoreboard'));
   match.teams[0].name = t('sb.home'); match.teams[1].name = t('sb.away');
   match.teams[0].players = ['Alex', 'Sam', 'Kim', 'Luca'].map(n => newPlayer(n)).map(({ id, name }) => ({ id, name }));
   match.teams[1].players = ['Max', 'Robin', 'Noa', 'Jo'].map(n => newPlayer(n)).map(({ id, name }) => ({ id, name }));

@@ -1,11 +1,9 @@
 // Client-side image resizing/compression before anything is stored.
-// Photos become small square avatars; logos keep their aspect ratio and
-// transparency. Output is WebP when the browser can encode it, otherwise
-// JPEG (photos) or PNG (logos). Typical result: 5–25 KB per image.
+// Logos keep their aspect ratio and transparency. Output is WebP when the
+// browser can encode it, otherwise PNG. Typical result: 5–25 KB per image.
 
 export const PRESETS = {
-  photo: { max: 192, square: true, quality: 0.82 },
-  logo: { max: 384, square: false, quality: 0.86, alpha: true }
+  logo: { max: 384, quality: 0.86 }
 };
 
 let webp;
@@ -35,33 +33,24 @@ async function decode(file) {
   }
 }
 
-/** Resize a File/Blob → data URL. kind: 'photo' | 'logo'. */
-export async function processImage(file, kind = 'photo') {
+/** Resize a logo File/Blob → data URL (max 384 px, keeps transparency). */
+export async function processImage(file, kind = 'logo') {
   if (!file || !/^image\//.test(file.type)) throw new Error('not-an-image');
-  const { max, square, quality, alpha } = PRESETS[kind];
+  const { max, quality } = PRESETS[kind];
   const img = await decode(file);
   const iw = img.naturalWidth || img.width;
   const ih = img.naturalHeight || img.height;
   if (!iw || !ih) throw new Error('bad-image');
 
-  let sx = 0, sy = 0, sw = iw, sh = ih, w, hgt;
-  if (square) {
-    const s = Math.min(iw, ih);
-    sx = (iw - s) / 2; sy = (ih - s) / 2; sw = sh = s;
-    w = hgt = Math.min(max, s);
-  } else {
-    const scale = Math.min(1, max / Math.max(iw, ih));
-    w = Math.max(1, Math.round(iw * scale));
-    hgt = Math.max(1, Math.round(ih * scale));
-  }
+  const scale = Math.min(1, max / Math.max(iw, ih));
+  const w = Math.max(1, Math.round(iw * scale));
+  const hgt = Math.max(1, Math.round(ih * scale));
   const canvas = document.createElement('canvas');
   canvas.width = w; canvas.height = hgt;
   const ctx = canvas.getContext('2d');
   ctx.imageSmoothingQuality = 'high';
-  if (!alpha) { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, hgt); }
-  ctx.drawImage(img, sx, sy, sw, sh, 0, 0, w, hgt);
+  ctx.drawImage(img, 0, 0, w, hgt);
   img.close?.();
 
-  if (canWebp()) return canvas.toDataURL('image/webp', quality);
-  return alpha ? canvas.toDataURL('image/png') : canvas.toDataURL('image/jpeg', quality);
+  return canWebp() ? canvas.toDataURL('image/webp', quality) : canvas.toDataURL('image/png');
 }
