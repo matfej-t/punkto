@@ -28,8 +28,6 @@
     "newBoard": "Нове табло",
     "empty": "У вас ще немає табло.",
     "createFirst": "Створити перше табло",
-    "tryExample": "Переглянути приклад",
-    "examplesAdded": "Додано два приклади",
     "duplicate": "Дублювати",
     "copyOf": "{title} (копія)",
     "deleteConfirm": "Видалити «{title}» разом з історією? Цю дію не можна скасувати.",
@@ -226,10 +224,6 @@
     "noGoals": "Голів ще немає.",
     "timeline": "Голи",
     "removeLogo": "Прибрати логотип"
-  },
-  "examples": {
-    "leaderboard": "Приклад таблиці лідерів",
-    "scoreboard": "Приклад матчу"
   },
   "display": {
     "fullscreen": "На весь екран",

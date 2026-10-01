@@ -28,8 +28,6 @@
     "newBoard": "Novo placar",
     "empty": "Você ainda não tem placares.",
     "createFirst": "Criar seu primeiro placar",
-    "tryExample": "Ver um exemplo",
-    "examplesAdded": "Dois placares de exemplo adicionados",
     "duplicate": "Duplicar",
     "copyOf": "{title} (cópia)",
     "deleteConfirm": "Excluir “{title}” e seu histórico? Isso não pode ser desfeito.",
@@ -226,10 +224,6 @@
     "noGoals": "Nenhum gol ainda.",
     "timeline": "Gols",
     "removeLogo": "Remover logo"
-  },
-  "examples": {
-    "leaderboard": "Ranking de exemplo",
-    "scoreboard": "Partida de exemplo"
   },
   "display": {
     "fullscreen": "Tela cheia",

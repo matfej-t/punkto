@@ -3,7 +3,7 @@ import { h, btn, iconBtn, modal, popMenu, promptDialog, confirmDialog, toast, co
 import { icon } from '../icons.js';
 import { t, fmtAgo, fmtNum } from '../i18n.js';
 import * as store from '../store.js';
-import { newBoard, newPlayer, cloneBoard, boardSummary, addGoal, DEFAULT_STEPS } from '../model.js';
+import { newBoard, cloneBoard, boardSummary, DEFAULT_STEPS } from '../model.js';
 import { leaderboardArt, scoreboardArt } from '../illustrations.js';
 import { boardToLink, exportJson, safeFilename } from '../share.js';
 import { appBar, footer, importFromFile, stepsInput } from './common.js';
@@ -59,8 +59,7 @@ function boardsSection(boards, render) {
       h('div.empty',
         h('p', { text: t('home.empty') }),
         h('div.row.center',
-          btn(t('home.createFirst'), { icon: 'plus', cls: 'btn-primary btn-lg', onclick: openCreate }),
-          btn(t('home.tryExample'), { icon: 'sparkle', cls: 'btn-ghost btn-lg', onclick: () => { createExamples(); render(); } })
+          btn(t('home.createFirst'), { icon: 'plus', cls: 'btn-primary btn-lg', onclick: openCreate })
         )
       )
     );
@@ -124,9 +123,7 @@ export async function copyBoardLink(b) {
 
 export function openCreate() {
   let mode = 'leaderboard';
-  let stepsEdited = false; // keep the user's point buttons when switching type
-  const steps = stepsInput(DEFAULT_STEPS[mode], () => {});
-  steps.addEventListener('input', () => { stepsEdited = true; });
+  const steps = stepsInput(DEFAULT_STEPS, () => {});
   const title = h('input.input', { type: 'text', maxLength: 80, placeholder: t('create.titlePlaceholder'), autofocus: true, 'aria-label': t('create.title') });
 
   const cards = h('div.mode-cards', { role: 'radiogroup', 'aria-label': t('create.mode') },
@@ -135,7 +132,6 @@ export function openCreate() {
         role: 'radio', 'aria-checked': String(m === mode), class: m === mode ? 'on' : '', dataset: { mode: m },
         onclick: (e) => {
           mode = m;
-          if (!stepsEdited) steps.setSteps(DEFAULT_STEPS[mode]);
           cards.querySelectorAll('.mode-card').forEach(c => { const on = c === e.currentTarget; c.classList.toggle('on', on); c.setAttribute('aria-checked', String(on)); });
         },
         html: art
@@ -160,26 +156,6 @@ export function openCreate() {
       } }
     ]
   });
-}
-
-function createExamples() {
-  const quiz = newBoard('leaderboard', t('examples.leaderboard'), [1, 2]);
-  const teams = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo'];
-  const rounds = [[8, 7, 9], [6, 9, 8], [9, 5, 7], [7, 8, 6], [5, 6, 9]];
-  quiz.players = teams.map((n, i) => ({ ...newPlayer(n), scores: rounds[i] }));
-  quiz.round = 2; quiz.roundCount = 3;
-
-  const match = newBoard('scoreboard', t('examples.scoreboard'));
-  match.teams[0].name = t('sb.home'); match.teams[1].name = t('sb.away');
-  match.teams[0].players = ['Alex', 'Sam', 'Kim', 'Luca'].map(n => newPlayer(n)).map(({ id, name }) => ({ id, name }));
-  match.teams[1].players = ['Max', 'Robin', 'Noa', 'Jo'].map(n => newPlayer(n)).map(({ id, name }) => ({ id, name }));
-  addGoal(match, match.teams[0].id, match.teams[0].players[1].id);
-  addGoal(match, match.teams[1].id, match.teams[1].players[0].id);
-  addGoal(match, match.teams[0].id, match.teams[0].players[3].id);
-
-  store.saveBoard(match);
-  store.saveBoard(quiz);
-  toast(t('home.examplesAdded'), { kind: 'ok' });
 }
 
 /* ------------------------------------------------------ SEO content */

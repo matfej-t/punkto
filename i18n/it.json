@@ -28,8 +28,6 @@
     "newBoard": "Nuovo tabellone",
     "empty": "Non hai ancora nessun tabellone.",
     "createFirst": "Crea il tuo primo tabellone",
-    "tryExample": "Prova un esempio",
-    "examplesAdded": "Aggiunti due tabelloni di esempio",
     "duplicate": "Duplica",
     "copyOf": "{title} (copia)",
     "deleteConfirm": "Eliminare «{title}» e la sua cronologia? L'operazione non si può annullare.",
@@ -226,10 +224,6 @@
     "noGoals": "Ancora nessun gol.",
     "timeline": "Gol",
     "removeLogo": "Rimuovi logo"
-  },
-  "examples": {
-    "leaderboard": "Classifica di esempio",
-    "scoreboard": "Partita di esempio"
   },
   "display": {
     "fullscreen": "Schermo intero",

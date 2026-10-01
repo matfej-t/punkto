@@ -10,8 +10,8 @@
 
 export const MODES = ['leaderboard', 'scoreboard'];
 export const HISTORY_LIMIT = 200;
-/** Default point buttons per mode (e.g. "+1" and "+5"). */
-export const DEFAULT_STEPS = { leaderboard: [1, 5], scoreboard: [1] };
+/** Default point buttons ("+1" and "+3") for new boards of either type. */
+export const DEFAULT_STEPS = [1, 3];
 
 export function uid() {
   if (crypto.randomUUID) return crypto.randomUUID().replace(/-/g, '').slice(0, 12);
@@ -33,10 +33,10 @@ export function newBoard(mode, title, steps = null) {
     logo: null, history: [], winner: null
   };
   if (mode === 'leaderboard') {
-    Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [...DEFAULT_STEPS.leaderboard], showRounds: false, sortControl: false });
+    Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [...DEFAULT_STEPS], showRounds: false, sortControl: false });
   } else {
     Object.assign(b, {
-      teams: [newTeam('Home'), newTeam('Away')], events: [], steps: [...DEFAULT_STEPS.scoreboard],
+      teams: [newTeam('Home'), newTeam('Away')], events: [], steps: [...DEFAULT_STEPS],
       clock: { enabled: false, running: false, startedAt: null, elapsed: 0 }
     });
   }

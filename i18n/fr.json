@@ -28,8 +28,6 @@
     "newBoard": "Nouveau tableau",
     "empty": "Vous n'avez encore aucun tableau.",
     "createFirst": "Créer votre premier tableau",
-    "tryExample": "Essayer un exemple",
-    "examplesAdded": "Deux tableaux d'exemple ajoutés",
     "duplicate": "Dupliquer",
     "copyOf": "{title} (copie)",
     "deleteConfirm": "Supprimer « {title} » et son historique ? Cette action est irréversible.",
@@ -226,10 +224,6 @@
     "noGoals": "Pas encore de but.",
     "timeline": "Buts",
     "removeLogo": "Retirer le logo"
-  },
-  "examples": {
-    "leaderboard": "Classement d'exemple",
-    "scoreboard": "Match d'exemple"
   },
   "display": {
     "fullscreen": "Plein écran",

@@ -28,8 +28,6 @@
     "newBoard": "Новое табло",
     "empty": "У вас пока нет табло.",
     "createFirst": "Создать первое табло",
-    "tryExample": "Посмотреть пример",
-    "examplesAdded": "Добавлены два примера",
     "duplicate": "Дублировать",
     "copyOf": "{title} (копия)",
     "deleteConfirm": "Удалить «{title}» вместе с историей? Это действие нельзя отменить.",
@@ -226,10 +224,6 @@
     "noGoals": "Голов пока нет.",
     "timeline": "Голы",
     "removeLogo": "Убрать логотип"
-  },
-  "examples": {
-    "leaderboard": "Пример таблицы лидеров",
-    "scoreboard": "Пример матча"
   },
   "display": {
     "fullscreen": "Во весь экран",

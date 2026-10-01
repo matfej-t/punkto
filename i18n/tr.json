@@ -28,8 +28,6 @@
     "newBoard": "Yeni tabela",
     "empty": "Henüz hiç tabelanız yok.",
     "createFirst": "İlk tabelanızı oluşturun",
-    "tryExample": "Bir örnek deneyin",
-    "examplesAdded": "İki örnek tabela eklendi",
     "duplicate": "Çoğalt",
     "copyOf": "{title} (kopya)",
     "deleteConfirm": "“{title}” ve geçmişi silinsin mi? Bu işlem geri alınamaz.",
@@ -226,10 +224,6 @@
     "noGoals": "Henüz gol yok.",
     "timeline": "Goller",
     "removeLogo": "Logoyu kaldır"
-  },
-  "examples": {
-    "leaderboard": "Örnek sıralama",
-    "scoreboard": "Örnek maç"
   },
   "display": {
     "fullscreen": "Tam ekran",

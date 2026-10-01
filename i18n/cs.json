@@ -28,8 +28,6 @@
     "newBoard": "Nová tabule",
     "empty": "Zatím nemáte žádné tabule.",
     "createFirst": "Vytvořit první tabuli",
-    "tryExample": "Vyzkoušet ukázku",
-    "examplesAdded": "Přidány dvě ukázkové tabule",
     "duplicate": "Duplikovat",
     "copyOf": "{title} (kopie)",
     "deleteConfirm": "Smazat „{title}“ i s historií? Tuto akci nelze vrátit.",
@@ -226,10 +224,6 @@
     "noGoals": "Zatím žádné góly.",
     "timeline": "Góly",
     "removeLogo": "Odebrat logo"
-  },
-  "examples": {
-    "leaderboard": "Ukázkový žebříček",
-    "scoreboard": "Ukázkový zápas"
   },
   "display": {
     "fullscreen": "Celá obrazovka",

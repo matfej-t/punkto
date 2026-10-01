@@ -28,8 +28,6 @@
     "newBoard": "Nowa tablica",
     "empty": "Nie masz jeszcze żadnych tablic.",
     "createFirst": "Utwórz pierwszą tablicę",
-    "tryExample": "Wypróbuj przykład",
-    "examplesAdded": "Dodano dwie przykładowe tablice",
     "duplicate": "Duplikuj",
     "copyOf": "{title} (kopia)",
     "deleteConfirm": "Usunąć „{title}” wraz z historią? Tej operacji nie można cofnąć.",
@@ -226,10 +224,6 @@
     "noGoals": "Jeszcze brak goli.",
     "timeline": "Gole",
     "removeLogo": "Usuń logo"
-  },
-  "examples": {
-    "leaderboard": "Przykładowy ranking",
-    "scoreboard": "Przykładowy mecz"
   },
   "display": {
     "fullscreen": "Pełny ekran",

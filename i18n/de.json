@@ -28,8 +28,6 @@
     "newBoard": "Neue Tafel",
     "empty": "Du hast noch keine Tafeln.",
     "createFirst": "Erste Tafel erstellen",
-    "tryExample": "Beispiel ausprobieren",
-    "examplesAdded": "Zwei Beispieltafeln hinzugefügt",
     "duplicate": "Duplizieren",
     "copyOf": "{title} (Kopie)",
     "deleteConfirm": "„{title}“ samt Verlauf löschen? Das kann nicht rückgängig gemacht werden.",
@@ -226,10 +224,6 @@
     "noGoals": "Noch keine Tore.",
     "timeline": "Tore",
     "removeLogo": "Logo entfernen"
-  },
-  "examples": {
-    "leaderboard": "Beispiel-Rangliste",
-    "scoreboard": "Beispielspiel"
   },
   "display": {
     "fullscreen": "Vollbild",

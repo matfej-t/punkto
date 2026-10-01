@@ -28,8 +28,6 @@
     "newBoard": "New board",
     "empty": "You don't have any boards yet.",
     "createFirst": "Create your first board",
-    "tryExample": "Try an example",
-    "examplesAdded": "Two example boards added",
     "duplicate": "Duplicate",
     "copyOf": "{title} (copy)",
     "deleteConfirm": "Delete “{title}” and its history? This cannot be undone.",
@@ -226,10 +224,6 @@
     "noGoals": "No goals yet.",
     "timeline": "Goals",
     "removeLogo": "Remove logo"
-  },
-  "examples": {
-    "leaderboard": "Example leaderboard",
-    "scoreboard": "Example match"
   },
   "display": {
     "fullscreen": "Fullscreen",

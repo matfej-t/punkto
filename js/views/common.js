@@ -21,7 +21,7 @@ export const logoSvg = `<svg viewBox="0 0 512 512" class="logo" aria-hidden="tru
 /* --------------------------------------------------------- point buttons */
 
 /**
- * Text field for the point buttons, e.g. "1, 5" → [1, 5].
+ * Text field for the point buttons, e.g. "1, 3" → [1, 3].
  * onChange receives the parsed list; invalid input snaps back to the last valid value.
  */
 export function stepsInput(initial, onChange) {
@@ -34,8 +34,6 @@ export function stepsInput(initial, onChange) {
       input.value = current.join(', ');
     }
   });
-  /** Replace the value programmatically (used when the board type changes). */
-  input.setSteps = (s) => { current = [...s]; input.value = current.join(', '); };
   input.getSteps = () => { const s = parseSteps(input.value); return s.length ? s : current; };
   return input;
 }

@@ -49,6 +49,16 @@ async function newCtx(opts = {}) {
   ctx.on('page', p => p.on('pageerror', e => errors.push(e.message)));
   return ctx;
 }
+/** Create a board through the UI (from the home page), optionally adding players. */
+async function createBoard(p, mode, name, players = []) {
+  await p.click('.section-head button:has-text("New board"), .empty button:has-text("Create your first board")');
+  await p.click(`.mode-card[data-mode="${mode}"]`);
+  await p.locator('dialog input.input').first().fill(name);
+  await p.click('text=Create board');
+  await p.waitForSelector('.ctl-main');
+  for (const n of players) { await p.fill('[data-key="add"]', n); await p.keyboard.press('Enter'); }
+  if (players.length) await p.click('button:has-text("Done")');
+}
 const boardOf = (page) => page.evaluate(() => JSON.parse(localStorage.getItem('punkto:board:' + location.hash.split('/')[2])));
 
 console.log('Punkto e2e');
@@ -71,11 +81,10 @@ await test('create a leaderboard with the mode cards and point buttons', async (
   assert(await page.locator('.mode-card svg').count() === 2, 'two illustrated cards');
   eq(await page.locator('dialog .swatch, dialog input[type=color]').count(), 0, 'no colour picker');
   const steps = page.locator('dialog input[aria-label="Point buttons"]');
-  eq(await steps.inputValue(), '1, 5', 'leaderboard default');
+  eq(await steps.inputValue(), '1, 3', 'leaderboard default');
   await page.click('.mode-card[data-mode="scoreboard"]');
-  eq(await steps.inputValue(), '1', 'scoreboard default');
+  eq(await steps.inputValue(), '1, 3', 'scoreboard default');
   await page.click('.mode-card[data-mode="leaderboard"]');
-  eq(await steps.inputValue(), '1, 5');
   await page.locator('dialog input.input').first().fill('Spring Cup');
   await page.click('text=Create board');
   await page.waitForSelector('[data-key="add"]');
@@ -114,11 +123,11 @@ await test('board logo upload is resized and compressed', async () => {
 
 await test('score with buttons, keyboard and undo', async () => {
   await page.locator('.lb-row').nth(1).locator('.step.plus.primary').click();
-  await page.locator('.lb-row').nth(1).locator('.step.plus').nth(1).click(); // +5
+  await page.locator('.lb-row').nth(1).locator('.step.plus').nth(1).click(); // +3
   await page.keyboard.press('3');
   await page.keyboard.press('+'); await page.keyboard.press('+');
   await page.keyboard.press('ArrowLeft');
-  eq((await page.locator('.score').allTextContents()).slice(0, 3), ['0', '6', '1']);
+  eq((await page.locator('.score').allTextContents()).slice(0, 3), ['0', '4', '1']);
   await page.keyboard.press('Control+z');
   eq((await page.locator('.score').allTextContents())[2], '2', 'undo');
 });
@@ -285,8 +294,7 @@ await test('free "hide ads" works for the session', async () => {
   const ctx4 = await newCtx();
   const p4 = await ctx4.newPage();
   await p4.goto(BASE + '?adpreview=1#/');
-  await p4.click('text=Try an example');
-  await p4.click('.board-card .board-card-main >> nth=0');
+  await createBoard(p4, 'leaderboard', 'Ads test', ['Anna']);
   await p4.waitForSelector('.ad-slot');
   await p4.click('.adfree-chip');
   await p4.click('.premium-modal button:has-text("Hide ads")');
@@ -336,7 +344,9 @@ await test('mobile: no horizontal scrolling on home and control', async () => {
   const ctx7 = await newCtx({ viewport: { width: 360, height: 740 }, isMobile: true, hasTouch: true });
   const p7 = await ctx7.newPage();
   await p7.goto(BASE + '?adpreview=1');
-  await p7.click('text=Try an example');
+  await createBoard(p7, 'scoreboard', 'Mobile match');
+  await p7.goto(BASE + '?adpreview=1#/');
+  await createBoard(p7, 'leaderboard', 'Mobile ranking', ['Alexandra Konstantinopolskaya', 'Ben', 'Carla']);
   for (const n of [0, 1]) {
     await p7.goto(BASE + '?adpreview=1#/');
     await p7.click(`.board-card .board-card-main >> nth=${n}`);

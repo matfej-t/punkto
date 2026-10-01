@@ -28,8 +28,6 @@
     "newBoard": "Nieuw bord",
     "empty": "Je hebt nog geen borden.",
     "createFirst": "Maak je eerste bord",
-    "tryExample": "Probeer een voorbeeld",
-    "examplesAdded": "Twee voorbeeldborden toegevoegd",
     "duplicate": "Dupliceren",
     "copyOf": "{title} (kopie)",
     "deleteConfirm": "“{title}” en de geschiedenis verwijderen? Dit kan niet ongedaan worden gemaakt.",
@@ -226,10 +224,6 @@
     "noGoals": "Nog geen doelpunten.",
     "timeline": "Doelpunten",
     "removeLogo": "Logo verwijderen"
-  },
-  "examples": {
-    "leaderboard": "Voorbeeldranglijst",
-    "scoreboard": "Voorbeeldwedstrijd"
   },
   "display": {
     "fullscreen": "Volledig scherm",

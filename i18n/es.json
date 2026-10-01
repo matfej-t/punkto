@@ -28,8 +28,6 @@
     "newBoard": "Nuevo marcador",
     "empty": "Todavía no tienes marcadores.",
     "createFirst": "Crea tu primer marcador",
-    "tryExample": "Probar un ejemplo",
-    "examplesAdded": "Se añadieron dos marcadores de ejemplo",
     "duplicate": "Duplicar",
     "copyOf": "{title} (copia)",
     "deleteConfirm": "¿Eliminar «{title}» y su historial? No se puede deshacer.",
@@ -226,10 +224,6 @@
     "noGoals": "Aún no hay goles.",
     "timeline": "Goles",
     "removeLogo": "Quitar logo"
-  },
-  "examples": {
-    "leaderboard": "Clasificación de ejemplo",
-    "scoreboard": "Partido de ejemplo"
   },
   "display": {
     "fullscreen": "Pantalla completa",
