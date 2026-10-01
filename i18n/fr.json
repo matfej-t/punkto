@@ -77,11 +77,13 @@
     "uploadLogo": "Importer un logo",
     "changeLogo": "Changer le logo",
     "steps": "Boutons de points",
-    "stepsHint": "Séparés par des virgules, ex. 1, 5 ou 1, 2, 3 (jusqu'à 4).",
+    "stepsHint": "Séparés par des virgules, jusqu'à 4 valeurs par champ, ex. 1, 3.",
     "clock": "Afficher un chronomètre de match",
     "resetScores": "Remettre les points à zéro",
     "resetConfirm": "Remettre tous les points à zéro ? Les parties terminées de l'historique sont conservées.",
-    "deleteBoard": "Supprimer le tableau"
+    "deleteBoard": "Supprimer le tableau",
+    "stepsPlus": "Ajouter",
+    "stepsMinus": "Retirer"
   },
   "premium": {
     "title": "Punkto sans publicité",
@@ -141,7 +143,10 @@
     "badLink": "Ce lien est cassé ou incomplet.",
     "badImage": "Impossible de lire cette image. Essayez un JPG ou un PNG.",
     "notFound": "Tableau introuvable",
-    "notFoundText": "Il a peut-être été supprimé, ou créé dans un autre navigateur."
+    "notFoundText": "Il a peut-être été supprimé, ou créé dans un autre navigateur.",
+    "nameRequired": "Le nom ne peut pas être vide.",
+    "boardNameTaken": "Vous avez déjà un tableau avec ce nom.",
+    "nameTaken": "Ce nom est déjà utilisé dans ce tableau."
   },
   "control": {
     "openDisplay": "Ouvrir l'affichage pour TV / vidéoprojecteur",
@@ -171,9 +176,9 @@
     "rounds": "Afficher / masquer les manches",
     "edit": "Mode édition",
     "homePlus": "But pour la première équipe",
-    "homeMinus": "Retirer le dernier but de la première équipe",
+    "homeMinus": "Retirer des points à la première équipe",
     "awayPlus": "But pour la deuxième équipe",
-    "awayMinus": "Retirer le dernier but de la deuxième équipe",
+    "awayMinus": "Retirer des points à la deuxième équipe",
     "pickScorer": "Choisir le buteur (0 = personne)",
     "clock": "Démarrer / mettre en pause le chrono",
     "display": "Ouvrir l'affichage",
@@ -204,7 +209,9 @@
     "addPlaceholder": "Nom du joueur ou de l'équipe",
     "addPlayer": "Ajouter un joueur ou une équipe",
     "add": "Ajouter",
-    "addHint": "Astuce : collez une liste (un nom par ligne) pour ajouter de nombreux joueurs d'un coup."
+    "addHint": "Astuce : collez une liste (un nom par ligne) pour ajouter de nombreux joueurs d'un coup.",
+    "skipped": { "one": "{n} nom ignoré : il figure déjà dans ce tableau.", "other": "{n} noms ignorés : ils figurent déjà dans ce tableau." },
+    "editScore": "Cliquez pour saisir un nouveau score"
   },
   "sb": {
     "home": "Domicile",

@@ -5,7 +5,7 @@
 //   punkto:board:<id>   → full board JSON (one key per board keeps writes small)
 //   punkto:settings     → { theme, lang }
 //   punkto:license      → premium license (see premium.js)
-import { normalizeBoard } from './model.js';
+import { normalizeBoard, normName } from './model.js';
 
 const PREFIX = 'punkto:';
 const chan = 'BroadcastChannel' in window ? new BroadcastChannel('punkto') : null;
@@ -78,6 +78,11 @@ export function saveBoard(board, { touch = true } = {}) {
   if (!idx.includes(board.id)) setIndex([board.id, ...idx]);
   broadcast({ type: 'board', id: board.id });
   return true;
+}
+
+/** Normalised titles of all saved boards (optionally ignoring one board). */
+export function boardTitles(exceptId = null) {
+  return new Set(listBoards().filter(b => b.id !== exceptId).map(b => normName(b.title)));
 }
 
 export function deleteBoard(id) {

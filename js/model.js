@@ -10,8 +10,9 @@
 
 export const MODES = ['leaderboard', 'scoreboard'];
 export const HISTORY_LIMIT = 200;
-/** Default point buttons ("+1" and "+3") for new boards of either type. */
+/** Default point buttons for new boards of either type: "+1 +3" and "−1". */
 export const DEFAULT_STEPS = [1, 3];
+export const DEFAULT_MINUS = [1];
 
 export function uid() {
   if (crypto.randomUUID) return crypto.randomUUID().replace(/-/g, '').slice(0, 12);
@@ -26,11 +27,12 @@ export function newTeam(name) {
   return { id: uid(), name, logo: null, players: [] };
 }
 
-export function newBoard(mode, title, steps = null) {
+export function newBoard(mode, title, steps = null, minus = null) {
   const now = Date.now();
   const b = {
     id: uid(), v: 1, mode, title: title.slice(0, 80), createdAt: now, updatedAt: now,
-    logo: null, history: [], winner: null
+    logo: null, history: [], winner: null,
+    minus: [...DEFAULT_MINUS] // subtract buttons (stored as positive amounts)
   };
   if (mode === 'leaderboard') {
     Object.assign(b, { players: [], round: 0, roundCount: 1, steps: [...DEFAULT_STEPS], showRounds: false, sortControl: false });
@@ -41,6 +43,7 @@ export function newBoard(mode, title, steps = null) {
     });
   }
   if (steps?.length) b.steps = steps;
+  if (minus?.length) b.minus = minus;
   return b;
 }
 
@@ -56,6 +59,7 @@ export function normalizeBoard(b) {
   delete b.custom;
   if (!Array.isArray(b.history)) b.history = [];
   if (!Array.isArray(b.steps) || !b.steps.length) b.steps = base.steps;
+  if (!Array.isArray(b.minus) || !b.minus.length) b.minus = base.minus;
   if (b.mode === 'leaderboard') {
     if (!Array.isArray(b.players)) b.players = [];
     b.players = b.players.filter(p => p && typeof p === 'object').map(p => ({
@@ -79,6 +83,32 @@ export function normalizeBoard(b) {
     if (!b.clock || typeof b.clock !== 'object') b.clock = base.clock;
   }
   return b;
+}
+
+/* ------------------------------------------------------------------ names */
+
+/** Comparable form of a name: trimmed, single spaces, case-insensitive. */
+export const normName = s => String(s ?? '').trim().replace(/\s+/g, ' ').toLocaleLowerCase();
+
+/**
+ * Every name used inside one board: players (leaderboard), or team names plus
+ * all squad players (scoreboard). All of them share one namespace.
+ */
+export function namesInBoard(board, exceptId = null) {
+  const items = board.mode === 'leaderboard'
+    ? board.players
+    : [...board.teams, ...board.teams.flatMap(tm => tm.players)];
+  return new Set(items.filter(x => x.id !== exceptId).map(x => normName(x.name)));
+}
+
+/** First of "Name", "Name (2)", "Name (3)" … that is not in `taken` (a Set of normName values). */
+export function uniqueName(name, taken) {
+  const base = String(name).trim().replace(/\s+/g, ' ');
+  if (!taken.has(normName(base))) return base;
+  for (let i = 2; ; i++) {
+    const candidate = `${base} (${i})`;
+    if (!taken.has(normName(candidate))) return candidate;
+  }
 }
 
 /* ------------------------------------------------------------ leaderboard */
@@ -144,13 +174,6 @@ export function addGoal(board, teamId, playerId = null, points = 1) {
     t: c?.enabled && (c.running || c.elapsed > 0) ? clockMs(c) : null,
     at: Date.now()
   });
-}
-
-export function removeLastGoal(board, teamId) {
-  for (let i = board.events.length - 1; i >= 0; i--) {
-    if (board.events[i].teamId === teamId) { board.events.splice(i, 1); return true; }
-  }
-  return false;
 }
 
 export function toggleClock(board) {

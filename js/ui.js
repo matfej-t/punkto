@@ -151,16 +151,32 @@ export function confirmDialog(message, { title, okLabel, danger = false } = {}) 
   });
 }
 
-export function promptDialog(title, { value = '', placeholder = '', okLabel, maxLength = 80 } = {}) {
+/**
+ * Ask for a line of text. validate(value) may return an error message,
+ * which is shown under the field and keeps the dialog open.
+ */
+export function promptDialog(title, { value = '', placeholder = '', okLabel, maxLength = 80, validate } = {}) {
   return new Promise((resolve) => {
     let done = false;
     const input = h('input.input', { type: 'text', value, placeholder, maxLength, autofocus: true });
+    const error = h('p.field-error', { role: 'alert' });
+    const check = () => {
+      const err = validate?.(input.value) || '';
+      error.textContent = err;
+      input.classList.toggle('invalid', !!err);
+      return !err;
+    };
+    if (validate) input.addEventListener('input', check);
     modal({
       title,
-      content: input,
+      content: h('div.field', input, error),
       actions: [
         { label: t('common.cancel'), kind: 'ghost', onClick: () => { done = true; resolve(null); } },
-        { label: okLabel || t('common.save'), kind: 'primary', onClick: () => { done = true; resolve(input.value.trim()); } }
+        { label: okLabel || t('common.save'), kind: 'primary', onClick: () => {
+          if (!check()) { input.focus(); return false; }
+          done = true;
+          resolve(input.value.trim().replace(/\s+/g, ' '));
+        } }
       ],
       onClose: () => { if (!done) resolve(null); }
     });

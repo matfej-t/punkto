@@ -77,11 +77,13 @@
     "uploadLogo": "Logo hochladen",
     "changeLogo": "Logo ändern",
     "steps": "Punkte-Buttons",
-    "stepsHint": "Durch Kommas getrennt, z. B. 1, 5 oder 1, 2, 3 (bis zu 4).",
+    "stepsHint": "Durch Kommas getrennt, je bis zu 4 Werte, z. B. 1, 3.",
     "clock": "Spieluhr anzeigen",
     "resetScores": "Punkte zurücksetzen",
     "resetConfirm": "Alle Punkte auf null setzen? Beendete Spiele im Verlauf bleiben erhalten.",
-    "deleteBoard": "Tafel löschen"
+    "deleteBoard": "Tafel löschen",
+    "stepsPlus": "Addieren",
+    "stepsMinus": "Abziehen"
   },
   "premium": {
     "title": "Punkto ohne Werbung",
@@ -141,7 +143,10 @@
     "badLink": "Dieser Link ist beschädigt oder unvollständig.",
     "badImage": "Dieses Bild konnte nicht gelesen werden. Versuche es mit JPG oder PNG.",
     "notFound": "Tafel nicht gefunden",
-    "notFoundText": "Vielleicht wurde sie gelöscht oder in einem anderen Browser erstellt."
+    "notFoundText": "Vielleicht wurde sie gelöscht oder in einem anderen Browser erstellt.",
+    "nameRequired": "Der Name darf nicht leer sein.",
+    "boardNameTaken": "Du hast schon eine Tafel mit diesem Namen.",
+    "nameTaken": "Dieser Name ist auf dieser Tafel schon vergeben."
   },
   "control": {
     "openDisplay": "Anzeige für TV / Beamer öffnen",
@@ -171,9 +176,9 @@
     "rounds": "Rundenansicht umschalten",
     "edit": "Bearbeitungsmodus",
     "homePlus": "Tor für das erste Team",
-    "homeMinus": "Letztes Tor des ersten Teams entfernen",
+    "homeMinus": "Punkte vom ersten Team abziehen",
     "awayPlus": "Tor für das zweite Team",
-    "awayMinus": "Letztes Tor des zweiten Teams entfernen",
+    "awayMinus": "Punkte vom zweiten Team abziehen",
     "pickScorer": "Torschützen wählen (0 = niemand)",
     "clock": "Uhr starten / pausieren",
     "display": "Anzeige öffnen",
@@ -204,7 +209,9 @@
     "addPlaceholder": "Name von Spieler oder Team",
     "addPlayer": "Spieler oder Team hinzufügen",
     "add": "Hinzufügen",
-    "addHint": "Tipp: Füge eine Liste ein (ein Name pro Zeile), um viele Spieler auf einmal hinzuzufügen."
+    "addHint": "Tipp: Füge eine Liste ein (ein Name pro Zeile), um viele Spieler auf einmal hinzuzufügen.",
+    "skipped": { "one": "{n} Name übersprungen – steht schon auf dieser Tafel.", "other": "{n} Namen übersprungen – stehen schon auf dieser Tafel." },
+    "editScore": "Klicken, um eine neue Punktzahl einzugeben"
   },
   "sb": {
     "home": "Heim",

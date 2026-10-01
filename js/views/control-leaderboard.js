@@ -2,7 +2,8 @@
 import { h, btn, iconBtn, rerender, avatar, toast, confirmDialog } from '../ui.js';
 import { icon } from '../icons.js';
 import { t, fmtNum } from '../i18n.js';
-import { newPlayer, rankPlayers, playerTotal, addPoints, setRoundScore, nextRound } from '../model.js';
+import { newPlayer, rankPlayers, playerTotal, addPoints, setRoundScore, nextRound, namesInBoard, normName } from '../model.js';
+import { editableScore, nameInput, nameInBoardError } from './common.js';
 
 export function leaderboardBody(ctx) {
   const el = h('div.lb');
@@ -73,15 +74,23 @@ export function leaderboardBody(ctx) {
     const roundPts = b.roundCount > 1 ? Number(p.scores[b.round]) || 0 : null;
     return h('li.lb-row', {
       class: selected === p.id ? 'selected' : '', dataset: { id: p.id },
-      onclick: (e) => { if (!e.target.closest('button')) { selected = selected === p.id ? null : p.id; render(); } }
+      onclick: (e) => { if (!e.target.closest('button, input')) { selected = selected === p.id ? null : p.id; render(); } }
     },
       h('span.rank', { class: medal, text: anyScore ? r.rank : i + 1, title: i < 9 ? `${t('shortcuts.selectN')}: ${i + 1}` : '' }),
       avatar(p.name),
       h('span.name', { text: p.name || '—' },
         roundPts !== null ? h('span.round-pts', { text: t('lb.thisRound', { n: fmtNum(roundPts) }) }) : null),
       h('div.score-ctl',
-        h('button.btn.step.minus', { 'aria-label': `−${b.steps[0]} ${p.name}`, onclick: () => ctx.mutate(bd => addPoints(bd, p.id, -b.steps[0])), html: icon('minus') }),
-        h('span.score', { dataset: { scoreOf: p.id }, text: fmtNum(r.total), 'aria-live': 'polite' }),
+        // Subtract buttons, largest outermost: −3 −1 [score] +1 +3
+        ...[...b.minus].reverse().map((s) => h('button.btn.step.minus', {
+          class: s === b.minus[0] ? 'first' : '', 'aria-label': `−${s} ${p.name}`,
+          onclick: () => ctx.mutate(bd => addPoints(bd, p.id, -s))
+        }, `−${s}`)),
+        // Click the score to type a new total (the difference goes into the current round).
+        editableScore({
+          value: r.total, label: p.name, cls: 'score', dataset: { scoreOf: p.id },
+          onSet: (n) => ctx.mutate(bd => addPoints(bd, p.id, n - r.total))
+        }),
         ...b.steps.map((s, k) => h('button.btn.step.plus', {
           class: k === 0 ? 'primary' : '', 'aria-label': `+${s} ${p.name}`,
           onclick: () => ctx.mutate(bd => addPoints(bd, p.id, s))
@@ -94,10 +103,13 @@ export function leaderboardBody(ctx) {
     const b = ctx.board;
     return h('li.lb-row.editing', { dataset: { id: p.id } },
       avatar(p.name),
-      h('input.input.name-input', {
-        type: 'text', value: p.name, maxLength: 60, dataset: { key: 'name-' + p.id }, 'aria-label': t('lb.name'),
-        oninput: (e) => { p.name = e.target.value; ctx.save({ render: false }); },
+      nameInput({
+        class: 'name-input', dataset: { key: 'name-' + p.id }, 'aria-label': t('lb.name'),
         onkeydown: (e) => { if (e.key === 'Enter') { e.preventDefault(); el.querySelector('[data-key="add"]')?.focus(); } }
+      }, {
+        value: p.name,
+        validate: v => nameInBoardError(b, v, p.id),
+        onCommit: (v) => { p.name = v; ctx.save({ render: false }); }
       }),
       iconBtn('trash', t('common.delete'), async () => {
         if (playerTotal(p) !== 0 && !await confirmDialog(t('lb.removeConfirm', { name: p.name || '—' }), { danger: true, okLabel: t('common.delete') })) return;
@@ -169,11 +181,26 @@ export function leaderboardBody(ctx) {
   }
 
   function add(text) {
-    const names = String(text).split(/\r?\n/).map(s => s.trim()).filter(Boolean).slice(0, 200);
-    if (!names.length) return;
-    names.forEach(n => ctx.board.players.push(newPlayer(n)));
+    const names = String(text).split(/\r?\n/).map(s => s.trim().replace(/\s+/g, ' ')).filter(Boolean).slice(0, 200);
+    const input = el.querySelector('[data-key="add"]');
+    if (!names.length) {
+      if (String(text).trim() === '' && input) { toast(t('errors.nameRequired'), { kind: 'error' }); input.focus(); }
+      return;
+    }
+    // Names must be unique within the board (also within the pasted list).
+    const taken = namesInBoard(ctx.board);
+    const fresh = names.filter(n => !taken.has(normName(n)) && (taken.add(normName(n)), true));
+    const skipped = names.length - fresh.length;
+    if (!fresh.length) {
+      toast(names.length === 1 ? t('errors.nameTaken') : t('lb.skipped', { n: skipped }), { kind: 'error' });
+      input?.focus();
+      input?.select();
+      return;
+    }
+    fresh.forEach(n => ctx.board.players.push(newPlayer(n)));
     ctx.ui.edit = true;
     ctx.save();
+    if (skipped) toast(t('lb.skipped', { n: skipped }), { kind: 'error', ms: 4000 });
     el.querySelector('[data-key="add"]')?.focus();
     const list = el.querySelector('.lb-list');
     list?.lastElementChild?.scrollIntoView({ block: 'nearest' });
@@ -199,7 +226,9 @@ export function leaderboardBody(ctx) {
       if (ids[n]) { selected = ids[n]; render(); return true; }
       return false;
     }
-    const step = e.shiftKey && k.startsWith('Arrow') ? (b.steps[1] ?? b.steps[0] * 5) : b.steps[0];
+    const second = e.shiftKey && k.startsWith('Arrow');
+    const step = second ? (b.steps[1] ?? b.steps[0]) : b.steps[0];
+    const minus = second ? (b.minus[1] ?? b.minus[0]) : b.minus[0];
     if ((k === '+' || k === '=' || k === 'ArrowRight') && ids.length && !b.showRounds) {
       const id = sel(); selected = id;
       ctx.mutate(bd => addPoints(bd, id, step));
@@ -207,7 +236,7 @@ export function leaderboardBody(ctx) {
     }
     if ((k === '-' || k === '_' || k === 'ArrowLeft') && ids.length && !b.showRounds) {
       const id = sel(); selected = id;
-      ctx.mutate(bd => addPoints(bd, id, -step));
+      ctx.mutate(bd => addPoints(bd, id, -minus));
       return true;
     }
     if (k === 'n' || k === 'N') { newRound(); return true; }

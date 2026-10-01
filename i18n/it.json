@@ -77,11 +77,13 @@
     "uploadLogo": "Carica logo",
     "changeLogo": "Cambia logo",
     "steps": "Pulsanti punti",
-    "stepsHint": "Separati da virgole, es. 1, 5 oppure 1, 2, 3 (fino a 4).",
+    "stepsHint": "Separati da virgole, fino a 4 valori per campo, es. 1, 3.",
     "clock": "Mostra il cronometro della partita",
     "resetScores": "Azzera i punteggi",
     "resetConfirm": "Riportare tutti i punteggi a zero? Le partite concluse nella cronologia vengono mantenute.",
-    "deleteBoard": "Elimina tabellone"
+    "deleteBoard": "Elimina tabellone",
+    "stepsPlus": "Aggiungi",
+    "stepsMinus": "Togli"
   },
   "premium": {
     "title": "Punkto senza pubblicità",
@@ -141,7 +143,10 @@
     "badLink": "Questo link è danneggiato o incompleto.",
     "badImage": "Impossibile leggere l'immagine. Prova con un JPG o un PNG.",
     "notFound": "Tabellone non trovato",
-    "notFoundText": "Forse è stato eliminato oppure è stato creato in un altro browser."
+    "notFoundText": "Forse è stato eliminato oppure è stato creato in un altro browser.",
+    "nameRequired": "Il nome non può essere vuoto.",
+    "boardNameTaken": "Hai già un tabellone con questo nome.",
+    "nameTaken": "Questo nome è già usato in questo tabellone."
   },
   "control": {
     "openDisplay": "Apri la visualizzazione per TV / proiettore",
@@ -171,9 +176,9 @@
     "rounds": "Mostra / nascondi i round",
     "edit": "Modalità modifica",
     "homePlus": "Gol per la prima squadra",
-    "homeMinus": "Togli l'ultimo gol della prima squadra",
+    "homeMinus": "Togli punti alla prima squadra",
     "awayPlus": "Gol per la seconda squadra",
-    "awayMinus": "Togli l'ultimo gol della seconda squadra",
+    "awayMinus": "Togli punti alla seconda squadra",
     "pickScorer": "Scegli il marcatore (0 = nessuno)",
     "clock": "Avvia / metti in pausa il cronometro",
     "display": "Apri lo schermo",
@@ -204,7 +209,9 @@
     "addPlaceholder": "Nome del giocatore o della squadra",
     "addPlayer": "Aggiungi giocatore o squadra",
     "add": "Aggiungi",
-    "addHint": "Suggerimento: incolla un elenco (un nome per riga) per aggiungere tanti giocatori in un colpo solo."
+    "addHint": "Suggerimento: incolla un elenco (un nome per riga) per aggiungere tanti giocatori in un colpo solo.",
+    "skipped": { "one": "{n} nome saltato: è già in questo tabellone.", "other": "{n} nomi saltati: sono già in questo tabellone." },
+    "editScore": "Clicca per inserire un nuovo punteggio"
   },
   "sb": {
     "home": "Casa",

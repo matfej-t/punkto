@@ -4,7 +4,8 @@
 Static site — HTML, CSS and vanilla JavaScript. No backend, no build step, no accounts.
 All data stays in the visitor's browser.
 
-- **Leaderboard mode:** many players or teams, points, quick +/− buttons (point amounts chosen when creating the board), rounds view (points per round).
+- **Leaderboard mode:** many players or teams, points, quick add and subtract buttons (amounts chosen when creating the board, default +1 +3 / −1), click any score to type a new value, rounds view (points per round).
+- **Names:** every board needs a name that is unique among all boards; player, team and squad names are unique within their board.
 - **Scoreboard mode:** two teams like football, logos, optional squads, goal scorers, optional match clock.
 - **Control view** for the host (mobile-friendly, keyboard shortcuts, undo) and a **Display view** for the TV or projector. The display updates live (`BroadcastChannel`), stays fullscreen and keeps the screen awake.
 - **End game** saves the result in a per-board history and shows a winner podium with a little confetti.
@@ -219,7 +220,7 @@ tests/e2e.mjs             browser tests
 
 **Keyboard shortcuts** (Control view; press `?` in the app to see them):
 - **Leaderboard:** `↑/↓` or `1–9` select a player, `+`/`→` add points, `−`/`←` subtract, `Shift+→/←` use the second point button, `N` starts the next round, `R` toggles the rounds view, `E` edit mode.
-- **Scoreboard:** `Q`/`A` add or remove a goal for the first team, `P`/`L` for the second team, `1–9` pick the scorer, `Space` starts or pauses the clock.
+- **Scoreboard:** `Q`/`A` add or subtract points for the first team, `P`/`L` for the second team, `1–9` pick the scorer, `Space` starts or pauses the clock.
 - **Everywhere:** `D` opens the display, `Z`/`Ctrl+Z` undo. On the display, `F` toggles fullscreen.
 
 ## 11. Privacy and GDPR notes

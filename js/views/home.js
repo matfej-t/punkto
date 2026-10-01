@@ -3,10 +3,10 @@ import { h, btn, iconBtn, modal, popMenu, promptDialog, confirmDialog, toast, co
 import { icon } from '../icons.js';
 import { t, fmtAgo, fmtNum } from '../i18n.js';
 import * as store from '../store.js';
-import { newBoard, cloneBoard, boardSummary, DEFAULT_STEPS } from '../model.js';
+import { newBoard, cloneBoard, boardSummary, uniqueName, DEFAULT_STEPS, DEFAULT_MINUS } from '../model.js';
 import { leaderboardArt, scoreboardArt } from '../illustrations.js';
 import { boardToLink, exportJson, safeFilename } from '../share.js';
-import { appBar, footer, importFromFile, stepsInput } from './common.js';
+import { appBar, footer, importFromFile, stepsFields, boardTitleError } from './common.js';
 
 export function homeView(root) {
   document.title = t('meta.title');
@@ -71,11 +71,11 @@ function boardCard(b, render) {
   const sum = boardSummary(b);
   const more = iconBtn('more', t('common.more'), (e) => popMenu(e.currentTarget, [
     { label: t('common.rename'), icon: 'edit', onClick: async () => {
-      const name = await promptDialog(t('common.rename'), { value: b.title });
+      const name = await promptDialog(t('common.rename'), { value: b.title, validate: v => boardTitleError(v, b.id) });
       if (name) { b.title = name; store.saveBoard(b); render(); }
     } },
     { label: t('home.duplicate'), icon: 'copy', onClick: () => {
-      store.saveBoard(cloneBoard(b, t('home.copyOf', { title: b.title })));
+      store.saveBoard(cloneBoard(b, uniqueName(t('home.copyOf', { title: b.title }), store.boardTitles())));
       render();
     } },
     { label: t('share.copyLink'), icon: 'link', onClick: () => copyBoardLink(b) },
@@ -123,8 +123,18 @@ export async function copyBoardLink(b) {
 
 export function openCreate() {
   let mode = 'leaderboard';
-  const steps = stepsInput(DEFAULT_STEPS, () => {});
-  const title = h('input.input', { type: 'text', maxLength: 80, placeholder: t('create.titlePlaceholder'), autofocus: true, 'aria-label': t('create.title') });
+  const steps = stepsFields(DEFAULT_STEPS, DEFAULT_MINUS);
+  const titleError = h('p.field-error', { role: 'alert' });
+  const checkTitle = () => {
+    const err = boardTitleError(title.value);
+    titleError.textContent = err;
+    title.classList.toggle('invalid', !!err);
+    return !err;
+  };
+  const title = h('input.input', {
+    type: 'text', maxLength: 80, placeholder: t('create.titlePlaceholder'), autofocus: true, required: true, 'aria-label': t('create.title'),
+    oninput: () => { if (titleError.textContent) checkTitle(); }
+  });
 
   const cards = h('div.mode-cards', { role: 'radiogroup', 'aria-label': t('create.mode') },
     [['leaderboard', leaderboardArt], ['scoreboard', scoreboardArt]].map(([m, art]) =>
@@ -142,14 +152,15 @@ export function openCreate() {
     title: t('create.heading'),
     wide: true,
     content: h('div.stack',
-      h('label.field', h('span.field-label', { text: t('create.title') }), title),
+      h('label.field', h('span.field-label', { text: t('create.title') }), title, titleError),
       h('div.field', h('span.field-label', { text: t('create.mode') }), cards),
-      h('label.field', h('span.field-label', { text: t('settings.steps') }), steps, h('span.small.muted', { text: t('settings.stepsHint') }))
+      steps.el
     ),
     actions: [
       { label: t('common.cancel'), kind: 'ghost' },
       { label: t('create.create'), kind: 'primary', onClick: () => {
-        const b = newBoard(mode, title.value.trim() || t('modes.' + mode), steps.getSteps());
+        if (!checkTitle()) { title.focus(); return false; }
+        const b = newBoard(mode, title.value.trim().replace(/\s+/g, ' '), steps.plus.getSteps(), steps.minus.getSteps());
         if (mode === 'scoreboard') { b.teams[0].name = t('sb.home'); b.teams[1].name = t('sb.away'); }
         store.saveBoard(b);
         location.hash = '#/b/' + b.id;

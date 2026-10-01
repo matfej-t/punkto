@@ -80,13 +80,49 @@ await test('create a leaderboard with the mode cards and point buttons', async (
   await page.click('text=Create your first board');
   assert(await page.locator('.mode-card svg').count() === 2, 'two illustrated cards');
   eq(await page.locator('dialog .swatch, dialog input[type=color]').count(), 0, 'no colour picker');
-  const steps = page.locator('dialog input[aria-label="Point buttons"]');
-  eq(await steps.inputValue(), '1, 3', 'leaderboard default');
+  const plus = page.locator('dialog input[aria-label="Add"]');
+  const minus = page.locator('dialog input[aria-label="Subtract"]');
+  eq([await plus.inputValue(), await minus.inputValue()], ['1, 3', '1'], 'leaderboard defaults');
   await page.click('.mode-card[data-mode="scoreboard"]');
-  eq(await steps.inputValue(), '1, 3', 'scoreboard default');
+  eq([await plus.inputValue(), await minus.inputValue()], ['1, 3', '1'], 'scoreboard defaults');
   await page.click('.mode-card[data-mode="leaderboard"]');
+  // The name is mandatory.
+  await page.click('text=Create board');
+  assert((await page.locator('dialog .field-error').textContent()).includes("can't be empty"), 'name required');
   await page.locator('dialog input.input').first().fill('Spring Cup');
   await page.click('text=Create board');
+  await page.waitForSelector('[data-key="add"]');
+});
+
+await test('board names are unique across all boards (create and rename)', async () => {
+  await page.goto(BASE + '?adpreview=1#/');
+  await page.click('.section-head button:has-text("New board")');
+  await page.click('.mode-card[data-mode="scoreboard"]');
+  await page.locator('dialog input.input').first().fill('  spring   CUP ');
+  await page.click('text=Create board');
+  assert((await page.locator('dialog .field-error').textContent()).includes('already have a board'), 'duplicate rejected');
+  await page.click('dialog button:has-text("Cancel")');
+  eq(await page.locator('.board-card').count(), 1);
+  // Duplicating gets a unique name; renaming the copy to an existing name is refused.
+  await page.click('.board-card .icon-btn[aria-label="More"]');
+  await page.click('.menu-item:has-text("Duplicate")');
+  await page.waitForSelector('.board-card >> nth=1');
+  const titles = await page.locator('.board-card h3').allTextContents();
+  eq(new Set(titles).size, 2, 'unique after duplicate');
+  const copy = page.locator('.board-card', { hasText: '(copy)' });
+  await copy.locator('.icon-btn[aria-label="More"]').click();
+  await page.click('.menu-item:has-text("Rename")');
+  await page.fill('dialog input.input', 'Spring Cup');
+  await page.click('dialog .btn-primary');
+  assert((await page.locator('dialog .field-error').textContent()).includes('already have a board'), 'rename rejected');
+  await page.fill('dialog input.input', '');
+  await page.click('dialog .btn-primary');
+  assert((await page.locator('dialog .field-error').textContent()).includes("can't be empty"), 'empty rename rejected');
+  await page.click('dialog button:has-text("Cancel")');
+  await copy.locator('.icon-btn[aria-label="More"]').click();
+  await page.click('.menu-item:has-text("Delete")');
+  await page.click('dialog .btn-danger');
+  await page.click('.board-card .board-card-main');
   await page.waitForSelector('[data-key="add"]');
 });
 
@@ -98,6 +134,27 @@ await test('add players by Enter and by pasting a list', async () => {
     document.querySelector('[data-key="add"]').dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
   });
   eq((await boardOf(page)).players.map(p => p.name), ['Anna', 'Ben', 'Carla', 'David', 'Emma']);
+});
+
+await test('player names are unique within the board', async () => {
+  await page.fill('[data-key="add"]', ' anna ');
+  await page.keyboard.press('Enter');
+  await page.evaluate(() => {
+    const dt = new DataTransfer(); dt.setData('text/plain', 'BEN\nFrank\nfrank');
+    document.querySelector('[data-key="add"]').dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
+  });
+  eq((await boardOf(page)).players.map(p => p.name), ['Anna', 'Ben', 'Carla', 'David', 'Emma', 'Frank'], 'duplicates skipped');
+  // Renaming to an existing name is marked invalid and reverted on leaving the field.
+  const ben = page.locator('[data-key^="name-"]').nth(1);
+  await ben.fill('Carla');
+  assert(await ben.evaluate(e => e.classList.contains('invalid')), 'marked invalid');
+  await page.locator('[data-key="add"]').focus();
+  eq(await ben.inputValue(), 'Ben', 'reverted');
+  await ben.fill('');
+  await page.locator('[data-key="add"]').focus();
+  eq(await ben.inputValue(), 'Ben', 'empty reverted');
+  await page.locator('.lb-row').nth(5).locator('.icon-btn').click(); // remove Frank (no points)
+  eq((await boardOf(page)).players.length, 5);
   await page.click('button:has-text("Done")');
 });
 
@@ -130,6 +187,23 @@ await test('score with buttons, keyboard and undo', async () => {
   eq((await page.locator('.score').allTextContents()).slice(0, 3), ['0', '4', '1']);
   await page.keyboard.press('Control+z');
   eq((await page.locator('.score').allTextContents())[2], '2', 'undo');
+});
+
+await test('subtract buttons and typing a score by hand', async () => {
+  const row = page.locator('.lb-row').nth(0);
+  await row.locator('.step.minus').click();
+  eq(await row.locator('.score').textContent(), '-1', '−1 button');
+  await row.locator('.score').click();
+  await page.locator('.score-input').fill('12');
+  await page.keyboard.press('Enter');
+  eq(await row.locator('.score').textContent(), '12', 'typed total');
+  await row.locator('.score').click();
+  await page.locator('.score-input').fill('99');
+  await page.keyboard.press('Escape');
+  eq(await row.locator('.score').textContent(), '12', 'escape cancels');
+  await page.keyboard.press('Control+z');
+  await page.keyboard.press('Control+z');
+  eq(await row.locator('.score').textContent(), '0', 'undo both');
 });
 
 await test('display window updates live (BroadcastChannel)', async () => {
@@ -183,14 +257,25 @@ await test('scoreboard: scorer picker, minus, clock, display', async () => {
   await page.click('.section-head button:has-text("New board")');
   await page.click('.mode-card[data-mode="scoreboard"]');
   await page.locator('dialog input.input').first().fill('Cup final');
-  await page.fill('dialog input[aria-label="Point buttons"]', '1, 2, 3');
+  await page.fill('dialog input[aria-label="Add"]', '1, 2, 3');
+  await page.fill('dialog input[aria-label="Subtract"]', '1, 2');
   await page.click('text=Create board');
   await page.waitForSelector('.team-card');
   eq((await boardOf(page)).steps, [1, 2, 3], 'steps chosen at creation');
   eq(await page.locator('.team-card').first().locator('.goal-btn').count(), 3, 'three point buttons');
+  eq((await boardOf(page)).minus, [1, 2], 'subtract buttons chosen at creation');
+  eq(await page.locator('.team-card').first().locator('.step.minus').count(), 2, 'two subtract buttons');
   await page.click('button:has-text("Edit teams")');
   await page.fill('[data-key="sq-add-0"]', 'Sam'); await page.keyboard.press('Enter');
   await page.fill('[data-key="sq-add-0"]', 'Kim'); await page.keyboard.press('Enter');
+  // Names are unique across both teams and their squads.
+  await page.fill('[data-key="sq-add-1"]', 'kim'); await page.keyboard.press('Enter');
+  await page.fill('[data-key="sq-add-1"]', 'Away'); await page.keyboard.press('Enter');
+  eq((await boardOf(page)).teams[1].players.length, 0, 'duplicate squad names refused');
+  const teamName = page.locator('[data-key="team-1"]');
+  await teamName.fill('Sam');
+  await page.locator('[data-key="sq-add-1"]').focus();
+  eq(await teamName.inputValue(), 'Away', 'team name reverted');
   await page.click('button:has-text("Done")');
   await page.keyboard.press('q');
   await page.waitForSelector('.scorer-modal');
@@ -201,6 +286,15 @@ await test('scoreboard: scorer picker, minus, clock, display', async () => {
   eq(await page.locator('.team-score').allTextContents(), ['1', '1']);
   const b = await boardOf(page);
   eq(b.events[0].playerId, b.teams[0].players[1].id, 'scorer Kim');
+  // Typing a score records the difference as a correction.
+  await page.locator('.team-score').nth(1).click();
+  await page.locator('.score-input').fill('4');
+  await page.keyboard.press('Enter');
+  eq(await page.locator('.team-score').allTextContents(), ['1', '4'], 'typed score');
+  await page.locator('.team-card').nth(1).locator('.step.minus.first').click();
+  await page.locator('.team-card').nth(1).locator('.step.minus.first').click();
+  await page.locator('.team-card').nth(1).locator('.step.minus.first').click();
+  eq(await page.locator('.team-score').allTextContents(), ['1', '1'], 'subtract buttons');
   // clock
   await page.click('.ctl-bar .icon-btn[aria-label="More"]');
   await page.click('.menu-item:has-text("Board settings")');

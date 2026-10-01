@@ -77,11 +77,13 @@
     "uploadLogo": "Logo yükle",
     "changeLogo": "Logoyu değiştir",
     "steps": "Puan düğmeleri",
-    "stepsHint": "Virgülle ayırın, ör. 1, 5 veya 1, 2, 3 (en fazla 4).",
+    "stepsHint": "Virgülle ayırın, her alanda en fazla 4 değer, ör. 1, 3.",
     "clock": "Maç saatini göster",
     "resetScores": "Puanları sıfırla",
     "resetConfirm": "Tüm puanlar sıfırlansın mı? Geçmişteki bitmiş oyunlar korunur.",
-    "deleteBoard": "Tabelayı sil"
+    "deleteBoard": "Tabelayı sil",
+    "stepsPlus": "Ekle",
+    "stepsMinus": "Çıkar"
   },
   "premium": {
     "title": "Reklamsız Punkto",
@@ -141,7 +143,10 @@
     "badLink": "Bu bağlantı bozuk veya eksik.",
     "badImage": "Bu görsel okunamadı. JPG veya PNG deneyin.",
     "notFound": "Tabela bulunamadı",
-    "notFoundText": "Silinmiş ya da başka bir tarayıcıda oluşturulmuş olabilir."
+    "notFoundText": "Silinmiş ya da başka bir tarayıcıda oluşturulmuş olabilir.",
+    "nameRequired": "Ad boş olamaz.",
+    "boardNameTaken": "Bu adla zaten bir tabelanız var.",
+    "nameTaken": "Bu ad bu tabelada zaten kullanılıyor."
   },
   "control": {
     "openDisplay": "TV / projektör ekranını aç",
@@ -171,9 +176,9 @@
     "rounds": "Tur görünümünü aç / kapat",
     "edit": "Düzenleme modu",
     "homePlus": "Birinci takıma gol",
-    "homeMinus": "Birinci takımın son golünü kaldır",
+    "homeMinus": "Birinci takımdan puan düş",
     "awayPlus": "İkinci takıma gol",
-    "awayMinus": "İkinci takımın son golünü kaldır",
+    "awayMinus": "İkinci takımdan puan düş",
     "pickScorer": "Golü atanı seç (0 = kimse)",
     "clock": "Saati başlat / duraklat",
     "display": "Ekranı aç",
@@ -204,7 +209,9 @@
     "addPlaceholder": "Oyuncu veya takım adı",
     "addPlayer": "Oyuncu veya takım ekle",
     "add": "Ekle",
-    "addHint": "İpucu: birçok oyuncuyu tek seferde eklemek için bir liste yapıştırın (her satıra bir ad)."
+    "addHint": "İpucu: birçok oyuncuyu tek seferde eklemek için bir liste yapıştırın (her satıra bir ad).",
+    "skipped": { "one": "{n} ad atlandı — zaten bu tabelada var.", "other": "{n} ad atlandı — zaten bu tabelada var." },
+    "editScore": "Yeni puan yazmak için tıklayın"
   },
   "sb": {
     "home": "Ev sahibi",

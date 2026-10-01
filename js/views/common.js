@@ -8,7 +8,7 @@ import { toggleScheme, resolvedScheme, setThemePref } from '../theme.js';
 import { isPremium, getLicense, activateLicense, removeLicense, hideAdsForSession, maskKey } from '../premium.js';
 import { adsActive } from '../ads.js';
 import { exportJson, parseImport, prepareImported, linkToBoard } from '../share.js';
-import { parseSteps } from '../model.js';
+import { parseSteps, normName, namesInBoard } from '../model.js';
 import { APP_VERSION } from '../env.js';
 
 const cfg = window.PUNKTO_CONFIG;
@@ -24,10 +24,10 @@ export const logoSvg = `<svg viewBox="0 0 512 512" class="logo" aria-hidden="tru
  * Text field for the point buttons, e.g. "1, 3" → [1, 3].
  * onChange receives the parsed list; invalid input snaps back to the last valid value.
  */
-export function stepsInput(initial, onChange) {
+export function stepsInput(initial, onChange, label = t('settings.steps')) {
   let current = [...initial];
   const input = h('input.input', {
-    type: 'text', value: current.join(', '), inputMode: 'numeric', 'aria-label': t('settings.steps'),
+    type: 'text', value: current.join(', '), inputMode: 'numeric', 'aria-label': label,
     onchange: () => {
       const s = parseSteps(input.value);
       if (s.length) { current = s; onChange(s); }
@@ -35,6 +35,108 @@ export function stepsInput(initial, onChange) {
     }
   });
   input.getSteps = () => { const s = parseSteps(input.value); return s.length ? s : current; };
+  return input;
+}
+
+/**
+ * The "Point buttons" field: one input for adding, one for subtracting.
+ * Returns { el, plus, minus } where plus/minus are stepsInput elements.
+ */
+export function stepsFields(plusInit, minusInit, onPlus = () => {}, onMinus = () => {}) {
+  const plus = stepsInput(plusInit, onPlus, t('settings.stepsPlus'));
+  const minus = stepsInput(minusInit, onMinus, t('settings.stepsMinus'));
+  const el = h('div.field',
+    h('span.field-label', { text: t('settings.steps') }),
+    h('div.steps-fields',
+      h('label.steps-field', h('span.steps-sign.plus', { text: '+', title: t('settings.stepsPlus') }), h('span.sr-only', { text: t('settings.stepsPlus') }), plus),
+      h('label.steps-field', h('span.steps-sign.minus', { text: '−', title: t('settings.stepsMinus') }), h('span.sr-only', { text: t('settings.stepsMinus') }), minus)
+    ),
+    h('span.small.muted', { text: t('settings.stepsHint') })
+  );
+  return { el, plus, minus };
+}
+
+/* ---------------------------------------------------------- manual score */
+
+/**
+ * A score that can be clicked and typed over. Shows `value` as a button;
+ * on click it turns into a number field. Enter or leaving the field calls
+ * onSet(newValue) when the number changed; Escape cancels.
+ */
+export function editableScore({ value, label, onSet, cls = '', dataset = {} }) {
+  const shown = fmtNum(value);
+  const b = h('button.score-btn', {
+    class: cls, dataset, text: shown, title: t('lb.editScore'), 'aria-label': `${label}: ${shown}. ${t('lb.editScore')}`,
+    onclick: (e) => {
+      e.stopPropagation();
+      let done = false;
+      const input = h('input.score-input', {
+        type: 'number', inputMode: 'numeric', step: 'any', value: String(value), 'aria-label': label, class: cls,
+        onkeydown: (ev) => {
+          if (ev.key === 'Enter') { ev.preventDefault(); finish(true); }
+          if (ev.key === 'Escape') { ev.preventDefault(); ev.stopPropagation(); finish(false); }
+        },
+        onblur: () => finish(true),
+        onclick: (ev) => ev.stopPropagation()
+      });
+      function finish(commit) {
+        if (done) return;
+        done = true;
+        const n = Number(input.value);
+        const changed = commit && input.value.trim() !== '' && Number.isFinite(n) && n !== value;
+        input.replaceWith(b);
+        if (changed) onSet(n);
+      }
+      b.replaceWith(input);
+      input.focus();
+      input.select();
+    }
+  });
+  return b;
+}
+
+/* ------------------------------------------------------------------ names */
+
+/** Error message for a board title, or '' when it is fine (required + unique among all boards). */
+export function boardTitleError(value, exceptId = null) {
+  if (!normName(value)) return t('errors.nameRequired');
+  if (store.boardTitles(exceptId).has(normName(value))) return t('errors.boardNameTaken');
+  return '';
+}
+
+/** Error message for a player/team name inside a board, or '' when fine (required + unique in the board). */
+export function nameInBoardError(board, value, exceptId = null) {
+  if (!normName(value)) return t('errors.nameRequired');
+  if (namesInBoard(board, exceptId).has(normName(value))) return t('errors.nameTaken');
+  return '';
+}
+
+/**
+ * Text input for a name that must stay valid. While typing, valid values are
+ * committed live (onCommit) and invalid ones are only marked red; on leaving
+ * the field an invalid value is reverted to the last valid one with a message.
+ */
+export function nameInput(props, { value, validate, onCommit }) {
+  let saved = value;
+  const mark = (err) => {
+    input.classList.toggle('invalid', !!err);
+    if (err) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    input.title = err;
+  };
+  const input = h('input.input', {
+    type: 'text', maxLength: 60, ...props, value,
+    oninput: () => {
+      const err = validate(input.value);
+      mark(err);
+      if (!err) { saved = input.value.trim().replace(/\s+/g, ' '); onCommit(saved); }
+    },
+    onchange: () => {
+      const err = validate(input.value);
+      if (err) toast(err, { kind: 'error' });
+      input.value = saved;
+      mark('');
+    }
+  });
   return input;
 }
 
@@ -155,7 +257,13 @@ export async function importFromFile() {
   try {
     const boards = parseImport(await file.text());
     const ids = new Set(store.listBoards().map(b => b.id));
-    for (const b of boards) { prepareImported(b, ids); ids.add(b.id); store.saveBoard(b, { touch: false }); }
+    const titles = store.boardTitles();
+    for (const b of boards) {
+      prepareImported(b, ids, titles);
+      ids.add(b.id);
+      titles.add(normName(b.title));
+      store.saveBoard(b, { touch: false });
+    }
     toast(t('share.imported', { n: boards.length }), { kind: 'ok' });
     reroute();
   } catch (e) {
@@ -269,7 +377,7 @@ export function importView(root, payload) {
         {
           label: t('share.restore'), kind: 'primary', onClick: () => {
             done = true;
-            prepareImported(board, new Set(store.listBoards().map(b => b.id)));
+            prepareImported(board, new Set(store.listBoards().map(b => b.id)), store.boardTitles());
             store.saveBoard(board);
             location.replace('#/b/' + board.id);
           }

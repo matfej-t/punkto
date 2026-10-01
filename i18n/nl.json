@@ -77,11 +77,13 @@
     "uploadLogo": "Logo uploaden",
     "changeLogo": "Logo wijzigen",
     "steps": "Puntenknoppen",
-    "stepsHint": "Gescheiden door komma's, bijv. 1, 5 of 1, 2, 3 (maximaal 4).",
+    "stepsHint": "Gescheiden door komma's, maximaal 4 waarden per veld, bijv. 1, 3.",
     "clock": "Wedstrijdklok tonen",
     "resetScores": "Scores resetten",
     "resetConfirm": "Alle scores op nul zetten? Afgeronde spellen in de geschiedenis blijven bewaard.",
-    "deleteBoard": "Bord verwijderen"
+    "deleteBoard": "Bord verwijderen",
+    "stepsPlus": "Erbij",
+    "stepsMinus": "Eraf"
   },
   "premium": {
     "title": "Punkto zonder advertenties",
@@ -141,7 +143,10 @@
     "badLink": "Deze link is beschadigd of onvolledig.",
     "badImage": "Deze afbeelding kon niet worden gelezen. Probeer een JPG of PNG.",
     "notFound": "Bord niet gevonden",
-    "notFoundText": "Misschien is het verwijderd of in een andere browser gemaakt."
+    "notFoundText": "Misschien is het verwijderd of in een andere browser gemaakt.",
+    "nameRequired": "De naam mag niet leeg zijn.",
+    "boardNameTaken": "Je hebt al een bord met deze naam.",
+    "nameTaken": "Deze naam wordt al gebruikt op dit bord."
   },
   "control": {
     "openDisplay": "Weergave openen voor tv / beamer",
@@ -171,9 +176,9 @@
     "rounds": "Rondeweergave aan / uit",
     "edit": "Bewerkmodus",
     "homePlus": "Doelpunt voor het eerste team",
-    "homeMinus": "Laatste doelpunt van het eerste team verwijderen",
+    "homeMinus": "Punten aftrekken bij het eerste team",
     "awayPlus": "Doelpunt voor het tweede team",
-    "awayMinus": "Laatste doelpunt van het tweede team verwijderen",
+    "awayMinus": "Punten aftrekken bij het tweede team",
     "pickScorer": "Doelpuntenmaker kiezen (0 = niemand)",
     "clock": "Klok starten / pauzeren",
     "display": "Weergave openen",
@@ -204,7 +209,9 @@
     "addPlaceholder": "Naam van speler of team",
     "addPlayer": "Speler of team toevoegen",
     "add": "Toevoegen",
-    "addHint": "Tip: plak een lijst (één naam per regel) om veel spelers in één keer toe te voegen."
+    "addHint": "Tip: plak een lijst (één naam per regel) om veel spelers in één keer toe te voegen.",
+    "skipped": { "one": "{n} naam overgeslagen — die staat al op dit bord.", "other": "{n} namen overgeslagen — die staan al op dit bord." },
+    "editScore": "Klik om een nieuwe score in te typen"
   },
   "sb": {
     "home": "Thuis",

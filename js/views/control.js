@@ -9,7 +9,7 @@ import { toggleScheme } from '../theme.js';
 import { processImage } from '../images.js';
 import { exportJson, safeFilename } from '../share.js';
 import { adSlot, adsActive } from '../ads.js';
-import { openPremium, stepsInput } from './common.js';
+import { openPremium, stepsFields, nameInput, boardTitleError } from './common.js';
 import { openDisplayWindow, copyBoardLink } from './home.js';
 import { leaderboardBody } from './control-leaderboard.js';
 import { scoreboardBody } from './control-scoreboard.js';
@@ -120,7 +120,7 @@ export function controlView(root, id) {
   }
 
   async function rename() {
-    const name = await promptDialog(t('common.rename'), { value: board.title });
+    const name = await promptDialog(t('common.rename'), { value: board.title, validate: v => boardTitleError(v, board.id) });
     if (name) { board.title = name; ctx.save(); }
   }
 
@@ -210,7 +210,11 @@ function boardSettingsFields(ctx, redraw, closeModal) {
   const b = ctx.board;
   const save = () => ctx.save();
 
-  const title = h('input.input', { type: 'text', value: b.title, maxLength: 80, oninput: (e) => { b.title = e.target.value.trim() || b.title; ctx.save({ render: false }); } });
+  const title = nameInput({ maxLength: 80, 'aria-label': t('settings.boardTitle') }, {
+    value: b.title,
+    validate: v => boardTitleError(v, b.id),
+    onCommit: (v) => { b.title = v; ctx.save({ render: false }); }
+  });
 
   const logoRow = h('div.row',
     b.logo ? h('img.logo-preview', { src: b.logo, alt: '' }) : h('div.logo-preview.empty', { html: icon('image') }),
@@ -222,7 +226,7 @@ function boardSettingsFields(ctx, redraw, closeModal) {
     b.logo ? btn(t('common.remove'), { cls: 'btn-ghost', onclick: () => { b.logo = null; save(); redraw(); } }) : null
   );
 
-  const steps = stepsInput(b.steps, (s) => { b.steps = s; save(); });
+  const steps = stepsFields(b.steps, b.minus, (s) => { b.steps = s; save(); }, (s) => { b.minus = s; save(); });
 
   const modeFields = [];
   if (b.mode === 'scoreboard') {
@@ -235,7 +239,7 @@ function boardSettingsFields(ctx, redraw, closeModal) {
   return [
     h('label.field', h('span.field-label', { text: t('settings.boardTitle') }), title),
     h('div.field', h('span.field-label', { text: t('settings.logo') }), logoRow),
-    h('label.field', h('span.field-label', { text: t('settings.steps') }), steps, h('span.small.muted', { text: t('settings.stepsHint') })),
+    steps.el,
     ...modeFields,
     h('div.divider'),
     h('div.row.wrap',

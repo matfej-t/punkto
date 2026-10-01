@@ -77,11 +77,13 @@
     "uploadLogo": "Upload logo",
     "changeLogo": "Change logo",
     "steps": "Point buttons",
-    "stepsHint": "Comma-separated, e.g. 1, 5 or 1, 2, 3 (up to 4).",
+    "stepsHint": "Comma-separated, up to 4 values each, e.g. 1, 3.",
     "clock": "Show a match clock",
     "resetScores": "Reset scores",
     "resetConfirm": "Set all scores back to zero? Finished games in the history are kept.",
-    "deleteBoard": "Delete board"
+    "deleteBoard": "Delete board",
+    "stepsPlus": "Add",
+    "stepsMinus": "Subtract"
   },
   "premium": {
     "title": "Punkto without ads",
@@ -141,7 +143,10 @@
     "badLink": "This link is broken or incomplete.",
     "badImage": "This image couldn't be read. Try a JPG or PNG.",
     "notFound": "Board not found",
-    "notFoundText": "It may have been deleted, or it was created in a different browser."
+    "notFoundText": "It may have been deleted, or it was created in a different browser.",
+    "nameRequired": "The name can't be empty.",
+    "boardNameTaken": "You already have a board with this name.",
+    "nameTaken": "This name is already used on this board."
   },
   "control": {
     "openDisplay": "Open display for TV / projector",
@@ -171,9 +176,9 @@
     "rounds": "Toggle the rounds view",
     "edit": "Edit mode",
     "homePlus": "Goal for the first team",
-    "homeMinus": "Remove last goal of the first team",
+    "homeMinus": "Subtract points from the first team",
     "awayPlus": "Goal for the second team",
-    "awayMinus": "Remove last goal of the second team",
+    "awayMinus": "Subtract points from the second team",
     "pickScorer": "Choose the scorer (0 = nobody)",
     "clock": "Start / pause the clock",
     "display": "Open the display",
@@ -204,7 +209,9 @@
     "addPlaceholder": "Player or team name",
     "addPlayer": "Add player or team",
     "add": "Add",
-    "addHint": "Tip: paste a list (one name per line) to add many players at once."
+    "addHint": "Tip: paste a list (one name per line) to add many players at once.",
+    "skipped": { "one": "{n} name skipped — it's already on this board.", "other": "{n} names skipped — they're already on this board." },
+    "editScore": "Click to type a new score"
   },
   "sb": {
     "home": "Home",

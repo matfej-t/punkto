@@ -1,8 +1,9 @@
 // Scoreboard control body: two teams, goals with scorer, squads, match clock.
 import { h, btn, iconBtn, rerender, modal, toast, pickFile } from '../ui.js';
 import { icon } from '../icons.js';
-import { t, fmtNum } from '../i18n.js';
-import { teamScore, addGoal, removeLastGoal, toggleClock, resetClock, clockMs, fmtClock, minuteOf, uid } from '../model.js';
+import { t } from '../i18n.js';
+import { teamScore, addGoal, toggleClock, resetClock, clockMs, fmtClock, minuteOf, uid, namesInBoard, normName } from '../model.js';
+import { editableScore, nameInput, nameInBoardError } from './common.js';
 import { teamVars } from '../theme.js';
 import { processImage } from '../images.js';
 
@@ -46,18 +47,20 @@ export function scoreboardBody(ctx) {
       return h('section.team-card.editing', { style },
         h('div.team-head',
           h('button.avatar-btn.logo-btn', { title: t('sb.logo'), 'aria-label': t('sb.logo'), onclick: () => uploadLogo(tm) }, logo, h('span.avatar-edit', { html: icon('image') })),
-          h('input.input.team-name-input', {
-            type: 'text', value: tm.name, maxLength: 60, dataset: { key: 'team-' + i }, 'aria-label': t('sb.teamName'),
-            oninput: (e) => { tm.name = e.target.value; ctx.save({ render: false }); }
+          nameInput({ class: 'team-name-input', dataset: { key: 'team-' + i }, 'aria-label': t('sb.teamName') }, {
+            value: tm.name,
+            validate: v => nameInBoardError(b, v, tm.id),
+            onCommit: (v) => { tm.name = v; ctx.save({ render: false }); }
           })
         ),
         tm.logo ? btn(t('sb.removeLogo'), { cls: 'btn-ghost btn-sm', onclick: () => { tm.logo = null; ctx.save(); } }) : null,
         h('div.squad-edit',
           h('span.field-label', { text: t('sb.squad') }),
           h('ul.squad-list', tm.players.map(p => h('li',
-            h('input.input.input-sm', {
-              type: 'text', value: p.name, maxLength: 60, dataset: { key: `pl-${p.id}` }, 'aria-label': t('lb.name'),
-              oninput: (e) => { p.name = e.target.value; ctx.save({ render: false }); }
+            nameInput({ class: 'input-sm', dataset: { key: `pl-${p.id}` }, 'aria-label': t('lb.name') }, {
+              value: p.name,
+              validate: v => nameInBoardError(b, v, p.id),
+              onCommit: (v) => { p.name = v; ctx.save({ render: false }); }
             }),
             iconBtn('trash', t('common.delete'), () => { tm.players = tm.players.filter(x => x !== p); ctx.save(); }, 'danger-text')
           ))),
@@ -68,9 +71,16 @@ export function scoreboardBody(ctx) {
 
     return h('section.team-card', { style },
       h('div.team-head', logo, h('h2.team-name', { text: tm.name || '—' })),
-      h('div.team-score', { dataset: { teamScore: i }, text: fmtNum(score), 'aria-live': 'polite' }),
+      // Click the score to type a new one; the difference is recorded as a correction.
+      editableScore({
+        value: score, label: tm.name, cls: 'team-score', dataset: { teamScore: i },
+        onSet: (n) => ctx.mutate(bd => addGoal(bd, tm.id, null, n - score))
+      }),
       h('div.team-buttons',
-        h('button.btn.step.minus', { 'aria-label': `−1 ${tm.name}`, title: KEYS[i][1], onclick: () => ctx.mutate(bd => removeLastGoal(bd, tm.id)), html: icon('minus') }),
+        ...[...b.minus].reverse().map((s) => h('button.btn.step.minus', {
+          class: s === b.minus[0] ? 'first' : '', title: s === b.minus[0] ? KEYS[i][1] : '', 'aria-label': `−${s} ${tm.name}`,
+          onclick: () => ctx.mutate(bd => addGoal(bd, tm.id, null, -s))
+        }, `−${s}`)),
         ...b.steps.map((s, k) => h('button.btn.step.plus.goal-btn', {
           class: k === 0 ? 'primary' : '', title: k === 0 ? KEYS[i][0] : '', 'aria-label': `+${s} ${tm.name}`,
           onclick: () => scoreFor(i, s)
@@ -94,10 +104,16 @@ export function scoreboardBody(ctx) {
       }
     });
     function add(text) {
-      const names = String(text).split(/\r?\n/).map(s => s.trim()).filter(Boolean).slice(0, 60);
-      if (!names.length) return;
-      names.forEach(n => tm.players.push({ id: uid(), name: n.slice(0, 60) }));
+      const names = String(text).split(/\r?\n/).map(s => s.trim().replace(/\s+/g, ' ').slice(0, 60)).filter(Boolean).slice(0, 60);
+      if (!names.length) { if (!String(text).trim()) toast(t('errors.nameRequired'), { kind: 'error' }); return; }
+      // Team and player names are unique across the whole board.
+      const taken = namesInBoard(ctx.board);
+      const fresh = names.filter(n => !taken.has(normName(n)) && (taken.add(normName(n)), true));
+      const skipped = names.length - fresh.length;
+      if (!fresh.length) { toast(names.length === 1 ? t('errors.nameTaken') : t('lb.skipped', { n: skipped }), { kind: 'error' }); return; }
+      fresh.forEach(n => tm.players.push({ id: uid(), name: n }));
       ctx.save();
+      if (skipped) toast(t('lb.skipped', { n: skipped }), { kind: 'error', ms: 4000 });
       el.querySelector(`[data-key="sq-add-${i}"]`)?.focus();
     }
     return h('div.row', input, iconBtn('plus', t('lb.add'), () => add(input.value)));
@@ -166,7 +182,7 @@ export function scoreboardBody(ctx) {
           ev.t != null ? h('span.minute', { text: minuteOf(ev.t) + "'" }) : null,
           h('span.ev-team', { text: tm.name }),
           h('span.ev-player', { text: pl ? pl.name : '' }),
-          ev.points !== 1 ? h('span.ev-pts', { text: '+' + ev.points }) : null,
+          ev.points !== 1 ? h('span.ev-pts', { class: ev.points < 0 ? 'neg' : '', text: (ev.points < 0 ? '−' : '+') + Math.abs(ev.points) }) : null,
           iconBtn('close', t('common.remove'), () => ctx.mutate(bd => { bd.events = bd.events.filter(x => x.id !== ev.id); }), 'btn-sm')
         );
       }))
@@ -179,8 +195,8 @@ export function scoreboardBody(ctx) {
     const k = e.key.toLowerCase();
     if (k === 'q') { scoreFor(0, b.steps[0]); return true; }
     if (k === 'p') { scoreFor(1, b.steps[0]); return true; }
-    if (k === 'a') { ctx.mutate(bd => removeLastGoal(bd, bd.teams[0].id)); return true; }
-    if (k === 'l') { ctx.mutate(bd => removeLastGoal(bd, bd.teams[1].id)); return true; }
+    if (k === 'a') { ctx.mutate(bd => addGoal(bd, bd.teams[0].id, null, -b.minus[0])); return true; }
+    if (k === 'l') { ctx.mutate(bd => addGoal(bd, bd.teams[1].id, null, -b.minus[0])); return true; }
     if (k === ' ' && b.clock.enabled) { ctx.mutate(toggleClock, { undoable: false }); return true; }
     if (k === 'e') { ctx.toggleEdit(); return true; }
     return false;

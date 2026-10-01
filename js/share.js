@@ -3,7 +3,7 @@
 // Restore links put the board in the URL *fragment* (#/import/...), which
 // browsers never send to any server — the data stays between the devices.
 // Logos are left out to keep links short; use JSON export for those.
-import { normalizeBoard, uid } from './model.js';
+import { normalizeBoard, uid, uniqueName } from './model.js';
 import { ROOT_URL } from './env.js';
 
 const FORMAT = 'punkto';
@@ -70,9 +70,13 @@ export function parseImport(text) {
   return list.map(normalizeBoard).filter(Boolean);
 }
 
-/** Give an imported board a fresh id if one with the same id exists. */
-export function prepareImported(board, existingIds) {
+/**
+ * Make an imported board fit in: a fresh id if the id exists, and a unique
+ * title ("Name (2)") if another board already uses the name.
+ */
+export function prepareImported(board, existingIds, existingTitles = new Set()) {
   if (existingIds.has(board.id)) board.id = uid();
+  board.title = uniqueName(board.title || 'Punkto', existingTitles);
   board.winner = null;
   return board;
 }
