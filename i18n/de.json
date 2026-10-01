@@ -121,9 +121,10 @@
     "p1": "Punkto hat keine Benutzerkonten und keine Datenbank. Alles, was du erstellst — Tafeln, Namen, Punkte und Logos — wird nur im lokalen Speicher deines Browsers auf diesem Gerät abgelegt. Wir erhalten davon nichts.",
     "p2": "Logos werden in deinem Browser verkleinert und komprimiert, bevor sie gespeichert werden. Wenn du eine Tafel löschst oder in den Einstellungen „Alle Daten löschen“ wählst, wird sie endgültig von diesem Gerät entfernt.",
     "p3": "Teilen-Links enthalten die Tafeldaten hinter dem #-Zeichen der Adresse. Browser senden diesen Teil nie an einen Server, die Daten gelangen also nur zu den Personen, denen du den Link gibst. Logos sind in Links nicht enthalten.",
-    "p4": "Die Website wird auf GitHub Pages gehostet. Wie jeder Webserver kann GitHub beim Laden der Seite technische Daten wie deine IP-Adresse protokollieren. Punkto selbst verwendet keine Analyse-Tools und keine Tracking-Cookies.",
+    "p4": "Die Website wird auf GitHub Pages gehostet. Wie jeder Webserver kann GitHub beim Laden der Seite technische Daten wie deine IP-Adresse protokollieren. Punkto selbst setzt keine Cookies und verfolgt dich nicht.",
     "p5": "In der kostenlosen Version wird Werbung von Google AdSense bereitgestellt. Google kann Cookies verwenden, um Anzeigen auszuliefern und zu messen; wo gesetzlich vorgeschrieben, wirst du vorher um Einwilligung gebeten. Werbung lässt sich für die Sitzung ausblenden, und Premium entfernt sämtlichen Werbecode.",
     "p6": "Wenn du Premium aktivierst, wird dein Lizenzschlüssel zur Prüfung an unseren Zahlungsanbieter Lemon Squeezy gesendet. Zahlungen werden vollständig von Lemon Squeezy abgewickelt — Karten- oder Zahlungsdaten sehen wir nie.",
+    "p7": "Um zu sehen, wie viele Menschen Punkto nutzen, werden Seitenaufrufe und einige anonyme Ereignisse (etwa „Tafel erstellt“) mit GoatCounter gezählt, einem datenschutzfreundlichen Statistikdienst. Er verwendet keine Cookies, speichert keine personenbezogenen Daten und verfolgt dich nicht über Websites hinweg.",
     "contact": "Fragen? Kontakt:"
   },
   "share": {
@@ -260,5 +261,13 @@
     "a4": "Ja. Nach dem ersten Besuch funktioniert Punkto ohne Internet. Du kannst es auch über das Browsermenü als App installieren.",
     "q5": "Ist Punkto DSGVO-freundlich?",
     "a5": "Punkto ist auf Datenschutz ausgelegt: keine Anmeldung und keine personenbezogenen Daten auf einem Server — Namen bleiben auf deinem Gerät. Mit Premium wird überhaupt kein Werbecode von Dritten geladen."
+  },
+  "uses": {
+    "title": "Kostenlose Punkte-Tools",
+    "scoreboard": "Online-Anzeigetafel",
+    "leaderboard": "Ranglisten-Generator",
+    "classroom": "Klassenpunkte-Tracker",
+    "quiz": "Quiz-Punktetafel",
+    "score-keeper": "Punktezähler für Spiele"
   }
 }

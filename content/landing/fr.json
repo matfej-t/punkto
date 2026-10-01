@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Comment ça marche",
+    "why": "Pourquoi Punkto",
+    "faq": "Questions et réponses",
+    "more": "Autres outils gratuits pour compter les points",
+    "badges": "Gratuit · Sans inscription · Fonctionne hors ligne",
+    "privacy": "Confidentiel par nature : les noms et les points sont stockés uniquement dans votre navigateur, rien n'est envoyé.",
+    "app": "Ouvrir l'appli"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Tableau des scores en ligne gratuit pour TV et vidéoprojecteur — Punkto",
+      "description": "Comptez les points de deux équipes en ligne. Un grand tableau des scores lisible sur TV ou vidéoprojecteur, avec buteurs, chrono et écran des vainqueurs. Gratuit, sans inscription, hors ligne.",
+      "h1": "Tableau des scores en ligne gratuit pour deux équipes",
+      "intro": "Punkto transforme votre ordinateur portable en tableau des scores. Ajoutez des points d'un geste et affichez le score en plein écran sur une TV ou un vidéoprojecteur : il se met à jour instantanément. Idéal pour le foot, le basket, le volley, le ping-pong ou tout jeu à deux camps.",
+      "cta": "Créer un tableau des scores",
+      "steps": [
+        "Nommez le match et les deux équipes. Ajoutez logos et joueurs si vous le souhaitez.",
+        "Touchez +1, +3 ou vos propres valeurs. Une erreur ? −1, annuler, ou cliquez sur le score et tapez-le.",
+        "Cliquez sur « Affichage », déplacez la fenêtre sur la TV ou le vidéoprojecteur et appuyez sur F pour le plein écran. Elle reste synchronisée pendant que vous comptez."
+      ],
+      "features": [
+        { "t": "Un score immense et lisible", "d": "Conçu pour les écrans au fond de la salle : gros chiffres, couleurs d'équipe, buteurs et chrono en option." },
+        { "t": "Buteurs et chronologie", "d": "Choisissez le buteur d'un geste. Chaque but est listé avec sa minute, et une erreur se supprime en un clic." },
+        { "t": "Écran des vainqueurs et historique", "d": "Terminez la partie pour afficher le score final avec un peu de confettis. Chaque résultat reste dans l'historique." }
+      ],
+      "faq": [
+        { "q": "Puis-je l'utiliser pour le basket ou le volley ?", "a": "Oui. Choisissez les boutons de points à la création du tableau, par exemple 1, 2, 3 pour le basket. Vous pouvez aussi saisir n'importe quel score à la main." },
+        { "q": "Faut-il installer quelque chose ?", "a": "Non. Punkto fonctionne dans le navigateur. Vous pouvez l'installer comme une appli depuis le menu du navigateur, et il fonctionne hors ligne après la première visite." },
+        { "q": "Comment afficher le score sur une TV ?", "a": "Branchez votre ordinateur sur la TV ou le vidéoprojecteur, ouvrez l'affichage dans une deuxième fenêtre et glissez-la sur cet écran. Continuez à compter dans la première fenêtre : l'affichage suit instantanément." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Créateur de classement gratuit — classement en ligne en direct — Punkto",
+      "description": "Créez un classement en direct en quelques secondes. Ajoutez joueurs ou équipes, donnez des points, gérez les manches et affichez le classement sur grand écran. Gratuit, sans inscription, privé.",
+      "h1": "Créateur de classement en ligne gratuit",
+      "intro": "Créez un classement en direct pour n'importe quelle compétition. Ajoutez joueurs ou équipes, donnez des points d'un geste et le classement se trie tout seul. Affichez-le en plein écran sur une TV ou un vidéoprojecteur et couronnez les vainqueurs sur un podium.",
+      "cta": "Créer un classement",
+      "steps": [
+        "Donnez un nom à votre classement et choisissez vos boutons plus et moins.",
+        "Ajoutez joueurs ou équipes — vous pouvez coller une liste entière d'un coup.",
+        "Donnez des points, le classement se met à jour tout seul. « Terminer la partie » affiche le podium."
+      ],
+      "features": [
+        { "t": "Toujours trié par points", "d": "Le classement se réordonne après chaque changement, avec or, argent et bronze pour les trois premiers." },
+        { "t": "Manches", "d": "Comptez les points par manche et consultez un tableau manche par manche, sur votre écran et sur le grand affichage." },
+        { "t": "Lisible avec 40 noms", "d": "L'affichage s'adapte pour que chaque nom reste lisible, même au fond de la salle." }
+      ],
+      "faq": [
+        { "q": "Combien de joueurs un classement peut-il avoir ?", "a": "Autant que nécessaire. L'affichage les répartit en colonnes, de sorte qu'environ 40 noms restent lisibles sur un seul écran." },
+        { "q": "Mon classement est-il enregistré ?", "a": "Oui, automatiquement, dans votre navigateur sur cet appareil. Exportez un fichier ou copiez un lien de sauvegarde pour le transférer sur un autre appareil." },
+        { "q": "Puis-je modifier les points ensuite ?", "a": "Oui. Avec les boutons moins ou annuler, dans le tableau des manches, ou cliquez sur un score et tapez le bon nombre." }
+      ]
+    },
+    "classroom": {
+      "title": "Compteur de points pour la classe et tableau des scores — gratuit — Punkto",
+      "description": "Comptez les points de la classe ou des équipes au vidéoprojecteur. Tableau des scores gratuit pour l'école avec manches et podium. Sans inscription : les noms des élèves restent sur l'appareil de l'enseignant.",
+      "h1": "Compteur de points de classe pour le vidéoprojecteur",
+      "intro": "Récompensez le travail d'équipe, les devoirs ou le bon comportement avec des points que toute la classe peut voir. Punkto affiche un grand classement coloré au vidéoprojecteur et garde tout sur votre propre appareil — aucun compte, ni pour vous ni pour vos élèves.",
+      "cta": "Créer un tableau de classe",
+      "steps": [
+        "Créez un tableau et collez votre liste de classe ou les noms des groupes.",
+        "Donnez des points pendant le cours d'un geste — ou au clavier, sans toucher la souris.",
+        "Affichez le classement au vidéoprojecteur et félicitez les gagnants en fin de semaine."
+      ],
+      "features": [
+        { "t": "Respectueux de la vie privée", "d": "Pas d'inscription ni de serveur : noms et points restent dans votre navigateur. Avec Premium, aucun code publicitaire n'est chargé." },
+        { "t": "Rapide en classe", "d": "Choisissez un élève avec les touches numériques et ajoutez des points avec + ou −. Une erreur se corrige en annulant." },
+        { "t": "Au jour, à la semaine ou au trimestre", "d": "Gardez un tableau tout le trimestre, ou terminez une partie chaque vendredi et conservez les résultats dans l'historique." }
+      ],
+      "faq": [
+        { "q": "Est-ce compatible avec le RGPD ?", "a": "Punkto ne stocke aucune donnée personnelle sur un serveur : les noms restent dans le navigateur de l'enseignant. Respectez toutefois les règles de votre établissement." },
+        { "q": "Cela fonctionne-t-il sur un TBI ?", "a": "Oui. Ouvrez Punkto sur l'ordinateur du tableau : les grands boutons fonctionnent au toucher et l'affichage occupe tout l'écran." },
+        { "q": "Les élèves ont-ils besoin d'appareils ?", "a": "Non. Seul l'enseignant utilise Punkto ; la classe regarde simplement le vidéoprojecteur." }
+      ]
+    },
+    "quiz": {
+      "title": "Tableau des scores pour quiz et soirées quiz — gratuit — Punkto",
+      "description": "Animez votre soirée quiz avec un tableau des scores en direct sur la TV. Saisissez les points de chaque manche, affichez le classement et un podium. Gratuit, sans inscription, hors ligne.",
+      "h1": "Tableau des scores pour soirées quiz",
+      "intro": "Vous animez un quiz au bar ou une soirée trivia ? Saisissez les points de chaque équipe par manche en quelques secondes et affichez un classement en direct sur la TV. Après la dernière manche, les vainqueurs montent sur le podium sous les confettis.",
+      "cta": "Créer un tableau de quiz",
+      "steps": [
+        "Créez un classement et ajoutez les noms des équipes.",
+        "Après chaque manche, tapez les points dans le tableau des manches — Entrée passe à l'équipe suivante.",
+        "Affichez le classement entre les manches et le podium en fin de soirée."
+      ],
+      "features": [
+        { "t": "Manche par manche", "d": "Les points de chaque équipe par manche et le total cumulé, sur l'écran de l'animateur et sur la TV." },
+        { "t": "Fonctionne sans Wi-Fi", "d": "Après la première visite, Punkto fonctionne hors ligne — pratique dans les lieux mal connectés." },
+        { "t": "Le logo de votre établissement", "d": "Ajoutez votre logo au tableau. Premium retire aussi les publicités et le badge Punkto." }
+      ],
+      "faq": [
+        { "q": "Comment corriger un mauvais score ?", "a": "Cliquez sur le nombre dans le tableau des manches et tapez le bon, ou appuyez sur Ctrl+Z pour annuler la dernière modification." },
+        { "q": "Puis-je organiser un quiz chaque semaine ?", "a": "Oui. Terminez la partie pour enregistrer le résultat dans l'historique, puis lancez le quiz suivant sur le même tableau — ou dupliquez-le." },
+        { "q": "Les participants voient-ils qui mène ?", "a": "Oui. Le classement est toujours trié par total de points, et la TV peut basculer entre le classement et le tableau des manches." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Compteur de points en ligne pour les jeux — gratuit, sans inscription — Punkto",
+      "description": "Comptez les points aux jeux de société, jeux de cartes et soirées jeux en famille. Points par joueur, manches et vainqueur. Un compteur de points en ligne gratuit qui fonctionne hors ligne.",
+      "h1": "Compteur de points en ligne pour les soirées jeux",
+      "intro": "Fini les feuilles griffonnées. Punkto compte les points aux jeux de cartes, de société, aux fléchettes ou au bowling : notez les points de chaque joueur, suivez les manches et laissez l'appli calculer — le vainqueur finit sur le podium.",
+      "cta": "Commencer à compter",
+      "steps": [
+        "Créez un classement et ajoutez les joueurs.",
+        "Choisissez des boutons de points adaptés à votre jeu — ou tapez les points de chaque manche dans le tableau des manches.",
+        "Appuyez sur « Terminer la partie » pour couronner le vainqueur. Le résultat est enregistré dans l'historique."
+      ],
+      "features": [
+        { "t": "Il calcule pour vous", "d": "Totaux, classements et points par manche sont calculés automatiquement — fini les erreurs d'addition." },
+        { "t": "Points négatifs aussi", "d": "Beaucoup de jeux retirent des points. Définissez vos propres boutons moins ou tapez des nombres négatifs." },
+        { "t": "L'historique de chaque partie", "d": "Gardez une trace des parties passées et voyez qui a gagné la dernière fois." }
+      ],
+      "faq": [
+        { "q": "Pour quels jeux ?", "a": "Pour tout jeu où l'on marque des points : jeux de cartes, jeux de société, fléchettes, bowling, minigolf, tournois de jeux vidéo et plus encore." },
+        { "q": "Et si le score le plus bas gagne ?", "a": "Punkto place le total le plus élevé en premier. Pour les jeux où le plus petit score gagne, saisissez les points en nombres négatifs." },
+        { "q": "Ça marche sur mon téléphone ?", "a": "Oui. L'écran de contrôle est conçu pour les téléphones, et Punkto fonctionne hors ligne après la première visite." }
+      ]
+    }
+  }
+}

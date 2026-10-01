@@ -433,6 +433,39 @@ await test('browser language is detected on the root page', async () => {
   await ctx6.close();
 });
 
+await test('SEO landing pages: every language, hreflang, CTA opens the right board type', async () => {
+  const cfgText = await readFile(join(ROOT, 'config.js'), 'utf8');
+  const langs = JSON.parse(cfgText.match(/languages:\s*(\[[^\]]+\])/)[1].replace(/'/g, '"'));
+  const slugs = { scoreboard: 'scoreboard', leaderboard: 'leaderboard', classroom: 'leaderboard', quiz: 'leaderboard', 'score-keeper': 'leaderboard' };
+  const ctx9 = await newCtx();
+  const p9 = await ctx9.newPage();
+  for (const l of langs) {
+    const content = JSON.parse(await readFile(join(ROOT, `content/landing/${l}.json`), 'utf8'));
+    for (const slug of Object.keys(slugs)) {
+      const res = await p9.goto(BASE + (l === 'en' ? '' : l + '/') + slug + '/');
+      eq(res.status(), 200, `${l}/${slug}`);
+      eq(await p9.locator('h1').textContent(), content.pages[slug].h1, `${l}/${slug} h1`);
+      eq(await p9.evaluate(() => document.documentElement.lang), l);
+      eq(await p9.locator('link[rel=alternate][hreflang]').count(), langs.length + 1, 'hreflang');
+      eq(await p9.locator('.lp-more a').count(), 4, 'links to the other pages');
+    }
+  }
+  for (const [path, mode] of [['quiz/', 'leaderboard'], ['de/scoreboard/', 'scoreboard']]) {
+    await p9.goto(BASE + path);
+    await p9.click('.lp-hero .btn-primary');
+    await p9.waitForSelector('dialog .mode-card.on');
+    eq(await p9.locator('.mode-card.on').getAttribute('data-mode'), mode, path + ' CTA');
+  }
+  const sitemap = await readFile(join(ROOT, 'sitemap.xml'), 'utf8');
+  eq((sitemap.match(/<url>/g) || []).length, langs.length * 6, 'sitemap urls');
+  await p9.goto(BASE);
+  eq(await p9.locator('.footer-uses a').count(), 5, 'app footer links to landing pages');
+  await p9.goto(BASE + '#/privacy');
+  await p9.waitForSelector('.prose');
+  assert(!(await p9.locator('.prose').textContent()).includes('GoatCounter'), 'no statistics text while statistics are off');
+  await ctx9.close();
+});
+
 /* ------------------------------------------------------- theme / mobile / sw */
 await test('day/night toggle persists', async () => {
   await page.goto(BASE + '#/');

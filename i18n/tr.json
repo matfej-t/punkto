@@ -121,9 +121,10 @@
     "p1": "Punkto'nun hesapları ve veritabanı yoktur. Oluşturduğunuz her şey — tabelalar, isimler, puanlar ve logolar — yalnızca bu cihazdaki tarayıcınızın yerel depolamasında saklanır. Biz bunların hiçbirini almayız.",
     "p2": "Logolar kaydedilmeden önce tarayıcınızda küçültülür ve sıkıştırılır. Bir tabelayı silmek veya ayarlardaki “Tüm verileri sil” seçeneğini kullanmak onu bu cihazdan kalıcı olarak kaldırır.",
     "p3": "Paylaşım bağlantıları tabela verilerini adresteki # işaretinden sonra içerir. Tarayıcılar bu kısmı hiçbir sunucuya göndermez; böylece veriler yalnızca bağlantıyı verdiğiniz kişilere ulaşır. Logolar bağlantılara dahil edilmez.",
-    "p4": "Web sitesi GitHub Pages üzerinde barındırılır. Her web sunucusu gibi GitHub da sayfa yüklenirken IP adresiniz gibi teknik verileri kaydedebilir. Punkto'nun kendisi analiz aracı veya izleme çerezi kullanmaz.",
+    "p4": "Web sitesi GitHub Pages üzerinde barındırılır. Her web sunucusu gibi GitHub da sayfa yüklenirken IP adresiniz gibi teknik verileri kaydedebilir. Punkto'nun kendisi çerez kullanmaz ve sizi izlemez.",
     "p5": "Ücretsiz sürümde reklamlar Google AdSense tarafından sağlanır. Google, reklamları göstermek ve ölçmek için çerez kullanabilir; yasanın gerektirdiği yerlerde önce onayınız istenir. Reklamlar oturum boyunca gizlenebilir ve Premium tüm reklam kodunu kaldırır.",
     "p6": "Premium'u etkinleştirdiğinizde lisans anahtarınız geçerliliğinin kontrolü için ödeme sağlayıcımız Lemon Squeezy'ye gönderilir. Ödemeler tamamen Lemon Squeezy tarafından işlenir — kart veya ödeme bilgilerinizi asla görmeyiz.",
+    "p7": "Punkto'yu kaç kişinin kullandığını görmek için sayfa ziyaretlerini ve birkaç anonim olayı (örneğin “tabela oluşturuldu”) gizliliğe saygılı bir istatistik hizmeti olan GoatCounter ile sayıyoruz. Çerez kullanmaz, kişisel veri saklamaz ve sizi başka sitelerde takip etmez.",
     "contact": "Sorularınız mı var? İletişim:"
   },
   "share": {
@@ -260,5 +261,13 @@
     "a4": "Evet. İlk ziyaretten sonra Punkto internet olmadan çalışır. Tarayıcınızın menüsünden uygulama olarak da yükleyebilirsiniz.",
     "q5": "Punkto KVKK/GDPR ile uyumlu mu?",
     "a5": "Punkto gizlilik düşünülerek tasarlandı: kayıt yok ve hiçbir sunucuda kişisel veri saklanmıyor — isimler sizin cihazınızda kalır. Premium ile hiçbir üçüncü taraf reklam kodu yüklenmez."
+  },
+  "uses": {
+    "title": "Ücretsiz araçlar",
+    "scoreboard": "Online skor tabelası",
+    "leaderboard": "Sıralama oluşturucu",
+    "classroom": "Sınıf puan takibi",
+    "quiz": "Quiz skor tablosu",
+    "score-keeper": "Oyun puan tutucu"
   }
 }

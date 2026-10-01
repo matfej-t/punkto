@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "So funktioniert's",
+    "why": "Warum Punkto",
+    "faq": "Fragen & Antworten",
+    "more": "Weitere kostenlose Punkte-Tools",
+    "badges": "Kostenlos · Ohne Anmeldung · Funktioniert offline",
+    "privacy": "Datenschutz eingebaut: Namen und Punkte werden nur in deinem Browser gespeichert — nichts wird hochgeladen.",
+    "app": "App öffnen"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Kostenlose Online-Anzeigetafel für TV & Beamer — Punkto",
+      "description": "Punkte für zwei Teams online zählen. Große, gut lesbare Anzeigetafel für TV oder Beamer mit Torschützen, Spieluhr und Siegerbildschirm. Kostenlos, ohne Anmeldung, offline nutzbar.",
+      "h1": "Kostenlose Online-Anzeigetafel für zwei Teams",
+      "intro": "Punkto macht deinen Laptop zur Anzeigetafel. Punkte mit einem Tipp vergeben und den Spielstand im Vollbild auf TV oder Beamer zeigen — er aktualisiert sich sofort. Ideal für Fußball, Basketball, Volleyball, Tischtennis und jedes Spiel mit zwei Seiten.",
+      "cta": "Anzeigetafel erstellen",
+      "steps": [
+        "Gib dem Spiel und den beiden Teams einen Namen. Logos und Spieler kannst du optional ergänzen.",
+        "Tippe auf +1, +3 oder deine eigenen Werte. Vertippt? −1, Rückgängig oder einfach den Spielstand anklicken und eintippen.",
+        "Klicke auf „Anzeige“, zieh das Fenster auf TV oder Beamer und drücke F für Vollbild. Es bleibt synchron, während du zählst."
+      ],
+      "features": [
+        { "t": "Riesig und gut lesbar", "d": "Gemacht für Bildschirme quer durch den Raum: große Zahlen, Teamfarben, Torschützen und eine optionale Spieluhr." },
+        { "t": "Torschützen und Spielverlauf", "d": "Wähle den Torschützen mit einem Tipp. Jedes Tor steht mit Spielminute in der Liste, falsche sind mit einem Klick weg." },
+        { "t": "Siegerbildschirm und Verlauf", "d": "Beende das Spiel, um das Endergebnis mit etwas Konfetti zu zeigen. Jedes Ergebnis bleibt im Verlauf der Tafel." }
+      ],
+      "faq": [
+        { "q": "Kann ich es für Basketball oder Volleyball nutzen?", "a": "Ja. Wähle die Punkte-Buttons beim Erstellen der Tafel — zum Beispiel 1, 2, 3 für Basketball. Du kannst jeden Spielstand auch von Hand eintippen." },
+        { "q": "Muss ich etwas installieren?", "a": "Nein. Punkto läuft im Browser. Über das Browsermenü kannst du es als App installieren, und nach dem ersten Besuch funktioniert es offline." },
+        { "q": "Wie zeige ich den Spielstand auf dem Fernseher?", "a": "Schließe deinen Laptop an TV oder Beamer an, öffne die Anzeige in einem zweiten Fenster und zieh es auf diesen Bildschirm. Im ersten Fenster zählst du weiter — die Anzeige folgt sofort." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Kostenloser Ranglisten-Generator — Live-Rangliste online — Punkto",
+      "description": "Erstelle in Sekunden eine Live-Rangliste. Spieler oder Teams hinzufügen, Punkte vergeben, Runden zählen und die Rangliste groß zeigen. Kostenlos, ohne Anmeldung, privat.",
+      "h1": "Kostenloser Online-Ranglisten-Generator",
+      "intro": "Erstelle eine Live-Rangliste für jeden Wettbewerb. Spieler oder Teams hinzufügen, Punkte mit einem Tipp vergeben — die Rangliste sortiert sich selbst. Zeig sie im Vollbild auf TV oder Beamer und ehre die Sieger auf dem Podest.",
+      "cta": "Rangliste erstellen",
+      "steps": [
+        "Gib deiner Rangliste einen Namen und wähle deine Plus- und Minus-Buttons.",
+        "Füge Spieler oder Teams hinzu — eine ganze Liste kannst du auf einmal einfügen.",
+        "Vergib Punkte, die Rangliste aktualisiert sich selbst. „Spiel beenden“ zeigt das Siegerpodest."
+      ],
+      "features": [
+        { "t": "Immer nach Punkten sortiert", "d": "Die Rangliste ordnet sich nach jeder Änderung neu, mit Gold, Silber und Bronze für die ersten drei." },
+        { "t": "Runden", "d": "Erfasse Punkte pro Runde und sieh eine Rundentabelle — auf deinem Bildschirm und auf der großen Anzeige." },
+        { "t": "Lesbar mit 40 Namen", "d": "Die Anzeige passt sich an, damit jeder Name lesbar bleibt — auch am Beamer in der letzten Reihe." }
+      ],
+      "faq": [
+        { "q": "Wie viele Spieler kann eine Rangliste haben?", "a": "So viele du brauchst. Die Anzeige verteilt sie auf Spalten, sodass rund 40 Namen auf einem Bildschirm lesbar bleiben." },
+        { "q": "Wird meine Rangliste gespeichert?", "a": "Ja, automatisch, in deinem Browser auf diesem Gerät. Mit einer Exportdatei oder einem Sicherungslink überträgst du sie auf ein anderes Gerät." },
+        { "q": "Kann ich Punkte nachträglich ändern?", "a": "Ja. Mit den Minus-Buttons oder Rückgängig, in der Rundentabelle — oder klicke auf eine Punktzahl und tippe die richtige ein." }
+      ]
+    },
+    "classroom": {
+      "title": "Klassenpunkte-Tracker & Punktetafel für den Unterricht — kostenlos — Punkto",
+      "description": "Klassen- oder Gruppenpunkte am Beamer zählen. Kostenlose Punktetafel für die Schule mit Runden und Siegerpodest. Ohne Anmeldung — Namen bleiben auf dem Gerät der Lehrkraft.",
+      "h1": "Klassenpunkte-Tracker für den Beamer",
+      "intro": "Belohne Teamarbeit, Hausaufgaben oder gutes Verhalten mit Punkten, die die ganze Klasse sieht. Punkto zeigt eine große, bunte Rangliste am Beamer und speichert alles auf deinem eigenen Gerät — keine Konten für dich oder die Kinder.",
+      "cta": "Klassentafel erstellen",
+      "steps": [
+        "Erstelle eine Tafel und füge deine Klassenliste oder die Namen der Tischgruppen ein.",
+        "Vergib im Unterricht Punkte mit einem Tipp — oder per Tastatur, ganz ohne Maus.",
+        "Zeig die Rangliste am Beamer und feiere die Sieger am Ende der Woche."
+      ],
+      "features": [
+        { "t": "Datenschutzfreundlich", "d": "Keine Anmeldung, kein Server: Namen und Punkte liegen nur in deinem Browser. Mit Premium wird gar kein Werbecode geladen." },
+        { "t": "Schnell im Unterricht", "d": "Kind per Zifferntaste wählen, mit + oder − Punkte vergeben. Fehler behebt ein Rückgängig." },
+        { "t": "Täglich, wöchentlich oder das ganze Halbjahr", "d": "Lass eine Tafel das ganze Halbjahr laufen oder beende jeden Freitag ein Spiel und behalte die Ergebnisse im Verlauf." }
+      ],
+      "faq": [
+        { "q": "Ist das DSGVO-freundlich?", "a": "Punkto speichert keine personenbezogenen Daten auf einem Server — die Namen bleiben im Browser der Lehrkraft. Bitte beachte trotzdem die Regeln deiner Schule." },
+        { "q": "Funktioniert es auf dem interaktiven Whiteboard?", "a": "Ja. Öffne Punkto am Rechner des Whiteboards: Die großen Buttons funktionieren per Touch, und die Anzeige füllt den Bildschirm." },
+        { "q": "Brauchen die Kinder eigene Geräte?", "a": "Nein. Nur die Lehrkraft nutzt Punkto; die Klasse schaut einfach auf den Beamer." }
+      ]
+    },
+    "quiz": {
+      "title": "Quiz-Punktetafel für Kneipenquiz & Quizabende — kostenlos — Punkto",
+      "description": "Leite deinen Quizabend mit einer Live-Punktetafel auf dem TV. Punkte jeder Runde eintragen, Rangliste und Siegerpodest zeigen. Kostenlos, ohne Anmeldung, offline nutzbar.",
+      "h1": "Quiz-Punktetafel für Quizabende",
+      "intro": "Du moderierst ein Kneipenquiz oder einen Quizabend? Trage die Punkte jedes Teams pro Runde in Sekunden ein und zeig eine Live-Rangliste auf dem Fernseher. Nach der letzten Runde gibt es für die Sieger ein Podest mit Konfetti.",
+      "cta": "Quiz-Tafel erstellen",
+      "steps": [
+        "Erstelle eine Rangliste und füge die Teamnamen hinzu.",
+        "Trage nach jeder Runde die Punkte in die Rundentabelle ein — Enter springt zum nächsten Team.",
+        "Zeig den Zwischenstand zwischen den Runden und am Ende des Abends das Podest."
+      ],
+      "features": [
+        { "t": "Runde für Runde", "d": "Die Punkte jedes Teams pro Runde und die Gesamtsumme — auf deinem Bildschirm und auf dem TV." },
+        { "t": "Funktioniert ohne WLAN", "d": "Nach dem ersten Besuch läuft Punkto offline — praktisch in Locations mit schlechtem Internet." },
+        { "t": "Dein Logo", "d": "Setz das Logo deiner Location auf die Tafel. Premium entfernt außerdem Werbung und das Punkto-Abzeichen." }
+      ],
+      "faq": [
+        { "q": "Wie korrigiere ich falsche Punkte?", "a": "Klicke auf die Zahl in der Rundentabelle und tippe die richtige ein, oder drücke Strg+Z, um die letzte Änderung rückgängig zu machen." },
+        { "q": "Kann ich jede Woche ein Quiz machen?", "a": "Ja. Beende das Spiel, um das Ergebnis im Verlauf zu speichern, und starte das nächste Quiz auf derselben Tafel — oder dupliziere sie." },
+        { "q": "Sehen die Gäste, wer vorne liegt?", "a": "Ja. Die Rangliste ist immer nach Gesamtpunkten sortiert, und der TV kann zwischen Rangliste und Rundentabelle wechseln." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Online-Punktezähler für Spiele — kostenlos, ohne Anmeldung — Punkto",
+      "description": "Punkte zählen für Brettspiele, Kartenspiele und Spieleabende. Punkte pro Spieler eintragen, Runden zählen und sehen, wer gewinnt. Kostenloser Online-Punktezähler, offline nutzbar.",
+      "h1": "Online-Punktezähler für den Spieleabend",
+      "intro": "Schluss mit Zetteln. Punkto zählt die Punkte bei Kartenspielen, Brettspielen, Darts oder Bowling: Punkte pro Spieler eintragen, Runden zählen und die App rechnen lassen — am Ende steht der Sieger auf dem Podest.",
+      "cta": "Punkte zählen",
+      "steps": [
+        "Erstelle eine Rangliste und füge die Spieler hinzu.",
+        "Wähle Punkte-Buttons, die zu deinem Spiel passen — oder trag die Punkte jeder Runde in die Rundentabelle ein.",
+        "Drücke „Spiel beenden“, um den Sieger zu küren. Das Ergebnis wird im Verlauf gespeichert."
+      ],
+      "features": [
+        { "t": "Rechnet für dich", "d": "Summen, Platzierungen und Rundenpunkte werden automatisch berechnet — keine Rechenfehler mehr." },
+        { "t": "Auch Minuspunkte", "d": "Viele Spiele ziehen Punkte ab. Lege eigene Minus-Buttons fest oder tippe negative Werte ein." },
+        { "t": "Verlauf aller Spiele", "d": "Behalte vergangene Spiele im Blick und sieh, wer zuletzt gewonnen hat." }
+      ],
+      "faq": [
+        { "q": "Für welche Spiele eignet es sich?", "a": "Für jedes Spiel, bei dem Punkte gesammelt werden: Kartenspiele, Brettspiele, Darts, Bowling, Minigolf, Videospiel-Turniere und mehr." },
+        { "q": "Was, wenn die niedrigste Punktzahl gewinnt?", "a": "Punkto setzt die höchste Summe auf Platz 1. Bei Spielen, in denen die niedrigste Zahl gewinnt, trägst du die Punkte als negative Zahlen ein." },
+        { "q": "Funktioniert es auf dem Handy?", "a": "Ja. Die Steuerung ist fürs Handy gemacht, und nach dem ersten Besuch funktioniert Punkto offline." }
+      ]
+    }
+  }
+}

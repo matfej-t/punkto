@@ -7,6 +7,7 @@ import { newBoard, cloneBoard, boardSummary, uniqueName, DEFAULT_STEPS, DEFAULT_
 import { leaderboardArt, scoreboardArt } from '../illustrations.js';
 import { boardToLink, exportJson, safeFilename } from '../share.js';
 import { appBar, footer, importFromFile, stepsFields, boardTitleError } from './common.js';
+import { track } from '../analytics.js';
 
 export function homeView(root) {
   document.title = t('meta.title');
@@ -109,6 +110,7 @@ function boardCard(b, render) {
 }
 
 export function openDisplayWindow(id) {
+  track('display-opened');
   const w = window.open('#/display/' + id, 'punkto-display-' + id);
   if (!w) location.hash = '#/display/' + id; // popup blocked → open here
 }
@@ -121,8 +123,8 @@ export async function copyBoardLink(b) {
 
 /* ------------------------------------------------------------ create */
 
-export function openCreate() {
-  let mode = 'leaderboard';
+export function openCreate(initialMode = 'leaderboard') {
+  let mode = initialMode === 'scoreboard' ? 'scoreboard' : 'leaderboard';
   const steps = stepsFields(DEFAULT_STEPS, DEFAULT_MINUS);
   const titleError = h('p.field-error', { role: 'alert' });
   const checkTitle = () => {
@@ -163,6 +165,7 @@ export function openCreate() {
         const b = newBoard(mode, title.value.trim().replace(/\s+/g, ' '), steps.plus.getSteps(), steps.minus.getSteps());
         if (mode === 'scoreboard') { b.teams[0].name = t('sb.home'); b.teams[1].name = t('sb.away'); }
         store.saveBoard(b);
+        track('board-created-' + mode);
         location.hash = '#/b/' + b.id;
       } }
     ]

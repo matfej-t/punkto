@@ -7,6 +7,8 @@
 //   index.html            English page (x-default)
 //   <lang>/index.html     one page per language in config.js (translated
 //                         <title>, meta description, hreflang, intro text)
+//   <lang>/<use-case>/    SEO landing pages from content/landing/<lang>.json
+//                         (English at /<use-case>/), linked from the app
 //   sitemap.xml, robots.txt
 //   sw.js                 refreshes the precache list + version hash
 //
@@ -39,6 +41,20 @@ const en = JSON.parse(read(`i18n/${FALLBACK}.json`));
 const lookup = (d, key) => key.split('.').reduce((o, k) => (o == null ? o : o[k]), d);
 
 const template = read('tools/page-template.html');
+
+// Landing pages: one per use case (search intent), in every language.
+// The slug is the URL folder; `mode` is the board type the CTA opens.
+const LANDING = [
+  { slug: 'scoreboard', mode: 'scoreboard' },
+  { slug: 'leaderboard', mode: 'leaderboard' },
+  { slug: 'classroom', mode: 'leaderboard' },
+  { slug: 'quiz', mode: 'leaderboard' },
+  { slug: 'score-keeper', mode: 'leaderboard' }
+];
+const landingUrl = (l, slug) => `${pageUrl(l)}${slug}/`;
+const analyticsTag = /^https:\/\/[\w.-]+\/count$/.test(cfg.analytics?.goatcounter || '')
+  ? `<script data-goatcounter="${esc(cfg.analytics.goatcounter)}" async src="https://gc.zgo.at/count.js"></script>`
+  : '';
 const hreflang = [
   ...langs.map(l => `<link rel="alternate" hreflang="${l}" href="${pageUrl(l)}">`),
   `<link rel="alternate" hreflang="x-default" href="${pageUrl(FALLBACK)}">`
@@ -82,7 +98,9 @@ for (const lang of langs) {
     tagline: esc(t('home.tagline')),
     privacyTitle: esc(t('home.privacyTitle')),
     privacyText: esc(t('home.privacyText')),
-    features, faq
+    features, faq,
+    uses: `<h2>${esc(t('uses.title'))}</h2>\n    <ul>\n` +
+      LANDING.map(({ slug }) => `      <li><a href="${slug}/">${esc(t('uses.' + slug))}</a></li>`).join('\n') + '\n    </ul>'
   };
   const html = template.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in vars ? vars[k] : m));
   const out = lang === FALLBACK ? 'index.html' : `${lang}/index.html`;
@@ -91,16 +109,86 @@ for (const lang of langs) {
   console.log('✓', out);
 }
 
+/* --------------------------------------------------------- landing pages */
+const landingTemplate = read('tools/landing-template.html');
+// The mode illustrations are shared with the app (js/illustrations.js).
+const art = await import('data:text/javascript,' + encodeURIComponent(read('js/illustrations.js')));
+const logo = `<svg viewBox="0 0 512 512" class="logo" aria-hidden="true"><rect width="512" height="512" rx="120" fill="var(--accent)"/><path d="M190 386V136h88a78 78 0 0 1 0 156h-88" fill="none" stroke="var(--accent-ink)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="372" r="38" fill="var(--gold)"/></svg>`;
+const LANG_NAMES = { en: 'English', de: 'Deutsch', ru: 'Русский', es: 'Español', fr: 'Français', it: 'Italiano', pt: 'Português', pl: 'Polski', uk: 'Українська', tr: 'Türkçe', cs: 'Čeština', nl: 'Nederlands' };
+let landingCount = 0;
+
+for (const lang of langs) {
+  const file = `content/landing/${lang}.json`;
+  if (!existsSync(join(ROOT, file))) { console.warn(`! missing ${file}, landing pages skipped`); continue; }
+  const content = JSON.parse(read(file));
+  const dict = JSON.parse(read(`i18n/${lang}.json`));
+  const t = (k) => lookup(dict, k) ?? lookup(en, k) ?? k;
+  const root = lang === FALLBACK ? '../' : '../../';   // from /<slug>/ or /<lang>/<slug>/
+  const appUrl = '../';                               // the app page of this language (one folder up)
+
+  for (const { slug, mode } of LANDING) {
+    const p = content.pages[slug];
+    const hreflangTags = [
+      ...langs.map(l => `<link rel="alternate" hreflang="${l}" href="${landingUrl(l, slug)}">`),
+      `<link rel="alternate" hreflang="x-default" href="${landingUrl(FALLBACK, slug)}">`
+    ].join('\n');
+    const jsonld = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: lang,
+      mainEntity: p.faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+    }).replace(/</g, '\\u003c');
+    const vars = {
+      lang, root, site, appUrl,
+      title: esc(p.title),
+      description: esc(p.description),
+      canonical: landingUrl(lang, slug),
+      hreflang: hreflangTags,
+      ogLocale: OG_LOCALE[lang] || lang,
+      adsenseMeta: cfg.ads?.adsenseClient ? `<meta name="google-adsense-account" content="${esc(cfg.ads.adsenseClient)}">` : '',
+      analytics: analyticsTag,
+      jsonld,
+      logo,
+      ctaUrl: `${appUrl}#/new/${mode}`,
+      appLabel: esc(content.ui.app),
+      h1: esc(p.h1),
+      intro: esc(p.intro),
+      cta: esc(p.cta),
+      badges: esc(content.ui.badges),
+      art: mode === 'scoreboard' ? art.scoreboardArt : art.leaderboardArt,
+      howTitle: esc(content.ui.how),
+      steps: p.steps.map(s => `      <li>${esc(s)}</li>`).join('\n'),
+      whyTitle: esc(content.ui.why),
+      features: p.features.map(f => `      <div class="feature"><h3>${esc(f.t)}</h3><p>${esc(f.d)}</p></div>`).join('\n'),
+      privacy: esc(content.ui.privacy),
+      faqTitle: esc(content.ui.faq),
+      faq: p.faq.map(f => `    <details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n'),
+      moreTitle: esc(content.ui.more),
+      more: LANDING.filter(x => x.slug !== slug).map(x => `      <li><a href="../${x.slug}/">${esc(t('uses.' + x.slug))}</a></li>`).join('\n'),
+      privacyLink: esc(t('privacy.title')),
+      langLinks: langs.map(l => `    <a href="${landingUrl(l, slug)}" hreflang="${l}" lang="${l}">${LANG_NAMES[l] || l}</a>`).join('\n')
+    };
+    const html = landingTemplate.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in vars ? vars[k] : m));
+    const out = lang === FALLBACK ? `${slug}/index.html` : `${lang}/${slug}/index.html`;
+    mkdirSync(dirname(join(ROOT, out)), { recursive: true });
+    writeFileSync(join(ROOT, out), html);
+    landingCount++;
+  }
+}
+console.log(`✓ ${landingCount} landing pages`);
+
 /* -------------------------------------------------------- sitemap/robots */
 const today = new Date().toISOString().slice(0, 10);
+// Every page (app home + landing pages) in every language, with its alternates.
+const sitemapGroups = [pageUrl, ...LANDING.map(({ slug }) => (l) => landingUrl(l, slug))];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${langs.map(l => `  <url>
-    <loc>${pageUrl(l)}</loc>
+${sitemapGroups.flatMap(urlOf => langs.map(l => `  <url>
+    <loc>${urlOf(l)}</loc>
     <lastmod>${today}</lastmod>
-${langs.map(a => `    <xhtml:link rel="alternate" hreflang="${a}" href="${pageUrl(a)}"/>`).join('\n')}
-    <xhtml:link rel="alternate" hreflang="x-default" href="${pageUrl(FALLBACK)}"/>
-  </url>`).join('\n')}
+${langs.map(a => `    <xhtml:link rel="alternate" hreflang="${a}" href="${urlOf(a)}"/>`).join('\n')}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${urlOf(FALLBACK)}"/>
+  </url>`)).join('\n')}
 </urlset>
 `;
 writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);

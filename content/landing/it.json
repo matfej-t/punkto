@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Come funziona",
+    "why": "Perché Punkto",
+    "faq": "Domande e risposte",
+    "more": "Altri strumenti gratuiti per i punteggi",
+    "badges": "Gratis · Senza registrazione · Funziona offline",
+    "privacy": "Privacy prima di tutto: nomi e punteggi restano solo nel tuo browser, non viene caricato nulla.",
+    "app": "Apri l'app"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Tabellone segnapunti online gratis per TV e proiettore — Punkto",
+      "description": "Tieni il punteggio di due squadre online. Un tabellone grande e leggibile per TV o proiettore, con marcatori, cronometro e schermata dei vincitori. Gratis, senza registrazione, funziona offline.",
+      "h1": "Tabellone segnapunti online gratis per due squadre",
+      "intro": "Punkto trasforma il tuo portatile in un tabellone segnapunti. Aggiungi punti con un tocco e mostra il punteggio a schermo intero su una TV o un proiettore: si aggiorna all'istante. Perfetto per calcio, basket, pallavolo, ping pong o qualsiasi gioco a due squadre.",
+      "cta": "Crea un tabellone",
+      "steps": [
+        "Dai un nome alla partita e alle due squadre. Aggiungi loghi e giocatori se vuoi.",
+        "Tocca +1, +3 o i tuoi valori. Hai sbagliato? Usa −1, annulla, oppure clicca sul punteggio e scrivilo.",
+        "Clicca su «Schermo», sposta la finestra sulla TV o sul proiettore e premi F per lo schermo intero. Resta sincronizzata mentre segni i punti."
+      ],
+      "features": [
+        { "t": "Punteggio enorme e leggibile", "d": "Pensato per schermi dall'altra parte della sala: numeri grandi, colori delle squadre, marcatori e cronometro opzionale." },
+        { "t": "Marcatori e cronologia", "d": "Scegli il marcatore con un tocco. Ogni gol compare con il suo minuto e quelli sbagliati si tolgono con un clic." },
+        { "t": "Schermata dei vincitori e cronologia", "d": "Termina la partita per mostrare il risultato finale con un po' di coriandoli. Ogni risultato resta nella cronologia." }
+      ],
+      "faq": [
+        { "q": "Posso usarlo per basket o pallavolo?", "a": "Sì. Scegli i pulsanti dei punti quando crei il tabellone, ad esempio 1, 2, 3 per il basket. Puoi anche scrivere qualsiasi punteggio a mano." },
+        { "q": "Devo installare qualcosa?", "a": "No. Punkto funziona nel browser. Puoi installarlo come app dal menu del browser e funziona offline dopo la prima visita." },
+        { "q": "Come mostro il punteggio su una TV?", "a": "Collega il portatile alla TV o al proiettore, apri lo schermo in una seconda finestra e trascinala su quello schermo. Continua a segnare nella prima finestra: lo schermo si aggiorna subito." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Crea una classifica gratis — classifica online dal vivo — Punkto",
+      "description": "Crea una classifica dal vivo in pochi secondi. Aggiungi giocatori o squadre, assegna punti, gestisci i round e mostra la classifica su un grande schermo. Gratis, senza registrazione, privato.",
+      "h1": "Crea classifiche online gratis",
+      "intro": "Crea una classifica dal vivo per qualsiasi competizione. Aggiungi giocatori o squadre, assegna punti con un tocco e la classifica si ordina da sola. Mostrala a schermo intero su una TV o un proiettore e premia i vincitori sul podio.",
+      "cta": "Crea una classifica",
+      "steps": [
+        "Dai un nome alla classifica e scegli i pulsanti per aggiungere e togliere punti.",
+        "Aggiungi giocatori o squadre: puoi incollare un intero elenco in un colpo solo.",
+        "Assegna punti e la classifica si aggiorna da sola. «Termina partita» mostra il podio."
+      ],
+      "features": [
+        { "t": "Sempre ordinata per punti", "d": "La classifica si riordina dopo ogni modifica, con oro, argento e bronzo per i primi tre." },
+        { "t": "Round", "d": "Segna i punti per round e consulta una tabella round per round, sul tuo schermo e sul grande schermo." },
+        { "t": "Leggibile con 40 nomi", "d": "La visualizzazione si adatta perché ogni nome resti leggibile, anche col proiettore in fondo alla sala." }
+      ],
+      "faq": [
+        { "q": "Quanti giocatori può avere una classifica?", "a": "Quanti te ne servono. Lo schermo li dispone in colonne, così circa 40 nomi restano leggibili su un unico schermo." },
+        { "q": "La mia classifica viene salvata?", "a": "Sì, automaticamente, nel tuo browser su questo dispositivo. Esporta un file o copia un link di backup per spostarla su un altro dispositivo." },
+        { "q": "Posso cambiare i punti dopo?", "a": "Sì. Usa i pulsanti per togliere punti o annulla, modifica qualsiasi round nella tabella dei round, oppure clicca su un punteggio e scrivi quello giusto." }
+      ]
+    },
+    "classroom": {
+      "title": "Segnapunti per la classe e classifica in aula — gratis — Punkto",
+      "description": "Tieni i punti della classe o delle squadre sul proiettore. Segnapunti gratuito per la scuola con round e podio. Senza registrazione: i nomi degli alunni restano sul dispositivo dell'insegnante.",
+      "h1": "Segnapunti per la classe da proiettare",
+      "intro": "Premia il lavoro di squadra, i compiti o il buon comportamento con punti che tutta la classe può vedere. Punkto mostra una classifica grande e colorata sul proiettore e conserva tutto sul tuo dispositivo, senza account per te o per gli alunni.",
+      "cta": "Crea un tabellone di classe",
+      "steps": [
+        "Crea un tabellone e incolla l'elenco della classe o i nomi dei gruppi.",
+        "Assegna punti durante la lezione con un tocco, oppure con la tastiera senza usare il mouse.",
+        "Mostra la classifica sul proiettore e festeggia i vincitori a fine settimana."
+      ],
+      "features": [
+        { "t": "Rispetta la privacy", "d": "Niente registrazione né server: nomi e punti restano solo nel tuo browser. Con Premium non viene caricato alcun codice pubblicitario." },
+        { "t": "Veloce durante la lezione", "d": "Scegli un alunno con i tasti numerici e assegna punti con + o −. Gli errori si correggono con annulla." },
+        { "t": "Ogni giorno, settimana o quadrimestre", "d": "Tieni un tabellone per tutto il quadrimestre o termina una partita ogni venerdì e conserva i risultati nella cronologia." }
+      ],
+      "faq": [
+        { "q": "È conforme al GDPR?", "a": "Punkto non salva dati personali su alcun server: i nomi restano nel browser dell'insegnante. Segui comunque le regole della tua scuola." },
+        { "q": "Funziona sulla LIM?", "a": "Sì. Apri Punkto sul computer della LIM: i pulsanti grandi funzionano al tocco e lo schermo riempie tutta la superficie." },
+        { "q": "Gli alunni hanno bisogno di dispositivi?", "a": "No. Punkto lo usa solo l'insegnante; la classe guarda il proiettore." }
+      ]
+    },
+    "quiz": {
+      "title": "Segnapunti per quiz e serate trivia — gratis — Punkto",
+      "description": "Gestisci la tua serata quiz con un segnapunti dal vivo sulla TV. Inserisci i punti di ogni round, mostra la classifica e il podio. Gratis, senza registrazione, funziona offline.",
+      "h1": "Segnapunti per serate quiz",
+      "intro": "Conduci un quiz al pub o una serata trivia? Inserisci i punti di ogni squadra per round in pochi secondi e mostra una classifica dal vivo sulla TV. Dopo l'ultimo round, i vincitori salgono sul podio tra i coriandoli.",
+      "cta": "Crea un segnapunti per quiz",
+      "steps": [
+        "Crea una classifica e aggiungi i nomi delle squadre.",
+        "Dopo ogni round, scrivi i punti nella tabella dei round: Invio passa alla squadra successiva.",
+        "Mostra la classifica tra un round e l'altro e il podio a fine serata."
+      ],
+      "features": [
+        { "t": "Round per round", "d": "I punti di ogni squadra per round e il totale, sullo schermo del conduttore e sulla TV." },
+        { "t": "Funziona senza Wi-Fi", "d": "Dopo la prima visita Punkto funziona offline, utile nei locali con internet scarso." },
+        { "t": "Il logo del tuo locale", "d": "Metti il tuo logo sul tabellone. Premium toglie anche la pubblicità e il badge di Punkto." }
+      ],
+      "faq": [
+        { "q": "Come correggo un punteggio sbagliato?", "a": "Clicca sul numero nella tabella dei round e scrivi quello giusto, oppure premi Ctrl+Z per annullare l'ultima modifica." },
+        { "q": "Posso fare un quiz ogni settimana?", "a": "Sì. Termina la partita per salvare il risultato nella cronologia e avvia il quiz successivo sullo stesso tabellone, oppure duplicalo." },
+        { "q": "Gli ospiti vedono chi è in testa?", "a": "Sì. La classifica è sempre ordinata per punti totali e la TV può passare dalla classifica alla tabella dei round." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Segnapunti online per giochi — gratis, senza registrazione — Punkto",
+      "description": "Tieni il punteggio di giochi da tavolo, giochi di carte e serate in famiglia. Punti per giocatore, round e vincitore. Un segnapunti online gratuito che funziona offline.",
+      "h1": "Segnapunti online per le serate di giochi",
+      "intro": "Basta fogli scarabocchiati. Punkto tiene il conto nei giochi di carte, da tavolo, freccette o bowling: inserisci i punti di ogni giocatore, segui i round e lascia che l'app faccia i calcoli; alla fine il vincitore sale sul podio.",
+      "cta": "Inizia a segnare",
+      "steps": [
+        "Crea una classifica e aggiungi i giocatori.",
+        "Scegli pulsanti adatti al tuo gioco, oppure scrivi i punti di ogni round nella tabella dei round.",
+        "Premi «Termina partita» per incoronare il vincitore. Il risultato viene salvato nella cronologia."
+      ],
+      "features": [
+        { "t": "Fa i calcoli per te", "d": "Totali, posizioni e punti per round sono calcolati automaticamente: addio errori nelle somme." },
+        { "t": "Anche punti negativi", "d": "Molti giochi tolgono punti. Imposta i tuoi pulsanti per togliere punti o scrivi numeri negativi." },
+        { "t": "La cronologia di ogni partita", "d": "Tieni traccia delle partite passate e scopri chi ha vinto l'ultima volta." }
+      ],
+      "faq": [
+        { "q": "Per quali giochi va bene?", "a": "Per qualsiasi gioco in cui si accumulano punti: carte, giochi da tavolo, freccette, bowling, minigolf, tornei di videogiochi e altro." },
+        { "q": "E se vince il punteggio più basso?", "a": "Punkto mette al primo posto il totale più alto. Nei giochi in cui vince il punteggio più basso, inserisci i punti come numeri negativi." },
+        { "q": "Funziona sul telefono?", "a": "Sì. La schermata di controllo è pensata per il telefono e Punkto funziona offline dopo la prima visita." }
+      ]
+    }
+  }
+}

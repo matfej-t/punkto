@@ -30,6 +30,9 @@ All data stays in the visitor's browser.
 9. [Tests](#9-tests)
 10. [Project structure](#10-project-structure)
 11. [Privacy and GDPR notes](#11-privacy-and-gdpr-notes)
+12. [Visitor statistics (GoatCounter)](#12-visitor-statistics-goatcounter)
+
+How to get visitors (Search Console, directories, communities) is in **[GROWTH.md](GROWTH.md)**.
 
 ---
 
@@ -60,7 +63,7 @@ The empty `.nojekyll` file tells GitHub to serve the files as they are, without 
 
 A custom domain such as `punkto.app` looks more professional. **You also need one for AdSense**, because AdSense doesn't accept a `github.io/<repo>` sub-path site.
 
-1. Buy a domain from any registrar (Namecheap, Cloudflare, INWX, …).
+1. Get a domain from any registrar (Namecheap, Cloudflare, INWX, …). Students: the [GitHub Student Developer Pack](https://education.github.com/pack) usually includes a free first year with a registrar. Renewal after that is at the normal price, so pick a name you want to keep.
 2. Add DNS records at your registrar:
    - **Apex domain** (`punkto.app`): four `A` records pointing to
      `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
@@ -164,7 +167,8 @@ If an `access-control-allow-origin` line shows up, direct browser calls work and
 - Plural forms use the [CLDR categories](https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html) (`one`, `few`, `many`, `other`), for example in `ru.json`.
 - `tools/generate-pages.mjs` builds the static, SEO-friendly pages from `tools/page-template.html`:
   - `index.html` (English, `x-default`) and `de/index.html`, `fr/index.html`, … Each has a translated `<title>`, meta description, `lang` attribute, `hreflang` links, Open Graph tags, JSON-LD and a crawlable intro, features and FAQ text.
-  - `sitemap.xml`, `robots.txt`, `404.html`.
+  - **Landing pages** for search: `/<use-case>/` in English and `/<lang>/<use-case>/` for every other language. The use cases are online scoreboard, leaderboard maker, classroom points tracker, quiz scoreboard and score keeper, which makes 60 pages. Their text lives in `content/landing/<lang>.json` and the layout in `tools/landing-template.html`. Each page's button opens the app with the right board type preselected (`#/new/leaderboard` or `#/new/scoreboard`).
+  - `sitemap.xml` (all pages in all languages, with alternates), `robots.txt`, `404.html`.
   - The list of offline files in `sw.js`, plus a new cache version.
 
   ```bash
@@ -175,7 +179,7 @@ If an `access-control-allow-origin` line shows up, direct browser calls work and
 
 **To add a language,** for example Swedish:
 
-1. Copy `i18n/en.json` to `i18n/sv.json` and translate the values. Keep the keys and the `{placeholders}` unchanged.
+1. Copy `i18n/en.json` to `i18n/sv.json` and `content/landing/en.json` to `content/landing/sv.json`, then translate the values. Keep the keys and the `{placeholders}` unchanged.
 2. Add `"sv"` to `languages` in `config.js`, and add `sv: 'Svenska'` to `LANG_NAMES` in `js/i18n.js`.
 3. Run `node tools/generate-pages.mjs`, then commit and push.
 
@@ -234,3 +238,23 @@ tests/e2e.mjs             browser tests
 
   The privacy page (`#/privacy`) explains this in all 12 languages. Add your contact e-mail in `config.js` and have the text checked against your own legal situation. Depending on your country, you may also need an imprint (Impressum).
 - Premium users load no third-party ad code at all.
+
+## 12. Visitor statistics (GoatCounter)
+
+Without numbers you can't tell what works, so Punkto supports [GoatCounter](https://www.goatcounter.com). It is free for sites like this, open source, and uses **no cookies**, so it needs no consent banner and fits the privacy promise.
+
+1. Sign up at goatcounter.com and choose a code, for example `punkto`.
+2. In `config.js`, set `analytics: { goatcounter: "https://punkto.goatcounter.com/count" }`.
+3. Run `node tools/generate-pages.mjs` so the landing pages include the counter too, then commit and push.
+
+It counts page views per page and language, where visitors came from, and these anonymous events:
+
+| Event | Meaning |
+|---|---|
+| `board-created-leaderboard` / `board-created-scoreboard` | someone created a board |
+| `display-opened` | the TV/projector view was opened |
+| `game-ended-…` | a game was finished |
+| `premium-opened` / `premium-checkout-clicked` / `premium-activated` | the paying funnel |
+
+The privacy page mentions GoatCounter automatically once it is switched on. While `goatcounter` is empty, no script is loaded.
+

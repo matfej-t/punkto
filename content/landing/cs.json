@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Jak to funguje",
+    "why": "Proč Punkto",
+    "faq": "Otázky a odpovědi",
+    "more": "Další bezplatné nástroje na počítání bodů",
+    "badges": "Zdarma · Bez registrace · Funguje offline",
+    "privacy": "Soukromí v základu: jména a body se ukládají jen ve vašem prohlížeči — nic se nenahrává.",
+    "app": "Otevřít aplikaci"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Bezplatná online tabule skóre pro TV a projektor — Punkto",
+      "description": "Počítejte skóre dvou týmů online. Velká, čitelná tabule skóre pro televizi nebo projektor se střelci, hodinami zápasu a obrazovkou vítěze. Zdarma, bez registrace, funguje offline.",
+      "h1": "Bezplatná online tabule skóre pro dva týmy",
+      "intro": "Punkto promění váš notebook v tabuli skóre. Přidávejte body jedním klepnutím a ukažte skóre na celou obrazovku televize nebo projektoru — aktualizuje se okamžitě. Ideální pro fotbal, basketbal, volejbal, stolní tenis i jakoukoli hru dvou stran.",
+      "cta": "Vytvořit tabuli skóre",
+      "steps": [
+        "Pojmenujte zápas a oba týmy. Pokud chcete, přidejte loga a hráče.",
+        "Klepejte na +1, +3 nebo vlastní hodnoty. Spletli jste se? −1, zpět, nebo klikněte na skóre a napište ho.",
+        "Klikněte na „Zobrazení“, přesuňte okno na televizi nebo projektor a stiskněte F pro celou obrazovku. Zůstává synchronizované, zatímco počítáte."
+      ],
+      "features": [
+        { "t": "Obrovské a čitelné skóre", "d": "Pro obrazovky přes celou místnost: velká čísla, barvy týmů, střelci a volitelné hodiny zápasu." },
+        { "t": "Střelci a průběh zápasu", "d": "Střelce vyberete jedním klepnutím. Každý gól je v seznamu i s minutou a chybný smažete jedním kliknutím." },
+        { "t": "Obrazovka vítěze a historie", "d": "Ukončete hru a ukažte konečné skóre s trochou konfet. Každý výsledek zůstane v historii tabule." }
+      ],
+      "faq": [
+        { "q": "Hodí se pro basketbal nebo volejbal?", "a": "Ano. Při vytváření tabule zvolte tlačítka bodů — například 1, 2, 3 pro basketbal. Libovolné skóre můžete také zadat ručně." },
+        { "q": "Musím něco instalovat?", "a": "Ne. Punkto běží v prohlížeči. Z nabídky prohlížeče si ho můžete nainstalovat jako aplikaci a po první návštěvě funguje offline." },
+        { "q": "Jak ukážu skóre na televizi?", "a": "Připojte notebook k televizi nebo projektoru, otevřete zobrazení ve druhém okně a přetáhněte ho na tuto obrazovku. V prvním okně počítejte dál — zobrazení se aktualizuje okamžitě." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Bezplatný tvůrce žebříčků — živý žebříček online — Punkto",
+      "description": "Vytvořte živý žebříček během pár vteřin. Přidejte hráče nebo týmy, udělujte body, počítejte kola a ukažte pořadí na velké obrazovce. Zdarma, bez registrace, soukromě.",
+      "h1": "Bezplatný online tvůrce žebříčků",
+      "intro": "Vytvořte živý žebříček pro jakoukoli soutěž. Přidejte hráče nebo týmy, udělujte body jedním klepnutím a pořadí se seřadí samo. Ukažte ho na celou obrazovku televize nebo projektoru a vyhlaste vítěze na stupních vítězů.",
+      "cta": "Vytvořit žebříček",
+      "steps": [
+        "Pojmenujte žebříček a zvolte tlačítka pro přičítání a odečítání.",
+        "Přidejte hráče nebo týmy — celý seznam můžete vložit najednou.",
+        "Udělujte body a pořadí se aktualizuje samo. „Ukončit hru“ ukáže stupně vítězů."
+      ],
+      "features": [
+        { "t": "Vždy podle bodů", "d": "Žebříček se po každé změně přeřadí, se zlatem, stříbrem a bronzem pro první tři." },
+        { "t": "Kola", "d": "Počítejte body po kolech a sledujte tabulku kol — na své obrazovce i na velkém zobrazení." },
+        { "t": "Čitelné i se 40 jmény", "d": "Zobrazení se přizpůsobí, aby každé jméno bylo čitelné i z poslední řady." }
+      ],
+      "faq": [
+        { "q": "Kolik hráčů může mít žebříček?", "a": "Kolik potřebujete. Zobrazení je rozloží do sloupců, takže zhruba 40 jmen zůstane čitelných na jedné obrazovce." },
+        { "q": "Ukládá se můj žebříček?", "a": "Ano, automaticky, ve vašem prohlížeči v tomto zařízení. K přenosu do jiného zařízení exportujte soubor nebo zkopírujte záložní odkaz." },
+        { "q": "Můžu body později změnit?", "a": "Ano. Tlačítky pro odečítání nebo vrácením, v tabulce kol — nebo klikněte na skóre a napište správné číslo." }
+      ]
+    },
+    "classroom": {
+      "title": "Počítadlo bodů pro třídu a tabule skóre do výuky — zdarma — Punkto",
+      "description": "Počítejte body třídy nebo skupin na projektoru. Bezplatná tabule skóre pro školu s koly a stupni vítězů. Bez registrace — jména žáků zůstávají v zařízení učitele.",
+      "h1": "Počítadlo bodů třídy pro projektor",
+      "intro": "Odměňujte týmovou práci, domácí úkoly nebo dobré chování body, které vidí celá třída. Punkto ukazuje na projektoru velký barevný žebříček a vše ukládá ve vašem vlastním zařízení — žádné účty pro vás ani pro žáky.",
+      "cta": "Vytvořit tabuli třídy",
+      "steps": [
+        "Vytvořte tabuli a vložte seznam třídy nebo názvy skupin.",
+        "Během hodiny udělujte body jedním klepnutím — nebo z klávesnice bez myši.",
+        "Ukažte pořadí na projektoru a na konci týdne oslavte vítěze."
+      ],
+      "features": [
+        { "t": "Šetrné k soukromí", "d": "Bez registrace a bez serveru: jména a body jsou jen ve vašem prohlížeči. S Premium se nenačítá vůbec žádný reklamní kód." },
+        { "t": "Rychle během hodiny", "d": "Žáka vyberete číselnou klávesou a body přidáte klávesou + nebo −. Chybu opraví jedno vrácení." },
+        { "t": "Na den, týden nebo celé pololetí", "d": "Nechte jednu tabuli běžet celé pololetí, nebo každý pátek ukončete hru a výsledky si nechte v historii." }
+      ],
+      "faq": [
+        { "q": "Je to v souladu s GDPR?", "a": "Punkto neukládá osobní údaje na žádný server — jména zůstávají v prohlížeči učitele. Přesto se řiďte pravidly své školy." },
+        { "q": "Funguje to na interaktivní tabuli?", "a": "Ano. Otevřete Punkto na počítači tabule: velká tlačítka fungují dotykem a zobrazení zaplní celou plochu." },
+        { "q": "Potřebují žáci vlastní zařízení?", "a": "Ne. Punkto používá jen učitel; třída se dívá na projektor." }
+      ]
+    },
+    "quiz": {
+      "title": "Tabule skóre pro kvízy a kvízové večery — zdarma — Punkto",
+      "description": "Veďte kvízový večer s živou tabulí skóre na televizi. Zadávejte body každého kola, ukazujte pořadí a stupně vítězů. Zdarma, bez registrace, funguje offline.",
+      "h1": "Tabule skóre pro kvízové večery",
+      "intro": "Moderujete hospodský kvíz nebo vědomostní večer? Zadejte body každého týmu po kolech během vteřin a ukažte živý žebříček na televizi. Po posledním kole čekají na vítěze stupně vítězů a konfety.",
+      "cta": "Vytvořit tabuli kvízu",
+      "steps": [
+        "Vytvořte žebříček a přidejte názvy týmů.",
+        "Po každém kole napište body do tabulky kol — Enter přeskočí na další tým.",
+        "Mezi koly ukazujte průběžné pořadí a na konci večera stupně vítězů."
+      ],
+      "features": [
+        { "t": "Kolo po kole", "d": "Body každého týmu v každém kole i celkový součet — na obrazovce moderátora i na televizi." },
+        { "t": "Funguje bez Wi-Fi", "d": "Po první návštěvě Punkto funguje offline — praktické v podnicích se slabým internetem." },
+        { "t": "Logo vašeho podniku", "d": "Přidejte své logo na tabuli. Premium navíc odstraní reklamy i odznak Punkto." }
+      ],
+      "faq": [
+        { "q": "Jak opravím špatné body?", "a": "Klikněte na číslo v tabulce kol a napište správné, nebo stiskněte Ctrl+Z a vraťte poslední změnu." },
+        { "q": "Můžu dělat kvíz každý týden?", "a": "Ano. Ukončete hru, výsledek se uloží do historie, a další kvíz začněte na stejné tabuli — nebo ji duplikujte." },
+        { "q": "Vidí hosté, kdo vede?", "a": "Ano. Žebříček je vždy seřazený podle celkových bodů a televize umí přepínat mezi žebříčkem a tabulkou kol." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Online počítadlo bodů pro hry — zdarma, bez registrace — Punkto",
+      "description": "Počítejte body v deskových a karetních hrách i při rodinných herních večerech. Body hráčů, kola a vítěz. Bezplatné online počítadlo bodů, které funguje offline.",
+      "h1": "Online počítadlo bodů pro herní večery",
+      "intro": "Konec čmárání na papír. Punkto počítá body v karetních a deskových hrách, šipkách nebo bowlingu: zapisujte body hráčů, sledujte kola a nechte počítání na aplikaci — vítěz nakonec stane na stupních vítězů.",
+      "cta": "Začít počítat body",
+      "steps": [
+        "Vytvořte žebříček a přidejte hráče.",
+        "Nastavte tlačítka bodů podle své hry — nebo body každého kola zapisujte do tabulky kol.",
+        "Stiskněte „Ukončit hru“ a vyhlaste vítěze. Výsledek se uloží do historie."
+      ],
+      "features": [
+        { "t": "Počítá za vás", "d": "Součty, pořadí i body za kola se počítají automaticky — žádné chyby ve sčítání." },
+        { "t": "I záporné body", "d": "V mnoha hrách se body odečítají. Nastavte vlastní tlačítka pro odečítání nebo zadávejte záporná čísla." },
+        { "t": "Historie každé hry", "d": "Uchovávejte odehrané partie a podívejte se, kdo vyhrál minule." }
+      ],
+      "faq": [
+        { "q": "Pro jaké hry se hodí?", "a": "Pro každou hru, kde se sbírají body: karetní a deskové hry, šipky, bowling, minigolf, turnaje ve videohrách a další." },
+        { "q": "Co když vyhrává nejnižší skóre?", "a": "Punkto řadí na první místo nejvyšší součet. U her, kde vyhrává nejnižší skóre, zadávejte body jako záporná čísla." },
+        { "q": "Funguje to na telefonu?", "a": "Ano. Ovládání je navržené pro telefon a po první návštěvě Punkto funguje offline." }
+      ]
+    }
+  }
+}

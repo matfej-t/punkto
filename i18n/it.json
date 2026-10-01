@@ -121,9 +121,10 @@
     "p1": "Punkto non ha account né database. Tutto ciò che crei — tabelloni, nomi, punteggi e loghi — viene salvato solo nella memoria locale del tuo browser su questo dispositivo. Noi non riceviamo nulla.",
     "p2": "I loghi vengono ridimensionati e compressi nel tuo browser prima del salvataggio. Eliminando un tabellone, o usando «Elimina tutti i dati» nelle impostazioni, lo rimuovi definitivamente da questo dispositivo.",
     "p3": "I link di condivisione contengono i dati del tabellone dopo il simbolo # dell'indirizzo. I browser non inviano mai questa parte a nessun server, quindi i dati arrivano solo a chi riceve il link da te. I loghi non sono inclusi nei link.",
-    "p4": "Il sito è ospitato su GitHub Pages. Come ogni server web, GitHub può registrare dati tecnici come il tuo indirizzo IP quando la pagina viene caricata. Punkto non usa strumenti di analisi né cookie di tracciamento propri.",
+    "p4": "Il sito è ospitato su GitHub Pages. Come ogni server web, GitHub può registrare dati tecnici come il tuo indirizzo IP quando la pagina viene caricata. Punkto non usa cookie propri e non ti traccia.",
     "p5": "Nella versione gratuita la pubblicità è fornita da Google AdSense. Google può usare cookie per mostrare e misurare gli annunci; dove la legge lo richiede, ti viene prima chiesto il consenso. La pubblicità si può nascondere per la sessione e Premium rimuove tutto il codice pubblicitario.",
     "p6": "Quando attivi Premium, la tua chiave di licenza viene inviata al nostro fornitore di pagamenti Lemon Squeezy per verificarne la validità. I pagamenti sono gestiti interamente da Lemon Squeezy: non vediamo mai i dati della tua carta o del pagamento.",
+    "p7": "Per sapere quante persone usano Punkto, contiamo le visite e alcuni eventi anonimi (come «tabellone creato») con GoatCounter, un servizio di statistiche rispettoso della privacy. Non usa cookie, non salva dati personali e non ti segue su altri siti.",
     "contact": "Domande? Contatto:"
   },
   "share": {
@@ -260,5 +261,13 @@
     "a4": "Sì. Dopo la prima visita Punkto funziona senza internet. Puoi anche installarlo come app dal menu del browser.",
     "q5": "Punkto rispetta il GDPR?",
     "a5": "Punkto è pensato per la privacy: nessuna registrazione e nessun dato personale salvato su un server — i nomi restano sul tuo dispositivo. Con Premium non viene caricato alcun codice pubblicitario di terzi."
+  },
+  "uses": {
+    "title": "Strumenti gratuiti",
+    "scoreboard": "Segnapunti online",
+    "leaderboard": "Crea classifiche",
+    "classroom": "Punti della classe",
+    "quiz": "Segnapunti per quiz",
+    "score-keeper": "Segnapunti per giochi"
   }
 }

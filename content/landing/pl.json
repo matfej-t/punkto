@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Jak to działa",
+    "why": "Dlaczego Punkto",
+    "faq": "Pytania i odpowiedzi",
+    "more": "Więcej darmowych narzędzi do liczenia punktów",
+    "badges": "Za darmo · Bez rejestracji · Działa offline",
+    "privacy": "Prywatność w standardzie: imiona i punkty są zapisywane tylko w Twojej przeglądarce — nic nie jest wysyłane.",
+    "app": "Otwórz aplikację"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Darmowa tablica wyników online na TV i rzutnik — Punkto",
+      "description": "Licz punkty dwóch drużyn online. Duża, czytelna tablica wyników na telewizor lub rzutnik ze strzelcami, zegarem meczowym i ekranem zwycięzcy. Za darmo, bez rejestracji, działa offline.",
+      "h1": "Darmowa tablica wyników online dla dwóch drużyn",
+      "intro": "Punkto zamienia Twój laptop w tablicę wyników. Dodawaj punkty jednym dotknięciem i pokazuj wynik na pełnym ekranie telewizora lub rzutnika — aktualizuje się natychmiast. Idealna do piłki nożnej, koszykówki, siatkówki, tenisa stołowego i każdej gry dwóch stron.",
+      "cta": "Utwórz tablicę wyników",
+      "steps": [
+        "Nazwij mecz i obie drużyny. Jeśli chcesz, dodaj herby i zawodników.",
+        "Stukaj +1, +3 lub własne wartości. Pomyłka? Użyj −1, cofnij albo kliknij wynik i wpisz go.",
+        "Kliknij „Ekran”, przenieś okno na telewizor lub rzutnik i naciśnij F, aby włączyć pełny ekran. Pozostaje zsynchronizowane, gdy liczysz punkty."
+      ],
+      "features": [
+        { "t": "Ogromny, czytelny wynik", "d": "Stworzony dla ekranów na drugim końcu sali: duże cyfry, kolory drużyn, strzelcy i opcjonalny zegar meczowy." },
+        { "t": "Strzelcy i przebieg meczu", "d": "Wybierz strzelca jednym dotknięciem. Każdy gol jest zapisany z minutą, a błędny usuniesz jednym kliknięciem." },
+        { "t": "Ekran zwycięzcy i historia", "d": "Zakończ grę, aby pokazać wynik końcowy z odrobiną konfetti. Każdy wynik zostaje w historii tablicy." }
+      ],
+      "faq": [
+        { "q": "Czy nadaje się do koszykówki lub siatkówki?", "a": "Tak. Wybierz przyciski punktów przy tworzeniu tablicy — na przykład 1, 2, 3 do koszykówki. Każdy wynik możesz też wpisać ręcznie." },
+        { "q": "Czy muszę coś instalować?", "a": "Nie. Punkto działa w przeglądarce. Możesz zainstalować je jako aplikację z menu przeglądarki, a po pierwszej wizycie działa offline." },
+        { "q": "Jak pokazać wynik na telewizorze?", "a": "Podłącz laptop do telewizora lub rzutnika, otwórz ekran wyświetlania w drugim oknie i przeciągnij je na ten ekran. W pierwszym oknie licz dalej — ekran nadąża natychmiast." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Darmowy kreator rankingów — ranking online na żywo — Punkto",
+      "description": "Utwórz ranking na żywo w kilka sekund. Dodaj graczy lub drużyny, przyznawaj punkty, prowadź rundy i pokazuj ranking na dużym ekranie. Za darmo, bez rejestracji, prywatnie.",
+      "h1": "Darmowy kreator rankingów online",
+      "intro": "Stwórz ranking na żywo dla dowolnej rywalizacji. Dodaj graczy lub drużyny, przyznawaj punkty jednym dotknięciem, a ranking sam się posortuje. Pokaż go na pełnym ekranie telewizora lub rzutnika i nagrodź zwycięzców na podium.",
+      "cta": "Utwórz ranking",
+      "steps": [
+        "Nazwij ranking i wybierz przyciski dodawania i odejmowania punktów.",
+        "Dodaj graczy lub drużyny — całą listę możesz wkleić naraz.",
+        "Przyznawaj punkty, a ranking sam się zaktualizuje. „Zakończ grę” pokaże podium."
+      ],
+      "features": [
+        { "t": "Zawsze według punktów", "d": "Ranking układa się na nowo po każdej zmianie, ze złotem, srebrem i brązem dla pierwszej trójki." },
+        { "t": "Rundy", "d": "Licz punkty w rundach i oglądaj tabelę runda po rundzie — na swoim ekranie i na dużym wyświetlaczu." },
+        { "t": "Czytelny nawet z 40 nazwiskami", "d": "Ekran wyświetlania dopasowuje się tak, by każde imię było czytelne, nawet z końca sali." }
+      ],
+      "faq": [
+        { "q": "Ilu graczy może mieć ranking?", "a": "Tylu, ilu potrzebujesz. Ekran układa ich w kolumny, więc około 40 imion pozostaje czytelnych na jednym ekranie." },
+        { "q": "Czy mój ranking jest zapisywany?", "a": "Tak, automatycznie, w Twojej przeglądarce na tym urządzeniu. Wyeksportuj plik lub skopiuj link z kopią, aby przenieść go na inne urządzenie." },
+        { "q": "Czy mogę później zmienić punkty?", "a": "Tak. Użyj przycisków odejmowania lub cofnij, edytuj dowolną rundę w tabeli rund albo kliknij wynik i wpisz właściwą liczbę." }
+      ]
+    },
+    "classroom": {
+      "title": "Licznik punktów klasy i tablica wyników na lekcję — za darmo — Punkto",
+      "description": "Licz punkty klasy lub grup na rzutniku. Darmowa tablica wyników do szkoły z rundami i podium. Bez rejestracji — imiona uczniów zostają na urządzeniu nauczyciela.",
+      "h1": "Licznik punktów klasy na rzutnik",
+      "intro": "Nagradzaj pracę zespołową, zadania domowe czy dobre zachowanie punktami, które widzi cała klasa. Punkto pokazuje duży, kolorowy ranking na rzutniku i przechowuje wszystko na Twoim urządzeniu — bez kont dla Ciebie i uczniów.",
+      "cta": "Utwórz tablicę klasy",
+      "steps": [
+        "Utwórz tablicę i wklej listę klasy lub nazwy grup.",
+        "Przyznawaj punkty na lekcji jednym dotknięciem — albo z klawiatury, bez myszy.",
+        "Pokaż ranking na rzutniku i świętuj zwycięzców na koniec tygodnia."
+      ],
+      "features": [
+        { "t": "Dba o prywatność", "d": "Bez rejestracji i bez serwera: imiona i punkty są tylko w Twojej przeglądarce. Z Premium nie jest ładowany żaden kod reklamowy." },
+        { "t": "Szybko na lekcji", "d": "Wybierz ucznia klawiszem z cyfrą i dodawaj punkty przyciskami + lub −. Pomyłkę naprawisz cofnięciem." },
+        { "t": "Na dzień, tydzień lub cały semestr", "d": "Prowadź jedną tablicę przez cały semestr albo kończ grę w każdy piątek i trzymaj wyniki w historii." }
+      ],
+      "faq": [
+        { "q": "Czy to jest zgodne z RODO?", "a": "Punkto nie przechowuje danych osobowych na żadnym serwerze — imiona zostają w przeglądarce nauczyciela. Mimo to stosuj się do zasad swojej szkoły." },
+        { "q": "Czy działa na tablicy interaktywnej?", "a": "Tak. Otwórz Punkto na komputerze tablicy: duże przyciski działają dotykowo, a ekran wyświetlania wypełnia całą powierzchnię." },
+        { "q": "Czy uczniowie potrzebują własnych urządzeń?", "a": "Nie. Z Punkto korzysta tylko nauczyciel; klasa po prostu patrzy na rzutnik." }
+      ]
+    },
+    "quiz": {
+      "title": "Tablica wyników do quizu i wieczorów quizowych — za darmo — Punkto",
+      "description": "Prowadź wieczór quizowy z tablicą wyników na żywo na telewizorze. Wpisuj punkty z każdej rundy, pokazuj ranking i podium. Za darmo, bez rejestracji, działa offline.",
+      "h1": "Tablica wyników na wieczory quizowe",
+      "intro": "Prowadzisz quiz w pubie lub wieczór z zagadkami? Wpisuj punkty każdej drużyny po rundzie w kilka sekund i pokazuj ranking na żywo na telewizorze. Po ostatniej rundzie zwycięzcy stają na podium wśród konfetti.",
+      "cta": "Utwórz tablicę quizu",
+      "steps": [
+        "Utwórz ranking i dodaj nazwy drużyn.",
+        "Po każdej rundzie wpisz punkty do tabeli rund — Enter przechodzi do następnej drużyny.",
+        "Pokazuj klasyfikację między rundami i podium na koniec wieczoru."
+      ],
+      "features": [
+        { "t": "Runda po rundzie", "d": "Punkty każdej drużyny w każdej rundzie i suma — na ekranie prowadzącego i na telewizorze." },
+        { "t": "Działa bez Wi-Fi", "d": "Po pierwszej wizycie Punkto działa offline — przydatne w lokalach ze słabym internetem." },
+        { "t": "Logo Twojego lokalu", "d": "Dodaj swoje logo do tablicy. Premium usuwa też reklamy i plakietkę Punkto." }
+      ],
+      "faq": [
+        { "q": "Jak poprawić błędny wynik?", "a": "Kliknij liczbę w tabeli rund i wpisz właściwą albo naciśnij Ctrl+Z, aby cofnąć ostatnią zmianę." },
+        { "q": "Czy mogę robić quiz co tydzień?", "a": "Tak. Zakończ grę, aby zapisać wynik w historii, i zacznij kolejny quiz na tej samej tablicy — albo ją zduplikuj." },
+        { "q": "Czy goście widzą, kto prowadzi?", "a": "Tak. Ranking jest zawsze sortowany według sumy punktów, a telewizor może przełączać się między rankingiem a tabelą rund." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Licznik punktów online do gier — za darmo, bez rejestracji — Punkto",
+      "description": "Licz punkty w grach planszowych, karcianych i podczas rodzinnych wieczorów. Punkty dla graczy, rundy i zwycięzca. Darmowy licznik punktów online, który działa offline.",
+      "h1": "Licznik punktów online na wieczór gier",
+      "intro": "Koniec z bazgraniem na kartce. Punkto liczy punkty w grach karcianych, planszowych, rzutkach czy kręglach: wpisuj punkty graczy, śledź rundy i pozwól aplikacji liczyć — a zwycięzca stanie na podium.",
+      "cta": "Zacznij liczyć punkty",
+      "steps": [
+        "Utwórz ranking i dodaj graczy.",
+        "Ustaw przyciski punktów pasujące do gry — albo wpisuj punkty z każdej rundy do tabeli rund.",
+        "Naciśnij „Zakończ grę”, aby wyłonić zwycięzcę. Wynik zostanie zapisany w historii."
+      ],
+      "features": [
+        { "t": "Liczy za Ciebie", "d": "Sumy, miejsca i punkty z rund są liczone automatycznie — koniec z pomyłkami w dodawaniu." },
+        { "t": "Także punkty ujemne", "d": "W wielu grach odejmuje się punkty. Ustaw własne przyciski odejmowania lub wpisuj liczby ujemne." },
+        { "t": "Historia każdej gry", "d": "Zapisuj rozegrane partie i sprawdzaj, kto wygrał ostatnio." }
+      ],
+      "faq": [
+        { "q": "Do jakich gier się nadaje?", "a": "Do każdej gry, w której zbiera się punkty: karcianych, planszowych, rzutek, kręgli, minigolfa, turniejów gier wideo i nie tylko." },
+        { "q": "A jeśli wygrywa najniższy wynik?", "a": "Punkto stawia na pierwszym miejscu najwyższą sumę. W grach, w których wygrywa najniższy wynik, wpisuj punkty jako liczby ujemne." },
+        { "q": "Czy działa na telefonie?", "a": "Tak. Ekran sterowania jest stworzony z myślą o telefonie, a po pierwszej wizycie Punkto działa offline." }
+      ]
+    }
+  }
+}

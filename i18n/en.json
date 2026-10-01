@@ -121,9 +121,10 @@
     "p1": "Punkto has no accounts and no database. Everything you create — boards, names, scores and logos — is stored only in your browser's local storage on this device. We never receive it.",
     "p2": "Logos are resized and compressed inside your browser before they are saved. Deleting a board, or using “Delete all data” in the settings, removes it from this device for good.",
     "p3": "Share links contain the board data after the # sign of the address. Browsers never send that part to any server, so the data only travels to the people you give the link to. Logos are not included in links.",
-    "p4": "The website is hosted on GitHub Pages. Like any web server, GitHub may log technical data such as your IP address when the page loads. Punkto itself uses no analytics and no tracking cookies.",
+    "p4": "The website is hosted on GitHub Pages. Like any web server, GitHub may log technical data such as your IP address when the page loads. Punkto itself sets no cookies and does not track you.",
     "p5": "In the free version, ads are provided by Google AdSense. Google may use cookies to show and measure ads; where the law requires it, you are asked for consent first. Ads can be hidden for the session, and Premium removes all ad code.",
     "p6": "When you activate Premium, your license key is sent to our payment provider Lemon Squeezy to check that it is valid. Payments are handled entirely by Lemon Squeezy — we never see your card or payment details.",
+    "p7": "To see how many people use Punkto, page visits and a few anonymous events (such as “board created”) are counted with GoatCounter, a privacy-friendly statistics service. It uses no cookies, stores no personal data and does not follow you across websites.",
     "contact": "Questions? Contact:"
   },
   "share": {
@@ -260,5 +261,13 @@
     "a4": "Yes. After your first visit Punkto works without internet. You can also install it as an app from your browser's menu.",
     "q5": "Is Punkto GDPR-friendly?",
     "a5": "Punkto is built for privacy: no sign-up and no personal data on any server — names stay on your device. With Premium, no third-party ad code is loaded at all."
+  },
+  "uses": {
+    "title": "Free score tools",
+    "scoreboard": "Online scoreboard",
+    "leaderboard": "Leaderboard maker",
+    "classroom": "Classroom points tracker",
+    "quiz": "Quiz scoreboard",
+    "score-keeper": "Score keeper for games"
   }
 }

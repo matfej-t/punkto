@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Como funciona",
+    "why": "Por que o Punkto",
+    "faq": "Perguntas e respostas",
+    "more": "Mais ferramentas grátis para marcar pontos",
+    "badges": "Grátis · Sem cadastro · Funciona offline",
+    "privacy": "Privado por natureza: nomes e pontos ficam salvos apenas no seu navegador — nada é enviado.",
+    "app": "Abrir o app"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Placar online grátis para TV e projetor — Punkto",
+      "description": "Marque os pontos de duas equipes online. Um placar grande e legível para TV ou projetor, com autores dos gols, cronômetro e tela de vencedor. Grátis, sem cadastro, funciona offline.",
+      "h1": "Placar online grátis para duas equipes",
+      "intro": "O Punkto transforma seu notebook em um placar. Some pontos com um toque e mostre o placar em tela cheia na TV ou no projetor — ele se atualiza na hora. Ideal para futebol, basquete, vôlei, tênis de mesa ou qualquer jogo entre dois lados.",
+      "cta": "Criar um placar",
+      "steps": [
+        "Dê um nome à partida e às duas equipes. Adicione escudos e jogadores se quiser.",
+        "Toque em +1, +3 ou nos seus próprios valores. Errou? Use −1, desfazer, ou clique no placar e digite.",
+        "Clique em “Exibição”, leve a janela para a TV ou o projetor e pressione F para tela cheia. Ela fica sincronizada enquanto você marca."
+      ],
+      "features": [
+        { "t": "Placar enorme e legível", "d": "Feito para telas do outro lado da sala: números grandes, cores das equipes, autores dos gols e cronômetro opcional." },
+        { "t": "Autores dos gols e linha do tempo", "d": "Escolha quem marcou com um toque. Cada gol aparece com o minuto, e um gol errado sai com um clique." },
+        { "t": "Tela de vencedor e histórico", "d": "Encerre a partida para mostrar o placar final com um pouco de confete. Cada resultado fica no histórico." }
+      ],
+      "faq": [
+        { "q": "Dá para usar no basquete ou no vôlei?", "a": "Sim. Escolha os botões de pontos ao criar o placar — por exemplo 1, 2, 3 para basquete. Você também pode digitar qualquer placar à mão." },
+        { "q": "Preciso instalar algo?", "a": "Não. O Punkto roda no navegador. Você pode instalá-lo como app pelo menu do navegador, e ele funciona offline depois da primeira visita." },
+        { "q": "Como mostro o placar na TV?", "a": "Conecte o notebook à TV ou ao projetor, abra a exibição numa segunda janela e arraste-a para essa tela. Continue marcando na primeira janela — a exibição acompanha na hora." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Criador de ranking grátis — ranking online ao vivo — Punkto",
+      "description": "Crie um ranking ao vivo em segundos. Adicione participantes ou equipes, dê pontos, acompanhe rodadas e mostre o ranking numa tela grande. Grátis, sem cadastro, privado.",
+      "h1": "Criador de ranking online grátis",
+      "intro": "Crie um ranking ao vivo para qualquer competição. Adicione participantes ou equipes, dê pontos com um toque e o ranking se ordena sozinho. Mostre-o em tela cheia na TV ou no projetor e coroe os vencedores num pódio.",
+      "cta": "Criar um ranking",
+      "steps": [
+        "Dê um nome ao ranking e escolha seus botões de somar e subtrair.",
+        "Adicione participantes ou equipes — dá para colar uma lista inteira de uma vez.",
+        "Dê pontos e o ranking se atualiza sozinho. “Encerrar partida” mostra o pódio."
+      ],
+      "features": [
+        { "t": "Sempre ordenado por pontos", "d": "O ranking se reorganiza após cada mudança, com ouro, prata e bronze para os três primeiros." },
+        { "t": "Rodadas", "d": "Marque pontos por rodada e veja uma tabela rodada a rodada, na sua tela e na tela grande." },
+        { "t": "Legível com 40 nomes", "d": "A exibição se ajusta para que cada nome continue legível, mesmo no projetor do fundo da sala." }
+      ],
+      "faq": [
+        { "q": "Quantos participantes um ranking pode ter?", "a": "Quantos você precisar. A exibição os distribui em colunas, então cerca de 40 nomes continuam legíveis numa só tela." },
+        { "q": "Meu ranking fica salvo?", "a": "Sim, automaticamente, no seu navegador neste dispositivo. Exporte um arquivo ou copie um link de backup para levá-lo a outro dispositivo." },
+        { "q": "Posso mudar os pontos depois?", "a": "Sim. Use os botões de subtrair ou desfazer, edite qualquer rodada na tabela de rodadas, ou clique numa pontuação e digite a correta." }
+      ]
+    },
+    "classroom": {
+      "title": "Contador de pontos da turma e placar da sala de aula — grátis — Punkto",
+      "description": "Marque os pontos da turma ou das equipes no projetor. Placar grátis para a escola com rodadas e pódio. Sem cadastro — os nomes dos alunos ficam no dispositivo do professor.",
+      "h1": "Contador de pontos da turma para o projetor",
+      "intro": "Recompense trabalho em equipe, lição de casa ou bom comportamento com pontos que a turma inteira vê. O Punkto mostra um ranking grande e colorido no projetor e guarda tudo no seu próprio dispositivo — sem contas para você ou para os alunos.",
+      "cta": "Criar um placar da turma",
+      "steps": [
+        "Crie um placar e cole a lista da turma ou os nomes dos grupos.",
+        "Dê pontos durante a aula com um toque — ou pelo teclado, sem tocar no mouse.",
+        "Mostre o ranking no projetor e comemore os vencedores no fim da semana."
+      ],
+      "features": [
+        { "t": "Respeita a privacidade", "d": "Sem cadastro e sem servidor: nomes e pontos ficam só no seu navegador. Com o Premium, nenhum código de anúncio é carregado." },
+        { "t": "Rápido durante a aula", "d": "Escolha um aluno pelas teclas numéricas e dê pontos com + ou −. Um erro se corrige com desfazer." },
+        { "t": "Diário, semanal ou o bimestre todo", "d": "Mantenha um placar o bimestre inteiro ou encerre uma partida toda sexta-feira e guarde os resultados no histórico." }
+      ],
+      "faq": [
+        { "q": "Está de acordo com a LGPD/RGPD?", "a": "O Punkto não guarda dados pessoais em nenhum servidor — os nomes ficam no navegador do professor. Ainda assim, siga as regras da sua escola." },
+        { "q": "Funciona na lousa digital?", "a": "Sim. Abra o Punkto no computador da lousa: os botões grandes funcionam com toque e a exibição ocupa a tela inteira." },
+        { "q": "Os alunos precisam de aparelhos?", "a": "Não. Só o professor usa o Punkto; a turma apenas olha o projetor." }
+      ]
+    },
+    "quiz": {
+      "title": "Placar para quiz e noites de perguntas — grátis — Punkto",
+      "description": "Conduza sua noite de quiz com um placar ao vivo na TV. Lance os pontos de cada rodada, mostre o ranking e o pódio. Grátis, sem cadastro, funciona offline.",
+      "h1": "Placar para noites de quiz",
+      "intro": "Vai apresentar um quiz no bar ou uma noite de perguntas? Lance os pontos de cada equipe por rodada em segundos e mostre um ranking ao vivo na TV. Depois da última rodada, os vencedores sobem ao pódio com confete.",
+      "cta": "Criar um placar de quiz",
+      "steps": [
+        "Crie um ranking e adicione os nomes das equipes.",
+        "Depois de cada rodada, digite os pontos na tabela de rodadas — Enter pula para a próxima equipe.",
+        "Mostre a classificação entre as rodadas e o pódio no fim da noite."
+      ],
+      "features": [
+        { "t": "Rodada a rodada", "d": "Os pontos de cada equipe por rodada e o total acumulado, na tela do apresentador e na TV." },
+        { "t": "Funciona sem Wi-Fi", "d": "Depois da primeira visita o Punkto funciona offline — ótimo em lugares com internet ruim." },
+        { "t": "O logo do seu bar", "d": "Coloque seu logo no placar. O Premium também remove os anúncios e o selo do Punkto." }
+      ],
+      "faq": [
+        { "q": "Como corrijo uma pontuação errada?", "a": "Clique no número na tabela de rodadas e digite o correto, ou pressione Ctrl+Z para desfazer a última alteração." },
+        { "q": "Posso fazer um quiz toda semana?", "a": "Sim. Encerre a partida para salvar o resultado no histórico e comece o próximo quiz no mesmo placar — ou duplique-o." },
+        { "q": "O público vê quem está na frente?", "a": "Sim. O ranking é sempre ordenado pelo total de pontos, e a TV pode alternar entre o ranking e a tabela de rodadas." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Marcador de pontos online para jogos — grátis e sem cadastro — Punkto",
+      "description": "Marque os pontos de jogos de tabuleiro, jogos de cartas e noites de jogos em família. Pontos por jogador, rodadas e vencedor. Um marcador de pontos online grátis que funciona offline.",
+      "h1": "Marcador de pontos online para noites de jogos",
+      "intro": "Chega de rabiscar no papel. O Punkto marca os pontos de jogos de cartas, de tabuleiro, dardos ou boliche: anote os pontos de cada jogador, acompanhe as rodadas e deixe o app fazer as contas — no fim, o vencedor sobe ao pódio.",
+      "cta": "Começar a marcar",
+      "steps": [
+        "Crie um ranking e adicione os jogadores.",
+        "Escolha botões de pontos que combinem com o seu jogo — ou digite os pontos de cada rodada na tabela de rodadas.",
+        "Toque em “Encerrar partida” para coroar o vencedor. O resultado fica salvo no histórico."
+      ],
+      "features": [
+        { "t": "Faz as contas por você", "d": "Totais, posições e pontos por rodada são calculados automaticamente — sem erros de soma." },
+        { "t": "Pontos negativos também", "d": "Muitos jogos tiram pontos. Defina seus próprios botões de subtrair ou digite números negativos." },
+        { "t": "Histórico de cada partida", "d": "Guarde as partidas anteriores e veja quem ganhou da última vez." }
+      ],
+      "faq": [
+        { "q": "Serve para quais jogos?", "a": "Para qualquer jogo em que se somam pontos: cartas, jogos de tabuleiro, dardos, boliche, minigolfe, torneios de videogame e mais." },
+        { "q": "E se a menor pontuação vencer?", "a": "O Punkto coloca o maior total em primeiro. Em jogos em que a menor pontuação vence, lance os pontos como números negativos." },
+        { "q": "Funciona no celular?", "a": "Sim. A tela de controle foi feita para celular, e o Punkto funciona offline depois da primeira visita." }
+      ]
+    }
+  }
+}

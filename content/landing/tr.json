@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Nasıl çalışır",
+    "why": "Neden Punkto",
+    "faq": "Sorular ve cevaplar",
+    "more": "Diğer ücretsiz puan araçları",
+    "badges": "Ücretsiz · Kayıt gerekmez · Çevrimdışı çalışır",
+    "privacy": "Tasarımı gereği gizli: isimler ve puanlar yalnızca tarayıcınızda saklanır — hiçbir şey yüklenmez.",
+    "app": "Uygulamayı aç"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "TV ve projektör için ücretsiz online skor tabelası — Punkto",
+      "description": "İki takımın skorunu online tutun. TV veya projektör için büyük, okunaklı bir skor tabelası; gol atanlar, maç saati ve kazanan ekranı. Ücretsiz, kayıt gerekmez, çevrimdışı çalışır.",
+      "h1": "İki takım için ücretsiz online skor tabelası",
+      "intro": "Punkto dizüstü bilgisayarınızı bir skor tabelasına dönüştürür. Tek dokunuşla puan ekleyin ve skoru TV'de veya projektörde tam ekran gösterin — anında güncellenir. Futbol, basketbol, voleybol, masa tenisi ve iki tarafın oynadığı her oyun için ideal.",
+      "cta": "Skor tabelası oluştur",
+      "steps": [
+        "Maça ve iki takıma bir ad verin. İsterseniz logo ve oyuncu ekleyin.",
+        "+1, +3 veya kendi değerlerinize dokunun. Hata mı yaptınız? −1, geri al ya da skora tıklayıp yazın.",
+        "“Ekran”a tıklayın, pencereyi TV'ye veya projektöre taşıyın ve tam ekran için F'ye basın. Siz puan tutarken senkron kalır."
+      ],
+      "features": [
+        { "t": "Dev ve okunaklı skor", "d": "Salonun öbür ucundaki ekranlar için: büyük rakamlar, takım renkleri, gol atanlar ve isteğe bağlı maç saati." },
+        { "t": "Gol atanlar ve maç akışı", "d": "Golü atanı tek dokunuşla seçin. Her gol dakikasıyla listelenir, yanlış olan tek tıkla silinir." },
+        { "t": "Kazanan ekranı ve geçmiş", "d": "Maçı bitirin, final skoru biraz konfetiyle gösterilsin. Her sonuç tabelanın geçmişinde kalır." }
+      ],
+      "faq": [
+        { "q": "Basketbol veya voleybol için kullanabilir miyim?", "a": "Evet. Tabelayı oluştururken puan düğmelerini seçin — örneğin basketbol için 1, 2, 3. Herhangi bir skoru elle de yazabilirsiniz." },
+        { "q": "Bir şey yüklemem gerekiyor mu?", "a": "Hayır. Punkto tarayıcıda çalışır. Tarayıcı menüsünden uygulama olarak yükleyebilirsiniz; ilk ziyaretten sonra çevrimdışı çalışır." },
+        { "q": "Skoru TV'de nasıl gösteririm?", "a": "Dizüstü bilgisayarınızı TV'ye veya projektöre bağlayın, gösterim ekranını ikinci bir pencerede açın ve o ekrana sürükleyin. İlk pencerede puan tutmaya devam edin — ekran anında güncellenir." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Ücretsiz sıralama tablosu oluşturucu — canlı online sıralama — Punkto",
+      "description": "Saniyeler içinde canlı bir sıralama tablosu oluşturun. Oyuncu veya takım ekleyin, puan verin, turları takip edin ve sıralamayı büyük ekranda gösterin. Ücretsiz, kayıt gerekmez, gizli.",
+      "h1": "Ücretsiz online sıralama tablosu oluşturucu",
+      "intro": "Her türlü yarışma için canlı bir sıralama tablosu oluşturun. Oyuncu veya takım ekleyin, tek dokunuşla puan verin; sıralama kendiliğinden düzenlenir. TV'de veya projektörde tam ekran gösterin ve kazananları kürsüye çıkarın.",
+      "cta": "Sıralama oluştur",
+      "steps": [
+        "Sıralamanıza bir ad verin ve artı ile eksi düğmelerinizi seçin.",
+        "Oyuncu veya takım ekleyin — elinizde liste varsa tamamını tek seferde yapıştırın.",
+        "Puan verin, sıralama kendiliğinden güncellenir. “Oyunu bitir” kürsüyü gösterir."
+      ],
+      "features": [
+        { "t": "Her zaman puana göre", "d": "Sıralama her değişiklikten sonra yeniden düzenlenir; ilk üçe altın, gümüş ve bronz." },
+        { "t": "Turlar", "d": "Puanları tur tur tutun ve tur tablosunu hem kendi ekranınızda hem büyük ekranda görün." },
+        { "t": "40 isimle bile okunaklı", "d": "Gösterim ekranı kendini ayarlar; her isim salonun en arkasından bile okunur." }
+      ],
+      "faq": [
+        { "q": "Bir sıralamada kaç oyuncu olabilir?", "a": "İhtiyacınız kadar. Ekran onları sütunlara yerleştirir, böylece yaklaşık 40 isim tek ekranda okunaklı kalır." },
+        { "q": "Sıralamam kaydediliyor mu?", "a": "Evet, otomatik olarak, bu cihazdaki tarayıcınızda. Başka bir cihaza taşımak için dosya dışa aktarın veya yedek bağlantısını kopyalayın." },
+        { "q": "Puanları sonradan değiştirebilir miyim?", "a": "Evet. Eksi düğmeleri veya geri al ile, tur tablosunda ya da bir puana tıklayıp doğrusunu yazarak." }
+      ]
+    },
+    "classroom": {
+      "title": "Sınıf puan takibi ve ders için puan tablosu — ücretsiz — Punkto",
+      "description": "Sınıfın veya grupların puanlarını projektörde takip edin. Turlu ve kürsülü ücretsiz okul puan tablosu. Kayıt gerekmez — öğrencilerin isimleri öğretmenin cihazında kalır.",
+      "h1": "Projektör için sınıf puan takibi",
+      "intro": "Takım çalışmasını, ödevleri veya iyi davranışı tüm sınıfın görebildiği puanlarla ödüllendirin. Punkto projektörde büyük ve renkli bir sıralama gösterir, her şeyi kendi cihazınızda saklar — sizin ve öğrencileriniz için hesap yok.",
+      "cta": "Sınıf tablosu oluştur",
+      "steps": [
+        "Bir tablo oluşturun ve sınıf listenizi veya grup adlarını yapıştırın.",
+        "Ders sırasında tek dokunuşla puan verin — ya da fareye dokunmadan klavyeyle.",
+        "Sıralamayı projektörde gösterin ve hafta sonunda kazananları kutlayın."
+      ],
+      "features": [
+        { "t": "Gizliliğe saygılı", "d": "Kayıt ve sunucu yok: isimler ve puanlar yalnızca tarayıcınızda. Premium ile hiç reklam kodu yüklenmez." },
+        { "t": "Derste hızlı", "d": "Öğrenciyi rakam tuşuyla seçin, + veya − ile puan verin. Hatalar tek geri almayla düzelir." },
+        { "t": "Günlük, haftalık veya tüm dönem", "d": "Bir tabloyu tüm dönem boyunca kullanın ya da her cuma oyunu bitirip sonuçları geçmişte saklayın." }
+      ],
+      "faq": [
+        { "q": "KVKK/GDPR ile uyumlu mu?", "a": "Punkto hiçbir sunucuda kişisel veri saklamaz — isimler öğretmenin tarayıcısında kalır. Yine de okulunuzun kurallarına uyun." },
+        { "q": "Akıllı tahtada çalışır mı?", "a": "Evet. Punkto'yu tahtanın bilgisayarında açın: büyük düğmeler dokunmatik çalışır ve gösterim ekranı tüm ekranı kaplar." },
+        { "q": "Öğrencilerin kendi cihazı gerekir mi?", "a": "Hayır. Punkto'yu yalnızca öğretmen kullanır; sınıf projektöre bakar." }
+      ]
+    },
+    "quiz": {
+      "title": "Bilgi yarışması ve quiz geceleri için skor tablosu — ücretsiz — Punkto",
+      "description": "Quiz gecenizi TV'de canlı bir skor tablosuyla yönetin. Her turun puanlarını girin, sıralamayı ve kürsüyü gösterin. Ücretsiz, kayıt gerekmez, çevrimdışı çalışır.",
+      "h1": "Quiz geceleri için skor tablosu",
+      "intro": "Barda quiz ya da bilgi yarışması mı sunuyorsunuz? Her takımın tur puanlarını saniyeler içinde girin ve TV'de canlı bir sıralama gösterin. Son turdan sonra kazananlar konfetiyle kürsüye çıkar.",
+      "cta": "Quiz tablosu oluştur",
+      "steps": [
+        "Bir sıralama oluşturun ve takım adlarını ekleyin.",
+        "Her turdan sonra puanları tur tablosuna yazın — Enter bir sonraki takıma geçer.",
+        "Turlar arasında ara sıralamayı, gecenin sonunda kürsüyü gösterin."
+      ],
+      "features": [
+        { "t": "Tur tur", "d": "Her takımın tur puanları ve toplamı — sunucu ekranında ve TV'de." },
+        { "t": "Wi-Fi olmadan çalışır", "d": "İlk ziyaretten sonra Punkto çevrimdışı çalışır — interneti zayıf mekânlarda işe yarar." },
+        { "t": "Mekânınızın logosu", "d": "Logonuzu tabloya ekleyin. Premium ayrıca reklamları ve Punkto rozetini kaldırır." }
+      ],
+      "faq": [
+        { "q": "Yanlış bir puanı nasıl düzeltirim?", "a": "Tur tablosundaki sayıya tıklayıp doğrusunu yazın ya da son değişikliği geri almak için Ctrl+Z'ye basın." },
+        { "q": "Her hafta quiz yapabilir miyim?", "a": "Evet. Sonucu geçmişe kaydetmek için oyunu bitirin ve sonraki quiz'e aynı tabloda başlayın — ya da tabloyu çoğaltın." },
+        { "q": "Konuklar kimin önde olduğunu görür mü?", "a": "Evet. Sıralama her zaman toplam puana göre dizilir ve TV sıralama ile tur tablosu arasında geçiş yapabilir." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Oyunlar için online puan tutucu — ücretsiz, kayıt gerekmez — Punkto",
+      "description": "Kutu oyunları, kart oyunları ve aile oyun geceleri için puan tutun. Oyuncu puanları, turlar ve kazanan. Çevrimdışı da çalışan ücretsiz online puan tutucu.",
+      "h1": "Oyun geceleri için online puan tutucu",
+      "intro": "Kâğıda karalamaya son. Punkto kart oyunlarında, kutu oyunlarında, dartta veya bowlingde puan tutar: oyuncuların puanlarını girin, turları takip edin, hesabı uygulamaya bırakın — sonunda kazanan kürsüye çıkar.",
+      "cta": "Puan tutmaya başla",
+      "steps": [
+        "Bir sıralama oluşturun ve oyuncuları ekleyin.",
+        "Oyununuza uygun puan düğmeleri seçin — ya da her turun puanını tur tablosuna yazın.",
+        "Kazananı belirlemek için “Oyunu bitir”e basın. Sonuç geçmişe kaydedilir."
+      ],
+      "features": [
+        { "t": "Hesabı sizin yerinize yapar", "d": "Toplamlar, sıralar ve tur puanları otomatik hesaplanır — toplama hatalarına son." },
+        { "t": "Eksi puanlar da var", "d": "Pek çok oyunda puan düşülür. Kendi eksi düğmelerinizi ayarlayın veya negatif sayı yazın." },
+        { "t": "Her oyunun geçmişi", "d": "Geçmiş oyunları kaydedin ve son kez kimin kazandığını görün." }
+      ],
+      "faq": [
+        { "q": "Hangi oyunlar için uygun?", "a": "Puan toplanan her oyun için: kart oyunları, kutu oyunları, dart, bowling, mini golf, video oyun turnuvaları ve daha fazlası." },
+        { "q": "En düşük puan kazanıyorsa ne olacak?", "a": "Punkto en yüksek toplamı birinci yapar. En düşük puanın kazandığı oyunlarda puanları negatif sayı olarak girin." },
+        { "q": "Telefonda çalışır mı?", "a": "Evet. Kontrol ekranı telefon için tasarlandı ve Punkto ilk ziyaretten sonra çevrimdışı çalışır." }
+      ]
+    }
+  }
+}

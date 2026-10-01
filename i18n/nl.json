@@ -121,9 +121,10 @@
     "p1": "Punkto heeft geen accounts en geen database. Alles wat je maakt — borden, namen, scores en logo's — wordt alleen opgeslagen in de lokale opslag van je browser op dit apparaat. Wij ontvangen er niets van.",
     "p2": "Logo's worden in je browser verkleind en gecomprimeerd voordat ze worden opgeslagen. Als je een bord verwijdert, of in de instellingen “Alle gegevens wissen” kiest, verdwijnt het voorgoed van dit apparaat.",
     "p3": "Deellinks bevatten de gegevens van het bord achter het #-teken in het adres. Browsers sturen dat deel nooit naar een server, dus de gegevens komen alleen terecht bij de mensen aan wie jij de link geeft. Logo's zitten niet in links.",
-    "p4": "De website wordt gehost op GitHub Pages. Zoals elke webserver kan GitHub bij het laden van de pagina technische gegevens vastleggen, zoals je IP-adres. Punkto zelf gebruikt geen analytics en geen trackingcookies.",
+    "p4": "De website wordt gehost op GitHub Pages. Zoals elke webserver kan GitHub bij het laden van de pagina technische gegevens vastleggen, zoals je IP-adres. Punkto zelf plaatst geen cookies en volgt je niet.",
     "p5": "In de gratis versie worden advertenties geleverd door Google AdSense. Google kan cookies gebruiken om advertenties te tonen en te meten; waar de wet dat vereist, wordt eerst om je toestemming gevraagd. Advertenties kun je voor de sessie verbergen, en Premium verwijdert alle advertentiecode.",
     "p6": "Als je Premium activeert, wordt je licentiesleutel naar onze betaalprovider Lemon Squeezy gestuurd om te controleren of hij geldig is. Betalingen worden volledig door Lemon Squeezy afgehandeld — wij zien nooit je kaart- of betaalgegevens.",
+    "p7": "Om te zien hoeveel mensen Punkto gebruiken, tellen we paginabezoeken en een paar anonieme gebeurtenissen (zoals ‘bord gemaakt’) met GoatCounter, een privacyvriendelijke statistiekdienst. Die gebruikt geen cookies, bewaart geen persoonsgegevens en volgt je niet over andere websites.",
     "contact": "Vragen? Contact:"
   },
   "share": {
@@ -260,5 +261,13 @@
     "a4": "Ja. Na je eerste bezoek werkt Punkto zonder internet. Je kunt het ook als app installeren via het menu van je browser.",
     "q5": "Is Punkto AVG-vriendelijk?",
     "a5": "Punkto is gebouwd met privacy voorop: geen account en geen persoonsgegevens op een server — namen blijven op jouw apparaat. Met Premium wordt er helemaal geen advertentiecode van derden geladen."
+  },
+  "uses": {
+    "title": "Gratis tools",
+    "scoreboard": "Online scorebord",
+    "leaderboard": "Ranglijst maken",
+    "classroom": "Klassenpunten",
+    "quiz": "Quizscorebord",
+    "score-keeper": "Scoreteller voor spellen"
   }
 }

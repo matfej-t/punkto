@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "How it works",
+    "why": "Why Punkto",
+    "faq": "Questions & answers",
+    "more": "More free score tools",
+    "badges": "Free · No sign-up · Works offline",
+    "privacy": "Private by design: names and scores are stored only in your browser — nothing is uploaded.",
+    "app": "Open the app"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Free Online Scoreboard for TV & Projector — Punkto",
+      "description": "Keep score for two teams online. A big, readable scoreboard for the TV or projector with goal scorers, match clock and winner screen. Free, no sign-up, works offline.",
+      "h1": "Free online scoreboard for two teams",
+      "intro": "Punkto turns your laptop into a scoreboard. Add points with one tap and show the score full-screen on a TV or projector — it updates instantly. Made for football, basketball, volleyball, table tennis or any game with two sides.",
+      "cta": "Create a scoreboard",
+      "steps": [
+        "Name the match and the two teams. Add logos and players if you like.",
+        "Tap +1, +3 or your own point values. Made a mistake? Use −1, undo, or click the score and type it.",
+        "Click “Display”, move the window to the TV or projector and press F for fullscreen. It stays in sync while you score."
+      ],
+      "features": [
+        { "t": "Huge, readable score", "d": "Built for screens across the room: big numbers, team colours, goal scorers and an optional match clock." },
+        { "t": "Scorers and timeline", "d": "Pick who scored with one tap. Every goal is listed with its minute, and wrong ones are removed in a click." },
+        { "t": "Winner screen and history", "d": "End the game to show the final score with a little confetti. Every result is kept in the board's history." }
+      ],
+      "faq": [
+        { "q": "Can I use it for basketball or volleyball?", "a": "Yes. Choose the point buttons when you create the scoreboard — for example 1, 2, 3 for basketball. You can also type any score by hand." },
+        { "q": "Do I need to install anything?", "a": "No. Punkto runs in the browser. You can install it as an app from the browser menu, and it works offline after the first visit." },
+        { "q": "How do I show the score on a TV?", "a": "Connect your laptop to the TV or projector, open the display view in a second window and drag it to that screen. Keep scoring in the first window — the display follows instantly." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Free Leaderboard Maker — Live Online Leaderboard — Punkto",
+      "description": "Create a live leaderboard in seconds. Add players or teams, give points, track rounds and show the ranking on a big screen. Free, no sign-up, private.",
+      "h1": "Free online leaderboard maker",
+      "intro": "Make a live leaderboard for any competition. Add players or teams, give points with one tap and watch the ranking sort itself. Show it full-screen on a TV or projector and crown the winners on a podium.",
+      "cta": "Create a leaderboard",
+      "steps": [
+        "Give your leaderboard a name and choose your plus and minus buttons.",
+        "Add players or teams — paste a whole list at once if you have one.",
+        "Give points and the ranking updates itself. Press “End game” to show the podium."
+      ],
+      "features": [
+        { "t": "Always sorted by points", "d": "The leaderboard re-ranks itself after every change, with gold, silver and bronze for the top three." },
+        { "t": "Rounds", "d": "Track points per round and see a round-by-round table, on your screen and on the big display." },
+        { "t": "Readable with 40 names", "d": "The display view sizes itself so every name stays readable, even on a projector at the back of the room." }
+      ],
+      "faq": [
+        { "q": "How many players can a leaderboard have?", "a": "As many as you need. The display arranges them in columns, so around 40 names stay readable on one screen." },
+        { "q": "Is my leaderboard saved?", "a": "Yes, automatically, in your browser on this device. Export a file or copy a backup link to move it to another device." },
+        { "q": "Can I change points afterwards?", "a": "Yes. Use the minus buttons or undo, edit any round in the rounds table, or click a score and type the correct number." }
+      ]
+    },
+    "classroom": {
+      "title": "Classroom Points Tracker & Class Scoreboard — Free — Punkto",
+      "description": "Track class or team points on the projector. A free classroom scoreboard with rounds and a winner podium. No sign-up — pupils' names stay on the teacher's device.",
+      "h1": "Classroom points tracker for the projector",
+      "intro": "Reward teamwork, homework or good behaviour with points your class can see. Punkto shows a big, colourful ranking on the projector and keeps everything on your own device — no accounts for you or your pupils.",
+      "cta": "Create a class board",
+      "steps": [
+        "Create a board and paste your class list or the names of your table groups.",
+        "Give points during the lesson with one tap — or with the keyboard, without touching the mouse.",
+        "Show the ranking on the projector and celebrate the winners at the end of the week."
+      ],
+      "features": [
+        { "t": "Privacy-friendly", "d": "No sign-up and no server: names and scores are stored only in your browser. With Premium, no ad code is loaded at all." },
+        { "t": "Fast during the lesson", "d": "Pick a pupil with the number keys and add points with + or −. Mistakes are fixed with one undo." },
+        { "t": "Daily, weekly or all term", "d": "Keep one board running all term, or end a game every Friday and keep the results in the history." }
+      ],
+      "faq": [
+        { "q": "Is it GDPR-friendly?", "a": "Punkto stores no personal data on any server — names stay in the teacher's browser. Please still follow your school's own rules." },
+        { "q": "Does it work on an interactive whiteboard?", "a": "Yes. Open Punkto on the whiteboard's computer: the large buttons work with touch, and the display view fills the screen." },
+        { "q": "Do pupils need their own devices?", "a": "No. Only the teacher uses Punkto; the class simply watches the projector." }
+      ]
+    },
+    "quiz": {
+      "title": "Quiz Scoreboard for Pub Quiz & Trivia Nights — Free — Punkto",
+      "description": "Run your quiz night with a live scoreboard on the TV. Enter each round's points, show the ranking and a winner podium. Free, no sign-up, works offline.",
+      "h1": "Quiz scoreboard for quiz nights",
+      "intro": "Hosting a pub quiz or trivia night? Enter every team's points per round in seconds and show a live leaderboard on the TV. When the last round is done, the winners get a podium and confetti.",
+      "cta": "Create a quiz scoreboard",
+      "steps": [
+        "Create a leaderboard and add the team names.",
+        "After each round, type the points into the round table — Enter jumps to the next team.",
+        "Show the standings between rounds and the podium at the end of the night."
+      ],
+      "features": [
+        { "t": "Round-by-round table", "d": "See each team's points per round and the running total, on the host screen and on the TV." },
+        { "t": "Works without Wi-Fi", "d": "After the first visit Punkto works offline — handy in venues with bad internet." },
+        { "t": "Your venue's logo", "d": "Put your logo on the board. Premium also removes the ads and the Punkto badge." }
+      ],
+      "faq": [
+        { "q": "How do I fix a wrong score?", "a": "Click the number in the round table and type the correct one, or press Ctrl+Z to undo the last change." },
+        { "q": "Can I run a quiz every week?", "a": "Yes. End the game to save the result in the history, then start the next quiz on the same board — or duplicate it." },
+        { "q": "Can guests see who is leading?", "a": "Yes. The ranking is always sorted by total points, and the TV can switch between the ranking and the round table." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Online Score Keeper for Games — Free, No Sign-up — Punkto",
+      "description": "Keep score for board games, card games and family game night. Add points per player, track rounds and see who wins. A free online score keeper that works offline.",
+      "h1": "Online score keeper for game night",
+      "intro": "Stop scribbling on paper. Punkto keeps score for card games, board games, darts or bowling: add points per player, track rounds and let the app do the maths — then show the winner on a podium.",
+      "cta": "Start keeping score",
+      "steps": [
+        "Create a leaderboard and add the players.",
+        "Set point buttons that fit your game — or type each round's score into the rounds table.",
+        "Press “End game” to crown the winner. The result is saved in the history."
+      ],
+      "features": [
+        { "t": "Does the maths for you", "d": "Totals, ranks and round scores are calculated automatically — no more adding-up mistakes." },
+        { "t": "Minus points too", "d": "Many games take points away. Set your own minus buttons or type negative scores." },
+        { "t": "A history of every game", "d": "Keep a record of past games and see who won last time." }
+      ],
+      "faq": [
+        { "q": "Which games does it work for?", "a": "Any game where players collect points: card games, board games, darts, bowling, mini golf, video game tournaments and more." },
+        { "q": "What if the lowest score wins?", "a": "Punkto ranks the highest total first. For games where the lowest score wins, enter the points as negative numbers." },
+        { "q": "Does it work on my phone?", "a": "Yes. The control view is made for phones, and Punkto works offline after the first visit." }
+      ]
+    }
+  }
+}

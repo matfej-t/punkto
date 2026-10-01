@@ -188,6 +188,8 @@ dialog.modal::backdrop { background: rgb(20 12 6 / .45); backdrop-filter: blur(2
 .site-footer { margin-top: auto; padding: 32px 16px 40px; border-top: 1px solid var(--border); text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: center; align-items: center; }
 .footer-langs { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; font-size: 14px; }
+.footer-uses { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; align-items: center; font-size: 14px; }
+.footer-uses a { color: var(--text); }
 .footer-langs a { color: var(--muted); text-decoration: none; }
 .footer-langs a:hover { color: var(--accent); }
 
@@ -514,6 +516,24 @@ body.is-display { overflow: hidden; }
 .final-score { display: flex; align-items: center; font-weight: 900; font-size: 3.6em; line-height: 1; font-variant-numeric: tabular-nums; align-self: center; }
 .final-score .sep { opacity: .4; margin: 0 .15em; }
 .d-winner .final { font-size: calc(var(--pod) / 14); }
+
+/* --------------------------------------------- Landing pages (SEO, static) */
+.lp-main { width: 100%; max-width: 1040px; margin: 0 auto; padding: 8px 16px 48px; display: flex; flex-direction: column; gap: 48px; }
+.lp-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; padding-top: 24px; }
+.lp-hero h1 { font-size: clamp(30px, 5vw, 50px); }
+.lp-hero .lead { font-size: clamp(17px, 2.1vw, 20px); color: var(--muted); }
+.lp-hero .btn-lg { margin: 6px 0 10px; }
+.lp-art .mode-art { width: 100%; max-width: 440px; display: block; margin: 0 auto; filter: drop-shadow(0 12px 30px rgb(0 0 0 / .12)); }
+.lp-section h2, .lp-more h2 { margin-bottom: 16px; }
+.lp-steps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.lp-steps li { counter-increment: step; position: relative; padding: 18px 18px 18px 64px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.lp-steps li::before { content: counter(step); position: absolute; left: 16px; top: 16px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-weight: 900; }
+.lp-privacy { margin-top: 16px; }
+.lp-cta { text-align: center; }
+.lp-more ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.lp-more a { display: inline-block; padding: 10px 16px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text); text-decoration: none; font-weight: 600; }
+.lp-more a:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 760px) { .lp-hero { grid-template-columns: 1fr; } .lp-art { order: -1; } .lp-art .mode-art { max-width: 320px; } }
 
 /* ------------------------------------------------------------------ 8. Misc */
 .confetti { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 2000; }

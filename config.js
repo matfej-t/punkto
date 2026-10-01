@@ -37,6 +37,15 @@ window.PUNKTO_CONFIG = {
     showPlaceholders: false
   },
 
+  /* ----------------------------------------------------- STATISTICS */
+  /* Optional, cookie-free visitor statistics with GoatCounter (free).
+     Sign up at https://www.goatcounter.com, choose a code (e.g. "punkto")
+     and put your count URL here: "https://punkto.goatcounter.com/count".
+     While empty, no statistics script is loaded at all.              */
+  analytics: {
+    goatcounter: ""
+  },
+
   /* -------------------------------------------------------- PREMIUM */
   premium: {
     /* Lemon Squeezy checkout link for the "Remove ads forever" product

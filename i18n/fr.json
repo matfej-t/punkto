@@ -121,9 +121,10 @@
     "p1": "Punkto n'a ni comptes ni base de données. Tout ce que vous créez — tableaux, noms, points et logos — est stocké uniquement dans le stockage local de votre navigateur sur cet appareil. Nous n'en recevons rien.",
     "p2": "Les logos sont redimensionnés et compressés dans votre navigateur avant d'être enregistrés. Supprimer un tableau, ou utiliser « Supprimer toutes les données » dans les réglages, l'efface définitivement de cet appareil.",
     "p3": "Les liens de partage contiennent les données du tableau après le signe # de l'adresse. Les navigateurs n'envoient jamais cette partie à un serveur : les données ne parviennent qu'aux personnes à qui vous donnez le lien. Les logos ne sont pas inclus dans les liens.",
-    "p4": "Le site est hébergé sur GitHub Pages. Comme tout serveur web, GitHub peut enregistrer des données techniques, comme votre adresse IP, lors du chargement de la page. Punkto lui-même n'utilise ni outil d'analyse ni cookie de suivi.",
+    "p4": "Le site est hébergé sur GitHub Pages. Comme tout serveur web, GitHub peut enregistrer des données techniques, comme votre adresse IP, lors du chargement de la page. Punkto lui-même ne dépose aucun cookie et ne vous suit pas.",
     "p5": "Dans la version gratuite, les publicités sont fournies par Google AdSense. Google peut utiliser des cookies pour afficher et mesurer les annonces ; lorsque la loi l'exige, votre consentement est demandé au préalable. Les pubs peuvent être masquées pour la session, et Premium supprime tout code publicitaire.",
     "p6": "Lorsque vous activez Premium, votre clé de licence est envoyée à notre prestataire de paiement Lemon Squeezy pour vérifier sa validité. Les paiements sont entièrement gérés par Lemon Squeezy — nous ne voyons jamais vos données de carte ou de paiement.",
+    "p7": "Pour savoir combien de personnes utilisent Punkto, les visites et quelques événements anonymes (comme « tableau créé ») sont comptés avec GoatCounter, un service de statistiques respectueux de la vie privée. Il n'utilise aucun cookie, ne stocke aucune donnée personnelle et ne vous suit pas d'un site à l'autre.",
     "contact": "Des questions ? Contact :"
   },
   "share": {
@@ -260,5 +261,13 @@
     "a4": "Oui. Après la première visite, Punkto fonctionne sans internet. Vous pouvez aussi l'installer comme une appli depuis le menu de votre navigateur.",
     "q5": "Punkto est-il respectueux du RGPD ?",
     "a5": "Punkto est conçu pour la confidentialité : pas d'inscription et aucune donnée personnelle stockée sur un serveur — les noms restent sur votre appareil. Avec Premium, aucun code publicitaire tiers n'est chargé."
+  },
+  "uses": {
+    "title": "Outils gratuits",
+    "scoreboard": "Tableau des scores en ligne",
+    "leaderboard": "Créateur de classement",
+    "classroom": "Points de classe",
+    "quiz": "Tableau des scores de quiz",
+    "score-keeper": "Compteur de points"
   }
 }

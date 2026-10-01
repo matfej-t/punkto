@@ -10,6 +10,7 @@ import { processImage } from '../images.js';
 import { exportJson, safeFilename } from '../share.js';
 import { adSlot, adsActive } from '../ads.js';
 import { openPremium, stepsFields, nameInput, boardTitleError } from './common.js';
+import { track } from '../analytics.js';
 import { openDisplayWindow, copyBoardLink } from './home.js';
 import { leaderboardBody } from './control-leaderboard.js';
 import { scoreboardBody } from './control-scoreboard.js';
@@ -134,6 +135,7 @@ export function controlView(root, id) {
     if (empty) { toast(t('control.addPlayersFirst')); return; }
     if (!await confirmDialog(t('control.endGameConfirm'), { title: t('control.endGame'), okLabel: t('control.endGame') })) return;
     endGame(board);
+    track('game-ended-' + board.mode);
     ui.undo = [];
     store.saveBoard(board);
     location.hash = `#/winner/${board.id}/${board.winner}`;

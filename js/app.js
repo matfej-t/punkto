@@ -5,6 +5,7 @@
 //   #/b/<id>               control view (host edits scores)
 //   #/display/<id>         display view (TV / projector)
 //   #/winner/<id>/<entry>  winner screen of a finished game
+//   #/new/<mode>           open "New board" with leaderboard/scoreboard preselected
 //   #/import/<payload>     restore a board from a shared link
 //   #/privacy              privacy information
 import { setLang, detectLang, t, getLang } from './i18n.js';
@@ -13,7 +14,8 @@ import { initTheme, applyScheme } from './theme.js';
 import { toast, closeMenus } from './ui.js';
 import { revalidateInBackground, hideAdsForSession } from './premium.js';
 import { ROOT_URL } from './env.js';
-import { homeView } from './views/home.js';
+import { homeView, openCreate } from './views/home.js';
+import { initAnalytics } from './analytics.js';
 import { controlView } from './views/control.js';
 import { displayView } from './views/display.js';
 import { winnerView } from './views/winner.js';
@@ -24,6 +26,13 @@ let current = null;
 
 const routes = [
   [/^#?\/?$/, homeView],
+  // Links from the landing pages: open "New board" with the type preselected.
+  [/^#\/new\/(leaderboard|scoreboard)$/, (root, mode) => {
+    const view = homeView(root);
+    history.replaceState(null, '', '#/');
+    openCreate(mode);
+    return view;
+  }],
   [/^#\/b\/([\w-]+)\/?$/, controlView],
   [/^#\/display\/([\w-]+)\/?$/, displayView],
   [/^#\/winner\/([\w-]+)\/([\w-]+)\/?$/, winnerView],
@@ -86,6 +95,7 @@ async function boot() {
   route();
   revalidateInBackground();
   registerServiceWorker();
+  initAnalytics();
 }
 
 function registerServiceWorker() {

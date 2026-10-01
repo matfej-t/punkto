@@ -1,0 +1,123 @@
+{
+  "ui": {
+    "how": "Zo werkt het",
+    "why": "Waarom Punkto",
+    "faq": "Vragen en antwoorden",
+    "more": "Meer gratis tools om punten te tellen",
+    "badges": "Gratis · Zonder account · Werkt offline",
+    "privacy": "Privacy ingebouwd: namen en scores worden alleen in je browser opgeslagen — er wordt niets geüpload.",
+    "app": "Open de app"
+  },
+  "pages": {
+    "scoreboard": {
+      "title": "Gratis online scorebord voor tv en beamer — Punkto",
+      "description": "Houd online de score bij voor twee teams. Een groot, goed leesbaar scorebord voor tv of beamer met doelpuntenmakers, wedstrijdklok en winnaarsscherm. Gratis, zonder account, werkt offline.",
+      "h1": "Gratis online scorebord voor twee teams",
+      "intro": "Punkto maakt van je laptop een scorebord. Geef punten met één tik en toon de stand schermvullend op een tv of beamer — die werkt direct bij. Ideaal voor voetbal, basketbal, volleybal, tafeltennis en elk spel met twee kanten.",
+      "cta": "Maak een scorebord",
+      "steps": [
+        "Geef de wedstrijd en de twee teams een naam. Voeg logo's en spelers toe als je wilt.",
+        "Tik op +1, +3 of je eigen waarden. Vergist? Gebruik −1, ongedaan maken of klik op de score en typ hem.",
+        "Klik op ‘Weergave’, sleep het venster naar de tv of beamer en druk op F voor volledig scherm. Het blijft gelijk lopen terwijl jij de score bijhoudt."
+      ],
+      "features": [
+        { "t": "Enorme, leesbare score", "d": "Gemaakt voor schermen aan de andere kant van de zaal: grote cijfers, teamkleuren, doelpuntenmakers en een optionele wedstrijdklok." },
+        { "t": "Doelpuntenmakers en verloop", "d": "Kies met één tik wie scoorde. Elk doelpunt staat met minuut in de lijst, een verkeerde verwijder je met één klik." },
+        { "t": "Winnaarsscherm en geschiedenis", "d": "Beëindig het spel om de eindstand met wat confetti te tonen. Elke uitslag blijft in de geschiedenis van het bord." }
+      ],
+      "faq": [
+        { "q": "Kan ik het gebruiken voor basketbal of volleybal?", "a": "Ja. Kies de puntenknoppen als je het scorebord maakt — bijvoorbeeld 1, 2, 3 voor basketbal. Je kunt elke stand ook met de hand invullen." },
+        { "q": "Moet ik iets installeren?", "a": "Nee. Punkto werkt in de browser. Je kunt het via het browsermenu als app installeren en na je eerste bezoek werkt het offline." },
+        { "q": "Hoe toon ik de stand op een tv?", "a": "Sluit je laptop aan op de tv of beamer, open de weergave in een tweede venster en sleep dat naar dat scherm. Houd in het eerste venster de score bij — de weergave volgt direct." }
+      ]
+    },
+    "leaderboard": {
+      "title": "Gratis ranglijst maken — live online ranglijst — Punkto",
+      "description": "Maak in een paar seconden een live ranglijst. Voeg spelers of teams toe, geef punten, houd rondes bij en toon de stand op een groot scherm. Gratis, zonder account, privé.",
+      "h1": "Gratis online ranglijst maken",
+      "intro": "Maak een live ranglijst voor elke wedstrijd. Voeg spelers of teams toe, geef punten met één tik en de ranglijst sorteert zichzelf. Toon hem schermvullend op een tv of beamer en zet de winnaars op het podium.",
+      "cta": "Maak een ranglijst",
+      "steps": [
+        "Geef je ranglijst een naam en kies je plus- en minknoppen.",
+        "Voeg spelers of teams toe — een hele lijst plak je in één keer.",
+        "Geef punten en de ranglijst werkt zichzelf bij. ‘Spel beëindigen’ toont het podium."
+      ],
+      "features": [
+        { "t": "Altijd op punten gesorteerd", "d": "De ranglijst herschikt zich na elke wijziging, met goud, zilver en brons voor de top drie." },
+        { "t": "Rondes", "d": "Houd punten per ronde bij en bekijk een tabel per ronde, op je eigen scherm en op de grote weergave." },
+        { "t": "Leesbaar met 40 namen", "d": "De weergave past zich aan zodat elke naam leesbaar blijft, zelfs achter in de zaal." }
+      ],
+      "faq": [
+        { "q": "Hoeveel spelers kan een ranglijst hebben?", "a": "Zoveel als je nodig hebt. De weergave zet ze in kolommen, zodat ongeveer 40 namen op één scherm leesbaar blijven." },
+        { "q": "Wordt mijn ranglijst bewaard?", "a": "Ja, automatisch, in je browser op dit apparaat. Exporteer een bestand of kopieer een back-uplink om hem naar een ander apparaat te verplaatsen." },
+        { "q": "Kan ik punten achteraf aanpassen?", "a": "Ja. Met de minknoppen of ongedaan maken, in de rondetabel — of klik op een score en typ het juiste getal." }
+      ]
+    },
+    "classroom": {
+      "title": "Klassenpunten bijhouden en scorebord voor de les — gratis — Punkto",
+      "description": "Houd punten van de klas of groepjes bij op het digibord of de beamer. Gratis scorebord voor school met rondes en podium. Zonder account — namen van leerlingen blijven op het apparaat van de leerkracht.",
+      "h1": "Klassenpunten bijhouden op de beamer",
+      "intro": "Beloon samenwerken, huiswerk of goed gedrag met punten die de hele klas ziet. Punkto toont een grote, kleurrijke ranglijst op de beamer en bewaart alles op je eigen apparaat — geen accounts voor jou of je leerlingen.",
+      "cta": "Maak een klassenbord",
+      "steps": [
+        "Maak een bord en plak je klassenlijst of de namen van de groepjes erin.",
+        "Geef tijdens de les punten met één tik — of met het toetsenbord, zonder muis.",
+        "Toon de ranglijst op de beamer en vier aan het eind van de week de winnaars."
+      ],
+      "features": [
+        { "t": "Privacyvriendelijk", "d": "Geen account en geen server: namen en punten staan alleen in je browser. Met Premium wordt helemaal geen advertentiecode geladen." },
+        { "t": "Snel tijdens de les", "d": "Kies een leerling met een cijfertoets en geef punten met + of −. Een vergissing herstel je met ongedaan maken." },
+        { "t": "Per dag, week of het hele schooljaar", "d": "Laat één bord het hele jaar lopen, of beëindig elke vrijdag een spel en bewaar de uitslagen in de geschiedenis." }
+      ],
+      "faq": [
+        { "q": "Is het AVG-vriendelijk?", "a": "Punkto bewaart geen persoonsgegevens op een server — namen blijven in de browser van de leerkracht. Volg wel de regels van je school." },
+        { "q": "Werkt het op een digibord?", "a": "Ja. Open Punkto op de computer van het digibord: de grote knoppen werken met aanraking en de weergave vult het hele scherm." },
+        { "q": "Hebben leerlingen een eigen apparaat nodig?", "a": "Nee. Alleen de leerkracht gebruikt Punkto; de klas kijkt gewoon naar de beamer." }
+      ]
+    },
+    "quiz": {
+      "title": "Scorebord voor pubquiz en quizavonden — gratis — Punkto",
+      "description": "Leid je quizavond met een live scorebord op de tv. Vul de punten per ronde in, toon de ranglijst en een podium. Gratis, zonder account, werkt offline.",
+      "h1": "Scorebord voor quizavonden",
+      "intro": "Presenteer je een pubquiz of kennisquiz? Vul in een paar seconden de punten per ronde in voor elk team en toon een live ranglijst op de tv. Na de laatste ronde staan de winnaars op het podium, met confetti.",
+      "cta": "Maak een quizscorebord",
+      "steps": [
+        "Maak een ranglijst en voeg de teamnamen toe.",
+        "Typ na elke ronde de punten in de rondetabel — Enter springt naar het volgende team.",
+        "Toon de tussenstand tussen de rondes en het podium aan het eind van de avond."
+      ],
+      "features": [
+        { "t": "Ronde voor ronde", "d": "De punten van elk team per ronde en het totaal, op het scherm van de quizmaster en op de tv." },
+        { "t": "Werkt zonder wifi", "d": "Na het eerste bezoek werkt Punkto offline — handig in zalen met slecht internet." },
+        { "t": "Het logo van je zaak", "d": "Zet je logo op het scorebord. Premium haalt ook de advertenties en de Punkto-badge weg." }
+      ],
+      "faq": [
+        { "q": "Hoe verbeter ik een verkeerde score?", "a": "Klik op het getal in de rondetabel en typ het juiste, of druk op Ctrl+Z om de laatste wijziging ongedaan te maken." },
+        { "q": "Kan ik elke week een quiz doen?", "a": "Ja. Beëindig het spel om de uitslag in de geschiedenis te bewaren en start de volgende quiz op hetzelfde bord — of dupliceer het." },
+        { "q": "Zien de gasten wie er voorstaat?", "a": "Ja. De ranglijst is altijd gesorteerd op totaalpunten en de tv kan wisselen tussen de ranglijst en de rondetabel." }
+      ]
+    },
+    "score-keeper": {
+      "title": "Online scoreteller voor spellen — gratis, zonder account — Punkto",
+      "description": "Houd de score bij bij bordspellen, kaartspellen en spelletjesavonden. Punten per speler, rondes en de winnaar. Een gratis online scoreteller die offline werkt.",
+      "h1": "Online scoreteller voor spelletjesavonden",
+      "intro": "Klaar met krabbelen op papier. Punkto houdt de score bij bij kaartspellen, bordspellen, darts of bowlen: vul de punten per speler in, houd rondes bij en laat de app rekenen — aan het eind staat de winnaar op het podium.",
+      "cta": "Begin met tellen",
+      "steps": [
+        "Maak een ranglijst en voeg de spelers toe.",
+        "Kies puntenknoppen die bij je spel passen — of typ de punten van elke ronde in de rondetabel.",
+        "Druk op ‘Spel beëindigen’ om de winnaar te kronen. De uitslag wordt in de geschiedenis bewaard."
+      ],
+      "features": [
+        { "t": "Rekent voor je", "d": "Totalen, plaatsen en rondepunten worden automatisch berekend — geen rekenfouten meer." },
+        { "t": "Ook minpunten", "d": "Veel spellen trekken punten af. Stel je eigen minknoppen in of typ negatieve getallen." },
+        { "t": "Geschiedenis van elk spel", "d": "Bewaar eerdere potjes en zie wie de vorige keer won." }
+      ],
+      "faq": [
+        { "q": "Voor welke spellen werkt het?", "a": "Voor elk spel waarin je punten verzamelt: kaartspellen, bordspellen, darts, bowlen, midgetgolf, gametoernooien en meer." },
+        { "q": "En als de laagste score wint?", "a": "Punkto zet het hoogste totaal bovenaan. Bij spellen waarin de laagste score wint, vul je de punten in als negatieve getallen." },
+        { "q": "Werkt het op mijn telefoon?", "a": "Ja. Het bedieningsscherm is gemaakt voor telefoons en Punkto werkt offline na het eerste bezoek." }
+      ]
+    }
+  }
+}
